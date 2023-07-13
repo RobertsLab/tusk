@@ -5,4 +5,4 @@ title: Where the fun starts
 This is a portal developed out as a Course Set where core learning modules exist. Please see sidebar menu for specific modules.
 There is a logic to the order as modules build as you go down the list, though they are developed where they are also stand-alone.
 
-If you want to contribute, have suggestions, want to see additional resources related to data science, or learn more about what are lab does please visit the [about page](about.qmd).
+If you want to contribute, have suggestions, want to see additional resources related to data science, or learn more about what our lab does please visit the [about page](about.qmd).
