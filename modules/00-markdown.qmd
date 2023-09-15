@@ -65,10 +65,12 @@ Here are some basic examples of Markdown syntax:
 
 -   Code Blocks:
 
-    ```         
+    ````
+    ```bash
+     Code goes here
     ```
+    ````
 
-    Code goes here
 
 -   In-line Code:
 
