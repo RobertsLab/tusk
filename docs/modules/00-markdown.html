@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -145,7 +179,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-markdown" id="toc-what-is-markdown" class="nav-link active" data-scroll-target="#what-is-markdown">What is Markdown?</a>
+  <ul class="collapse">
+  <li><a href="#why-is-markdown-useful" id="toc-why-is-markdown-useful" class="nav-link" data-scroll-target="#why-is-markdown-useful">Why is Markdown Useful?</a>
+  <ul class="collapse">
+  <li><a href="#simplicity" id="toc-simplicity" class="nav-link" data-scroll-target="#simplicity">Simplicity</a></li>
+  <li><a href="#flexibility" id="toc-flexibility" class="nav-link" data-scroll-target="#flexibility">Flexibility</a></li>
+  <li><a href="#versatility" id="toc-versatility" class="nav-link" data-scroll-target="#versatility">Versatility</a></li>
+  <li><a href="#readability" id="toc-readability" class="nav-link" data-scroll-target="#readability">Readability</a></li>
+  </ul></li>
+  <li><a href="#markdown-syntax-and-examples" id="toc-markdown-syntax-and-examples" class="nav-link" data-scroll-target="#markdown-syntax-and-examples">Markdown Syntax and Examples</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#keep-it-simple" id="toc-keep-it-simple" class="nav-link" data-scroll-target="#keep-it-simple">Keep it Simple</a></li>
+  <li><a href="#be-consistent" id="toc-be-consistent" class="nav-link" data-scroll-target="#be-consistent">Be Consistent</a></li>
+  <li><a href="#use-a-style-guide" id="toc-use-a-style-guide" class="nav-link" data-scroll-target="#use-a-style-guide">Use a Style Guide</a></li>
+  <li><a href="#use-markdown-extensions-wisely" id="toc-use-markdown-extensions-wisely" class="nav-link" data-scroll-target="#use-markdown-extensions-wisely">Use Markdown Extensions Wisely</a></li>
+  <li><a href="#preview-before-publishing" id="toc-preview-before-publishing" class="nav-link" data-scroll-target="#preview-before-publishing">Preview Before Publishing</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -167,8 +225,81 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="what-is-markdown" class="level1">
+<h1>What is Markdown?</h1>
+<p>Markdown is a lightweight markup language created by John Gruber and Aaron Swartz in 2004. It is designed to be easy-to-read and easy-to-write. The syntax allows you to format text using simple symbols and characters you already know. For example, you can use asterisks <code>*</code> or underscores <code>_</code> to create italics or bold text. You can also create lists, headers, links, and many other formatting features easily.</p>
+<section id="why-is-markdown-useful" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-markdown-useful">Why is Markdown Useful?</h2>
+<section id="simplicity" class="level3">
+<h3 class="anchored" data-anchor-id="simplicity">Simplicity</h3>
+<p>Markdown is much simpler to learn compared to other markup languages like HTML. This makes it a quick tool for anyone who wants to write well-formatted content without the steep learning curve.</p>
+</section>
+<section id="flexibility" class="level3">
+<h3 class="anchored" data-anchor-id="flexibility">Flexibility</h3>
+<p>Markdown files are plain text files with a <code>.md</code> extension, which means they can be opened with any text editor. This makes them extremely portable and easy to manage.</p>
+</section>
+<section id="versatility" class="level3">
+<h3 class="anchored" data-anchor-id="versatility">Versatility</h3>
+<p>Markdown is commonly used for readme files, GitHub repositories, blogging platforms like Jekyll, and even in data science notebooks like Jupyter.</p>
+</section>
+<section id="readability" class="level3">
+<h3 class="anchored" data-anchor-id="readability">Readability</h3>
+<p>The syntax is designed to be readable as-is, so even if you’re not rendering the Markdown to HTML or another format, it’s still easy to understand what’s going on.</p>
+</section>
+</section>
+<section id="markdown-syntax-and-examples" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-syntax-and-examples">Markdown Syntax and Examples</h2>
+<p>Here are some basic examples of Markdown syntax:</p>
+<ul>
+<li><p>Headers:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># H1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## H2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### H3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Lists:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Sub-item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Item 1</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Item 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Links:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">OpenAI</span><span class="co">](https://www.openai.com/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Images:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Alt text](url)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Code Blocks:</p>
+<pre><code></code></pre>
+<p>Code goes here</p></li>
+<li><p>In-line Code:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`code`</span> in your markdown file.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="keep-it-simple" class="level3">
+<h3 class="anchored" data-anchor-id="keep-it-simple">Keep it Simple</h3>
+<p>The beauty of Markdown lies in its simplicity. Stick to the basics unless there’s a strong reason to use a complex feature.</p>
+</section>
+<section id="be-consistent" class="level3">
+<h3 class="anchored" data-anchor-id="be-consistent">Be Consistent</h3>
+<p>If you’re working on a longer document or a series of documents, be consistent in your style and formatting. This will make it easier for others (or future you) to read and modify the content.</p>
+</section>
+<section id="use-a-style-guide" class="level3">
+<h3 class="anchored" data-anchor-id="use-a-style-guide">Use a Style Guide</h3>
+<p>Consider using a Markdown style guide or linter to keep your formatting consistent. This is especially helpful for collaborative projects.</p>
+</section>
+<section id="use-markdown-extensions-wisely" class="level3">
+<h3 class="anchored" data-anchor-id="use-markdown-extensions-wisely">Use Markdown Extensions Wisely</h3>
+<p>Many platforms support Markdown extensions that provide additional features like tables, footnotes, and task lists. While these are useful, keep in mind that they may not be supported everywhere.</p>
+</section>
+<section id="preview-before-publishing" class="level3">
+<h3 class="anchored" data-anchor-id="preview-before-publishing">Preview Before Publishing</h3>
+<p>Always preview your Markdown file before publishing to make sure it looks the way you intended.</p>
+<p>By adopting these best practices, you’ll be able to create content that is clean, easy to read, and easy to maintain.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

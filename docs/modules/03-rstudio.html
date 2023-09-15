@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -145,7 +179,34 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-rstudio" id="toc-what-is-rstudio" class="nav-link active" data-scroll-target="#what-is-rstudio">What is RStudio</a>
+  <ul class="collapse">
+  <li><a href="#why-is-rstudio-useful" id="toc-why-is-rstudio-useful" class="nav-link" data-scroll-target="#why-is-rstudio-useful">Why is RStudio Useful?</a>
+  <ul class="collapse">
+  <li><a href="#streamlined-workflow" id="toc-streamlined-workflow" class="nav-link" data-scroll-target="#streamlined-workflow">Streamlined Workflow</a></li>
+  <li><a href="#enhanced-productivity" id="toc-enhanced-productivity" class="nav-link" data-scroll-target="#enhanced-productivity">Enhanced Productivity</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
+  <li><a href="#extensible" id="toc-extensible" class="nav-link" data-scroll-target="#extensible">Extensible</a></li>
+  </ul></li>
+  <li><a href="#key-rstudio-features-and-examples" id="toc-key-rstudio-features-and-examples" class="nav-link" data-scroll-target="#key-rstudio-features-and-examples">Key RStudio Features and Examples</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#project-management" id="toc-project-management" class="nav-link" data-scroll-target="#project-management">Project Management</a></li>
+  <li><a href="#code-commenting" id="toc-code-commenting" class="nav-link" data-scroll-target="#code-commenting">Code Commenting</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  <li><a href="#version-control-1" id="toc-version-control-1" class="nav-link" data-scroll-target="#version-control-1">Version Control</a></li>
+  <li><a href="#use-functions-and-packages" id="toc-use-functions-and-packages" class="nav-link" data-scroll-target="#use-functions-and-packages">Use Functions and Packages</a></li>
+  <li><a href="#keyboard-shortcuts" id="toc-keyboard-shortcuts" class="nav-link" data-scroll-target="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+  <li><a href="#regularly-update-r-and-rstudio" id="toc-regularly-update-r-and-rstudio" class="nav-link" data-scroll-target="#regularly-update-r-and-rstudio">Regularly Update R and RStudio</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -167,8 +228,89 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="what-is-rstudio" class="level1">
+<h1>What is RStudio</h1>
+<p>RStudio is an Integrated Development Environment (IDE) for R, a programming language for statistical computing and data visualization. Developed by RStudio, Inc., this IDE provides a user-friendly interface to R, making it easier to write code, run analyses, and produce plots. It includes features such as syntax highlighting, code completion, and the ability to run R code interactively.</p>
+<section id="why-is-rstudio-useful" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-rstudio-useful">Why is RStudio Useful?</h2>
+<section id="streamlined-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="streamlined-workflow">Streamlined Workflow</h3>
+<p>RStudio consolidates your code, plots, and output in one place, improving workflow and making the process more efficient.</p>
+</section>
+<section id="enhanced-productivity" class="level3">
+<h3 class="anchored" data-anchor-id="enhanced-productivity">Enhanced Productivity</h3>
+<p>With features like auto-completion and built-in debugging tools, RStudio speeds up the coding process.</p>
+</section>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<p>RStudio simplifies the process of creating complex data visualizations by providing easy-to-use interfaces for ggplot2, Shiny, and other R packages.</p>
+</section>
+<section id="version-control" class="level3">
+<h3 class="anchored" data-anchor-id="version-control">Version Control</h3>
+<p>RStudio includes integrated support for Git and GitHub, making it easier to manage changes to your code and collaborate with others.</p>
+</section>
+<section id="extensible" class="level3">
+<h3 class="anchored" data-anchor-id="extensible">Extensible</h3>
+<p>RStudio supports various R packages and also allows the use of other programming languages like C++, Python, and SQL within the IDE.</p>
+</section>
+</section>
+<section id="key-rstudio-features-and-examples" class="level2">
+<h2 class="anchored" data-anchor-id="key-rstudio-features-and-examples">Key RStudio Features and Examples</h2>
+<ul>
+<li><p><strong>Script Editor</strong>: Write and edit your R scripts.</p></li>
+<li><p><strong>Console</strong>: Run R commands interactively.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">print</span>(<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Environment</strong>: View and manage all variables, data frames, and other objects in your R session.</p></li>
+<li><p><strong>Plots</strong>: Visualize your data and generate plots easily.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Packages</strong>: Install and manage R packages.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Help</strong>: Access R documentation quickly.</p></li>
+<li><p><strong>File Browser</strong>: Navigate your file system and manage your project files.</p></li>
+<li><p><strong>Version Control</strong>: Manage Git repositories directly within RStudio.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Shiny Apps</strong>: Build interactive web apps right within RStudio.</p></li>
+</ul>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="project-management" class="level3">
+<h3 class="anchored" data-anchor-id="project-management">Project Management</h3>
+<p>Use RStudio Projects to keep your scripts, data, and other files organized. This makes it easier to manage complex analyses and collaborate with others.</p>
+</section>
+<section id="code-commenting" class="level3">
+<h3 class="anchored" data-anchor-id="code-commenting">Code Commenting</h3>
+<p>Use comments to describe what your code is doing. This makes it easier for you (and others) to understand the logic later.</p>
+<pre><code>```R
+# Calculate the mean of x
+mean_x &lt;- mean(x)
+```</code></pre>
+</section>
+<section id="reproducibility" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility">Reproducibility</h3>
+<p>Make your code and analyses reproducible. Use relative file paths and R Markdown documents to ensure others can easily run your code.</p>
+</section>
+<section id="version-control-1" class="level3">
+<h3 class="anchored" data-anchor-id="version-control-1">Version Control</h3>
+<p>Use Git to keep track of changes in your project. This is invaluable for collaboration and data science project management.</p>
+</section>
+<section id="use-functions-and-packages" class="level3">
+<h3 class="anchored" data-anchor-id="use-functions-and-packages">Use Functions and Packages</h3>
+<p>Don’t reinvent the wheel. Make use of R’s extensive library of packages and functions to perform common tasks.</p>
+</section>
+<section id="keyboard-shortcuts" class="level3">
+<h3 class="anchored" data-anchor-id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<p>Learn RStudio’s keyboard shortcuts to navigate the IDE more efficiently.</p>
+</section>
+<section id="regularly-update-r-and-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="regularly-update-r-and-rstudio">Regularly Update R and RStudio</h3>
+<p>To make use of the latest features and improvements, keep your R and RStudio installations up to date.</p>
+<p>By adhering to these best practices, you can make the most out of RStudio, whether you’re doing data analysis, statistical modeling, or creating data visualizations.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

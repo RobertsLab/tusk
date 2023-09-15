@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -145,7 +179,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-bash" id="toc-what-is-bash" class="nav-link active" data-scroll-target="#what-is-bash">What is Bash?</a>
+  <ul class="collapse">
+  <li><a href="#why-is-bash-useful" id="toc-why-is-bash-useful" class="nav-link" data-scroll-target="#why-is-bash-useful">Why is Bash Useful?</a>
+  <ul class="collapse">
+  <li><a href="#automation" id="toc-automation" class="nav-link" data-scroll-target="#automation">Automation</a></li>
+  <li><a href="#system-administration" id="toc-system-administration" class="nav-link" data-scroll-target="#system-administration">System Administration</a></li>
+  <li><a href="#flexibility" id="toc-flexibility" class="nav-link" data-scroll-target="#flexibility">Flexibility</a></li>
+  <li><a href="#portability" id="toc-portability" class="nav-link" data-scroll-target="#portability">Portability</a></li>
+  <li><a href="#integration" id="toc-integration" class="nav-link" data-scroll-target="#integration">Integration</a></li>
+  </ul></li>
+  <li><a href="#key-bash-features-and-examples" id="toc-key-bash-features-and-examples" class="nav-link" data-scroll-target="#key-bash-features-and-examples">Key Bash Features and Examples</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#comment-your-code" id="toc-comment-your-code" class="nav-link" data-scroll-target="#comment-your-code">Comment Your Code</a></li>
+  <li><a href="#use-meaningful-variable-names" id="toc-use-meaningful-variable-names" class="nav-link" data-scroll-target="#use-meaningful-variable-names">Use Meaningful Variable Names</a></li>
+  <li><a href="#keep-it-simple" id="toc-keep-it-simple" class="nav-link" data-scroll-target="#keep-it-simple">Keep It Simple</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -167,8 +224,80 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="what-is-bash" class="level1">
+<h1>What is Bash?</h1>
+<p>Bash, or the Bourne Again Shell, is a Unix shell and command-line interface for operating systems like Linux and macOS. Created by Brian Fox in 1989 as a free software replacement for the Bourne Shell, Bash is one of the most widely-used and powerful shells available. It serves as both a scripting language and an interactive command interpreter.</p>
+<section id="why-is-bash-useful" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-bash-useful">Why is Bash Useful?</h2>
+<section id="automation" class="level3">
+<h3 class="anchored" data-anchor-id="automation">Automation</h3>
+<p>Bash scripts can automate repetitive tasks, making your workflow more efficient.</p>
+</section>
+<section id="system-administration" class="level3">
+<h3 class="anchored" data-anchor-id="system-administration">System Administration</h3>
+<p>Bash is crucial for system administration tasks such as managing users, processes, and system updates.</p>
+</section>
+<section id="flexibility" class="level3">
+<h3 class="anchored" data-anchor-id="flexibility">Flexibility</h3>
+<p>Bash commands can be combined and executed in a variety of ways to perform complex tasks.</p>
+</section>
+<section id="portability" class="level3">
+<h3 class="anchored" data-anchor-id="portability">Portability</h3>
+<p>Bash scripts are usually portable across different Unix-based systems with little to no modification.</p>
+</section>
+<section id="integration" class="level3">
+<h3 class="anchored" data-anchor-id="integration">Integration</h3>
+<p>Bash can interact with other command-line tools and languages like awk, sed, and even Python, further extending its utility.</p>
+</section>
+</section>
+<section id="key-bash-features-and-examples" class="level2">
+<h2 class="anchored" data-anchor-id="key-bash-features-and-examples">Key Bash Features and Examples</h2>
+<ul>
+<li><p><strong>Commands</strong>: The basic units of instruction in Bash.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>  <span class="co"># List files</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> directory/  <span class="co"># Change directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Variables</strong>: Store data that can be accessed and manipulated.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">NAME</span><span class="op">=</span><span class="st">"John"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$NAME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Control Structures</strong>: If-else statements, loops, and case statements to control flow.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="st">"</span><span class="va">$a</span><span class="st">"</span> <span class="ot">-eq</span> <span class="st">"</span><span class="va">$b</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"a is equal to b"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Pipes and Redirection</strong>: Connect multiple commands and redirect output.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">'.txt'</span>  <span class="co"># List only .txt files</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello"</span> <span class="op">&gt;</span> file.txt  <span class="co"># Write to file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Scripting</strong>: Combine all of the above to write complex scripts.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a simple script</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="comment-your-code" class="level3">
+<h3 class="anchored" data-anchor-id="comment-your-code">Comment Your Code</h3>
+<p>Always comment your scripts to explain what each part is doing. This is especially useful for more complex scripts.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment explaining the following line of code</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="use-meaningful-variable-names" class="level3">
+<h3 class="anchored" data-anchor-id="use-meaningful-variable-names">Use Meaningful Variable Names</h3>
+<p>Choose descriptive variable names to make your script more readable.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">file_count</span><span class="op">=</span>10</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Bad</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">fc</span><span class="op">=</span>10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="keep-it-simple" class="level3">
+<h3 class="anchored" data-anchor-id="keep-it-simple">Keep It Simple</h3>
+<p>Bash has many features, but that doesn’t mean you have to use them all. Stick to the simplest approach that gets the job done.</p>
+<p>By following these best practices, you can write effective, robust, and maintainable Bash scripts, making the most of what this versatile tool has to offer.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

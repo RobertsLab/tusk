@@ -12,5 +12,117 @@
     "title": "About",
     "section": "",
     "text": "This is a Quarto Website that you can contribute to at\nhttps://github.com/RobertsLab/tusk\nPlease see the readme file for instructions and guidelines for contribution."
+  },
+  {
+    "objectID": "modules/00-markdown.html",
+    "href": "modules/00-markdown.html",
+    "title": "markdown",
+    "section": "",
+    "text": "Markdown is a lightweight markup language created by John Gruber and Aaron Swartz in 2004. It is designed to be easy-to-read and easy-to-write. The syntax allows you to format text using simple symbols and characters you already know. For example, you can use asterisks * or underscores _ to create italics or bold text. You can also create lists, headers, links, and many other formatting features easily.\n\n\n\n\nMarkdown is much simpler to learn compared to other markup languages like HTML. This makes it a quick tool for anyone who wants to write well-formatted content without the steep learning curve.\n\n\n\nMarkdown files are plain text files with a .md extension, which means they can be opened with any text editor. This makes them extremely portable and easy to manage.\n\n\n\nMarkdown is commonly used for readme files, GitHub repositories, blogging platforms like Jekyll, and even in data science notebooks like Jupyter.\n\n\n\nThe syntax is designed to be readable as-is, so even if you’re not rendering the Markdown to HTML or another format, it’s still easy to understand what’s going on.\n\n\n\n\nHere are some basic examples of Markdown syntax:\n\nHeaders:\n# H1\n## H2\n### H3\nLists:\n- Item 1\n- Item 2\n    - Sub-item\nor\n1. Item 1\n2. Item 2\nLinks:\n[OpenAI](https://www.openai.com/)\nImages:\n![Alt text](url)\nCode Blocks:\n\nCode goes here\nIn-line Code:\nUse `code` in your markdown file.\n\n\n\n\n\n\nThe beauty of Markdown lies in its simplicity. Stick to the basics unless there’s a strong reason to use a complex feature.\n\n\n\nIf you’re working on a longer document or a series of documents, be consistent in your style and formatting. This will make it easier for others (or future you) to read and modify the content.\n\n\n\nConsider using a Markdown style guide or linter to keep your formatting consistent. This is especially helpful for collaborative projects.\n\n\n\nMany platforms support Markdown extensions that provide additional features like tables, footnotes, and task lists. While these are useful, keep in mind that they may not be supported everywhere.\n\n\n\nAlways preview your Markdown file before publishing to make sure it looks the way you intended.\nBy adopting these best practices, you’ll be able to create content that is clean, easy to read, and easy to maintain."
+  },
+  {
+    "objectID": "modules/00-markdown.html#why-is-markdown-useful",
+    "href": "modules/00-markdown.html#why-is-markdown-useful",
+    "title": "markdown",
+    "section": "",
+    "text": "Markdown is much simpler to learn compared to other markup languages like HTML. This makes it a quick tool for anyone who wants to write well-formatted content without the steep learning curve.\n\n\n\nMarkdown files are plain text files with a .md extension, which means they can be opened with any text editor. This makes them extremely portable and easy to manage.\n\n\n\nMarkdown is commonly used for readme files, GitHub repositories, blogging platforms like Jekyll, and even in data science notebooks like Jupyter.\n\n\n\nThe syntax is designed to be readable as-is, so even if you’re not rendering the Markdown to HTML or another format, it’s still easy to understand what’s going on."
+  },
+  {
+    "objectID": "modules/00-markdown.html#markdown-syntax-and-examples",
+    "href": "modules/00-markdown.html#markdown-syntax-and-examples",
+    "title": "markdown",
+    "section": "",
+    "text": "Here are some basic examples of Markdown syntax:\n\nHeaders:\n# H1\n## H2\n### H3\nLists:\n- Item 1\n- Item 2\n    - Sub-item\nor\n1. Item 1\n2. Item 2\nLinks:\n[OpenAI](https://www.openai.com/)\nImages:\n![Alt text](url)\nCode Blocks:\n\nCode goes here\nIn-line Code:\nUse `code` in your markdown file."
+  },
+  {
+    "objectID": "modules/00-markdown.html#best-practices",
+    "href": "modules/00-markdown.html#best-practices",
+    "title": "markdown",
+    "section": "",
+    "text": "The beauty of Markdown lies in its simplicity. Stick to the basics unless there’s a strong reason to use a complex feature.\n\n\n\nIf you’re working on a longer document or a series of documents, be consistent in your style and formatting. This will make it easier for others (or future you) to read and modify the content.\n\n\n\nConsider using a Markdown style guide or linter to keep your formatting consistent. This is especially helpful for collaborative projects.\n\n\n\nMany platforms support Markdown extensions that provide additional features like tables, footnotes, and task lists. While these are useful, keep in mind that they may not be supported everywhere.\n\n\n\nAlways preview your Markdown file before publishing to make sure it looks the way you intended.\nBy adopting these best practices, you’ll be able to create content that is clean, easy to read, and easy to maintain."
+  },
+  {
+    "objectID": "modules/03-rstudio.html",
+    "href": "modules/03-rstudio.html",
+    "title": "RStudio",
+    "section": "",
+    "text": "RStudio is an Integrated Development Environment (IDE) for R, a programming language for statistical computing and data visualization. Developed by RStudio, Inc., this IDE provides a user-friendly interface to R, making it easier to write code, run analyses, and produce plots. It includes features such as syntax highlighting, code completion, and the ability to run R code interactively.\n\n\n\n\nRStudio consolidates your code, plots, and output in one place, improving workflow and making the process more efficient.\n\n\n\nWith features like auto-completion and built-in debugging tools, RStudio speeds up the coding process.\n\n\n\nRStudio simplifies the process of creating complex data visualizations by providing easy-to-use interfaces for ggplot2, Shiny, and other R packages.\n\n\n\nRStudio includes integrated support for Git and GitHub, making it easier to manage changes to your code and collaborate with others.\n\n\n\nRStudio supports various R packages and also allows the use of other programming languages like C++, Python, and SQL within the IDE.\n\n\n\n\n\nScript Editor: Write and edit your R scripts.\nConsole: Run R commands interactively.\n&gt; print(\"Hello, World!\")\nEnvironment: View and manage all variables, data frames, and other objects in your R session.\nPlots: Visualize your data and generate plots easily.\nggplot(data, aes(x=x, y=y)) + geom_point()\nPackages: Install and manage R packages.\ninstall.packages(\"tidyverse\")\nHelp: Access R documentation quickly.\nFile Browser: Navigate your file system and manage your project files.\nVersion Control: Manage Git repositories directly within RStudio.\ngit commit -m \"Initial commit\"\nShiny Apps: Build interactive web apps right within RStudio.\n\n\n\n\n\n\nUse RStudio Projects to keep your scripts, data, and other files organized. This makes it easier to manage complex analyses and collaborate with others.\n\n\n\nUse comments to describe what your code is doing. This makes it easier for you (and others) to understand the logic later.\n```R\n# Calculate the mean of x\nmean_x &lt;- mean(x)\n```\n\n\n\nMake your code and analyses reproducible. Use relative file paths and R Markdown documents to ensure others can easily run your code.\n\n\n\nUse Git to keep track of changes in your project. This is invaluable for collaboration and data science project management.\n\n\n\nDon’t reinvent the wheel. Make use of R’s extensive library of packages and functions to perform common tasks.\n\n\n\nLearn RStudio’s keyboard shortcuts to navigate the IDE more efficiently.\n\n\n\nTo make use of the latest features and improvements, keep your R and RStudio installations up to date.\nBy adhering to these best practices, you can make the most out of RStudio, whether you’re doing data analysis, statistical modeling, or creating data visualizations."
+  },
+  {
+    "objectID": "modules/03-rstudio.html#why-is-rstudio-useful",
+    "href": "modules/03-rstudio.html#why-is-rstudio-useful",
+    "title": "RStudio",
+    "section": "",
+    "text": "RStudio consolidates your code, plots, and output in one place, improving workflow and making the process more efficient.\n\n\n\nWith features like auto-completion and built-in debugging tools, RStudio speeds up the coding process.\n\n\n\nRStudio simplifies the process of creating complex data visualizations by providing easy-to-use interfaces for ggplot2, Shiny, and other R packages.\n\n\n\nRStudio includes integrated support for Git and GitHub, making it easier to manage changes to your code and collaborate with others.\n\n\n\nRStudio supports various R packages and also allows the use of other programming languages like C++, Python, and SQL within the IDE."
+  },
+  {
+    "objectID": "modules/03-rstudio.html#key-rstudio-features-and-examples",
+    "href": "modules/03-rstudio.html#key-rstudio-features-and-examples",
+    "title": "RStudio",
+    "section": "",
+    "text": "Script Editor: Write and edit your R scripts.\nConsole: Run R commands interactively.\n&gt; print(\"Hello, World!\")\nEnvironment: View and manage all variables, data frames, and other objects in your R session.\nPlots: Visualize your data and generate plots easily.\nggplot(data, aes(x=x, y=y)) + geom_point()\nPackages: Install and manage R packages.\ninstall.packages(\"tidyverse\")\nHelp: Access R documentation quickly.\nFile Browser: Navigate your file system and manage your project files.\nVersion Control: Manage Git repositories directly within RStudio.\ngit commit -m \"Initial commit\"\nShiny Apps: Build interactive web apps right within RStudio."
+  },
+  {
+    "objectID": "modules/03-rstudio.html#best-practices",
+    "href": "modules/03-rstudio.html#best-practices",
+    "title": "RStudio",
+    "section": "",
+    "text": "Use RStudio Projects to keep your scripts, data, and other files organized. This makes it easier to manage complex analyses and collaborate with others.\n\n\n\nUse comments to describe what your code is doing. This makes it easier for you (and others) to understand the logic later.\n```R\n# Calculate the mean of x\nmean_x &lt;- mean(x)\n```\n\n\n\nMake your code and analyses reproducible. Use relative file paths and R Markdown documents to ensure others can easily run your code.\n\n\n\nUse Git to keep track of changes in your project. This is invaluable for collaboration and data science project management.\n\n\n\nDon’t reinvent the wheel. Make use of R’s extensive library of packages and functions to perform common tasks.\n\n\n\nLearn RStudio’s keyboard shortcuts to navigate the IDE more efficiently.\n\n\n\nTo make use of the latest features and improvements, keep your R and RStudio installations up to date.\nBy adhering to these best practices, you can make the most out of RStudio, whether you’re doing data analysis, statistical modeling, or creating data visualizations."
+  },
+  {
+    "objectID": "modules/01-github.html",
+    "href": "modules/01-github.html",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub is a web-based platform that provides hosting for software development and a set of tools for version control using Git. Created by Tom Preston-Werner, Chris Wanstrath, and PJ Hyett in 2008, GitHub has become one of the most popular platforms for developers to share code, collaborate on projects, and even showcase their portfolio.\n\n\n\n\nGitHub makes it extremely easy for multiple people to work on the same project. Features like forks, pull requests, and issues help facilitate effective collaboration.\n\n\n\nBuilt on Git, GitHub provides robust version control capabilities, allowing you to keep track of changes, revert to previous states, and work on different branches simultaneously.\n\n\n\nGitHub is not just for code. It’s widely used for documentation, thanks to support for Markdown and GitHub Pages which can turn repositories into full-fledged, static websites.\n\n\n\n\n\nRepositories: Central locations for storing all of your project’s files and revision history.\nCommits: Save changes to the repository.\ngit add .\ngit commit -m \"Your message here\"\nIssues: Report bugs, request features, and manage tasks in a project.\nActions: Automate tasks like building, testing, and deploying your code.\nGitHub Pages: Host websites directly from a GitHub repository.\n\n\n\n\n\n\nCommit messages should be concise and describe what was done and why. This makes it easier to review changes later.\n\n\n\nAlways include a README.md file to explain what your project is, how to set it up, and how to use it. Good documentation encourages collaboration.\n\n\n\nMake use of GitHub features like Projects, Milestones, and Labels to organize and track work on your repositories.\nBy adhering to these best practices, you can make the most out of GitHub’s myriad features for both personal and collaborative projects."
+  },
+  {
+    "objectID": "modules/01-github.html#why-is-github-useful",
+    "href": "modules/01-github.html#why-is-github-useful",
+    "title": "GitHub",
+    "section": "",
+    "text": "GitHub makes it extremely easy for multiple people to work on the same project. Features like forks, pull requests, and issues help facilitate effective collaboration.\n\n\n\nBuilt on Git, GitHub provides robust version control capabilities, allowing you to keep track of changes, revert to previous states, and work on different branches simultaneously.\n\n\n\nGitHub is not just for code. It’s widely used for documentation, thanks to support for Markdown and GitHub Pages which can turn repositories into full-fledged, static websites."
+  },
+  {
+    "objectID": "modules/01-github.html#key-github-features-and-examples",
+    "href": "modules/01-github.html#key-github-features-and-examples",
+    "title": "GitHub",
+    "section": "",
+    "text": "Repositories: Central locations for storing all of your project’s files and revision history.\nCommits: Save changes to the repository.\ngit add .\ngit commit -m \"Your message here\"\nIssues: Report bugs, request features, and manage tasks in a project.\nActions: Automate tasks like building, testing, and deploying your code.\nGitHub Pages: Host websites directly from a GitHub repository."
+  },
+  {
+    "objectID": "modules/01-github.html#best-practices",
+    "href": "modules/01-github.html#best-practices",
+    "title": "GitHub",
+    "section": "",
+    "text": "Commit messages should be concise and describe what was done and why. This makes it easier to review changes later.\n\n\n\nAlways include a README.md file to explain what your project is, how to set it up, and how to use it. Good documentation encourages collaboration.\n\n\n\nMake use of GitHub features like Projects, Milestones, and Labels to organize and track work on your repositories.\nBy adhering to these best practices, you can make the most out of GitHub’s myriad features for both personal and collaborative projects."
+  },
+  {
+    "objectID": "modules/02-bash.html",
+    "href": "modules/02-bash.html",
+    "title": "bash",
+    "section": "",
+    "text": "Bash, or the Bourne Again Shell, is a Unix shell and command-line interface for operating systems like Linux and macOS. Created by Brian Fox in 1989 as a free software replacement for the Bourne Shell, Bash is one of the most widely-used and powerful shells available. It serves as both a scripting language and an interactive command interpreter.\n\n\n\n\nBash scripts can automate repetitive tasks, making your workflow more efficient.\n\n\n\nBash is crucial for system administration tasks such as managing users, processes, and system updates.\n\n\n\nBash commands can be combined and executed in a variety of ways to perform complex tasks.\n\n\n\nBash scripts are usually portable across different Unix-based systems with little to no modification.\n\n\n\nBash can interact with other command-line tools and languages like awk, sed, and even Python, further extending its utility.\n\n\n\n\n\nCommands: The basic units of instruction in Bash.\nls  # List files\ncd directory/  # Change directory\nVariables: Store data that can be accessed and manipulated.\nNAME=\"John\"\necho $NAME\nControl Structures: If-else statements, loops, and case statements to control flow.\nif [ \"$a\" -eq \"$b\" ]; then\n    echo \"a is equal to b\"\nfi\nPipes and Redirection: Connect multiple commands and redirect output.\nls | grep '.txt'  # List only .txt files\necho \"Hello\" &gt; file.txt  # Write to file\nScripting: Combine all of the above to write complex scripts.\n#!/bin/bash\n# This is a simple script\necho \"Hello, world!\"\n\n\n\n\n\n\nAlways comment your scripts to explain what each part is doing. This is especially useful for more complex scripts.\n# This is a comment explaining the following line of code\nls\n\n\n\nChoose descriptive variable names to make your script more readable.\n# Good\nfile_count=10\n\n# Bad\nfc=10\n\n\n\nBash has many features, but that doesn’t mean you have to use them all. Stick to the simplest approach that gets the job done.\nBy following these best practices, you can write effective, robust, and maintainable Bash scripts, making the most of what this versatile tool has to offer."
+  },
+  {
+    "objectID": "modules/02-bash.html#why-is-bash-useful",
+    "href": "modules/02-bash.html#why-is-bash-useful",
+    "title": "bash",
+    "section": "",
+    "text": "Bash scripts can automate repetitive tasks, making your workflow more efficient.\n\n\n\nBash is crucial for system administration tasks such as managing users, processes, and system updates.\n\n\n\nBash commands can be combined and executed in a variety of ways to perform complex tasks.\n\n\n\nBash scripts are usually portable across different Unix-based systems with little to no modification.\n\n\n\nBash can interact with other command-line tools and languages like awk, sed, and even Python, further extending its utility."
+  },
+  {
+    "objectID": "modules/02-bash.html#key-bash-features-and-examples",
+    "href": "modules/02-bash.html#key-bash-features-and-examples",
+    "title": "bash",
+    "section": "",
+    "text": "Commands: The basic units of instruction in Bash.\nls  # List files\ncd directory/  # Change directory\nVariables: Store data that can be accessed and manipulated.\nNAME=\"John\"\necho $NAME\nControl Structures: If-else statements, loops, and case statements to control flow.\nif [ \"$a\" -eq \"$b\" ]; then\n    echo \"a is equal to b\"\nfi\nPipes and Redirection: Connect multiple commands and redirect output.\nls | grep '.txt'  # List only .txt files\necho \"Hello\" &gt; file.txt  # Write to file\nScripting: Combine all of the above to write complex scripts.\n#!/bin/bash\n# This is a simple script\necho \"Hello, world!\""
+  },
+  {
+    "objectID": "modules/02-bash.html#best-practices",
+    "href": "modules/02-bash.html#best-practices",
+    "title": "bash",
+    "section": "",
+    "text": "Always comment your scripts to explain what each part is doing. This is especially useful for more complex scripts.\n# This is a comment explaining the following line of code\nls\n\n\n\nChoose descriptive variable names to make your script more readable.\n# Good\nfile_count=10\n\n# Bad\nfc=10\n\n\n\nBash has many features, but that doesn’t mean you have to use them all. Stick to the simplest approach that gets the job done.\nBy following these best practices, you can write effective, robust, and maintainable Bash scripts, making the most of what this versatile tool has to offer."
   }
 ]
