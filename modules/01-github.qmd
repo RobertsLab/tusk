@@ -52,3 +52,13 @@ Always include a `README.md` file to explain what your project is, how to set it
 Make use of GitHub features like Projects, Milestones, and Labels to organize and track work on your repositories.
 
 By adhering to these best practices, you can make the most out of GitHub's myriad features for both personal and collaborative projects.
+
+# Working with Git and RStudio on Raven
+<html><body>
+<video width="640" height="480" controls>
+<source src="https://gannet.fish.washington.edu/seashell/snaps/rstudio-rav.mp4" type="video/mp4">
+Your browser does not support the video tag. </video>
+</body>
+</html>
+
+related - getting a Personal Access token - https://d.pr/i/lS8UAr

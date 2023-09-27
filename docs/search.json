@@ -179,7 +179,7 @@
     "href": "modules/04-blast.html#obtain-fasta-uniprotswiss-prot",
     "title": "NCBI Blast",
     "section": "Obtain Fasta (UniProt/Swiss-Prot)",
-    "text": "Obtain Fasta (UniProt/Swiss-Prot)\nThis is from here picur reviewe sequences I named based on the identify of the database given\n\n\ncurrent date and time is  September 27, 2023 07:53:21\n\n\n\ncd ../data\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz\ngunzip -k uniprot_sprot_r2023_04.fasta.gz"
+    "text": "Obtain Fasta (UniProt/Swiss-Prot)\nThis is from here picur reviewe sequences I named based on the identify of the database given\n\n\ncurrent date and time is  September 27, 2023 08:25:28\n\n\n\ncd ../data\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz\ngunzip -k uniprot_sprot_r2023_04.fasta.gz"
   },
   {
     "objectID": "modules/04-blast.html#making-the-database",
