@@ -211,6 +211,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#regularly-update-r-and-rstudio" id="toc-regularly-update-r-and-rstudio" class="nav-link" data-scroll-target="#regularly-update-r-and-rstudio">Regularly Update R and RStudio</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#benefits-of-using-rstudio" id="toc-benefits-of-using-rstudio" class="nav-link" data-scroll-target="#benefits-of-using-rstudio">Benefits of Using RStudio</a>
+  <ul class="collapse">
+  <li><a href="#r-markdown-and-report-generation" id="toc-r-markdown-and-report-generation" class="nav-link" data-scroll-target="#r-markdown-and-report-generation">R Markdown and report generation</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a>
+  <ul class="collapse">
+  <li><a href="#cache-option" id="toc-cache-option" class="nav-link" data-scroll-target="#cache-option">cache option</a></li>
+  </ul></li>
+  <li><a href="#global-chunk-options" id="toc-global-chunk-options" class="nav-link" data-scroll-target="#global-chunk-options">Global Chunk Options</a></li>
+  <li><a href="#tables-and-images" id="toc-tables-and-images" class="nav-link" data-scroll-target="#tables-and-images">Tables and Images</a>
+  <ul class="collapse">
+  <li><a href="#adding-tables" id="toc-adding-tables" class="nav-link" data-scroll-target="#adding-tables"><strong>Adding tables:</strong></a></li>
+  </ul></li>
+  <li><a href="#adding-images" id="toc-adding-images" class="nav-link" data-scroll-target="#adding-images"><strong>Adding images:</strong></a></li>
+  <li><a href="#shiny-apps" id="toc-shiny-apps" class="nav-link" data-scroll-target="#shiny-apps">Shiny Apps</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -312,9 +327,132 @@ mean_x &lt;- mean(x)
 <h3 class="anchored" data-anchor-id="regularly-update-r-and-rstudio">Regularly Update R and RStudio</h3>
 <p>To make use of the latest features and improvements, keep your R and RStudio installations up to date.</p>
 <p>By adhering to these best practices, you can make the most out of RStudio, whether you’re doing data analysis, statistical modeling, or creating data visualizations.</p>
-
-
 </section>
+</section>
+</section>
+<section id="benefits-of-using-rstudio" class="level1">
+<h1>Benefits of Using RStudio</h1>
+<p>One of the key benefits of using RStudio is its ability to handle large and complex data sets. RStudio provides users with a range of powerful tools and packages that make it easy to analyze, manipulate, and visualize data. It has an intuitive user interface that allows users to write and execute R code quickly and efficiently.</p>
+<p>Another advantage of using RStudio is its integration with other popular data science tools and platforms. For example, RStudio can be easily integrated with Github, allowing users to collaborate on projects with other team members. It also has built-in support for Markdown, making it easy to create high-quality reports and presentations.</p>
+<p>In addition to its powerful features, RStudio has a large and supportive community of users and developers. This community provides users with access to a wealth of resources, including documentation, tutorials, and sample code. There are also many third-party packages available for RStudio that extend its functionality and provide additional tools for data analysis and visualization.</p>
+<section id="r-markdown-and-report-generation" class="level2">
+<h2 class="anchored" data-anchor-id="r-markdown-and-report-generation">R Markdown and report generation</h2>
+<p>To effectively generate pretty reports you need to understand</p>
+<ol type="1">
+<li><p>Document structure: Learn the structure of an R Markdown document, which consists of a YAML header (metadata), code chunks, and narrative text.</p></li>
+<li><p>YAML header: Familiarize yourself with the YAML header and its key components such as ‘title’, ‘author’, ‘date’, and ‘output’. Customize the output format and options (e.g., ‘html_document’, ‘pdf_document’, or ‘word_document’).</p></li>
+<li><p>Code chunks: Understand how to insert and customize code chunks using triple backticks (```{r}), options like ‘echo’, ‘eval’, ‘include’, and ‘cache’, and inline R code using <strong><code>r</code></strong>.</p></li>
+<li><p>Markdown syntax: Learn the basic Markdown syntax for formatting text, such as headers, lists, tables, links, images, and emphasis (bold, italics).</p></li>
+<li><p>Knitting: Get comfortable with the process of knitting an R Markdown document to generate the desired output format (e.g., HTML, PDF, or Word) using the “Knit” button in RStudio or the ‘rmarkdown::render()’ function.</p></li>
+<li><p>Reproducible research: Learn the importance of reproducible research and best practices for organizing R projects, version control, and data management.</p></li>
+</ol>
+</section>
+<section id="code-chunks" class="level2">
+<h2 class="anchored" data-anchor-id="code-chunks">Code Chunks</h2>
+<p>Code chunk options are used to control the behavior and appearance of R code chunks in R Markdown documents. They are set within the curly braces <strong><code>{}</code></strong> following the language identifier (e.g., <strong><code>r</code></strong>). Here is a description of essential code chunk options to know and use:</p>
+<ol type="1">
+<li><p><strong><code>echo</code></strong>: Determines whether the code chunk is displayed in the output document. Set <strong><code>echo=TRUE</code></strong> to display the code or <strong><code>echo=FALSE</code></strong> to hide it. The default is <strong><code>TRUE</code></strong>.</p></li>
+<li><p><strong><code>eval</code></strong>: Controls whether the code chunk is executed. Set <strong><code>eval=TRUE</code></strong> to execute the code or <strong><code>eval=FALSE</code></strong> to prevent execution. The default is <strong><code>TRUE</code></strong>.</p></li>
+<li><p><strong><code>include</code></strong>: Determines whether the code chunk, its output, or both are included in the final output. Set <strong><code>include=TRUE</code></strong> to include both or <strong><code>include=FALSE</code></strong> to exclude both. The default is <strong><code>TRUE</code></strong>.</p></li>
+<li><p><strong><code>results</code></strong>: Controls the display of code chunk results. Options include <strong><code>'markup'</code></strong> (default) to include the output as-is, <strong><code>'hide'</code></strong> to hide the output, <strong><code>'asis'</code></strong> to display raw results, and <strong><code>'hold'</code></strong> to display all output at once at the end of the code chunk.</p></li>
+<li><p><strong><code>message</code></strong>: Controls whether to display messages generated by the code chunk. Set <strong><code>message=TRUE</code></strong> to display messages or <strong><code>message=FALSE</code></strong> to hide them. The default is <strong><code>TRUE</code></strong>.</p></li>
+<li><p><strong><code>warning</code></strong>: Determines whether to display warnings generated by the code chunk. Set <strong><code>warning=TRUE</code></strong> to display warnings or <strong><code>warning=FALSE</code></strong> to hide them. The default is <strong><code>TRUE</code></strong>.</p></li>
+<li><p><strong><code>error</code></strong>: Controls whether to stop knitting if a code chunk generates an error. Set <strong><code>error=TRUE</code></strong> to continue knitting even if an error occurs or <strong><code>error=FALSE</code></strong> to stop knitting. The default is <strong><code>FALSE</code></strong>.</p></li>
+<li><p><strong><code>fig.width</code></strong> and <strong><code>fig.height</code></strong>: Set the width and height of the output plots, respectively, in inches. For example, <strong><code>fig.width=6</code></strong> and <strong><code>fig.height=4</code></strong> set a 6x4-inch plot size.</p></li>
+<li><p><strong><code>fig.align</code></strong>: Controls the horizontal alignment of plots in the output document. Options include <strong><code>'left'</code></strong>, <strong><code>'center'</code></strong>, and <strong><code>'right'</code></strong>. The default is <strong><code>'default'</code></strong>, which depends on the output format.</p></li>
+<li><p><strong><code>cache</code></strong>: Determines whether to cache the results of a code chunk. Set <strong><code>cache=TRUE</code></strong> to cache the results or <strong><code>cache=FALSE</code></strong> to re-run the code chunk every time the document is knit. The default is <strong><code>FALSE</code></strong>.</p></li>
+</ol>
+<p>By understanding and using these essential code chunk options, you can gain better control over the execution, display, and formatting of your R code and its output within R Markdown documents.</p>
+<section id="cache-option" class="level3">
+<h3 class="anchored" data-anchor-id="cache-option">cache option</h3>
+<p>The <strong><code>cache</code></strong> option in R Markdown allows you to cache the results of code chunks, so they don’t need to be re-evaluated every time the document is knit. This can significantly speed up the knitting process for documents with computationally intensive or time-consuming code chunks.</p>
+<p>Benefits of using the <strong><code>cache</code></strong> option:</p>
+<ol type="1">
+<li><p>Faster knitting: By caching the results of expensive code chunks, you can save time and resources when re-knitting your document, especially when only making small changes that don’t affect the cached chunks.</p></li>
+<li><p>Consistency: When working with random processes or time-sensitive data, caching the results can help maintain consistency across multiple versions of the document.</p></li>
+<li><p>Resource management: Caching can help manage resources for large datasets or computationally intensive tasks that may otherwise cause the knitting process to fail or become unresponsive.</p></li>
+</ol>
+<p>Here’s an example of using the <strong><code>cache</code></strong> option in an R Markdown code chunk:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r expensive-operation, cache=TRUE}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate a time-consuming operation</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">10</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">100</span>, <span class="at">sd=</span><span class="dv">15</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this example, the code chunk simulates a time-consuming operation by waiting for 10 seconds before generating random data. By setting <strong><code>cache=TRUE</code></strong>, the results of this code chunk are cached, so that they are not re-evaluated every time the document is knit. This can save time and ensure that the random data remains consistent between document versions.</p>
+<p>Keep in mind that you should use the <strong><code>cache</code></strong> option carefully, as it may cause unexpected behavior if you’re caching results that depend on external resources or dynamic data. Always verify that your document produces the desired output when using the <strong><code>cache</code></strong> option.</p>
+</section>
+</section>
+<section id="global-chunk-options" class="level2">
+<h2 class="anchored" data-anchor-id="global-chunk-options">Global Chunk Options</h2>
+<p>Global chunk options are settings that apply to all code chunks in an R Markdown document by default. You can set global options using the <strong><code>knitr::opts_chunk$set()</code></strong> function at the beginning of your R Markdown document, typically in an initial code chunk. By setting global options, you can maintain consistency across all code chunks and reduce the need to set options individually for each chunk.</p>
+<p>Here’s an example of setting global chunk options:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,         <span class="co"># Display code chunks</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">eval =</span> <span class="cn">TRUE</span>,         <span class="co"># Evaluate code chunks</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,     <span class="co"># Hide warnings</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span>,     <span class="co"># Hide messages</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">6</span>,       <span class="co"># Set plot width in inches</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">4</span>,      <span class="co"># Set plot height in inches</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">"center"</span> <span class="co"># Align plots to the center</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tables-and-images" class="level2">
+<h2 class="anchored" data-anchor-id="tables-and-images">Tables and Images</h2>
+<p>In R Markdown, you can add tables and images using either Markdown syntax or R code.</p>
+<section id="adding-tables" class="level3">
+<h3 class="anchored" data-anchor-id="adding-tables"><strong>Adding tables:</strong></h3>
+<ol type="1">
+<li><strong>Markdown syntax</strong>: You can create a simple table using pipes <strong><code>|</code></strong> and hyphens <strong><code>-</code></strong>. Here’s an example:</li>
+</ol>
+<pre><code>| Column1 | Column2 | Column3 |
+|---------|---------|---------|
+| A       | B       | C       |
+| X       | Y       | Z       |</code></pre>
+<p>This will create a table with two rows and three columns.</p>
+<ol start="2" type="1">
+<li><strong>R code</strong>: You can create more complex tables using R packages like <strong><code>kable</code></strong> from the <strong><code>knitr</code></strong> package, or <strong><code>gt</code></strong> and <strong><code>flextable</code></strong>. Here’s an example using <strong><code>kable</code></strong>:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Column1 =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"X"</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"Y"</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Column3 =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"Z"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data, <span class="at">caption =</span> <span class="st">"An example table"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will generate a table with the specified data and caption.</p>
+</section>
+</section>
+<section id="adding-images" class="level2">
+<h2 class="anchored" data-anchor-id="adding-images"><strong>Adding images:</strong></h2>
+<ol type="1">
+<li><strong>Markdown syntax</strong>: You can insert an image using the following syntax: <strong><code>![alt text](path/to/image "Optional title")</code></strong>. Here’s an example:</li>
+</ol>
+<pre><code>![Example image](path/to/image.jpg "Optional title")</code></pre>
+<p>Make sure to replace <strong><code>path/to/image.jpg</code></strong> with the actual file path or URL of the image.</p>
+<ol start="2" type="1">
+<li><strong>R code</strong>: You can also add images using R code, especially if you’re generating images with R plots. Here’s two examples:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars, <span class="at">main =</span> <span class="st">"An example plot"</span>, <span class="at">xlab =</span> <span class="st">"Speed"</span>, <span class="at">ylab =</span> <span class="st">"Distance"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r schemat, echo = FALSE, out.width = “70%”, fig.align = “center”}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(“img<span class="sc">/</span>ncbi.png”)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The benefit of the this code as opposed to Mardown (above) is that you the ability to change size and align</p>
+</section>
+<section id="shiny-apps" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-apps">Shiny Apps</h2>
+<p>RStudio also provides a framework for building interactive web applications called Shiny apps. Shiny apps are built using R code and can be easily deployed on the web. They allow users to interact with data and visualizations in real-time, making it easy to explore and analyze complex data sets. Shiny apps are ideal for building dashboards, interactive reports, and other data-driven applications.</p>
+
+
 </section>
 </section>
 

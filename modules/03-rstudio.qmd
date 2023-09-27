@@ -9,82 +9,257 @@ RStudio is an Integrated Development Environment (IDE) for R, a programming lang
 ## Why is RStudio Useful?
 
 ### Streamlined Workflow
+
 RStudio consolidates your code, plots, and output in one place, improving workflow and making the process more efficient.
 
 ### Enhanced Productivity
+
 With features like auto-completion and built-in debugging tools, RStudio speeds up the coding process.
 
 ### Data Visualization
+
 RStudio simplifies the process of creating complex data visualizations by providing easy-to-use interfaces for ggplot2, Shiny, and other R packages.
 
 ### Version Control
+
 RStudio includes integrated support for Git and GitHub, making it easier to manage changes to your code and collaborate with others.
 
 ### Extensible
+
 RStudio supports various R packages and also allows the use of other programming languages like C++, Python, and SQL within the IDE.
 
 ## Key RStudio Features and Examples
 
-- **Script Editor**: Write and edit your R scripts.
+-   **Script Editor**: Write and edit your R scripts.
 
-- **Console**: Run R commands interactively.
+-   **Console**: Run R commands interactively.
 
-    ```R
+    ``` r
     > print("Hello, World!")
     ```
 
-- **Environment**: View and manage all variables, data frames, and other objects in your R session.
+-   **Environment**: View and manage all variables, data frames, and other objects in your R session.
 
-- **Plots**: Visualize your data and generate plots easily.
+-   **Plots**: Visualize your data and generate plots easily.
 
-    ```R
+    ``` r
     ggplot(data, aes(x=x, y=y)) + geom_point()
     ```
 
-- **Packages**: Install and manage R packages.
+-   **Packages**: Install and manage R packages.
 
-    ```R
+    ``` r
     install.packages("tidyverse")
     ```
 
-- **Help**: Access R documentation quickly.
+-   **Help**: Access R documentation quickly.
 
-- **File Browser**: Navigate your file system and manage your project files.
+-   **File Browser**: Navigate your file system and manage your project files.
 
-- **Version Control**: Manage Git repositories directly within RStudio.
+-   **Version Control**: Manage Git repositories directly within RStudio.
 
-    ```bash
+    ``` bash
     git commit -m "Initial commit"
     ```
 
-- **Shiny Apps**: Build interactive web apps right within RStudio.
+-   **Shiny Apps**: Build interactive web apps right within RStudio.
 
 ## Best Practices
 
 ### Project Management
+
 Use RStudio Projects to keep your scripts, data, and other files organized. This makes it easier to manage complex analyses and collaborate with others.
 
 ### Code Commenting
+
 Use comments to describe what your code is doing. This makes it easier for you (and others) to understand the logic later.
 
-    ```R
-    # Calculate the mean of x
-    mean_x <- mean(x)
-    ```
+````         
+```R
+# Calculate the mean of x
+mean_x <- mean(x)
+```
+````
 
 ### Reproducibility
+
 Make your code and analyses reproducible. Use relative file paths and R Markdown documents to ensure others can easily run your code.
 
 ### Version Control
+
 Use Git to keep track of changes in your project. This is invaluable for collaboration and data science project management.
 
 ### Use Functions and Packages
-Don’t reinvent the wheel. Make use of R’s extensive library of packages and functions to perform common tasks.
+
+Don't reinvent the wheel. Make use of R's extensive library of packages and functions to perform common tasks.
 
 ### Keyboard Shortcuts
-Learn RStudio’s keyboard shortcuts to navigate the IDE more efficiently.
+
+Learn RStudio's keyboard shortcuts to navigate the IDE more efficiently.
 
 ### Regularly Update R and RStudio
+
 To make use of the latest features and improvements, keep your R and RStudio installations up to date.
 
 By adhering to these best practices, you can make the most out of RStudio, whether you're doing data analysis, statistical modeling, or creating data visualizations.
+
+
+
+
+
+# Benefits of Using RStudio
+
+One of the key benefits of using RStudio is its ability to handle large and complex data sets. RStudio provides users with a range of powerful tools and packages that make it easy to analyze, manipulate, and visualize data. It has an intuitive user interface that allows users to write and execute R code quickly and efficiently.
+
+Another advantage of using RStudio is its integration with other popular data science tools and platforms. For example, RStudio can be easily integrated with Github, allowing users to collaborate on projects with other team members. It also has built-in support for Markdown, making it easy to create high-quality reports and presentations.
+
+In addition to its powerful features, RStudio has a large and supportive community of users and developers. This community provides users with access to a wealth of resources, including documentation, tutorials, and sample code. There are also many third-party packages available for RStudio that extend its functionality and provide additional tools for data analysis and visualization.
+
+## R Markdown and report generation
+
+To effectively generate pretty reports you need to understand
+
+1.  Document structure: Learn the structure of an R Markdown document, which consists of a YAML header (metadata), code chunks, and narrative text.
+
+2.  YAML header: Familiarize yourself with the YAML header and its key components such as 'title', 'author', 'date', and 'output'. Customize the output format and options (e.g., 'html_document', 'pdf_document', or 'word_document').
+
+3.  Code chunks: Understand how to insert and customize code chunks using triple backticks (\`\`\`{r}), options like 'echo', 'eval', 'include', and 'cache', and inline R code using **`r`**.
+
+4.  Markdown syntax: Learn the basic Markdown syntax for formatting text, such as headers, lists, tables, links, images, and emphasis (bold, italics).
+
+5.  Knitting: Get comfortable with the process of knitting an R Markdown document to generate the desired output format (e.g., HTML, PDF, or Word) using the "Knit" button in RStudio or the 'rmarkdown::render()' function.
+
+6.  Reproducible research: Learn the importance of reproducible research and best practices for organizing R projects, version control, and data management.
+
+## Code Chunks
+
+Code chunk options are used to control the behavior and appearance of R code chunks in R Markdown documents. They are set within the curly braces **`{}`** following the language identifier (e.g., **`r`**). Here is a description of essential code chunk options to know and use:
+
+1.  **`echo`**: Determines whether the code chunk is displayed in the output document. Set **`echo=TRUE`** to display the code or **`echo=FALSE`** to hide it. The default is **`TRUE`**.
+
+2.  **`eval`**: Controls whether the code chunk is executed. Set **`eval=TRUE`** to execute the code or **`eval=FALSE`** to prevent execution. The default is **`TRUE`**.
+
+3.  **`include`**: Determines whether the code chunk, its output, or both are included in the final output. Set **`include=TRUE`** to include both or **`include=FALSE`** to exclude both. The default is **`TRUE`**.
+
+4.  **`results`**: Controls the display of code chunk results. Options include **`'markup'`** (default) to include the output as-is, **`'hide'`** to hide the output, **`'asis'`** to display raw results, and **`'hold'`** to display all output at once at the end of the code chunk.
+
+5.  **`message`**: Controls whether to display messages generated by the code chunk. Set **`message=TRUE`** to display messages or **`message=FALSE`** to hide them. The default is **`TRUE`**.
+
+6.  **`warning`**: Determines whether to display warnings generated by the code chunk. Set **`warning=TRUE`** to display warnings or **`warning=FALSE`** to hide them. The default is **`TRUE`**.
+
+7.  **`error`**: Controls whether to stop knitting if a code chunk generates an error. Set **`error=TRUE`** to continue knitting even if an error occurs or **`error=FALSE`** to stop knitting. The default is **`FALSE`**.
+
+8.  **`fig.width`** and **`fig.height`**: Set the width and height of the output plots, respectively, in inches. For example, **`fig.width=6`** and **`fig.height=4`** set a 6x4-inch plot size.
+
+9.  **`fig.align`**: Controls the horizontal alignment of plots in the output document. Options include **`'left'`**, **`'center'`**, and **`'right'`**. The default is **`'default'`**, which depends on the output format.
+
+10. **`cache`**: Determines whether to cache the results of a code chunk. Set **`cache=TRUE`** to cache the results or **`cache=FALSE`** to re-run the code chunk every time the document is knit. The default is **`FALSE`**.
+
+By understanding and using these essential code chunk options, you can gain better control over the execution, display, and formatting of your R code and its output within R Markdown documents.
+
+### cache option
+
+The **`cache`** option in R Markdown allows you to cache the results of code chunks, so they don't need to be re-evaluated every time the document is knit. This can significantly speed up the knitting process for documents with computationally intensive or time-consuming code chunks.
+
+Benefits of using the **`cache`** option:
+
+1.  Faster knitting: By caching the results of expensive code chunks, you can save time and resources when re-knitting your document, especially when only making small changes that don't affect the cached chunks.
+
+2.  Consistency: When working with random processes or time-sensitive data, caching the results can help maintain consistency across multiple versions of the document.
+
+3.  Resource management: Caching can help manage resources for large datasets or computationally intensive tasks that may otherwise cause the knitting process to fail or become unresponsive.
+
+Here's an example of using the **`cache`** option in an R Markdown code chunk:
+
+````         
+```{{r expensive-operation, cache=TRUE}}
+# Simulate a time-consuming operation
+Sys.sleep(10)
+result <- rnorm(1000, mean=100, sd=15)
+summary(result)
+```
+````
+
+In this example, the code chunk simulates a time-consuming operation by waiting for 10 seconds before generating random data. By setting **`cache=TRUE`**, the results of this code chunk are cached, so that they are not re-evaluated every time the document is knit. This can save time and ensure that the random data remains consistent between document versions.
+
+Keep in mind that you should use the **`cache`** option carefully, as it may cause unexpected behavior if you're caching results that depend on external resources or dynamic data. Always verify that your document produces the desired output when using the **`cache`** option.
+
+## Global Chunk Options
+
+Global chunk options are settings that apply to all code chunks in an R Markdown document by default. You can set global options using the **`knitr::opts_chunk$set()`** function at the beginning of your R Markdown document, typically in an initial code chunk. By setting global options, you can maintain consistency across all code chunks and reduce the need to set options individually for each chunk.
+
+Here's an example of setting global chunk options:
+
+``` {{r}}
+library(knitr)
+opts_chunk$set(
+  echo = TRUE,         # Display code chunks
+  eval = TRUE,         # Evaluate code chunks
+  warning = FALSE,     # Hide warnings
+  message = FALSE,     # Hide messages
+  fig.width = 6,       # Set plot width in inches
+  fig.height = 4,      # Set plot height in inches
+  fig.align = "center" # Align plots to the center
+)
+```
+
+## Tables and Images
+
+In R Markdown, you can add tables and images using either Markdown syntax or R code.
+
+### **Adding tables:**
+
+1.  **Markdown syntax**: You can create a simple table using pipes **`|`** and hyphens **`-`**. Here's an example:
+
+```         
+| Column1 | Column2 | Column3 |
+|---------|---------|---------|
+| A       | B       | C       |
+| X       | Y       | Z       |
+```
+
+This will create a table with two rows and three columns.
+
+2.  **R code**: You can create more complex tables using R packages like **`kable`** from the **`knitr`** package, or **`gt`** and **`flextable`**. Here's an example using **`kable`**:
+
+``` {{r}}
+library(knitr)
+
+data <- data.frame(
+  Column1 = c("A", "X"),
+  Column2 = c("B", "Y"),
+  Column3 = c("C", "Z")
+)
+
+kable(data, caption = "An example table")
+```
+
+This will generate a table with the specified data and caption.
+
+## **Adding images:**
+
+1.  **Markdown syntax**: You can insert an image using the following syntax: **`![alt text](path/to/image "Optional title")`**. Here's an example:
+
+```         
+![Example image](path/to/image.jpg "Optional title")
+```
+
+Make sure to replace **`path/to/image.jpg`** with the actual file path or URL of the image.
+
+2.  **R code**: You can also add images using R code, especially if you're generating images with R plots. Here's two examples:
+
+``` {{r}}
+plot(cars, main = "An example plot", xlab = "Speed", ylab = "Distance")
+```
+
+````         
+```{{r schemat, echo = FALSE, out.width = “70%”, fig.align = “center”}}
+knitr::include_graphics(“img/ncbi.png”)
+```
+````
+
+The benefit of the this code as opposed to Mardown (above) is that you the ability to change size and align
+
+## Shiny Apps
+
+RStudio also provides a framework for building interactive web applications called Shiny apps. Shiny apps are built using R code and can be easily deployed on the web. They allow users to interact with data and visualizations in real-time, making it easy to explore and analyze complex data sets. Shiny apps are ideal for building dashboards, interactive reports, and other data-driven applications.
