@@ -22,6 +22,7 @@ website:
       - modules/01-github.qmd
       - modules/02-bash.qmd
       - modules/03-rstudio.qmd
+      - modules/04-blast.qmd
   
 
 

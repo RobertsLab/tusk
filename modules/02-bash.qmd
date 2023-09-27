@@ -101,3 +101,5 @@ fc=10
 Bash has many features, but that doesn't mean you have to use them all. Stick to the simplest approach that gets the job done.
 
 By following these best practices, you can write effective, robust, and maintainable Bash scripts, making the most of what this versatile tool has to offer.
+
+

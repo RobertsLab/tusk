@@ -124,5 +124,40 @@
     "title": "bash",
     "section": "",
     "text": "Always comment your scripts to explain what each part is doing. This is especially useful for more complex scripts.\n# This is a comment explaining the following line of code\nls\n\n\n\nChoose descriptive variable names to make your script more readable.\n# Good\nfile_count=10\n\n# Bad\nfc=10\n\n\n\nBash has many features, but that doesn’t mean you have to use them all. Stick to the simplest approach that gets the job done.\nBy following these best practices, you can write effective, robust, and maintainable Bash scripts, making the most of what this versatile tool has to offer."
+  },
+  {
+    "objectID": "modules/04-blast.html",
+    "href": "modules/04-blast.html",
+    "title": "NCBI Blast",
+    "section": "",
+    "text": "For the first task you will take an unknown multi-fasta file and annotate it using blast. You are welcome to do this in terminal, Rstudio, or jupyter. My recommendation, and how I will demonstrate is using Rmarkdown. Once you have have your project structured, we will download software, databases, a fasta file and run the code.\nThis is product offers a workflow to take a few thousand unidentified sequences and provide a better understanding of what genes are present. This will be accomplished through using Blast and protein sequenes from UniProt/Swiss-prot."
+  },
+  {
+    "objectID": "modules/04-blast.html#obtain-fasta-uniprotswiss-prot",
+    "href": "modules/04-blast.html#obtain-fasta-uniprotswiss-prot",
+    "title": "NCBI Blast",
+    "section": "Obtain Fasta (UniProt/Swiss-Prot)",
+    "text": "Obtain Fasta (UniProt/Swiss-Prot)\nThis is from here picur reviewe sequences I named based on the identify of the database given\n\n\ncurrent date and time is  September 26, 2023 21:17:53\n\n\n\ncd ../data\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz\ngunzip -k uniprot_sprot_r2023_04.fasta.gz"
+  },
+  {
+    "objectID": "modules/04-blast.html#making-the-database",
+    "href": "modules/04-blast.html#making-the-database",
+    "title": "NCBI Blast",
+    "section": "Making the database",
+    "text": "Making the database\n\nmkdir ../blastdb\n/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \\\n-in ../data/uniprot_sprot_r2023_01.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_r2023_01"
+  },
+  {
+    "objectID": "modules/04-blast.html#prepping-blast-table-for-easy-join",
+    "href": "modules/04-blast.html#prepping-blast-table-for-easy-join",
+    "title": "NCBI Blast",
+    "section": "Prepping Blast table for easy join",
+    "text": "Prepping Blast table for easy join\n\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\n\nhead -1 ../output/Ab_4-uniprot_blastx_sep.tab"
+  },
+  {
+    "objectID": "modules/04-blast.html#could-do-some-cool-stuff-in-r-here-reading-in-table",
+    "href": "modules/04-blast.html#could-do-some-cool-stuff-in-r-here-reading-in-table",
+    "title": "NCBI Blast",
+    "section": "Could do some cool stuff in R here reading in table",
+    "text": "Could do some cool stuff in R here reading in table\n\nbltabl &lt;- read.csv(\"../output/Ab_4-uniprot_blastx_sep.tab\", sep = '\\t', header = FALSE)\n\nspgo &lt;- read.csv(\"https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab\", sep = '\\t', header = TRUE)\n\n\ndatatable(head(bltabl), options = list(scrollX = TRUE, scrollY = \"400px\", scrollCollapse = TRUE, paging = FALSE))\n\n\ndatatable(head(spgo), options = list(scrollX = TRUE, scrollY = \"400px\", scrollCollapse = TRUE, paging = FALSE))\n\n\ndatatable(\n  left_join(bltabl, spgo,  by = c(\"V3\" = \"Entry\")) %&gt;%\n  select(V1, V3, V13, Protein.names, Organism, Gene.Ontology..biological.process., Gene.Ontology.IDs) %&gt;% mutate(V1 = str_replace_all(V1, \n            pattern = \"solid0078_20110412_FRAG_BC_WHITE_WHITE_F3_QV_SE_trimmed\", replacement = \"Ab\"))\n)\n\n\nannot_tab &lt;-\n  left_join(bltabl, spgo,  by = c(\"V3\" = \"Entry\")) %&gt;%\n  select(V1, V3, V13, Protein.names, Organism, Gene.Ontology..biological.process., Gene.Ontology.IDs) %&gt;% mutate(V1 = str_replace_all(V1, \n            pattern = \"solid0078_20110412_FRAG_BC_WHITE_WHITE_F3_QV_SE_trimmed\", replacement = \"Ab\"))\n\n\n# Read dataset\ndataset &lt;- read.csv(\"../output/blast_annot_go.tab\", sep = '\\t')  # Replace with the path to your dataset\n\n# Select the column of interest\ncolumn_name &lt;- \"Organism\"  # Replace with the name of the column of interest\ncolumn_data &lt;- dataset[[column_name]]\n\n# Count the occurrences of the strings in the column\nstring_counts &lt;- table(column_data)\n\n# Convert to a data frame, sort by count, and select the top 10\nstring_counts_df &lt;- as.data.frame(string_counts)\ncolnames(string_counts_df) &lt;- c(\"String\", \"Count\")\nstring_counts_df &lt;- string_counts_df[order(string_counts_df$Count, decreasing = TRUE), ]\ntop_10_strings &lt;- head(string_counts_df, n = 10)\n\n# Plot the top 10 most common strings using ggplot2\nggplot(top_10_strings, aes(x = reorder(String, -Count), y = Count, fill = String)) +\n  geom_bar(stat = \"identity\", position = \"dodge\", color = \"black\") +\n  labs(title = \"Top 10 Species hits\",\n       x = column_name,\n       y = \"Count\") +\n  theme_minimal() +\n  theme(legend.position = \"none\") +\n  coord_flip()\n\n\ndata &lt;- read.csv(\"../output/blast_annot_go.tab\", sep = '\\t')\n\n# Rename the `Gene.Ontology..biological.process.` column to `Biological_Process`\ncolnames(data)[colnames(data) == \"Gene.Ontology..biological.process.\"] &lt;- \"Biological_Process\"\n\n# Separate the `Biological_Process` column into individual biological processes\ndata_separated &lt;- unlist(strsplit(data$Biological_Process, split = \";\"))\n\n# Trim whitespace from the biological processes\ndata_separated &lt;- gsub(\"^\\\\s+|\\\\s+$\", \"\", data_separated)\n\n# Count the occurrences of each biological process\nprocess_counts &lt;- table(data_separated)\nprocess_counts &lt;- data.frame(Biological_Process = names(process_counts), Count = as.integer(process_counts))\nprocess_counts &lt;- process_counts[order(-process_counts$Count), ]\n\n# Select the 20 most predominant biological processes\ntop_20_processes &lt;- process_counts[1:20, ]\n\n# Create a color palette for the bars\nbar_colors &lt;- rainbow(nrow(top_20_processes))\n\n# Create a staggered vertical bar plot with different colors for each bar\nbarplot(top_20_processes$Count, names.arg = rep(\"\", nrow(top_20_processes)), col = bar_colors,\n        ylim = c(0, max(top_20_processes$Count) * 1.25),\n        main = \"Occurrences of the 20 Most Predominant Biological Processes\", xlab = \"Biological Process\", ylab = \"Count\")\n\n\n# Create a separate plot for the legend\npng(\"../output/GOlegend.png\", width = 800, height = 600)\npar(mar = c(0, 0, 0, 0))\nplot.new()\nlegend(\"center\", legend = top_20_processes$Biological_Process, fill = bar_colors, cex = 1, title = \"Biological Processes\")\ndev.off()\n\n\nknitr::include_graphics(\"../output/GOlegend.png\")"
   }
 ]
