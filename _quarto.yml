@@ -4,6 +4,8 @@ project:
 
 website:
   title: "Roberts Lab Course Set - Things u should know"
+  repo-url: https://github.com/Robertslab/tusk
+  repo-actions: [edit, issue]
   navbar:
     left:
       - href: index.qmd

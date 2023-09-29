@@ -11,28 +11,6 @@ format:
     code-overflow: wrap
 ---
 
-For the first task you will take an unknown multi-fasta file and annotate it using blast. You are welcome to do this in terminal, Rstudio, or jupyter. My recommendation, and how I will demonstrate is using Rmarkdown. Once you have have your project structured, we will download software, databases, a fasta file and run the code.
-
-```{r setup, include = FALSE}
-library(knitr)
-library(tidyverse)
-library(kableExtra)
-library(DT)
-library(Biostrings)
-knitr::opts_chunk$set(
-  echo = TRUE,         # Display code chunks
-  eval = FALSE,         # Evaluate code chunks
-  warning = FALSE,     # Hide warnings
-  message = FALSE,     # Hide messages
-  fig.width = 6,       # Set plot width in inches
-  fig.height = 4,      # Set plot height in inches
-  fig.align = "center" # Align plots to the center
-)
-```
-
-This is product offers a workflow to take a few thousand unidentified sequences and provide a better understanding of what genes are present. This will be accomplished through using Blast and protein sequenes from UniProt/Swiss-prot.
-
-------------------------------------------------------------------------
 
 # TLDR (basics)
 
@@ -56,14 +34,39 @@ This is product offers a workflow to take a few thousand unidentified sequences 
 ```
 
 
+# 546 Tutorial
+
+
+For the first task you will take an unknown multi-fasta file and annotate it using blast. You are welcome to do this in terminal, Rstudio, or jupyter. My recommendation, and how I will demonstrate is using Rmarkdown. Once you have have your project structured, we will download software, databases, a fasta file and run the code.
+
+```{r setup, include = FALSE}
+library(knitr)
+library(tidyverse)
+library(kableExtra)
+library(DT)
+library(Biostrings)
+knitr::opts_chunk$set(
+  echo = TRUE,         # Display code chunks
+  eval = FALSE,         # Evaluate code chunks
+  warning = FALSE,     # Hide warnings
+  message = FALSE,     # Hide messages
+  fig.width = 6,       # Set plot width in inches
+  fig.height = 4,      # Set plot height in inches
+  fig.align = "center" # Align plots to the center
+)
+```
+
+This is product offers a workflow to take a few thousand unidentified sequences and provide a better understanding of what genes are present. This will be accomplished through using Blast and protein sequenes from UniProt/Swiss-prot.
+
+------------------------------------------------------------------------
 
 
 
 A few weeks ago I perfected software installation, so I will not demonstrate that here. Please see this notebook for more.
 
-# Database Creation
+## Database Creation
 
-## Obtain Fasta (UniProt/Swiss-Prot)
+### Obtain Fasta (UniProt/Swiss-Prot)
 
 This is from here picur reviewe sequences I named based on the identify of the database given
 
@@ -79,7 +82,7 @@ mv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz
 gunzip -k uniprot_sprot_r2023_04.fasta.gz
 ```
 
-## Making the database
+### Making the database
 
 ```{r make-blastdb, engine='bash'}
 mkdir ../blastdb
@@ -89,7 +92,7 @@ mkdir ../blastdb
 -out ../blastdb/uniprot_sprot_r2023_01
 ```
 
-# Getting the query fasta file
+## Getting the query fasta file
 
 ```{r download-query, engine='bash', eval=TRUE}
 curl https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \
@@ -179,7 +182,7 @@ ggplot(cg_motifs_counts_df, aes(x = CG_Count)) +
 ```
 
 
-# Running Blastx
+## Running Blastx
 
 ```{r blastx, engine='bash'}
 ~/applications/ncbi-blast-2.13.0+/bin/blastx \
@@ -204,9 +207,9 @@ wc -l ../output/Ab_4-uniprot_blastx.tab
 
 
 
-# Joining Blast table with annoations.
+## Joining Blast table with annoations.
 
-## Prepping Blast table for easy join
+### Prepping Blast table for easy join
 
 ```{r separate, engine='bash'}
 tr '|' '\t' < ../output/Ab_4-uniprot_blastx.tab \
