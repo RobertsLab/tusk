@@ -172,28 +172,35 @@
     "href": "modules/04-blast.html",
     "title": "NCBI Blast",
     "section": "",
-    "text": "For the first task you will take an unknown multi-fasta file and annotate it using blast. You are welcome to do this in terminal, Rstudio, or jupyter. My recommendation, and how I will demonstrate is using Rmarkdown. Once you have have your project structured, we will download software, databases, a fasta file and run the code.\nThis is product offers a workflow to take a few thousand unidentified sequences and provide a better understanding of what genes are present. This will be accomplished through using Blast and protein sequenes from UniProt/Swiss-prot."
+    "text": "/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \\\n-in ../data/uniprot_sprot_r2023_01.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_r2023_01\n/home/shared/ncbi-blast-2.11.0+/bin/blastx \\\n-query ../data/Ab_4denovo_CLC6_a.fa \\\n-db ../blastdb/uniprot_sprot_r2023_01 \\\n-out ../output/Ab_4-uniprot_blastx.tab \\\n-evalue 1E-20 \\\n-num_threads 20 \\\n-max_target_seqs 1 \\\n-outfmt 6"
   },
   {
-    "objectID": "modules/04-blast.html#obtain-fasta-uniprotswiss-prot",
-    "href": "modules/04-blast.html#obtain-fasta-uniprotswiss-prot",
+    "objectID": "modules/04-blast.html#database-creation",
+    "href": "modules/04-blast.html#database-creation",
     "title": "NCBI Blast",
-    "section": "Obtain Fasta (UniProt/Swiss-Prot)",
-    "text": "Obtain Fasta (UniProt/Swiss-Prot)\nThis is from here picur reviewe sequences I named based on the identify of the database given\n\ncurrent_time &lt;- format(Sys.time(), \"%B %d, %Y %H:%M:%S\")\ncat(\"current date and time is \", current_time)\n\n\ncd ../data\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz\ngunzip -k uniprot_sprot_r2023_04.fasta.gz"
+    "section": "Database Creation",
+    "text": "Database Creation\n\nObtain Fasta (UniProt/Swiss-Prot)\nThis is from here picur reviewe sequences I named based on the identify of the database given\n\ncurrent_time &lt;- format(Sys.time(), \"%B %d, %Y %H:%M:%S\")\ncat(\"current date and time is \", current_time)\n\n\ncd ../data\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz\ngunzip -k uniprot_sprot_r2023_04.fasta.gz\n\n\n\nMaking the database\n\nmkdir ../blastdb\n/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \\\n-in ../data/uniprot_sprot_r2023_01.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_r2023_01"
   },
   {
-    "objectID": "modules/04-blast.html#making-the-database",
-    "href": "modules/04-blast.html#making-the-database",
+    "objectID": "modules/04-blast.html#getting-the-query-fasta-file",
+    "href": "modules/04-blast.html#getting-the-query-fasta-file",
     "title": "NCBI Blast",
-    "section": "Making the database",
-    "text": "Making the database\n\nmkdir ../blastdb\n/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \\\n-in ../data/uniprot_sprot_r2023_01.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_r2023_01"
+    "section": "Getting the query fasta file",
+    "text": "Getting the query fasta file\n\ncurl https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \\\n-k \\\n&gt; ../data/Ab_4denovo_CLC6_a.fa\n\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  5 1982k    5   99k    0     0   218k      0  0:00:09 --:--:--  0:00:09  220k\n 53 1982k   53 1063k    0     0   730k      0  0:00:02  0:00:01  0:00:01  732k\n 92 1982k   92 1839k    0     0   749k      0  0:00:02  0:00:02 --:--:--  750k\n100 1982k  100 1982k    0     0   748k      0  0:00:02  0:00:02 --:--:--  748k\n\n\nExploring what fasta file\n\nhead -3 ../data/Ab_4denovo_CLC6_a.fa\n\n&gt;solid0078_20110412_FRAG_BC_WHITE_WHITE_F3_QV_SE_trimmed_contig_1\nACACCCCACCCCAACGCACCCTCACCCCCACCCCAACAATCCATGATTGAATACTTCATC\nTATCCAAGACAAACTCCTCCTACAATCCATGATAGAATTCCTCCAAAAATAATTTCACAC\n\n\n\necho \"How many sequences are there?\"\ngrep -c \"&gt;\" ../data/Ab_4denovo_CLC6_a.fa\n\nHow many sequences are there?\n5490\n\n\n\n# Read FASTA file\nfasta_file &lt;- \"../data/Ab_4denovo_CLC6_a.fa\"  # Replace with the name of your FASTA file\nsequences &lt;- readDNAStringSet(fasta_file)\n\n# Calculate sequence lengths\nsequence_lengths &lt;- width(sequences)\n\n# Create a data frame\nsequence_lengths_df &lt;- data.frame(Length = sequence_lengths)\n\n# Plot histogram using ggplot2\nggplot(sequence_lengths_df, aes(x = Length)) +\n  geom_histogram(binwidth = 1, color = \"grey\", fill = \"blue\", alpha = 0.75) +\n  labs(title = \"Histogram of Sequence Lengths\",\n       x = \"Sequence Length\",\n       y = \"Frequency\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n# Read FASTA file\nfasta_file &lt;- \"../data/Ab_4denovo_CLC6_a.fa\"\nsequences &lt;- readDNAStringSet(fasta_file)\n\n# Calculate base composition\nbase_composition &lt;- alphabetFrequency(sequences, baseOnly = TRUE)\n\n# Convert to data frame and reshape for ggplot2\nbase_composition_df &lt;- as.data.frame(base_composition)\nbase_composition_df$ID &lt;- rownames(base_composition_df)\nbase_composition_melted &lt;- reshape2::melt(base_composition_df, id.vars = \"ID\", variable.name = \"Base\", value.name = \"Count\")\n\n# Plot base composition bar chart using ggplot2\nggplot(base_composition_melted, aes(x = Base, y = Count, fill = Base)) +\n  geom_bar(stat = \"identity\", position = \"dodge\", color = \"black\") +\n  labs(title = \"Base Composition\",\n       x = \"Base\",\n       y = \"Count\") +\n  theme_minimal() +\n  scale_fill_manual(values = c(\"A\" = \"green\", \"C\" = \"blue\", \"G\" = \"yellow\", \"T\" = \"red\"))\n\n\n\n\n\n\n\n\n\n# Read FASTA file\nfasta_file &lt;- \"../data/Ab_4denovo_CLC6_a.fa\"\nsequences &lt;- readDNAStringSet(fasta_file)\n\n# Count CG motifs in each sequence\ncount_cg_motifs &lt;- function(sequence) {\n  cg_motif &lt;- \"CG\"\n  return(length(gregexpr(cg_motif, sequence, fixed = TRUE)[[1]]))\n}\n\ncg_motifs_counts &lt;- sapply(sequences, count_cg_motifs)\n\n# Create a data frame\ncg_motifs_counts_df &lt;- data.frame(CG_Count = cg_motifs_counts)\n\n# Plot CG motifs distribution using ggplot2\nggplot(cg_motifs_counts_df, aes(x = CG_Count)) +\n  geom_histogram(binwidth = 1, color = \"black\", fill = \"blue\", alpha = 0.75) +\n  labs(title = \"Distribution of CG Motifs\",\n       x = \"Number of CG Motifs\",\n       y = \"Frequency\") +\n  theme_minimal()"
   },
   {
-    "objectID": "modules/04-blast.html#prepping-blast-table-for-easy-join",
-    "href": "modules/04-blast.html#prepping-blast-table-for-easy-join",
+    "objectID": "modules/04-blast.html#running-blastx",
+    "href": "modules/04-blast.html#running-blastx",
     "title": "NCBI Blast",
-    "section": "Prepping Blast table for easy join",
-    "text": "Prepping Blast table for easy join\n\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\n\nhead -1 ../output/Ab_4-uniprot_blastx_sep.tab"
+    "section": "Running Blastx",
+    "text": "Running Blastx\n\n~/applications/ncbi-blast-2.13.0+/bin/blastx \\\n-query ../data/Ab_4denovo_CLC6_a.fa \\\n-db ../blastdb/uniprot_sprot_r2023_01 \\\n-out ../output/Ab_4-uniprot_blastx.tab \\\n-evalue 1E-20 \\\n-num_threads 20 \\\n-max_target_seqs 1 \\\n-outfmt 6\n\n\nhead -2 ../output/Ab_4-uniprot_blastx.tab\n\n\necho \"Number of lines in output\"\nwc -l ../output/Ab_4-uniprot_blastx.tab"
+  },
+  {
+    "objectID": "modules/04-blast.html#joining-blast-table-with-annoations.",
+    "href": "modules/04-blast.html#joining-blast-table-with-annoations.",
+    "title": "NCBI Blast",
+    "section": "Joining Blast table with annoations.",
+    "text": "Joining Blast table with annoations.\n\nPrepping Blast table for easy join\n\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\n\nhead -1 ../output/Ab_4-uniprot_blastx_sep.tab"
   },
   {
     "objectID": "modules/04-blast.html#could-do-some-cool-stuff-in-r-here-reading-in-table",
