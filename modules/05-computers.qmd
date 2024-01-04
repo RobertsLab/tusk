@@ -9,3 +9,75 @@ format:
     highlight-style: github
     code-overflow: wrap
 ---
+
+Our lab has a number of different computing resources available for people to take advantage of.
+
+# Why use a computer other than my own?
+
+ - More power: A significant amount of the computing tasks our lab performs utilize very large data files and require much more memory (RAM), computing power (CPUs), and storage space than exists on most standard laptops/desktops.
+
+ - Reproducibility: If everyone in lab is using the same computer and the same versions of software, then it makes it easy for everyone in the lab to reproduce what has been done - including yourself!
+
+ - Simplification: You no longer have to worry about and/or struggle with installing software. This also makes troubleshooting much simpler, since everyone has access to the same computer(s).
+
+# What's available?
+
+## Raven
+
+Raven is a Linux (Ubuntu 18.04LTS) computer with 48 CPUs, 256GB of RAM, and ~24TB of hard drive (HDD) storage.
+
+## Hyak
+
+Hyak is the Univ. of Washington's high-performance computing (HPC) cluster. We have two Linux (RedHat CentOS) "nodes" (i.e. computers) available:
+
+- 28 CPUs, 128GB RAM
+
+- 28 CPUs, 512GB RAM
+
+# How do I start?
+
+## Raven
+
+### RStudio Server
+
+[Read about why you should use RStudio Server.](./03-rstudio.qmd)
+
+#### Request Access to RStudio Server
+
+1. Request RStudio Server access using [the repo Issues](https://github.com/RobertsLab/tusk/issues). If you are _not_ an existing UW employee/student, please provide a current email address.
+
+    - If you already have a UW NetID, proceed to Step #3.
+
+    - If you _do not_ have a UW NetID, proceed to Step #2.
+
+2. If you are _not_ an existing UW employee/student, please provide Sam with a current email address. You will receive instructions from UW IT with instructions on how to register with UW and receive a UW NetID. Steven or Sam will notify you in the [the repo Issue you created](https://github.com/RobertsLab/tusk/issues) when you can proceed to Step 3.
+
+3. Once you have a UW NetID, download and install [Husky OnNet](https://itconnect.uw.edu/connect/uw-networks/about-husky-onnet/use-husky-onnet/). This is a VPN service that provides access to computers hosted on the UW network.
+
+4. Post your UW Net ID [in the repo Issue](https://github.com/RobertsLab/tusk/issues) you created.
+
+5. Steven or Sam will send you a direct message in Slack with your RStudio Server login credentials.
+
+---
+
+#### Accessing RStudio Server
+
+1. Activate Husky OnNet VPN service.
+
+2. Paste the following URL in your internet browser:
+
+    - `http://raven.fish.washington.edu:8787`
+
+    - If you receive a notice from your browser regarding "insecure connection", you may safely ignore this and proceed.
+
+3. Use login credentials provided by Steven or Sam.
+
+4. If you encounter any issues, please [create a new Issue](https://github.com/RobertsLab/tusk/issues). Please post screenshots _and_ paste text of any error messages you encounter.
+
+---
+
+#### Administration Instructions
+
+1. Steven/Sam go here to sponsor UW NetID: https://uwnetid.washington.edu/sponsor/
+
+2. After acceptance by user, provision access to Husky OnNet with their UW NetID: https://provision.uw.edu/
