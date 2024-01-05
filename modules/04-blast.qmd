@@ -11,10 +11,9 @@ format:
     code-overflow: wrap
 ---
 
-
 # TLDR (basics)
 
-```
+```         
 
 /home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \
 -in ../data/uniprot_sprot_r2023_01.fasta \
@@ -22,7 +21,7 @@ format:
 -out ../blastdb/uniprot_sprot_r2023_01
 ```
 
-```
+```         
 /home/shared/ncbi-blast-2.11.0+/bin/blastx \
 -query ../data/Ab_4denovo_CLC6_a.fa \
 -db ../blastdb/uniprot_sprot_r2023_01 \
@@ -33,9 +32,7 @@ format:
 -outfmt 6
 ```
 
-
 # 546 Tutorial
-
 
 For the first task you will take an unknown multi-fasta file and annotate it using blast. You are welcome to do this in terminal, Rstudio, or jupyter. My recommendation, and how I will demonstrate is using Rmarkdown. Once you have have your project structured, we will download software, databases, a fasta file and run the code.
 
@@ -44,7 +41,7 @@ library(knitr)
 library(tidyverse)
 library(kableExtra)
 library(DT)
-library(Biostrings)
+#library(Biostrings)
 knitr::opts_chunk$set(
   echo = TRUE,         # Display code chunks
   eval = FALSE,         # Evaluate code chunks
@@ -59,8 +56,6 @@ knitr::opts_chunk$set(
 This is product offers a workflow to take a few thousand unidentified sequences and provide a better understanding of what genes are present. This will be accomplished through using Blast and protein sequenes from UniProt/Swiss-prot.
 
 ------------------------------------------------------------------------
-
-
 
 A few weeks ago I perfected software installation, so I will not demonstrate that here. Please see this notebook for more.
 
@@ -94,7 +89,7 @@ mkdir ../blastdb
 
 ## Getting the query fasta file
 
-```{r download-query, engine='bash', eval=TRUE}
+```{r download-query, engine='bash', eval=FALSE}
 curl https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \
 -k \
 > ../data/Ab_4denovo_CLC6_a.fa
@@ -102,16 +97,16 @@ curl https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \
 
 Exploring what fasta file
 
-```{r view-query, eval = TRUE, engine='bash'}
+```{r view-query, eval = FALSE, engine='bash'}
 head -3 ../data/Ab_4denovo_CLC6_a.fa
 ```
 
-```{r view2-query, engine='bash', eval=TRUE}
+```{r view2-query, engine='bash', eval=FALSE}
 echo "How many sequences are there?"
 grep -c ">" ../data/Ab_4denovo_CLC6_a.fa
 ```
 
-```{r histogram, eval=TRUE}
+```{r histogram, eval=FALSE}
 # Read FASTA file
 fasta_file <- "../data/Ab_4denovo_CLC6_a.fa"  # Replace with the name of your FASTA file
 sequences <- readDNAStringSet(fasta_file)
@@ -131,7 +126,7 @@ ggplot(sequence_lengths_df, aes(x = Length)) +
   theme_minimal()
 ```
 
-```{r ACGT, eval=TRUE}
+```{r ACGT, eval=FALSE}
 
 # Read FASTA file
 fasta_file <- "../data/Ab_4denovo_CLC6_a.fa"
@@ -155,8 +150,7 @@ ggplot(base_composition_melted, aes(x = Base, y = Count, fill = Base)) +
   scale_fill_manual(values = c("A" = "green", "C" = "blue", "G" = "yellow", "T" = "red"))
 ```
 
-
-```{r cg, eval=TRUE}
+```{r cg, eval=FALSE}
 # Read FASTA file
 fasta_file <- "../data/Ab_4denovo_CLC6_a.fa"
 sequences <- readDNAStringSet(fasta_file)
@@ -181,7 +175,6 @@ ggplot(cg_motifs_counts_df, aes(x = CG_Count)) +
   theme_minimal()
 ```
 
-
 ## Running Blastx
 
 ```{r blastx, engine='bash'}
@@ -203,9 +196,6 @@ head -2 ../output/Ab_4-uniprot_blastx.tab
 echo "Number of lines in output"
 wc -l ../output/Ab_4-uniprot_blastx.tab
 ```
-
-
-
 
 ## Joining Blast table with annoations.
 
@@ -250,7 +240,6 @@ annot_tab <-
             pattern = "solid0078_20110412_FRAG_BC_WHITE_WHITE_F3_QV_SE_trimmed", replacement = "Ab"))
 ```
 
-
 ```{r}
 # Read dataset
 dataset <- read.csv("../output/blast_annot_go.tab", sep = '\t')  # Replace with the path to your dataset
@@ -280,6 +269,7 @@ ggplot(top_10_strings, aes(x = reorder(String, -Count), y = Count, fill = String
 
 
 ```
+
 ```{r go}
 
 
@@ -324,6 +314,7 @@ knitr::include_graphics("../output/GOlegend.png")
 ```
 
 # Case Study - Oyster
+
 ## Navigating Annotation
 
 The following is a stepwise example or annotation of a gene set using UniProt::Swiss-Prot (reviewed) such that Gene Ontology terms can be associated with each gene.
@@ -429,7 +420,7 @@ Let's break it down step by step:
 
 1.  **`g.spid <- left_join(blast, cdsftab, by = "V1")`** - This line is using the **`left_join()`** function from **`dplyr`** to merge the **`blast`** and **`cdsftab`** datasets by the column "V1". A left join retains all the rows in the **`blast`** data frame and appends the matching rows in the **`cdsftab`** data frame. If there is no match, the result is **`NA`**. The result of this operation is assigned to the **`g.spid`** object.
 
-2.  **`mutate(gene = str_extract(V2.y, "(?<=\\[gene=)\\w+"))`** - This line is using the **`mutate()`** function from **`dplyr`** to add a new column called "gene" to the data frame. The new column is created by extracting substrings from the "V2.y" column based on the given regular expression pattern **`"(?<=\\[gene=)\\w+"`**. This regular expression matches and extracts any word (sequence of word characters, i.e., alphanumeric and underscore) that comes after "[gene=".
+2.  **`mutate(gene = str_extract(V2.y, "(?<=\\[gene=)\\w+"))`** - This line is using the **`mutate()`** function from **`dplyr`** to add a new column called "gene" to the data frame. The new column is created by extracting substrings from the "V2.y" column based on the given regular expression pattern **`"(?<=\\[gene=)\\w+"`**. This regular expression matches and extracts any word (sequence of word characters, i.e., alphanumeric and underscore) that comes after "\[gene=".
 
 3.  **`select(gene, V11, V2.x)`** - This line is using the **`select()`** function from **`dplyr`** to keep only the specified columns ("gene", "V11", and "V2.x") in the data frame.
 
@@ -452,27 +443,19 @@ left_join(blast, cdsftab, by = "V1") %>%
  ) 
 ```
 
-
 With a list of matching Swiss-Prot IDs, (technically UniProt Accession number) we can go back to https://www.uniprot.org and grab corresponding GO terms. This can be done via a web or using Python API.
 
 **Using Web**
 
-Using ID Mapping 
+Using ID Mapping
 
 ![id](http://gannet.fish.washington.edu/seashell/snaps/Monosnap_RetrieveID_mapping__UniProt_2023-07-10_10-03-33.png)
 
-
-
-
-
-
 ![finished](http://gannet.fish.washington.edu/seashell/snaps/Monosnap_Tool_results__UniProt_2023-07-10_10-05-07.png)
-
 
 Now will customize columns to get GO IDs.
 
 ![custcol](http://gannet.fish.washington.edu/seashell/snaps/Monosnap_RetrieveID_mapping_results__UniProtKB__UniProt_2023-07-10_10-07-05.png)
-
 
 ```{r engine='bash', eval=FALSE}
 head -2 DRAFT_Funct_Enrich/annot/uniprotGO.tab
@@ -484,7 +467,6 @@ Finally we can join table to get "LOCIDs" the notation for our DEGs, with GO ter
 go <- read.csv("DRAFT_Funct_Enrich/annot/uniprotGO.tab", sep = '\t', header = TRUE, row.names=NULL)
 ```
 
-
 ```{r, eval=FALSE}
 left_join(g.spid, go, by = c("SPID" = "Entry")) %>%
   select(gene,Gene.Ontology.IDs) %>%
@@ -492,16 +474,11 @@ left_join(g.spid, go, by = c("SPID" = "Entry")) %>%
   )
 ```
 
-
-
 ```{r engine='bash', eval=FALSE}
 head DRAFT_Funct_Enrich/annot/geneGO.txt
 ```
 
-
-
-
-**Using API** 
+**Using API**
 
 ```{r engine='bash'}
 python3 DRAFT_Funct_Enrich/annot/uniprot-retrieval.py DRAFT_Funct_Enrich/annot/SPID.txt
