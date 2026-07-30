@@ -1,0 +1,144 @@
+---
+title: "Foundational Papers"
+subtitle: "Anchor index for the environmental memory literature"
+---
+
+Catalog of the seven foundational papers underpinning the [Lab Conceptual Framework](conceptual-framework.qmd). Each entry captures the citation, the framing the paper adopts, the central constructs and terminology it uses, and the methodology underlying its claims.
+
+This index is the **comparison baseline** against which new papers are evaluated — see [Notes on use](#notes-on-use) at the bottom.
+
+::: callout-note
+## Getting the PDFs
+
+Papers published under an open license are linked below as local PDFs. The remaining three are subscription/paywalled and are linked by DOI only — get those through the UW Libraries proxy or the lab's shared literature folder.
+:::
+
+------------------------------------------------------------------------
+
+## 1. Sol Dourdin et al. 2024 — Multigenerational pesticide exposure in oyster
+
+**Citation.** Sol Dourdin T, Guyomard K, Rabiller M, Houssais N, Cormier A, Le Monier P, Sussarellu R, Rivière G. (2024) Ancestors' Gift: Parental Early Exposure to the Environmentally Realistic Pesticide Mixture Drives Offspring Phenotype in a Larger Extent Than Direct Exposure in the Pacific Oyster, *Crassostrea gigas*. *Environ. Sci. Technol.* 58, 1865–1876. [doi:10.1021/acs.est.3c08201](https://doi.org/10.1021/acs.est.3c08201)
+
+**System.** *Crassostrea gigas* (Pacific oyster), early-life (embryo–larval, 0–48 hpf) exposure across F0 and F1.
+
+**Framing.** Parental developmental exposure can produce phenotypic and molecular signatures in offspring that exceed those produced by the offspring's own direct exposure. Positions epigenetic inheritance as a non-trivial axis of ecotoxicological risk.
+
+**Key constructs.** Multigenerational/transgenerational effects; environmentally realistic contaminant mixture (not single-compound, single-dose); DNA methylation as meiotically heritable mark; F1:F0 treatment interactions at gene-level resolution; carryover of parental experience into offspring metamorphosis and field survival.
+
+**Methodology.** 18-pesticide mixture at nominal 2.85 μg/L sum concentration; embryo–larval window exposure in F0 and F1 in a full-factorial parental × direct design. RNA-seq + Methyl-seq (reduced-representation–style methylome) on gastrula embryos and metamorphosis-competent pediveliger (MCP) larvae. Physiological endpoints across the life cycle: epinephrine-induced metamorphosis, field survival. Candidate genes flagged for F1:F0 interaction (e.g., *Calm*, *Myd88* — shell secretion and immunity).
+
+**Why it is an anchor.** Empirical demonstration that *ancestral exposure can dominate the offspring phenotype* — a load-bearing claim for environmental memory framing in marine invertebrates. Pairs molecular (methylome, transcriptome) with organismal (metamorphosis, survival) readouts in the same design.
+
+------------------------------------------------------------------------
+
+## 2. Eirin-Lopez & Putnam 2019 — Marine Environmental Epigenetics
+
+**Citation.** Eirin-Lopez JM, Putnam HM. (2019) Marine Environmental Epigenetics. *Annu. Rev. Mar. Sci.* 11, 335–368. [doi:10.1146/annurev-marine-010318-095114](https://doi.org/10.1146/annurev-marine-010318-095114)
+
+**Framing.** Review/synthesis. Positions epigenetic mechanisms as the proximate substrate for genotype × environment interactions in marine systems, integrating acclimatization, adaptation, conservation, biomonitoring, and aquaculture applications under a single framework.
+
+**Key constructs.** Phenotypic plasticity; acclimatization vs. adaptation; transgenerational epigenetic inheritance; biomonitoring; the link between epigenetic mark and persistence under global change.
+
+**Methodology.** Conceptual review across taxa, mechanisms (methylation, histone modifications, ncRNA), and applications. No new empirical data.
+
+**Why it is an anchor.** Field-defining review. Provides the canonical vocabulary, taxonomic scope, and conceptual scaffolding for marine environmental epigenetics — useful as a citation backbone for grant introductions and as a comparator for how subsequent empirical work fits the framework.
+
+------------------------------------------------------------------------
+
+## 3. Venney et al. 2023 — Methylation across timescales
+
+**Citation.** Venney CJ, Anastasiadi D, Wellenreuther M, Bernatchez L. (2023) The Evolutionary Complexities of DNA Methylation in Animals: From Plasticity to Genetic Evolution. *Genome Biol. Evol.* 15(12): evad216. [doi:10.1093/gbe/evad216](https://doi.org/10.1093/gbe/evad216) · [PDF](papers/Venney-2023-methylation-plasticity-to-evolution.pdf)
+
+**Framing.** Perspective. Argues that DNA methylation acts along a continuum of evolutionary timescales — (i) short-term transient acclimation within a generation, (ii) stable phenotypic evolution across generations under constant or divergent habitats, and (iii) genomic evolution via methylation-induced mutagenesis. Plasticity and genetic adaptation are not separate regimes but linked by methylation dynamics.
+
+**Key constructs.** Plasticity-to-fixation continuum; genetic assimilation; epigenetically facilitated mutagenesis (CpG → TpG transitions); reciprocal interaction between genetic variation and methylation state; intragenerational developmental plasticity boxes.
+
+**Methodology.** Conceptual perspective with illustrative figures and case examples (e.g., *Astyanax mexicanus* eye loss, stickleback). No new empirical data.
+
+**Why it is an anchor.** Provides the *cautious interpretive frame* for epigenetic causality — explicitly distinguishes timescales over which methylation acts and addresses when plastic changes might become evolutionarily encoded. Useful for hedging mechanistic claims and for hypothesis generation about when memory should persist vs. decay.
+
+------------------------------------------------------------------------
+
+## 4. Yévenes et al. 2024 — lncRNAs in *Mytilus chilensis*
+
+**Citation.** Yévenes M, Gallardo-Escárate C, Gajardo G. (2024) Epigenetic variation mediated by lncRNAs accounts for adaptive genomic differentiation of the endemic blue mussel *Mytilus chilensis*. *Heliyon* 10(1), e23695. [doi:10.1016/j.heliyon.2023.e23695](https://doi.org/10.1016/j.heliyon.2023.e23695) · [PDF](papers/Yevenes-2024-lncRNA-Mytilus-chilensis.pdf)
+
+**System.** *Mytilus chilensis*, gill and mantle tissue from two ecologically and climatically distinct natural seedbed sites (Cochamó 41°S, Yaldad 43°S, southern Chile).
+
+**Framing.** lncRNAs as a non-methylation epigenetic axis underlying tissue- and location-specific gene regulation, proposed as contributors to local adaptive differentiation in a shellfish-aquaculture-relevant species.
+
+**Key constructs.** Long non-coding RNAs; tissue-specific epigenetic regulation; differentially expressed lncRNAs (DE-lncRNAs); neighboring protein-coding-gene cis-regulation; location-specific lncRNA expression as a candidate signature of local adaptation.
+
+**Methodology.** Reanalysis of 12 cDNA libraries (RNA-Seq, prior BioProject) from 5-individual pools per tissue per location. De novo transcript reconstruction (TRL, 189,743 transcripts) → coding-potential filtering (CPAT) → 43,011 candidate lncRNAs. DESeq2-style differential expression (Wald test, negative binomial) using high fold-change thresholds (≥\|100\|). Neighboring-gene GO enrichment to infer function.
+
+**Why it is an anchor.** Establishes lncRNA-focused workflow and reasoning in a shellfish system directly relevant to the lab's *Mytilus*/*Crassostrea* interests. Anchor for the ncRNA/lncRNA strand of the project rather than the methylation strand.
+
+------------------------------------------------------------------------
+
+## 5. Gavery & Roberts 2017 — Epigenetic considerations in aquaculture
+
+**Citation.** Gavery MR, Roberts SB. (2017) Epigenetic considerations in aquaculture. *PeerJ* 5:e4147. [doi:10.7717/peerj.4147](https://doi.org/10.7717/peerj.4147) · [PDF](papers/Gavery-Roberts-2017-epigenetic-considerations-aquaculture.pdf)
+
+**Framing.** Review proposing two concrete application axes for epigenetics in aquaculture: (1) environmental manipulation to induce an *epigenetic memory* within or between generations toward a desired phenotype, and (2) epigenetic selection, used alone or alongside genetic selection. Positions epigenetic memory as an actionable lever, not just a descriptive phenomenon.
+
+**Key constructs.** Epigenetic memory (within- vs. between-generation); environmental manipulation; epigenetic selection; methylation, histone modifications, and non-coding RNA as the operative mechanisms; aquaculture life history as the context that makes these levers tractable.
+
+**Methodology.** Conceptual review. No new empirical data.
+
+**Why it is an anchor.** Origin/program piece for the lab's applied framing of epigenetic memory in aquaculture. Establishes the explicit term *"epigenetic memory"* as an inducible state and frames the productivity/sustainability stakes — directly informs grant framing.
+
+------------------------------------------------------------------------
+
+## 6. Kenkel & Matz 2016 — Gene expression plasticity in coral
+
+**Citation.** Kenkel CD, Matz MV. (2016) Gene expression plasticity as a mechanism of coral adaptation to a variable environment. *Nat. Ecol. Evol.* 1:0014. [doi:10.1038/s41559-016-0014](https://doi.org/10.1038/s41559-016-0014)
+
+**System.** *Porites astreoides* (mustard hill coral) and its intracellular *Symbiodinium*, Lower Florida Keys; year-long reciprocal transplant between an inshore environmentally variable site and an offshore stable site.
+
+**Framing.** Local adaptation operates not (only) through fixed differences in expression but through differences in *plasticity itself*. Populations from variable environments evolve a more flexible transcriptomic response, and that flexibility is what confers stress tolerance.
+
+**Key constructs.** Gene expression plasticity as a quantitative trait; environmental stress response (ESR); reaction-norm framing at the transcriptome level; resilience emerging from environmental history; host–symbiont decomposition of expression.
+
+**Methodology.** Reciprocal transplant (inshore↔offshore) for \~1 year. TagSeq genome-wide expression profiling in host and symbiont. DAPC to define population-discriminating expression axes and project transplanted samples onto them. Coexpression network analysis. Correlation of ESR plasticity with bleaching susceptibility in a natural summer bleaching event.
+
+**Why it is an anchor.** Cleanest empirical demonstration that **plasticity itself is the adaptive trait** and that prior environmental variability shapes molecular responsiveness in a way that maps onto organismal resilience. Cornerstone reference for predictive phenotyping — expression-plasticity profiles forecast bleaching outcome.
+
+------------------------------------------------------------------------
+
+## 7. Liew et al. 2018 — Epigenome and OA acclimatization in coral
+
+**Citation.** Liew YJ, Zoccola D, Li Y, Tambutté E, Venn AA, Michell CT, Cui G, Deutekom ES, Kaandorp JA, Voolstra CR, Forêt S, Allemand D, Tambutté S, Aranda M. (2018) Epigenome-associated phenotypic acclimatization to ocean acidification in a reef-building coral. *Sci. Adv.* 4: eaar8028. [doi:10.1126/sciadv.aar8028](https://doi.org/10.1126/sciadv.aar8028) · [PDF](papers/Liew-2018-epigenome-OA-acclimatization-coral.pdf)
+
+**System.** *Stylophora pistillata* (scleractinian coral), long-term (\~2 years) cultivation across four seawater pH conditions (7.2, 7.4, 7.8, 8.0) in a controlled aquarium series.
+
+**Framing.** Epigenetic — specifically methylation — regulation of phenotypic acclimatization under sustained ocean acidification. Treats the epigenome as the mediator that allows continued calcification under conditions where carbonate saturation would naively forbid it.
+
+**Key constructs.** Phenotypic acclimatization (vs. transient response or hard adaptation); gene body methylation (gbM); methylation-mediated reduction of spurious transcription and transcriptional noise; epigenome–phenotype linkage at organismal (calyx size, porosity, calcification) and cellular (cell size) scales.
+
+**Methodology.** Whole-genome bisulfite sequencing (WGBS) at high CpG coverage; RNA-seq matched per tank; amplicon-specific bisulfite sequencing for follow-up; laser microdissection for tissue-specific readout; porosity and cell/calyx size morphometrics. Same-genet fragments distributed across pH treatments to control for genotype.
+
+**Why it is an anchor.** Mechanistic integration across scales — WGBS + transcriptome + morphometrics on the same coral genets under realistic long-duration OA. Anchors the *gene body methylation as noise-reduction* interpretation and the claim that methylation state tracks phenotypic acclimatization to a sustained stressor.
+
+------------------------------------------------------------------------
+
+## Quick reference
+
+| \# | Paper | System | Type | Memory channel |
+|----|-------|--------|------|----------------|
+| 1 | Sol Dourdin et al. 2024 | *C. gigas* | Empirical | Methylation + transcriptome, transgenerational |
+| 2 | Eirin-Lopez & Putnam 2019 | Marine, broad | Review | All channels |
+| 3 | Venney et al. 2023 | Animals, broad | Perspective | Methylation → genome |
+| 4 | Yévenes et al. 2024 | *M. chilensis* | Empirical | lncRNA |
+| 5 | Gavery & Roberts 2017 | Aquaculture spp. | Review | All channels, applied |
+| 6 | Kenkel & Matz 2016 | *P. astreoides* | Empirical | Expression plasticity / reaction norm |
+| 7 | Liew et al. 2018 | *S. pistillata* | Empirical | Gene body methylation |
+
+------------------------------------------------------------------------
+
+## Notes on use {#notes-on-use}
+
+This index is the comparison baseline. When a new paper enters the project, it can be evaluated against this set by asking, for each anchor:
+
+-   Does it extend, refine, or contradict the framing here?
+-   Does its methodology match the rigor implied by this set (matched multi-scale readouts; same-genet or sibling-design controls; environmentally realistic exposures; cautious causal language)?
+-   Does it use the same vocabulary (e.g., epigenetic memory, plasticity-to-fixation continuum, environmentally realistic mixture) or introduce drift?

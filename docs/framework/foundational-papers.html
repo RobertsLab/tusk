@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Foundational Papers – Roberts Lab Course Set - Things u should know</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2757cfadcc89ddbfb9e61569f8c3689f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8652ff5161e63bdd14abb267f7ee8a78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-2757cfadcc89ddbfb9e61569f8c3689f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Roberts Lab Course Set - Things u should know</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../framework/conceptual-framework.html" aria-current="page"> 
+<span class="menu-text">Framework</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/RobertsLab/tusk" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../framework/conceptual-framework.html">Lab Science</a></li><li class="breadcrumb-item"><a href="../framework/foundational-papers.html">Foundational Papers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modules</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/00-markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/01-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/02-bash.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">bash</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/03-rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/04-blast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NCBI Blast</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/05-computers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lab Science</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework/conceptual-framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab Conceptual Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework/foundational-papers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Foundational Papers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sol-dourdin-et-al.-2024-multigenerational-pesticide-exposure-in-oyster" id="toc-sol-dourdin-et-al.-2024-multigenerational-pesticide-exposure-in-oyster" class="nav-link active" data-scroll-target="#sol-dourdin-et-al.-2024-multigenerational-pesticide-exposure-in-oyster">1. Sol Dourdin et al.&nbsp;2024 — Multigenerational pesticide exposure in oyster</a></li>
+  <li><a href="#eirin-lopez-putnam-2019-marine-environmental-epigenetics" id="toc-eirin-lopez-putnam-2019-marine-environmental-epigenetics" class="nav-link" data-scroll-target="#eirin-lopez-putnam-2019-marine-environmental-epigenetics">2. Eirin-Lopez &amp; Putnam 2019 — Marine Environmental Epigenetics</a></li>
+  <li><a href="#venney-et-al.-2023-methylation-across-timescales" id="toc-venney-et-al.-2023-methylation-across-timescales" class="nav-link" data-scroll-target="#venney-et-al.-2023-methylation-across-timescales">3. Venney et al.&nbsp;2023 — Methylation across timescales</a></li>
+  <li><a href="#yévenes-et-al.-2024-lncrnas-in-mytilus-chilensis" id="toc-yévenes-et-al.-2024-lncrnas-in-mytilus-chilensis" class="nav-link" data-scroll-target="#yévenes-et-al.-2024-lncrnas-in-mytilus-chilensis">4. Yévenes et al.&nbsp;2024 — lncRNAs in <em>Mytilus chilensis</em></a></li>
+  <li><a href="#gavery-roberts-2017-epigenetic-considerations-in-aquaculture" id="toc-gavery-roberts-2017-epigenetic-considerations-in-aquaculture" class="nav-link" data-scroll-target="#gavery-roberts-2017-epigenetic-considerations-in-aquaculture">5. Gavery &amp; Roberts 2017 — Epigenetic considerations in aquaculture</a></li>
+  <li><a href="#kenkel-matz-2016-gene-expression-plasticity-in-coral" id="toc-kenkel-matz-2016-gene-expression-plasticity-in-coral" class="nav-link" data-scroll-target="#kenkel-matz-2016-gene-expression-plasticity-in-coral">6. Kenkel &amp; Matz 2016 — Gene expression plasticity in coral</a></li>
+  <li><a href="#liew-et-al.-2018-epigenome-and-oa-acclimatization-in-coral" id="toc-liew-et-al.-2018-epigenome-and-oa-acclimatization-in-coral" class="nav-link" data-scroll-target="#liew-et-al.-2018-epigenome-and-oa-acclimatization-in-coral">7. Liew et al.&nbsp;2018 — Epigenome and OA acclimatization in coral</a></li>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">Quick reference</a></li>
+  <li><a href="#notes-on-use" id="toc-notes-on-use" class="nav-link" data-scroll-target="#notes-on-use">Notes on use</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/framework/foundational-papers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../framework/conceptual-framework.html">Lab Science</a></li><li class="breadcrumb-item"><a href="../framework/foundational-papers.html">Foundational Papers</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Foundational Papers</h1>
+<p class="subtitle lead">Anchor index for the environmental memory literature</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Catalog of the seven foundational papers underpinning the <a href="../framework/conceptual-framework.html">Lab Conceptual Framework</a>. Each entry captures the citation, the framing the paper adopts, the central constructs and terminology it uses, and the methodology underlying its claims.</p>
+<p>This index is the <strong>comparison baseline</strong> against which new papers are evaluated — see <a href="#notes-on-use">Notes on use</a> at the bottom.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Getting the PDFs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Papers published under an open license are linked below as local PDFs. The remaining three are subscription/paywalled and are linked by DOI only — get those through the UW Libraries proxy or the lab’s shared literature folder.</p>
+</div>
+</div>
+<hr>
+<section id="sol-dourdin-et-al.-2024-multigenerational-pesticide-exposure-in-oyster" class="level2">
+<h2 class="anchored" data-anchor-id="sol-dourdin-et-al.-2024-multigenerational-pesticide-exposure-in-oyster">1. Sol Dourdin et al.&nbsp;2024 — Multigenerational pesticide exposure in oyster</h2>
+<p><strong>Citation.</strong> Sol Dourdin T, Guyomard K, Rabiller M, Houssais N, Cormier A, Le Monier P, Sussarellu R, Rivière G. (2024) Ancestors’ Gift: Parental Early Exposure to the Environmentally Realistic Pesticide Mixture Drives Offspring Phenotype in a Larger Extent Than Direct Exposure in the Pacific Oyster, <em>Crassostrea gigas</em>. <em>Environ. Sci. Technol.</em> 58, 1865–1876. <a href="https://doi.org/10.1021/acs.est.3c08201">doi:10.1021/acs.est.3c08201</a></p>
+<p><strong>System.</strong> <em>Crassostrea gigas</em> (Pacific oyster), early-life (embryo–larval, 0–48 hpf) exposure across F0 and F1.</p>
+<p><strong>Framing.</strong> Parental developmental exposure can produce phenotypic and molecular signatures in offspring that exceed those produced by the offspring’s own direct exposure. Positions epigenetic inheritance as a non-trivial axis of ecotoxicological risk.</p>
+<p><strong>Key constructs.</strong> Multigenerational/transgenerational effects; environmentally realistic contaminant mixture (not single-compound, single-dose); DNA methylation as meiotically heritable mark; F1:F0 treatment interactions at gene-level resolution; carryover of parental experience into offspring metamorphosis and field survival.</p>
+<p><strong>Methodology.</strong> 18-pesticide mixture at nominal 2.85 μg/L sum concentration; embryo–larval window exposure in F0 and F1 in a full-factorial parental × direct design. RNA-seq + Methyl-seq (reduced-representation–style methylome) on gastrula embryos and metamorphosis-competent pediveliger (MCP) larvae. Physiological endpoints across the life cycle: epinephrine-induced metamorphosis, field survival. Candidate genes flagged for F1:F0 interaction (e.g., <em>Calm</em>, <em>Myd88</em> — shell secretion and immunity).</p>
+<p><strong>Why it is an anchor.</strong> Empirical demonstration that <em>ancestral exposure can dominate the offspring phenotype</em> — a load-bearing claim for environmental memory framing in marine invertebrates. Pairs molecular (methylome, transcriptome) with organismal (metamorphosis, survival) readouts in the same design.</p>
+<hr>
+</section>
+<section id="eirin-lopez-putnam-2019-marine-environmental-epigenetics" class="level2">
+<h2 class="anchored" data-anchor-id="eirin-lopez-putnam-2019-marine-environmental-epigenetics">2. Eirin-Lopez &amp; Putnam 2019 — Marine Environmental Epigenetics</h2>
+<p><strong>Citation.</strong> Eirin-Lopez JM, Putnam HM. (2019) Marine Environmental Epigenetics. <em>Annu. Rev.&nbsp;Mar.&nbsp;Sci.</em> 11, 335–368. <a href="https://doi.org/10.1146/annurev-marine-010318-095114">doi:10.1146/annurev-marine-010318-095114</a></p>
+<p><strong>Framing.</strong> Review/synthesis. Positions epigenetic mechanisms as the proximate substrate for genotype × environment interactions in marine systems, integrating acclimatization, adaptation, conservation, biomonitoring, and aquaculture applications under a single framework.</p>
+<p><strong>Key constructs.</strong> Phenotypic plasticity; acclimatization vs.&nbsp;adaptation; transgenerational epigenetic inheritance; biomonitoring; the link between epigenetic mark and persistence under global change.</p>
+<p><strong>Methodology.</strong> Conceptual review across taxa, mechanisms (methylation, histone modifications, ncRNA), and applications. No new empirical data.</p>
+<p><strong>Why it is an anchor.</strong> Field-defining review. Provides the canonical vocabulary, taxonomic scope, and conceptual scaffolding for marine environmental epigenetics — useful as a citation backbone for grant introductions and as a comparator for how subsequent empirical work fits the framework.</p>
+<hr>
+</section>
+<section id="venney-et-al.-2023-methylation-across-timescales" class="level2">
+<h2 class="anchored" data-anchor-id="venney-et-al.-2023-methylation-across-timescales">3. Venney et al.&nbsp;2023 — Methylation across timescales</h2>
+<p><strong>Citation.</strong> Venney CJ, Anastasiadi D, Wellenreuther M, Bernatchez L. (2023) The Evolutionary Complexities of DNA Methylation in Animals: From Plasticity to Genetic Evolution. <em>Genome Biol. Evol.</em> 15(12): evad216. <a href="https://doi.org/10.1093/gbe/evad216">doi:10.1093/gbe/evad216</a> · <a href="papers/Venney-2023-methylation-plasticity-to-evolution.pdf">PDF</a></p>
+<p><strong>Framing.</strong> Perspective. Argues that DNA methylation acts along a continuum of evolutionary timescales — (i) short-term transient acclimation within a generation, (ii) stable phenotypic evolution across generations under constant or divergent habitats, and (iii) genomic evolution via methylation-induced mutagenesis. Plasticity and genetic adaptation are not separate regimes but linked by methylation dynamics.</p>
+<p><strong>Key constructs.</strong> Plasticity-to-fixation continuum; genetic assimilation; epigenetically facilitated mutagenesis (CpG → TpG transitions); reciprocal interaction between genetic variation and methylation state; intragenerational developmental plasticity boxes.</p>
+<p><strong>Methodology.</strong> Conceptual perspective with illustrative figures and case examples (e.g., <em>Astyanax mexicanus</em> eye loss, stickleback). No new empirical data.</p>
+<p><strong>Why it is an anchor.</strong> Provides the <em>cautious interpretive frame</em> for epigenetic causality — explicitly distinguishes timescales over which methylation acts and addresses when plastic changes might become evolutionarily encoded. Useful for hedging mechanistic claims and for hypothesis generation about when memory should persist vs.&nbsp;decay.</p>
+<hr>
+</section>
+<section id="yévenes-et-al.-2024-lncrnas-in-mytilus-chilensis" class="level2">
+<h2 class="anchored" data-anchor-id="yévenes-et-al.-2024-lncrnas-in-mytilus-chilensis">4. Yévenes et al.&nbsp;2024 — lncRNAs in <em>Mytilus chilensis</em></h2>
+<p><strong>Citation.</strong> Yévenes M, Gallardo-Escárate C, Gajardo G. (2024) Epigenetic variation mediated by lncRNAs accounts for adaptive genomic differentiation of the endemic blue mussel <em>Mytilus chilensis</em>. <em>Heliyon</em> 10(1), e23695. <a href="https://doi.org/10.1016/j.heliyon.2023.e23695">doi:10.1016/j.heliyon.2023.e23695</a> · <a href="papers/Yevenes-2024-lncRNA-Mytilus-chilensis.pdf">PDF</a></p>
+<p><strong>System.</strong> <em>Mytilus chilensis</em>, gill and mantle tissue from two ecologically and climatically distinct natural seedbed sites (Cochamó 41°S, Yaldad 43°S, southern Chile).</p>
+<p><strong>Framing.</strong> lncRNAs as a non-methylation epigenetic axis underlying tissue- and location-specific gene regulation, proposed as contributors to local adaptive differentiation in a shellfish-aquaculture-relevant species.</p>
+<p><strong>Key constructs.</strong> Long non-coding RNAs; tissue-specific epigenetic regulation; differentially expressed lncRNAs (DE-lncRNAs); neighboring protein-coding-gene cis-regulation; location-specific lncRNA expression as a candidate signature of local adaptation.</p>
+<p><strong>Methodology.</strong> Reanalysis of 12 cDNA libraries (RNA-Seq, prior BioProject) from 5-individual pools per tissue per location. De novo transcript reconstruction (TRL, 189,743 transcripts) → coding-potential filtering (CPAT) → 43,011 candidate lncRNAs. DESeq2-style differential expression (Wald test, negative binomial) using high fold-change thresholds (≥|100|). Neighboring-gene GO enrichment to infer function.</p>
+<p><strong>Why it is an anchor.</strong> Establishes lncRNA-focused workflow and reasoning in a shellfish system directly relevant to the lab’s <em>Mytilus</em>/<em>Crassostrea</em> interests. Anchor for the ncRNA/lncRNA strand of the project rather than the methylation strand.</p>
+<hr>
+</section>
+<section id="gavery-roberts-2017-epigenetic-considerations-in-aquaculture" class="level2">
+<h2 class="anchored" data-anchor-id="gavery-roberts-2017-epigenetic-considerations-in-aquaculture">5. Gavery &amp; Roberts 2017 — Epigenetic considerations in aquaculture</h2>
+<p><strong>Citation.</strong> Gavery MR, Roberts SB. (2017) Epigenetic considerations in aquaculture. <em>PeerJ</em> 5:e4147. <a href="https://doi.org/10.7717/peerj.4147">doi:10.7717/peerj.4147</a> · <a href="papers/Gavery-Roberts-2017-epigenetic-considerations-aquaculture.pdf">PDF</a></p>
+<p><strong>Framing.</strong> Review proposing two concrete application axes for epigenetics in aquaculture: (1) environmental manipulation to induce an <em>epigenetic memory</em> within or between generations toward a desired phenotype, and (2) epigenetic selection, used alone or alongside genetic selection. Positions epigenetic memory as an actionable lever, not just a descriptive phenomenon.</p>
+<p><strong>Key constructs.</strong> Epigenetic memory (within- vs.&nbsp;between-generation); environmental manipulation; epigenetic selection; methylation, histone modifications, and non-coding RNA as the operative mechanisms; aquaculture life history as the context that makes these levers tractable.</p>
+<p><strong>Methodology.</strong> Conceptual review. No new empirical data.</p>
+<p><strong>Why it is an anchor.</strong> Origin/program piece for the lab’s applied framing of epigenetic memory in aquaculture. Establishes the explicit term <em>“epigenetic memory”</em> as an inducible state and frames the productivity/sustainability stakes — directly informs grant framing.</p>
+<hr>
+</section>
+<section id="kenkel-matz-2016-gene-expression-plasticity-in-coral" class="level2">
+<h2 class="anchored" data-anchor-id="kenkel-matz-2016-gene-expression-plasticity-in-coral">6. Kenkel &amp; Matz 2016 — Gene expression plasticity in coral</h2>
+<p><strong>Citation.</strong> Kenkel CD, Matz MV. (2016) Gene expression plasticity as a mechanism of coral adaptation to a variable environment. <em>Nat. Ecol. Evol.</em> 1:0014. <a href="https://doi.org/10.1038/s41559-016-0014">doi:10.1038/s41559-016-0014</a></p>
+<p><strong>System.</strong> <em>Porites astreoides</em> (mustard hill coral) and its intracellular <em>Symbiodinium</em>, Lower Florida Keys; year-long reciprocal transplant between an inshore environmentally variable site and an offshore stable site.</p>
+<p><strong>Framing.</strong> Local adaptation operates not (only) through fixed differences in expression but through differences in <em>plasticity itself</em>. Populations from variable environments evolve a more flexible transcriptomic response, and that flexibility is what confers stress tolerance.</p>
+<p><strong>Key constructs.</strong> Gene expression plasticity as a quantitative trait; environmental stress response (ESR); reaction-norm framing at the transcriptome level; resilience emerging from environmental history; host–symbiont decomposition of expression.</p>
+<p><strong>Methodology.</strong> Reciprocal transplant (inshore↔︎offshore) for ~1 year. TagSeq genome-wide expression profiling in host and symbiont. DAPC to define population-discriminating expression axes and project transplanted samples onto them. Coexpression network analysis. Correlation of ESR plasticity with bleaching susceptibility in a natural summer bleaching event.</p>
+<p><strong>Why it is an anchor.</strong> Cleanest empirical demonstration that <strong>plasticity itself is the adaptive trait</strong> and that prior environmental variability shapes molecular responsiveness in a way that maps onto organismal resilience. Cornerstone reference for predictive phenotyping — expression-plasticity profiles forecast bleaching outcome.</p>
+<hr>
+</section>
+<section id="liew-et-al.-2018-epigenome-and-oa-acclimatization-in-coral" class="level2">
+<h2 class="anchored" data-anchor-id="liew-et-al.-2018-epigenome-and-oa-acclimatization-in-coral">7. Liew et al.&nbsp;2018 — Epigenome and OA acclimatization in coral</h2>
+<p><strong>Citation.</strong> Liew YJ, Zoccola D, Li Y, Tambutté E, Venn AA, Michell CT, Cui G, Deutekom ES, Kaandorp JA, Voolstra CR, Forêt S, Allemand D, Tambutté S, Aranda M. (2018) Epigenome-associated phenotypic acclimatization to ocean acidification in a reef-building coral. <em>Sci. Adv.</em> 4: eaar8028. <a href="https://doi.org/10.1126/sciadv.aar8028">doi:10.1126/sciadv.aar8028</a> · <a href="papers/Liew-2018-epigenome-OA-acclimatization-coral.pdf">PDF</a></p>
+<p><strong>System.</strong> <em>Stylophora pistillata</em> (scleractinian coral), long-term (~2 years) cultivation across four seawater pH conditions (7.2, 7.4, 7.8, 8.0) in a controlled aquarium series.</p>
+<p><strong>Framing.</strong> Epigenetic — specifically methylation — regulation of phenotypic acclimatization under sustained ocean acidification. Treats the epigenome as the mediator that allows continued calcification under conditions where carbonate saturation would naively forbid it.</p>
+<p><strong>Key constructs.</strong> Phenotypic acclimatization (vs.&nbsp;transient response or hard adaptation); gene body methylation (gbM); methylation-mediated reduction of spurious transcription and transcriptional noise; epigenome–phenotype linkage at organismal (calyx size, porosity, calcification) and cellular (cell size) scales.</p>
+<p><strong>Methodology.</strong> Whole-genome bisulfite sequencing (WGBS) at high CpG coverage; RNA-seq matched per tank; amplicon-specific bisulfite sequencing for follow-up; laser microdissection for tissue-specific readout; porosity and cell/calyx size morphometrics. Same-genet fragments distributed across pH treatments to control for genotype.</p>
+<p><strong>Why it is an anchor.</strong> Mechanistic integration across scales — WGBS + transcriptome + morphometrics on the same coral genets under realistic long-duration OA. Anchors the <em>gene body methylation as noise-reduction</em> interpretation and the claim that methylation state tracks phenotypic acclimatization to a sustained stressor.</p>
+<hr>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick reference</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Paper</th>
+<th>System</th>
+<th>Type</th>
+<th>Memory channel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Sol Dourdin et al.&nbsp;2024</td>
+<td><em>C. gigas</em></td>
+<td>Empirical</td>
+<td>Methylation + transcriptome, transgenerational</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Eirin-Lopez &amp; Putnam 2019</td>
+<td>Marine, broad</td>
+<td>Review</td>
+<td>All channels</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Venney et al.&nbsp;2023</td>
+<td>Animals, broad</td>
+<td>Perspective</td>
+<td>Methylation → genome</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Yévenes et al.&nbsp;2024</td>
+<td><em>M. chilensis</em></td>
+<td>Empirical</td>
+<td>lncRNA</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Gavery &amp; Roberts 2017</td>
+<td>Aquaculture spp.</td>
+<td>Review</td>
+<td>All channels, applied</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Kenkel &amp; Matz 2016</td>
+<td><em>P. astreoides</em></td>
+<td>Empirical</td>
+<td>Expression plasticity / reaction norm</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Liew et al.&nbsp;2018</td>
+<td><em>S. pistillata</em></td>
+<td>Empirical</td>
+<td>Gene body methylation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="notes-on-use" class="level2">
+<h2 class="anchored" data-anchor-id="notes-on-use">Notes on use</h2>
+<p>This index is the comparison baseline. When a new paper enters the project, it can be evaluated against this set by asking, for each anchor:</p>
+<ul>
+<li>Does it extend, refine, or contradict the framing here?</li>
+<li>Does its methodology match the rigor implied by this set (matched multi-scale readouts; same-genet or sibling-design controls; environmentally realistic exposures; cautious causal language)?</li>
+<li>Does it use the same vocabulary (e.g., epigenetic memory, plasticity-to-fixation continuum, environmentally realistic mixture) or introduce drift?</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/framework/foundational-papers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

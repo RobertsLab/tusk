@@ -1,0 +1,108 @@
+---
+title: "Lab Conceptual Framework"
+subtitle: "Environmental Memory, Resilience, and Predictive Phenotyping in Marine Organisms"
+---
+
+A working reference distilled from the [seven foundational papers](foundational-papers.qmd). Intended for use in grant introductions, manuscript framings, lab discussions, and as the comparison baseline for incoming literature.
+
+------------------------------------------------------------------------
+
+## 1. Definition of environmental memory
+
+> **Environmental memory is a state-dependent biological substrate that encodes prior environmental experience — of the organism or its ancestors — and biases future phenotypic response.**
+
+The substrate is multi-modal: DNA methylation, gene expression baselines, reaction-norm shape, non-coding RNA inventory, chromatin state, and the epitranscriptome each contribute. It is laid down across multiple timescales — from minutes (transcriptional response) to lifetimes (developmental programming) to generations (transgenerational plasticity) to evolutionary time (genetic assimilation). It is heritable across at least one biological boundary — mitotic, developmental, or meiotic — and can be propagated through maternal and paternal channels.
+
+The phenotypic consequence of memory is not fixed in sign. Memory can be **adaptive** when it primes the organism for conditions resembling those it has encoded, **neutral** when uncoupled from current selection, or **maladaptive** when it persists past the environment that produced it. The mismatch case — anticipatory phenotyping that becomes wrong because the environment outran the encoding — is a central concern under rapid anthropogenic change.
+
+Memory in this framework is informational, not damage. It is what the organism *is*, given where it has been.
+
+------------------------------------------------------------------------
+
+## 2. Major mechanistic pathways
+
+The lab treats environmental memory as operating through five mechanistic channels, which interact rather than substitute:
+
+**Gene body methylation (gbM).** Functions as a regulator of transcriptional fidelity — suppresses spurious transcription from cryptic intragenic promoters, fine-tunes transcriptional noise of highly expressed genes, and shifts the precision–flexibility balance under stress. Not a binary on/off switch. Relationship to expression is non-linear and saturates at high methylation density.
+
+**Regulatory non-coding RNAs (lncRNAs / lincRNAs in particular).** Act as a parallel epigenetic layer, frequently in cis on neighboring protein-coding genes. Evolve faster than coding sequence; respond to environmental context tissue- and location-specifically; provide a fast-response channel that does not require nucleotide change.
+
+**Gene expression baselines and reaction norms.** The transcriptomic state itself functions as memory. Populations exposed to historically variable environments evolve different reaction-norm slopes than populations from stable environments. Reaction-norm shape — frontloaded constitutive expression versus reactive plasticity — is a quantitative trait under selection, with stress periodicity setting which solution is favored.
+
+**Chromatin and histone modification.** Acts in concert with methylation to set transcriptional potential. Not directly assayed in most foundational empirical work in this corpus but treated as integral to the regulatory layer.
+
+**Reciprocal coupling to the genome.** Methylation can be controlled in cis by SNPs (mQTLs), can drive mutation at methylated CpGs over generational time, and gates transposable-element activity. Memory has a forward channel into the genome itself — the plasticity-to-assimilation continuum.
+
+These channels are not independent. Empirical correspondence between methylation, transcription, and phenotype is often weak (DMG–DEG overlap can be \~2%), which means the lab treats no single mark as causally sufficient for phenotype.
+
+------------------------------------------------------------------------
+
+## 3. Physiology ↔ molecular regulation
+
+The lab's working model places molecular regulation as the substrate that integrates environmental signal and physiology as the integrated output. The relationship runs in both directions and across scales:
+
+**Bottom-up.** Methylation, ncRNA, and chromatin state set transcriptional baselines and response kinetics → transcription drives protein-level effectors → effectors set cellular state (growth, calcification, immune readiness, mitochondrial function) → cellular states integrate to organismal performance metrics (size, survival, metamorphosis competency, bleaching status, fecundity).
+
+**Top-down.** Physiological state — energetic budget, hormonal milieu, redox balance — feeds back onto the regulatory layer. SAM/SAH stoichiometry constrains methylation capacity. Energy availability constrains how much regulatory plasticity is affordable. Higher epigenetic plasticity is expected to carry higher metabolic cost.
+
+**Cross-scale decoupling is the empirical reality.** Methylome changes do not cleanly track transcriptome changes; transcriptome changes do not cleanly track phenotype; phenotype does not cleanly track fitness. The lab treats each layer as informative and partially independent, not as a deterministic pipeline.
+
+**The relevant physiological readouts in this framework** are growth and size, survival under stress, developmental milestone competency (especially metamorphosis), calcification and biomineralization, symbiont density (where applicable), immune response, and the shape of the reaction norm itself. Lifetime reproductive success — the formal fitness measure — is rarely accessible and is inferred from proxies.
+
+------------------------------------------------------------------------
+
+## 4. Conceptual model of resilience
+
+> **Resilience is the emergent organismal property that arises when memory state and current regulatory configuration are well-matched to current and impending conditions.**
+
+It is not a fixed trait. It is the time-integrated consequence of an organism's environmental history, encoded across regulatory layers, evaluated against the environment the organism currently faces.
+
+Resilience in this framework has four operational faces:
+
+-   **Buffering.** The regulatory system keeps critical functions within homeostatic bounds under perturbation. Gene body methylation contributes by reducing transcriptional noise.
+-   **Plasticity.** The capacity to track environmental change with appropriate molecular and physiological adjustment. Populations from variable environments often have higher plasticity capacity.
+-   **Preparedness.** Anticipatory state, encoded developmentally or transgenerationally, that prefigures effective response to expected conditions.
+-   **Time-buying.** Epigenetic acclimatization provides bridging time over which slower genetic adaptation can occur.
+
+Resilience is *not* uniformly good. Memory-encoded preparedness becomes maladaptive when the environment diverges from what was encoded — the epigenetic trap. Frontloading is wasteful when stress is rare. Plasticity is metabolically expensive when stress is absent. The framework is explicit that resilience is context-dependent and that "more memory" is not always better.
+
+**Predictive phenotyping** is the empirical program of using molecular state — methylation profile, expression baseline, lncRNA inventory, reaction-norm slope — to forecast organismal performance under stress. The framework treats it as plausible and important, but acknowledges that no held-out predictive test has yet been demonstrated in marine systems. This is a target, not an established capability.
+
+------------------------------------------------------------------------
+
+## 5. Key unresolved questions
+
+The lab carries these forward as open. Each is tractable and each maps to potential experimental design.
+
+-   **Persistence and decay of marks.** What governs whether an environmentally induced epigenetic state washes out, persists, or assimilates? At what timescale does which mechanism dominate?
+-   **Soma-to-germline transmission.** How is parental experience translated into the gamete in marine invertebrates, given spermatozoan epigenome reprogramming?
+-   **Causal direction.** When methylation, transcription, and phenotype co-vary, which is causing which? Targeted perturbation experiments (dCas9-DNMT/TET, antisense oligonucleotides against specific lncRNAs) are not yet standard in this literature.
+-   **F0–F1 methylation rebound.** Why do parental and offspring methylation responses sometimes go in opposite directions (F0 hypomethylation → F1 hypermethylation)?
+-   **ncRNA functional validation.** Are inferred cis-regulatory effects of lncRNAs on neighboring genes real, and at what magnitude?
+-   **Channel integration.** Are methylation- and ncRNA-mediated memory independent, redundant, or hierarchically organized? No foundational paper measures both on the same animals.
+-   **Energetic cost of plasticity.** What is the metabolic burden of maintaining high-turnover methylation states?
+-   **Mismatch threshold.** At what rate of environmental change does anticipatory memory tip from adaptive to maladaptive?
+-   **Cross-taxa generality.** Does the plasticity-frontloading trade-off generalize from corals to bivalves? Do bivalve and coral memory mechanisms share predictive signatures?
+-   **Held-out predictive performance.** Can molecular signatures trained on one cohort forecast performance in an independent cohort under novel conditions?
+
+------------------------------------------------------------------------
+
+## 6. Implications for aquaculture and restoration
+
+The framework treats environmental memory as an *actionable* axis, not just a descriptive phenomenon. Two application modes follow directly:
+
+**Environmental conditioning during sensitive windows.** Embryo–larval development and broodstock holding are programming windows during which sub-lethal exposure to a stressor can induce a memory that biases later phenotype toward resilience to that stressor. Empirical precedents in the foundational set include parental low-pH priming of Sydney rock oyster offspring, poly(I:C) priming of Pacific oyster broodstock yielding herpesvirus-resistant offspring, and parental thermal preconditioning across taxa producing positive transgenerational thermal plasticity. The application program is to identify the windows, identify the doses, and characterize how long the induced memory persists relative to commercial production timescales.
+
+**Epigenetic selection.** Epigenetic markers can be integrated with — and may sometimes substitute for — genetic markers in broodstock selection. The framework treats this cautiously: epigenetic selection requires that the relevant marks be heritable, stable across the production cycle, and predictive of the target trait. None of these is yet established at scale in shellfish or coral aquaculture, but the conceptual framework supports active investigation.
+
+**Restoration ("assisted acclimatization", "designer reefs").** For coral restoration in particular, pre-conditioning of out-planted fragments via controlled stress exposure is conceptually grounded in the same plasticity / memory framework. The lab's framing is that restoration interventions should be evaluated not only for survival of out-planted material but for whether the induced epigenetic state remains adaptive on the timescale of the deployment.
+
+**Biomonitoring.** Environmental memory leaves measurable signatures — methylation profiles, lncRNA inventories, transcriptional baselines. These signatures encode exposure history and can serve as population-level or individual-level biomarkers for cumulative stress, beyond what point-in-time physiological assays detect.
+
+**Constraints the framework imposes on application.** Memory can be maladaptive. Engineered conditioning could induce mismatch if downstream environments diverge from the conditioning environment. Epigenetic plasticity is metabolically costly. And the field has not yet demonstrated reliable held-out prediction. Aquaculture and restoration applications should be framed as informed by, not yet delivered by, the conceptual framework — and the lab's empirical program is, in part, what is required to close that gap.
+
+------------------------------------------------------------------------
+
+## Notes on use
+
+This document is intended as the lab's working reference. The conceptual claims are the lab's; the empirical support for them lives in the seven anchor papers (see [Foundational Papers](foundational-papers.qmd)). When this framework is invoked in grants, talks, or manuscripts, the specific empirical anchors should be cited from those papers directly.

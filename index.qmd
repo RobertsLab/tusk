@@ -5,4 +5,11 @@ title: Where the fun starts
 This is a portal developed out as a Course Set where core learning modules exist. Please see sidebar menu for specific modules.
 There is a logic to the order as modules build as you go down the list, though they are developed where they are also stand-alone.
 
+## Lab Science
+
+Beyond the technical modules, the **Lab Science** section holds the conceptual grounding for what we do:
+
+-   [Lab Conceptual Framework](framework/conceptual-framework.qmd) — how the lab defines environmental memory, resilience, and predictive phenotyping in marine organisms, including the mechanistic channels we work on and the questions we treat as open.
+-   [Foundational Papers](framework/foundational-papers.qmd) — annotated index of the seven anchor papers the framework is distilled from, with PDFs where licensing allows.
+
 If you want to contribute, have suggestions, want to see additional resources related to data science, or learn more about what our lab does please visit the [about page](about.qmd).

@@ -10,6 +10,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: framework/conceptual-framework.qmd
+        text: Framework
       - about.qmd
     tools:
       - icon: github
@@ -20,12 +22,19 @@ website:
     style: "docked"
  #  search: true
     contents:
-      - modules/00-markdown.qmd
-      - modules/01-github.qmd
-      - modules/02-bash.qmd
-      - modules/03-rstudio.qmd
-      - modules/04-blast.qmd
-  
+      - section: "Modules"
+        contents:
+          - modules/00-markdown.qmd
+          - modules/01-github.qmd
+          - modules/02-bash.qmd
+          - modules/03-rstudio.qmd
+          - modules/04-blast.qmd
+          - modules/05-computers.qmd
+      - section: "Lab Science"
+        contents:
+          - framework/conceptual-framework.qmd
+          - framework/foundational-papers.qmd
+
 
 
     
