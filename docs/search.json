@@ -1076,7 +1076,7 @@
     "href": "modules/04-blast.html",
     "title": "NCBI Blast",
     "section": "",
-    "text": "NoteHow to read this module\n\n\n\nThis is a walkthrough, not a script. The code is shown so you can read it, understand what each step does, and adapt it — the page itself does not execute anything. Expected outputs are shown as static blocks beneath the commands that produce them.\nTo actually run it, you need NCBI BLAST+ and a machine with some memory and patience. See Computing Resources.",
+    "text": "NoteHow to read this module\n\n\n\nThis is a walkthrough, not a script — the code is here to read and adapt, and the page does not execute anything. To run it you need NCBI BLAST+ and somewhere with a bit of memory; see Computing Resources.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1292,7 +1292,7 @@
     "href": "modules/04-blast.html#next-steps",
     "title": "NCBI Blast",
     "section": "Next steps",
-    "text": "Next steps\nWith geneGO.txt you can run functional enrichment on a gene set — for instance, the differentially expressed genes from an experiment — and ask which biological processes are over-represented.\nFor background on the animal behind the case study, see Bivalves. For where to run jobs this size, see Computing Resources.",
+    "text": "Next steps\nWith gene-to-GO mappings you can run functional enrichment on a gene set — the differentially expressed genes from an experiment, for instance — and ask which biological processes are over-represented.\nNow that you know what each step does, use workflow-annotation rather than assembling this by hand each time. It also produces GO-Slim terms, which the manual workflow above does not.\nFor the animal behind the example, see Bivalves.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1633,6 +1633,90 @@
       "Home",
       "Organism Biology",
       "Cnidarians"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#the-idea",
+    "href": "modules/04-blast.html#the-idea",
+    "title": "NCBI Blast",
+    "section": "The idea",
+    "text": "The idea\nYou have a few thousand sequences and no idea what they are — off a de novo assembly of a non-model organism, say, with no annotation to inherit.\nThe strategy is comparison: search each unknown sequence against a database of proteins whose function is known, and take the annotation from the best match.\nThe database here is UniProt/Swiss-Prot, the manually reviewed part of UniProt. Smaller than the full database and far better curated — the right trade for annotation.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#the-three-steps",
+    "href": "modules/04-blast.html#the-three-steps",
+    "title": "NCBI Blast",
+    "section": "The three steps",
+    "text": "The three steps\n\n\n\n\n\nflowchart LR\n  A[\"Swiss-Prot&lt;br/&gt;FASTA\"] --&gt;|makeblastdb| B[\"BLAST&lt;br/&gt;database\"]\n  C[\"Your&lt;br/&gt;sequences\"] --&gt; D\n  B --&gt; D[\"blastx\"]\n  D --&gt; E[\"Hit table&lt;br/&gt;outfmt 6\"]\n  E --&gt;|join in R| F[\"Gene names,&lt;br/&gt;GO terms\"]\n\n\n\n\n\n\n\n\n\n\n\n\nTipThere is a script that does all of this\n\n\n\nsr320/workflow-annotation wraps the entire workflow in one command:\nbash blast2slim.sh -i transcripts.fasta\nIt downloads and indexes Swiss-Prot, picks blastx or blastp for you, pulls UniProt annotations over the REST API, maps GO terms to GO-Slim categories with GOATOOLS, and writes TSVs ready for downstream use. --diamond swaps in DIAMOND when BLAST+ is too slow for the dataset.\nWork through the steps below first so you know what it is doing — then use the script for real work rather than retyping this by hand.\n\n\nEverything below is those three steps. Set your BLAST+ location once if it is not already on your PATH:\nexport BLAST=/home/shared/ncbi-blast-2.11.0+/bin   # adjust to your machine\n$BLAST/blastx -version                             # check what you actually have",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#step-1-build-the-database",
+    "href": "modules/04-blast.html#step-1-build-the-database",
+    "title": "NCBI Blast",
+    "section": "Step 1 — Build the database",
+    "text": "Step 1 — Build the database\nDownload Swiss-Prot and index it. Record the release — annotation results shift between releases, so it belongs in your methods.\ncd ../data\nRELEASE=r2025_03    # check https://www.uniprot.org/help/release-statistics\n\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_${RELEASE}.fasta.gz\ngunzip -k uniprot_sprot_${RELEASE}.fasta.gz\n\nmkdir -p ../blastdb\nmakeblastdb \\\n-in ../data/uniprot_sprot_${RELEASE}.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_${RELEASE}\nUsing a variable for the release is deliberate: type it by hand in both places and they will eventually disagree, leaving you with a database built from a different file than you think — and nothing will error.\n-out gives a prefix, not a filename. Several index files are written from it, and that same prefix is what you pass to -db.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#step-2-run-blast",
+    "href": "modules/04-blast.html#step-2-run-blast",
+    "title": "NCBI Blast",
+    "section": "Step 2 — Run BLAST",
+    "text": "Step 2 — Run BLAST\n\nPick the right program\n\n\n\nProgram\nQuery\nDatabase\n\n\n\n\nblastn\nnucleotide\nnucleotide\n\n\nblastp\nprotein\nprotein\n\n\nblastx\nnucleotide, translated\nprotein\n\n\ntblastn\nprotein\nnucleotide, translated\n\n\n\nTranscripts against a protein database means blastx.\ncurl -k https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \\\n&gt; ../data/Ab_4denovo_CLC6_a.fa\n\ngrep -c \"&gt;\" ../data/Ab_4denovo_CLC6_a.fa    # how many sequences?\n\nblastx \\\n-query ../data/Ab_4denovo_CLC6_a.fa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Ab_4-uniprot_blastx.tab \\\n-evalue 1E-20 \\\n-num_threads 20 \\\n-max_target_seqs 1 \\\n-outfmt 6\n\n-evalue 1E-20 — how many hits this good you would expect by chance. Smaller is stricter.\n-num_threads 20 — set to what the machine has (nproc).\n-max_target_seqs 1 — best hit only.\n-outfmt 6 — tabular; everything downstream expects this.\n\n\n\n\n\n\n\nTip\n\n\n\nRun head -100 of your input through the whole thing first. You will find path typos in 30 seconds rather than 3 hours.\n\n\n\n\nRead the output\nhead -2 ../output/Ab_4-uniprot_blastx.tab\nwc -l ../output/Ab_4-uniprot_blastx.tab\nThere is no header row, so you have to know the 12 columns:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#\n1\n2\n3\n4\n5\n6\n7–8\n9–10\n11\n12\n\n\n\n\n\nqseqid\nsseqid\npident\nlength\nmismatch\ngapopen\nqstart qend\nsstart send\nevalue\nbitscore\n\n\n\nExpect fewer hits than sequences. Anything without a match above threshold produces no line — normal for a non-model assembly, not a failure.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#step-3-add-annotation",
+    "href": "modules/04-blast.html#step-3-add-annotation",
+    "title": "NCBI Blast",
+    "section": "Step 3 — Add annotation",
+    "text": "Step 3 — Add annotation\nBLAST told you which protein each sequence matches, not what it does. Join to a UniProt table for that.\nSwiss-Prot IDs arrive as sp|P12345|NAME_SPECIES; split on the pipe to expose the accession:\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\nThat turns column 2 into three, shifting everything after it right by two — accession lands in column 3, E-value moves from 11 to 13.\nlibrary(tidyverse)\n\nbltabl &lt;- read.csv(\"../output/Ab_4-uniprot_blastx_sep.tab\", sep = \"\\t\", header = FALSE)\nspgo   &lt;- read.csv(\"https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab\",\n                   sep = \"\\t\", header = TRUE)\n\nannot_tab &lt;- left_join(bltabl, spgo, by = c(\"V3\" = \"Entry\")) |&gt;\n  select(V1, V3, V13,\n         Protein.names, Organism,\n         Gene.Ontology..biological.process., Gene.Ontology.IDs)\n\nwrite.table(annot_tab, \"../output/blast_annot_go.tab\",\n            sep = \"\\t\", row.names = FALSE, quote = FALSE)\nleft_join keeps every BLAST hit even where UniProt has no matching row, so misses show as NA rather than disappearing — a silently shrinking table is the easiest way to lose data without noticing.\nThat is the workflow. annot_tab has a gene name, organism, and GO terms for every sequence that matched.\n\n\n\n\n\n\nNote\n\n\n\nMost hits will be to human, mouse, and other heavily studied organisms. That is a property of Swiss-Prot, not a discovery about your animal.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#variation-starting-from-a-reference-proteome",
+    "href": "modules/04-blast.html#variation-starting-from-a-reference-proteome",
+    "title": "NCBI Blast",
+    "section": "Variation — starting from a reference proteome",
+    "text": "Variation — starting from a reference proteome\nMore often you are in a species that already has a reference, and the goal is to attach GO terms to an existing gene set for enrichment testing later. Same three steps, two differences.\nWork backwards from your identifiers. Whatever you annotate must produce IDs matching your count matrix, or the final join silently fails. For a Crassostrea virginica matrix built against the RefSeq GFF, genes look like gene-LOC111099033, and the file carrying those in its headers is translated_cds.faa.\n\n\n\n\n\n\nImportantUse the current assembly\n\n\n\nOlder notebooks use GCF_002022765.2 (C_virginica-3.0), which is now suppressed in RefSeq. The current reference is GCF_053477285.1 (ASM5347728v1). See Bivalves.\n\n\ncd ../data\nASM=GCF_053477285.1_ASM5347728v1\ncurl -O https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/${ASM}/${ASM}_translated_cds.faa.gz\ngunzip -k ${ASM}_translated_cds.faa.gz\nThese are already proteins, so use blastp:\nblastp \\\n-query ../data/${ASM}_translated_cds.faa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Cvir_transcds-uniprot_blastp.tab \\\n-evalue 1E-20 -num_threads 40 -max_target_seqs 1 -outfmt 6\nThe gene ID lives in the FASTA header ([gene=LOC111126949]), not in the BLAST output, so pull it out and pair it with the Swiss-Prot accession:\ng.spid &lt;- left_join(blast, cdsftab, by = \"V1\") |&gt;\n  mutate(gene = str_extract(V2.y, \"(?&lt;=\\\\[gene=)\\\\w+\"),          # from the header\n         SPID = str_extract(V2.x, \"(?&lt;=\\\\|)[^\\\\|]*(?=\\\\|)\")) |&gt;  # from sp|P12345|NAME\n  distinct(gene, SPID)\n\nwrite.table(g.spid[\"SPID\"], \"../output/SPID.txt\",\n            sep = \"\\t\", row.names = FALSE, quote = FALSE)\nThen map those accessions to GO terms at https://www.uniprot.org via Retrieve/ID mapping, adding Gene Ontology IDs under Customize columns, and join the result back on SPID. The output — each LOC gene with its GO terms — is what an enrichment test expects.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
+    ]
+  },
+  {
+    "objectID": "modules/04-blast.html#when-it-doesnt-work",
+    "href": "modules/04-blast.html#when-it-doesnt-work",
+    "title": "NCBI Blast",
+    "section": "When it doesn’t work",
+    "text": "When it doesn’t work\n\nEmpty output — the -db prefix does not match what makeblastdb -out wrote, or the path is wrong for where you are running.\nJoin gives all NA — keys do not match. head() both key columns; usually an identifier still has a sp| prefix or version suffix attached.\nRow count grows after a join — duplicate keys on the right-hand table.\nRunning for hours — check input size and -num_threads, then go back to the head -100 test.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "NCBI Blast"
     ]
   }
 ]

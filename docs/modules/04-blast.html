@@ -109,6 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -467,36 +470,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-you-are-doing-and-why" id="toc-what-you-are-doing-and-why" class="nav-link active" data-scroll-target="#what-you-are-doing-and-why">What you are doing and why</a></li>
-  <li><a href="#which-blast-program-to-use" id="toc-which-blast-program-to-use" class="nav-link" data-scroll-target="#which-blast-program-to-use">Which BLAST program to use</a></li>
-  <li><a href="#a-note-on-paths" id="toc-a-note-on-paths" class="nav-link" data-scroll-target="#a-note-on-paths">A note on paths</a></li>
-  <li><a href="#part-1-build-the-database" id="toc-part-1-build-the-database" class="nav-link" data-scroll-target="#part-1-build-the-database">Part 1 — Build the database</a>
+  <li><a href="#the-idea" id="toc-the-idea" class="nav-link active" data-scroll-target="#the-idea">The idea</a></li>
+  <li><a href="#the-three-steps" id="toc-the-three-steps" class="nav-link" data-scroll-target="#the-three-steps">The three steps</a></li>
+  <li><a href="#step-1-build-the-database" id="toc-step-1-build-the-database" class="nav-link" data-scroll-target="#step-1-build-the-database">Step 1 — Build the database</a></li>
+  <li><a href="#step-2-run-blast" id="toc-step-2-run-blast" class="nav-link" data-scroll-target="#step-2-run-blast">Step 2 — Run BLAST</a>
   <ul class="collapse">
-  <li><a href="#download-swiss-prot" id="toc-download-swiss-prot" class="nav-link" data-scroll-target="#download-swiss-prot">Download Swiss-Prot</a></li>
-  <li><a href="#make-the-blast-database" id="toc-make-the-blast-database" class="nav-link" data-scroll-target="#make-the-blast-database">Make the BLAST database</a></li>
+  <li><a href="#pick-the-right-program" id="toc-pick-the-right-program" class="nav-link" data-scroll-target="#pick-the-right-program">Pick the right program</a></li>
+  <li><a href="#read-the-output" id="toc-read-the-output" class="nav-link" data-scroll-target="#read-the-output">Read the output</a></li>
   </ul></li>
-  <li><a href="#part-2-annotate-unknown-sequences" id="toc-part-2-annotate-unknown-sequences" class="nav-link" data-scroll-target="#part-2-annotate-unknown-sequences">Part 2 — Annotate unknown sequences</a>
-  <ul class="collapse">
-  <li><a href="#get-the-query-sequences" id="toc-get-the-query-sequences" class="nav-link" data-scroll-target="#get-the-query-sequences">Get the query sequences</a></li>
-  <li><a href="#look-at-your-input-first" id="toc-look-at-your-input-first" class="nav-link" data-scroll-target="#look-at-your-input-first">Look at your input first</a></li>
-  <li><a href="#run-blastx" id="toc-run-blastx" class="nav-link" data-scroll-target="#run-blastx">Run blastx</a></li>
-  <li><a href="#check-the-output" id="toc-check-the-output" class="nav-link" data-scroll-target="#check-the-output">Check the output</a></li>
-  <li><a href="#split-the-uniprot-identifier" id="toc-split-the-uniprot-identifier" class="nav-link" data-scroll-target="#split-the-uniprot-identifier">Split the UniProt identifier</a></li>
-  </ul></li>
-  <li><a href="#part-3-join-annotations-in-r" id="toc-part-3-join-annotations-in-r" class="nav-link" data-scroll-target="#part-3-join-annotations-in-r">Part 3 — Join annotations in R</a>
-  <ul class="collapse">
-  <li><a href="#what-did-you-match" id="toc-what-did-you-match" class="nav-link" data-scroll-target="#what-did-you-match">What did you match?</a></li>
-  <li><a href="#most-common-biological-processes" id="toc-most-common-biological-processes" class="nav-link" data-scroll-target="#most-common-biological-processes">Most common biological processes</a></li>
-  </ul></li>
-  <li><a href="#part-4-case-study-the-eastern-oyster" id="toc-part-4-case-study-the-eastern-oyster" class="nav-link" data-scroll-target="#part-4-case-study-the-eastern-oyster">Part 4 — Case study: the eastern oyster</a>
-  <ul class="collapse">
-  <li><a href="#choosing-which-file-to-annotate" id="toc-choosing-which-file-to-annotate" class="nav-link" data-scroll-target="#choosing-which-file-to-annotate">Choosing which file to annotate</a></li>
-  <li><a href="#run-blastp" id="toc-run-blastp" class="nav-link" data-scroll-target="#run-blastp">Run blastp</a></li>
-  <li><a href="#link-gene-ids-to-swiss-prot-accessions" id="toc-link-gene-ids-to-swiss-prot-accessions" class="nav-link" data-scroll-target="#link-gene-ids-to-swiss-prot-accessions">Link gene IDs to Swiss-Prot accessions</a></li>
-  <li><a href="#get-go-terms" id="toc-get-go-terms" class="nav-link" data-scroll-target="#get-go-terms">Get GO terms</a></li>
-  <li><a href="#where-things-commonly-go-wrong" id="toc-where-things-commonly-go-wrong" class="nav-link" data-scroll-target="#where-things-commonly-go-wrong">Where things commonly go wrong</a></li>
+  <li><a href="#step-3-add-annotation" id="toc-step-3-add-annotation" class="nav-link" data-scroll-target="#step-3-add-annotation">Step 3 — Add annotation</a></li>
+  <li><a href="#variation-starting-from-a-reference-proteome" id="toc-variation-starting-from-a-reference-proteome" class="nav-link" data-scroll-target="#variation-starting-from-a-reference-proteome">Variation — starting from a reference proteome</a></li>
+  <li><a href="#when-it-doesnt-work" id="toc-when-it-doesnt-work" class="nav-link" data-scroll-target="#when-it-doesnt-work">When it doesn’t work</a></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next steps</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/modules/04-blast.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -534,33 +519,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a <strong>walkthrough, not a script</strong>. The code is shown so you can read it, understand what each step does, and adapt it — the page itself does not execute anything. Expected outputs are shown as static blocks beneath the commands that produce them.</p>
-<p>To actually run it, you need NCBI BLAST+ and a machine with some memory and patience. See <a href="../modules/05-computers.html">Computing Resources</a>.</p>
+<p>This is a <strong>walkthrough, not a script</strong> — the code is here to read and adapt, and the page does not execute anything. To run it you need NCBI BLAST+ and somewhere with a bit of memory; see <a href="../modules/05-computers.html">Computing Resources</a>.</p>
 </div>
 </div>
-<section id="what-you-are-doing-and-why" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-are-doing-and-why">What you are doing and why</h2>
-<p>You have a few thousand sequences and no idea what they are. Maybe they came off a de novo assembly of a non-model organism, so there is no annotation to inherit. You want to know which genes are present.</p>
-<p>The strategy is comparison. Take each unknown sequence, search it against a database of proteins whose function <em>is</em> known, and transfer the annotation from the best match. That is the whole idea behind BLAST — Basic Local Alignment Search Tool.</p>
-<p>The database used here is <strong>UniProt/Swiss-Prot</strong>: the manually reviewed portion of UniProt. It is much smaller than the full database and much better curated, which is exactly the trade you want for annotation. A confident match to a reviewed protein is worth more than a match to something machine-annotated.</p>
-<p>By the end you will have gone from an anonymous FASTA file to a table of gene names, organisms, and Gene Ontology terms.</p>
+<section id="the-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-idea">The idea</h2>
+<p>You have a few thousand sequences and no idea what they are — off a de novo assembly of a non-model organism, say, with no annotation to inherit.</p>
+<p>The strategy is comparison: search each unknown sequence against a database of proteins whose function <em>is</em> known, and take the annotation from the best match.</p>
+<p>The database here is <strong>UniProt/Swiss-Prot</strong>, the manually reviewed part of UniProt. Smaller than the full database and far better curated — the right trade for annotation.</p>
 </section>
-<section id="which-blast-program-to-use" class="level2">
-<h2 class="anchored" data-anchor-id="which-blast-program-to-use">Which BLAST program to use</h2>
-<p>This trips people up, so settle it first. The program name tells you what is being compared:</p>
+<section id="the-three-steps" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-steps">The three steps</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A["Swiss-Prot&lt;br/&gt;FASTA"] --&gt;|makeblastdb| B["BLAST&lt;br/&gt;database"]
+  C["Your&lt;br/&gt;sequences"] --&gt; D
+  B --&gt; D["blastx"]
+  D --&gt; E["Hit table&lt;br/&gt;outfmt 6"]
+  E --&gt;|join in R| F["Gene names,&lt;br/&gt;GO terms"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>There is a script that does all of this
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://github.com/sr320/workflow-annotation"><strong>sr320/workflow-annotation</strong></a> wraps the entire workflow in one command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> blast2slim.sh <span class="at">-i</span> transcripts.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It downloads and indexes Swiss-Prot, picks <code>blastx</code> or <code>blastp</code> for you, pulls UniProt annotations over the REST API, maps GO terms to <strong>GO-Slim</strong> categories with GOATOOLS, and writes TSVs ready for downstream use. <code>--diamond</code> swaps in DIAMOND when BLAST+ is too slow for the dataset.</p>
+<p>Work through the steps below first so you know what it is doing — then use the script for real work rather than retyping this by hand.</p>
+</div>
+</div>
+<p>Everything below is those three steps. Set your BLAST+ location once if it is not already on your <code>PATH</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">BLAST</span><span class="op">=</span>/home/shared/ncbi-blast-2.11.0+/bin   <span class="co"># adjust to your machine</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$BLAST</span><span class="ex">/blastx</span> <span class="at">-version</span>                             <span class="co"># check what you actually have</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="step-1-build-the-database" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-build-the-database">Step 1 — Build the database</h2>
+<p>Download Swiss-Prot and index it. <strong>Record the release</strong> — annotation results shift between releases, so it belongs in your methods.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../data</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">RELEASE</span><span class="op">=</span>r2025_03    <span class="co"># check https://www.uniprot.org/help/release-statistics</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> uniprot_sprot.fasta.gz uniprot_sprot_<span class="va">${RELEASE}</span>.fasta.gz</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> <span class="at">-k</span> uniprot_sprot_<span class="va">${RELEASE}</span>.fasta.gz</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ../blastdb</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">makeblastdb</span> <span class="dt">\</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>-in ../data/uniprot_sprot_<span class="va">${RELEASE}</span>.fasta <span class="dt">\</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>-dbtype prot <span class="dt">\</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>-out ../blastdb/uniprot_sprot_<span class="va">${RELEASE}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Using a variable for the release is deliberate: type it by hand in both places and they will eventually disagree, leaving you with a database built from a different file than you think — and nothing will error.</p>
+<p><code>-out</code> gives a <em>prefix</em>, not a filename. Several index files are written from it, and that same prefix is what you pass to <code>-db</code>.</p>
+<hr>
+</section>
+<section id="step-2-run-blast" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-run-blast">Step 2 — Run BLAST</h2>
+<section id="pick-the-right-program" class="level3">
+<h3 class="anchored" data-anchor-id="pick-the-right-program">Pick the right program</h3>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Program</th>
 <th>Query</th>
 <th>Database</th>
-<th>Use when</th>
 </tr>
 </thead>
 <tbody>
@@ -568,166 +604,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>blastn</code></td>
 <td>nucleotide</td>
 <td>nucleotide</td>
-<td>Comparing DNA to DNA</td>
 </tr>
 <tr class="even">
 <td><code>blastp</code></td>
 <td>protein</td>
 <td>protein</td>
-<td>You already have protein sequences</td>
 </tr>
 <tr class="odd">
-<td><code>blastx</code></td>
+<td><strong><code>blastx</code></strong></td>
 <td><strong>nucleotide, translated</strong></td>
-<td>protein</td>
-<td>You have transcripts/DNA and want to know what protein they encode</td>
+<td><strong>protein</strong></td>
 </tr>
 <tr class="even">
 <td><code>tblastn</code></td>
 <td>protein</td>
 <td>nucleotide, translated</td>
-<td>Looking for a known protein in an unannotated genome</td>
 </tr>
 </tbody>
 </table>
-<p>This module uses <strong><code>blastx</code></strong> for the unknown transcripts (nucleotide query against a protein database) and <strong><code>blastp</code></strong> for the oyster case study (where NCBI already provides translated proteins).</p>
-</section>
-<section id="a-note-on-paths" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-paths">A note on paths</h2>
-<p>Commands below call <code>blastx</code>, <code>blastp</code>, and <code>makeblastdb</code> directly, assuming BLAST+ is on your <code>PATH</code>.</p>
-<p>On lab machines it may be installed somewhere specific instead. Rather than hardcoding a version into every command — which is how a tutorial silently rots — set it once:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust to wherever BLAST+ lives on your machine, then use $BLAST/ below.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">BLAST</span><span class="op">=</span>/home/shared/ncbi-blast-2.11.0+/bin</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">$BLAST</span><span class="ex">/blastx</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the version you actually have rather than assuming. Paths and version numbers in older lab notebooks are frequently stale.</p>
-<hr>
-</section>
-<section id="part-1-build-the-database" class="level1">
-<h1>Part 1 — Build the database</h1>
-<section id="download-swiss-prot" class="level2">
-<h2 class="anchored" data-anchor-id="download-swiss-prot">Download Swiss-Prot</h2>
-<p>UniProt publishes releases, and <strong>which release you used is part of your methods</strong>. Recording it is not bookkeeping for its own sake — annotation results shift between releases, and a reviewer or a future you will want to know.</p>
-<p>Set the release once and let the filenames follow from it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../data</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Record the release you are actually downloading.</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check https://www.uniprot.org/help/release-statistics for the current one.</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">RELEASE</span><span class="op">=</span>r2025_03</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> uniprot_sprot.fasta.gz uniprot_sprot_<span class="va">${RELEASE}</span>.fasta.gz</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> <span class="at">-k</span> uniprot_sprot_<span class="va">${RELEASE}</span>.fasta.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Keep the release consistent
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using a variable here is deliberate. If you type the release by hand in the download step and again in the database step, sooner or later they will disagree — you will build a database from one file while believing you built it from another, and nothing will error. Set it once, reuse it.</p>
-</div>
-</div>
-</section>
-<section id="make-the-blast-database" class="level2">
-<h2 class="anchored" data-anchor-id="make-the-blast-database">Make the BLAST database</h2>
-<p>A FASTA file is not searchable as-is. <code>makeblastdb</code> builds the index BLAST needs:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ../blastdb</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">makeblastdb</span> <span class="dt">\</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>-in ../data/uniprot_sprot_<span class="va">${RELEASE}</span>.fasta <span class="dt">\</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>-dbtype prot <span class="dt">\</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>-out ../blastdb/uniprot_sprot_<span class="va">${RELEASE}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>-dbtype prot</code> says these are protein sequences. <code>-out</code> gives a <em>prefix</em>, not a filename — several index files are written using it, and you pass that same prefix to <code>-db</code> later.</p>
-<hr>
-</section>
-</section>
-<section id="part-2-annotate-unknown-sequences" class="level1">
-<h1>Part 2 — Annotate unknown sequences</h1>
-<section id="get-the-query-sequences" class="level2">
-<h2 class="anchored" data-anchor-id="get-the-query-sequences">Get the query sequences</h2>
-<p>The example file is a de novo transcriptome assembly:</p>
+<p>Transcripts against a protein database means <strong><code>blastx</code></strong>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-k</span> https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa <span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ../data/Ab_4denovo_CLC6_a.fa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="look-at-your-input-first" class="level2">
-<h2 class="anchored" data-anchor-id="look-at-your-input-first">Look at your input first</h2>
-<p>Always. Knowing the size and shape of your input tells you whether the run will take minutes or days, and catches a truncated download before it costs you an afternoon.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-3</span> ../data/Ab_4denovo_CLC6_a.fa</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"How many sequences?"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"&gt;"</span> ../data/Ab_4denovo_CLC6_a.fa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Basic properties worth plotting for any new assembly — sequence length distribution, base composition, and CG motif counts:</p>
-<div class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="04-img/histogram-1.png" class="img-fluid figure-img" alt="Histogram of sequence lengths in the assembly"></p>
-<figcaption>Sequence length distribution</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="04-img/ACGT-1.png" class="img-fluid figure-img" alt="Bar chart of A, C, G, T base counts"></p>
-<figcaption>Base composition</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="04-img/cg-1.png" class="img-fluid figure-img" alt="Histogram of CG motif counts per sequence"></p>
-<figcaption>CG motif distribution</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Those were produced in R with <code>Biostrings</code> and <code>ggplot2</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Biostrings)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sequences <span class="ot">&lt;-</span> <span class="fu">readDNAStringSet</span>(<span class="st">"../data/Ab_4denovo_CLC6_a.fa"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sequence length distribution</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">Length =</span> <span class="fu">width</span>(sequences)) <span class="sc">|&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Length)) <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"grey"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogram of Sequence Lengths"</span>, <span class="at">x =</span> <span class="st">"Sequence Length"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Base composition</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">alphabetFrequency</span>(sequences, <span class="at">baseOnly =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Base"</span>, <span class="at">values_to =</span> <span class="st">"Count"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Base, <span class="at">y =</span> Count, <span class="at">fill =</span> Base)) <span class="sc">+</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Base Composition"</span>, <span class="at">x =</span> <span class="st">"Base"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="run-blastx" class="level2">
-<h2 class="anchored" data-anchor-id="run-blastx">Run blastx</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastx</span> <span class="dt">\</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>-query ../data/Ab_4denovo_CLC6_a.fa <span class="dt">\</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>-db ../blastdb/uniprot_sprot_<span class="va">${RELEASE}</span> <span class="dt">\</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>-out ../output/Ab_4-uniprot_blastx.tab <span class="dt">\</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>-evalue 1E-20 <span class="dt">\</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>-num_threads 20 <span class="dt">\</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>-max_target_seqs 1 <span class="dt">\</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>-outfmt 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The arguments that matter:</p>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ../data/Ab_4denovo_CLC6_a.fa</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"&gt;"</span> ../data/Ab_4denovo_CLC6_a.fa    <span class="co"># how many sequences?</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">blastx</span> <span class="dt">\</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>-query ../data/Ab_4denovo_CLC6_a.fa <span class="dt">\</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>-db ../blastdb/uniprot_sprot_<span class="va">${RELEASE}</span> <span class="dt">\</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>-out ../output/Ab_4-uniprot_blastx.tab <span class="dt">\</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>-evalue 1E-20 <span class="dt">\</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>-num_threads 20 <span class="dt">\</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>-max_target_seqs 1 <span class="dt">\</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>-outfmt 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li><strong><code>-evalue 1E-20</code></strong> — the significance cutoff. E-value is the number of hits this good you would expect <em>by chance</em> in a database this size, so smaller is stricter. <code>1E-20</code> is conservative, appropriate when you would rather miss a real gene than record a wrong one.</li>
-<li><strong><code>-num_threads 20</code></strong> — how many CPUs to use. Set this to what your machine actually has; check with <code>nproc</code>.</li>
-<li><strong><code>-max_target_seqs 1</code></strong> — keep only the best hit per query. Fine for “what is this gene,” wrong if you want to examine the hit distribution.</li>
-<li><strong><code>-outfmt 6</code></strong> — tabular output. This is the format everything downstream expects.</li>
+<li><strong><code>-evalue 1E-20</code></strong> — how many hits this good you would expect by chance. Smaller is stricter.</li>
+<li><strong><code>-num_threads 20</code></strong> — set to what the machine has (<code>nproc</code>).</li>
+<li><strong><code>-max_target_seqs 1</code></strong> — best hit only.</li>
+<li><strong><code>-outfmt 6</code></strong> — tabular; everything downstream expects this.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -735,156 +648,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Start small
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Before committing to a run over thousands of sequences, take the first few and time it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-100</span> ../data/Ab_4denovo_CLC6_a.fa <span class="op">&gt;</span> ../data/test.fa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Run the pipeline on that. You will find your path typos in 30 seconds rather than 3 hours.</p>
+<p>Run <code>head -100</code> of your input through the whole thing first. You will find path typos in 30 seconds rather than 3 hours.</p>
 </div>
 </div>
 </section>
-<section id="check-the-output" class="level2">
-<h2 class="anchored" data-anchor-id="check-the-output">Check the output</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-2</span> ../output/Ab_4-uniprot_blastx.tab</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Number of hits"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> ../output/Ab_4-uniprot_blastx.tab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The 12 columns of <code>-outfmt 6</code>, in order:</p>
+<section id="read-the-output" class="level3">
+<h3 class="anchored" data-anchor-id="read-the-output">Read the output</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-2</span> ../output/Ab_4-uniprot_blastx.tab</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> ../output/Ab_4-uniprot_blastx.tab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>There is no header row, so you have to know the 12 columns:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>#</th>
-<th>Column</th>
-<th>Meaning</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7–8</th>
+<th>9–10</th>
+<th>11</th>
+<th>12</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td></td>
 <td><code>qseqid</code></td>
-<td>Query sequence ID</td>
-</tr>
-<tr class="even">
-<td>2</td>
 <td><code>sseqid</code></td>
-<td>Subject (database hit) ID</td>
-</tr>
-<tr class="odd">
-<td>3</td>
 <td><code>pident</code></td>
-<td>Percent identical</td>
-</tr>
-<tr class="even">
-<td>4</td>
 <td><code>length</code></td>
-<td>Alignment length</td>
-</tr>
-<tr class="odd">
-<td>5</td>
 <td><code>mismatch</code></td>
-<td>Mismatches</td>
-</tr>
-<tr class="even">
-<td>6</td>
 <td><code>gapopen</code></td>
-<td>Gap openings</td>
-</tr>
-<tr class="odd">
-<td>7–8</td>
-<td><code>qstart</code>, <code>qend</code></td>
-<td>Alignment range on the query</td>
-</tr>
-<tr class="even">
-<td>9–10</td>
-<td><code>sstart</code>, <code>send</code></td>
-<td>Alignment range on the subject</td>
-</tr>
-<tr class="odd">
-<td>11</td>
+<td><code>qstart</code> <code>qend</code></td>
+<td><code>sstart</code> <code>send</code></td>
 <td><code>evalue</code></td>
-<td>E-value</td>
-</tr>
-<tr class="even">
-<td>12</td>
 <td><code>bitscore</code></td>
-<td>Bit score</td>
 </tr>
 </tbody>
 </table>
-<p>There is no header row in the file — you have to know this table.</p>
-<p>Note that the hit count is normally <strong>lower</strong> than your sequence count. Sequences with no match above the E-value threshold simply produce no line. That is a result, not a failure: plenty of transcripts in a non-model assembly have no reviewed homolog.</p>
-</section>
-<section id="split-the-uniprot-identifier" class="level2">
-<h2 class="anchored" data-anchor-id="split-the-uniprot-identifier">Split the UniProt identifier</h2>
-<p>Swiss-Prot IDs arrive as <code>sp|P12345|NAME_SPECIES</code>. The middle field is the accession you need for joining:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="st">'|'</span> <span class="st">'\t'</span> <span class="op">&lt;</span> ../output/Ab_4-uniprot_blastx.tab <span class="dt">\</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ../output/Ab_4-uniprot_blastx_sep.tab</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-1</span> ../output/Ab_4-uniprot_blastx_sep.tab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This turns column 2 into three columns, so everything after it shifts right by two. The accession lands in <strong>column 3</strong>, and the E-value that was column 11 is now column 13.</p>
+<p>Expect <strong>fewer hits than sequences</strong>. Anything without a match above threshold produces no line — normal for a non-model assembly, not a failure.</p>
 <hr>
 </section>
 </section>
-<section id="part-3-join-annotations-in-r" class="level1">
-<h1>Part 3 — Join annotations in R</h1>
-<p>BLAST told you <em>which</em> protein each sequence matches. It did not tell you what that protein does. For that, join to a UniProt table carrying protein names, organisms, and GO terms.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>bltabl <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../output/Ab_4-uniprot_blastx_sep.tab"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>spgo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab"</span>,</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>annot_tab <span class="ot">&lt;-</span> <span class="fu">left_join</span>(bltabl, spgo, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"V3"</span> <span class="ot">=</span> <span class="st">"Entry"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(V1, V3, V13,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         Protein.names, Organism,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>         Gene.Ontology..biological.process., Gene.Ontology.IDs)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Write it out — later steps read this file back in.</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(annot_tab, <span class="st">"../output/blast_annot_go.tab"</span>,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(<span class="fu">head</span>(annot_tab, <span class="dv">100</span>), <span class="at">options =</span> <span class="fu">list</span>(<span class="at">scrollX =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>V3</code> is the UniProt accession you exposed with <code>tr</code>, and <code>V13</code> is the E-value after the shift. A <code>left_join</code> keeps every BLAST hit even where the UniProt table has no matching row, so unmatched entries appear as <code>NA</code> rather than vanishing — which is what you want, because a silently shrinking table is the easiest way to lose data without noticing.</p>
-<section id="what-did-you-match" class="level2">
-<h2 class="anchored" data-anchor-id="what-did-you-match">What did you match?</h2>
-<p>A quick sanity check — the organisms behind your hits:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>annot_tab <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Organism, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Organism, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 10 species hits"</span>, <span class="at">x =</span> <span class="st">"Organism"</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Expect a lot of human, mouse, and other well-studied models. That is a property of Swiss-Prot, not a discovery about your animal — reviewed proteins skew heavily toward organisms people study intensively. Do not over-read it.</p>
-</section>
-<section id="most-common-biological-processes" class="level2">
-<h2 class="anchored" data-anchor-id="most-common-biological-processes">Most common biological processes</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>annot_tab <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_rows</span>(Gene.Ontology..biological.process., <span class="at">sep =</span> <span class="st">";"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">process =</span> <span class="fu">str_trim</span>(Gene.Ontology..biological.process.)) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(process), process <span class="sc">!=</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(process, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">20</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(process, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"darkseagreen"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"20 most common biological processes"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="step-3-add-annotation" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-add-annotation">Step 3 — Add annotation</h2>
+<p>BLAST told you which protein each sequence matches, not what it does. Join to a UniProt table for that.</p>
+<p>Swiss-Prot IDs arrive as <code>sp|P12345|NAME_SPECIES</code>; split on the pipe to expose the accession:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="st">'|'</span> <span class="st">'\t'</span> <span class="op">&lt;</span> ../output/Ab_4-uniprot_blastx.tab <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ../output/Ab_4-uniprot_blastx_sep.tab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>That turns column 2 into three, shifting everything after it right by two — accession lands in <strong>column 3</strong>, E-value moves from 11 to <strong>13</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bltabl <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../output/Ab_4-uniprot_blastx_sep.tab"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>spgo   <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>annot_tab <span class="ot">&lt;-</span> <span class="fu">left_join</span>(bltabl, spgo, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"V3"</span> <span class="ot">=</span> <span class="st">"Entry"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(V1, V3, V13,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>         Protein.names, Organism,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>         Gene.Ontology..biological.process., Gene.Ontology.IDs)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(annot_tab, <span class="st">"../output/blast_annot_go.tab"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>left_join</code> keeps every BLAST hit even where UniProt has no matching row, so misses show as <code>NA</code> rather than disappearing — a silently shrinking table is the easiest way to lose data without noticing.</p>
+<p>That is the workflow. <code>annot_tab</code> has a gene name, organism, and GO terms for every sequence that matched.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most hits will be to human, mouse, and other heavily studied organisms. That is a property of Swiss-Prot, not a discovery about your animal.</p>
+</div>
+</div>
 <hr>
 </section>
-</section>
-<section id="part-4-case-study-the-eastern-oyster" class="level1">
-<h1>Part 4 — Case study: the eastern oyster</h1>
-<p>The workflow above starts from unknown sequences. More often you are working in a species that already has a reference, and the goal is to attach GO terms to an existing gene set so you can run functional enrichment later.</p>
-<section id="choosing-which-file-to-annotate" class="level2">
-<h2 class="anchored" data-anchor-id="choosing-which-file-to-annotate">Choosing which file to annotate</h2>
-<p>This is the step people get wrong, and it is worth slowing down for.</p>
-<p><strong>Work backwards from your identifiers.</strong> Your count matrix already names genes in some particular way. Whatever you annotate has to produce identifiers that match, or the join at the end silently fails.</p>
-<p>For a <em>Crassostrea virginica</em> count matrix built with HISAT2/StringTie against the RefSeq GFF, genes are named like <code>gene-LOC111099033</code>. The file that lets you recover those IDs is <code>translated_cds.faa</code> — its FASTA headers carry the <code>[gene=...]</code> tag.</p>
+<section id="variation-starting-from-a-reference-proteome" class="level2">
+<h2 class="anchored" data-anchor-id="variation-starting-from-a-reference-proteome">Variation — starting from a reference proteome</h2>
+<p>More often you are in a species that already has a reference, and the goal is to attach GO terms to an existing gene set for enrichment testing later. Same three steps, two differences.</p>
+<p><strong>Work backwards from your identifiers.</strong> Whatever you annotate must produce IDs matching your count matrix, or the final join silently fails. For a <em>Crassostrea virginica</em> matrix built against the RefSeq GFF, genes look like <code>gene-LOC111099033</code>, and the file carrying those in its headers is <code>translated_cds.faa</code>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -895,107 +761,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Older lab notebooks — and earlier versions of this module — used <code>GCF_002022765.2</code> (<em>C_virginica-3.0</em>). <strong>That assembly is now suppressed in RefSeq.</strong></p>
-<p>The current <em>C. virginica</em> reference is <code>GCF_053477285.1</code> (ASM5347728v1, chromosome-level, ~529 Mb). Use it for new work.</p>
-<p>If you are reproducing an older analysis, you may still need the old assembly — but know that you are doing that deliberately, and say so in your methods. See <a href="../biology/01-bivalves.html">Bivalves</a> for more on this species.</p>
+<p>Older notebooks use <code>GCF_002022765.2</code> (<em>C_virginica-3.0</em>), which is now <strong>suppressed in RefSeq</strong>. The current reference is <code>GCF_053477285.1</code> (ASM5347728v1). See <a href="../biology/01-bivalves.html">Bivalves</a>.</p>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../data</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="va">ASM</span><span class="op">=</span>GCF_053477285.1_ASM5347728v1</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/<span class="va">${ASM}</span>/<span class="va">${ASM}</span>_translated_cds.faa.gz</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> <span class="at">-k</span> <span class="va">${ASM}</span>_translated_cds.faa.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-2</span> ../data/<span class="va">${ASM}</span>_translated_cds.faa</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"number of sequences"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"&gt;"</span> ../data/<span class="va">${ASM}</span>_translated_cds.faa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A header looks like this — note the <code>[gene=...]</code> field, which is the part you need:</p>
-<pre><code>&gt;lcl|NC_035780.1_prot_XP_022327646.1_1 [gene=LOC111126949] [db_xref=GeneID:111126949] [protein=UNC5C-like protein] [protein_id=XP_022327646.1] [location=join(30535..31557,31736..31887,31977..32565,32959..33204)] [gbkey=CDS]
-MTEVCYIWASSSTTVVICGIFFIVWRCFISIKKRASPLHGSSQQVCQTCQIEGHDFGEFQLSCRRQNTNVGYDLQGRRSD</code></pre>
-</section>
-<section id="run-blastp" class="level2">
-<h2 class="anchored" data-anchor-id="run-blastp">Run blastp</h2>
-<p>These are already proteins, so this is <code>blastp</code> rather than <code>blastx</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastp</span> <span class="dt">\</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>-query ../data/<span class="va">${ASM}</span>_translated_cds.faa <span class="dt">\</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>-db ../blastdb/uniprot_sprot_<span class="va">${RELEASE}</span> <span class="dt">\</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>-out ../output/Cvir_transcds-uniprot_blastp.tab <span class="dt">\</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>-evalue 1E-20 <span class="dt">\</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>-num_threads 40 <span class="dt">\</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>-max_target_seqs 1 <span class="dt">\</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>-outfmt 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This is a much larger job than Part 2 — tens of thousands of proteins. Run it somewhere it can finish.</p>
-</section>
-<section id="link-gene-ids-to-swiss-prot-accessions" class="level2">
-<h2 class="anchored" data-anchor-id="link-gene-ids-to-swiss-prot-accessions">Link gene IDs to Swiss-Prot accessions</h2>
-<p>The BLAST output identifies each query by the full <code>lcl|...</code> header ID, which does not contain the gene name. The gene name lives in the <em>rest</em> of the header. So convert the FASTA to a table and join on that ID:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'/^&gt;/ {if (seq) print id "\t" desc "\t" seq; \</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="st">           split(substr($0,2), a, " "); id = a[1]; \</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="st">           desc = substr($0, 2 + length(id) + 1); seq = ""; next} \</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="st">     {gsub(/ /, ""); seq = seq $0} \</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="st">     END {if (seq) print id "\t" desc "\t" seq}'</span> <span class="dt">\</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  ../data/<span class="va">${ASM}</span>_translated_cds.faa <span class="dt">\</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">&gt;</span> ../data/<span class="va">${ASM}</span>_translated_cds.tab</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-1</span> ../data/<span class="va">${ASM}</span>_translated_cds.tab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>blast <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../output/Cvir_transcds-uniprot_blastp.tab"</span>,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>cdsftab <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(<span class="st">"../data/"</span>, ASM, <span class="st">"_translated_cds.tab"</span>),</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="cn">NULL</span>)</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>g.spid <span class="ot">&lt;-</span> <span class="fu">left_join</span>(blast, cdsftab, <span class="at">by =</span> <span class="st">"V1"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gene =</span> <span class="fu">str_extract</span>(V2.y, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">[gene=)</span><span class="sc">\\</span><span class="st">w+"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gene, V11, V2.x) <span class="sc">|&gt;</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SPID =</span> <span class="fu">str_extract</span>(V2.x, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">|)[^</span><span class="sc">\\</span><span class="st">|]*(?=</span><span class="sc">\\</span><span class="st">|)"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(gene, SPID, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Step by step:</p>
-<ol type="1">
-<li><strong><code>left_join(blast, cdsftab, by = "V1")</code></strong> — both tables key on the sequence ID, so this attaches each BLAST hit to its original FASTA header. Columns present in both get suffixed: <code>V2.x</code> from <code>blast</code> (the Swiss-Prot hit), <code>V2.y</code> from <code>cdsftab</code> (the header description).</li>
-<li><strong><code>str_extract(V2.y, "(?&lt;=\\[gene=)\\w+")</code></strong> — pulls the gene name out of the header. The <code>(?&lt;=...)</code> is a lookbehind: match word characters <em>preceded by</em> <code>[gene=</code>, without capturing that text itself.</li>
-<li><strong><code>select(gene, V11, V2.x)</code></strong> — keep the gene name, the E-value, and the hit ID.</li>
-<li><strong><code>str_extract(V2.x, "(?&lt;=\\|)[^\\|]*(?=\\|)")</code></strong> — pull the accession from <code>sp|P12345|NAME_SPECIES</code> by matching what sits between two pipes. Same idea as the <code>tr</code> trick in Part 2, done in R.</li>
-<li><strong><code>distinct(gene, SPID, .keep_all = TRUE)</code></strong> — one row per gene–accession pair. A gene with several transcripts would otherwise appear repeatedly.</li>
-</ol>
-</section>
-<section id="get-go-terms" class="level2">
-<h2 class="anchored" data-anchor-id="get-go-terms">Get GO terms</h2>
-<p>Write out the accessions:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>g.spid <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(SPID) <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(<span class="at">file =</span> <span class="st">"../output/SPID.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>,</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then map them to GO terms at <a href="https://www.uniprot.org" class="uri">https://www.uniprot.org</a> using <strong>Retrieve/ID mapping</strong>. Paste or upload <code>SPID.txt</code>, map from UniProtKB_AC-ID to UniProtKB, then use <strong>Customize columns</strong> to include Gene Ontology IDs before downloading as TSV.</p>
-<p>Finally, join back so your gene IDs carry GO terms:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>go <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../output/uniprotGO.tab"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>,</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="cn">NULL</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(g.spid, go, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"SPID"</span> <span class="ot">=</span> <span class="st">"Entry"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gene, Gene.Ontology.IDs) <span class="sc">|&gt;</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(<span class="at">file =</span> <span class="st">"../output/geneGO.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>geneGO.txt</code> maps each <code>LOC</code> gene ID to its GO terms — the input a functional enrichment test expects.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../data</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">ASM</span><span class="op">=</span>GCF_053477285.1_ASM5347728v1</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/<span class="va">${ASM}</span>/<span class="va">${ASM}</span>_translated_cds.faa.gz</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> <span class="at">-k</span> <span class="va">${ASM}</span>_translated_cds.faa.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>These are already proteins, so use <code>blastp</code>:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastp</span> <span class="dt">\</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>-query ../data/<span class="va">${ASM}</span>_translated_cds.faa <span class="dt">\</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>-db ../blastdb/uniprot_sprot_<span class="va">${RELEASE}</span> <span class="dt">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>-out ../output/Cvir_transcds-uniprot_blastp.tab <span class="dt">\</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>-evalue 1E-20 <span class="at">-num_threads</span> 40 <span class="at">-max_target_seqs</span> 1 <span class="at">-outfmt</span> 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The gene ID lives in the FASTA header (<code>[gene=LOC111126949]</code>), not in the BLAST output, so pull it out and pair it with the Swiss-Prot accession:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>g.spid <span class="ot">&lt;-</span> <span class="fu">left_join</span>(blast, cdsftab, <span class="at">by =</span> <span class="st">"V1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gene =</span> <span class="fu">str_extract</span>(V2.y, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">[gene=)</span><span class="sc">\\</span><span class="st">w+"</span>),          <span class="co"># from the header</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">SPID =</span> <span class="fu">str_extract</span>(V2.x, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">|)[^</span><span class="sc">\\</span><span class="st">|]*(?=</span><span class="sc">\\</span><span class="st">|)"</span>)) <span class="sc">|&gt;</span>  <span class="co"># from sp|P12345|NAME</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(gene, SPID)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(g.spid[<span class="st">"SPID"</span>], <span class="st">"../output/SPID.txt"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then map those accessions to GO terms at <a href="https://www.uniprot.org" class="uri">https://www.uniprot.org</a> via <strong>Retrieve/ID mapping</strong>, adding Gene Ontology IDs under <strong>Customize columns</strong>, and join the result back on <code>SPID</code>. The output — each <code>LOC</code> gene with its GO terms — is what an enrichment test expects.</p>
 <hr>
 </section>
-<section id="where-things-commonly-go-wrong" class="level2">
-<h2 class="anchored" data-anchor-id="where-things-commonly-go-wrong">Where things commonly go wrong</h2>
-<p><strong>Empty output file.</strong> Usually the <code>-db</code> prefix does not match what <code>makeblastdb -out</code> wrote, or the path is wrong relative to where you are running. BLAST will not always complain loudly.</p>
-<p><strong>Far fewer hits than sequences.</strong> Often correct. Sequences with no homolog above threshold produce no line. Loosen <code>-evalue</code> only if you have a reason, and know you are trading precision for recall.</p>
-<p><strong>The join produces all <code>NA</code>.</strong> The keys do not match. Print <code>head()</code> of both key columns and look at them. Most often the identifier still has decoration — a <code>sp|</code> prefix, a version suffix — that has not been stripped.</p>
-<p><strong>Row count grows after a join.</strong> A one-to-many match. Check for duplicate keys on the right-hand table before joining.</p>
-<p><strong>It has been running for hours.</strong> Check the size of the input and the thread count. Then remember the <code>head -100</code> test from earlier.</p>
+<section id="when-it-doesnt-work" class="level2">
+<h2 class="anchored" data-anchor-id="when-it-doesnt-work">When it doesn’t work</h2>
+<ul>
+<li><strong>Empty output</strong> — the <code>-db</code> prefix does not match what <code>makeblastdb -out</code> wrote, or the path is wrong for where you are running.</li>
+<li><strong>Join gives all <code>NA</code></strong> — keys do not match. <code>head()</code> both key columns; usually an identifier still has a <code>sp|</code> prefix or version suffix attached.</li>
+<li><strong>Row count grows after a join</strong> — duplicate keys on the right-hand table.</li>
+<li><strong>Running for hours</strong> — check input size and <code>-num_threads</code>, then go back to the <code>head -100</code> test.</li>
+</ul>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
-<p>With <code>geneGO.txt</code> you can run functional enrichment on a gene set — for instance, the differentially expressed genes from an experiment — and ask which biological processes are over-represented.</p>
-<p>For background on the animal behind the case study, see <a href="../biology/01-bivalves.html">Bivalves</a>. For where to run jobs this size, see <a href="../modules/05-computers.html">Computing Resources</a>.</p>
+<p>With gene-to-GO mappings you can run functional enrichment on a gene set — the differentially expressed genes from an experiment, for instance — and ask which biological processes are over-represented.</p>
+<p>Now that you know what each step does, use <a href="https://github.com/sr320/workflow-annotation"><strong>workflow-annotation</strong></a> rather than assembling this by hand each time. It also produces GO-Slim terms, which the manual workflow above does not.</p>
+<p>For the animal behind the example, see <a href="../biology/01-bivalves.html">Bivalves</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
