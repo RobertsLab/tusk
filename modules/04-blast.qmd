@@ -1,186 +1,167 @@
 ---
 title: "NCBI Blast"
-subtitle: "Taking a set of unknown sequence files and annotating them"
+subtitle: "Taking a set of unknown sequences and working out what genes they are"
 
 format:
   html:
-    code-fold: false
-    code-tools: true
     code-copy: true
-    highlight-style: github
     code-overflow: wrap
+    highlight-style: github
 ---
 
-# TLDR (basics)
+::: callout-note
+## How to read this module
+This is a **walkthrough, not a script**. The code is shown so you can read it, understand what each step does, and adapt it — the page itself does not execute anything. Expected outputs are shown as static blocks beneath the commands that produce them.
 
-```         
+To actually run it, you need NCBI BLAST+ and a machine with some memory and patience. See [Computing Resources](05-computers.qmd).
+:::
 
-/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \
--in ../data/uniprot_sprot_r2023_01.fasta \
--dbtype prot \
--out ../blastdb/uniprot_sprot_r2023_01
+## What you are doing and why
+
+You have a few thousand sequences and no idea what they are. Maybe they came off a de novo assembly of a non-model organism, so there is no annotation to inherit. You want to know which genes are present.
+
+The strategy is comparison. Take each unknown sequence, search it against a database of proteins whose function *is* known, and transfer the annotation from the best match. That is the whole idea behind BLAST — Basic Local Alignment Search Tool.
+
+The database used here is **UniProt/Swiss-Prot**: the manually reviewed portion of UniProt. It is much smaller than the full database and much better curated, which is exactly the trade you want for annotation. A confident match to a reviewed protein is worth more than a match to something machine-annotated.
+
+By the end you will have gone from an anonymous FASTA file to a table of gene names, organisms, and Gene Ontology terms.
+
+## Which BLAST program to use
+
+This trips people up, so settle it first. The program name tells you what is being compared:
+
+| Program | Query | Database | Use when |
+|---|---|---|---|
+| `blastn` | nucleotide | nucleotide | Comparing DNA to DNA |
+| `blastp` | protein | protein | You already have protein sequences |
+| `blastx` | **nucleotide, translated** | protein | You have transcripts/DNA and want to know what protein they encode |
+| `tblastn` | protein | nucleotide, translated | Looking for a known protein in an unannotated genome |
+
+This module uses **`blastx`** for the unknown transcripts (nucleotide query against a protein database) and **`blastp`** for the oyster case study (where NCBI already provides translated proteins).
+
+## A note on paths
+
+Commands below call `blastx`, `blastp`, and `makeblastdb` directly, assuming BLAST+ is on your `PATH`.
+
+On lab machines it may be installed somewhere specific instead. Rather than hardcoding a version into every command — which is how a tutorial silently rots — set it once:
+
+``` bash
+# Adjust to wherever BLAST+ lives on your machine, then use $BLAST/ below.
+export BLAST=/home/shared/ncbi-blast-2.11.0+/bin
+
+$BLAST/blastx -version
 ```
 
-```         
-/home/shared/ncbi-blast-2.11.0+/bin/blastx \
--query ../data/Ab_4denovo_CLC6_a.fa \
--db ../blastdb/uniprot_sprot_r2023_01 \
--out ../output/Ab_4-uniprot_blastx.tab \
--evalue 1E-20 \
--num_threads 20 \
--max_target_seqs 1 \
--outfmt 6
-```
-
-# 546 Tutorial
-
-For the first task you will take an unknown multi-fasta file and annotate it using blast. You are welcome to do this in terminal, Rstudio, or jupyter. My recommendation, and how I will demonstrate is using Rmarkdown. Once you have have your project structured, we will download software, databases, a fasta file and run the code.
-
-```{r setup, include = FALSE}
-library(knitr)
-library(tidyverse)
-library(kableExtra)
-library(DT)
-#library(Biostrings)
-knitr::opts_chunk$set(
-  echo = TRUE,         # Display code chunks
-  eval = FALSE,         # Evaluate code chunks
-  warning = FALSE,     # Hide warnings
-  message = FALSE,     # Hide messages
-  fig.width = 6,       # Set plot width in inches
-  fig.height = 4,      # Set plot height in inches
-  fig.align = "center" # Align plots to the center
-)
-```
-
-This is product offers a workflow to take a few thousand unidentified sequences and provide a better understanding of what genes are present. This will be accomplished through using Blast and protein sequenes from UniProt/Swiss-prot.
+Check the version you actually have rather than assuming. Paths and version numbers in older lab notebooks are frequently stale.
 
 ------------------------------------------------------------------------
 
-A few weeks ago I perfected software installation, so I will not demonstrate that here. Please see this notebook for more.
+# Part 1 — Build the database
 
-## Database Creation
+## Download Swiss-Prot
 
-### Obtain Fasta (UniProt/Swiss-Prot)
+UniProt publishes releases, and **which release you used is part of your methods**. Recording it is not bookkeeping for its own sake — annotation results shift between releases, and a reviewer or a future you will want to know.
 
-This is from here picur reviewe sequences I named based on the identify of the database given
+Set the release once and let the filenames follow from it:
 
-```{r time, eval=FALSE, echo=TRUE}
-current_time <- format(Sys.time(), "%B %d, %Y %H:%M:%S")
-cat("current date and time is ", current_time)
-```
-
-```{r download-data, engine='bash'}
+``` bash
 cd ../data
+
+# Record the release you are actually downloading.
+# Check https://www.uniprot.org/help/release-statistics for the current one.
+RELEASE=r2025_03
+
 curl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
-mv uniprot_sprot.fasta.gz uniprot_sprot_r2023_04.fasta.gz
-gunzip -k uniprot_sprot_r2023_04.fasta.gz
+
+mv uniprot_sprot.fasta.gz uniprot_sprot_${RELEASE}.fasta.gz
+gunzip -k uniprot_sprot_${RELEASE}.fasta.gz
 ```
 
-### Making the database
+::: callout-warning
+## Keep the release consistent
+Using a variable here is deliberate. If you type the release by hand in the download step and again in the database step, sooner or later they will disagree — you will build a database from one file while believing you built it from another, and nothing will error. Set it once, reuse it.
+:::
 
-```{r make-blastdb, engine='bash'}
-mkdir ../blastdb
-/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \
--in ../data/uniprot_sprot_r2023_01.fasta \
+## Make the BLAST database
+
+A FASTA file is not searchable as-is. `makeblastdb` builds the index BLAST needs:
+
+``` bash
+mkdir -p ../blastdb
+
+makeblastdb \
+-in ../data/uniprot_sprot_${RELEASE}.fasta \
 -dbtype prot \
--out ../blastdb/uniprot_sprot_r2023_01
+-out ../blastdb/uniprot_sprot_${RELEASE}
 ```
 
-## Getting the query fasta file
+`-dbtype prot` says these are protein sequences. `-out` gives a *prefix*, not a filename — several index files are written using it, and you pass that same prefix to `-db` later.
 
-```{r download-query, engine='bash', eval=FALSE}
-curl https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \
--k \
+------------------------------------------------------------------------
+
+# Part 2 — Annotate unknown sequences
+
+## Get the query sequences
+
+The example file is a de novo transcriptome assembly:
+
+``` bash
+curl -k https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \
 > ../data/Ab_4denovo_CLC6_a.fa
 ```
 
-Exploring what fasta file
+## Look at your input first
 
-```{r view-query, eval = FALSE, engine='bash'}
+Always. Knowing the size and shape of your input tells you whether the run will take minutes or days, and catches a truncated download before it costs you an afternoon.
+
+``` bash
 head -3 ../data/Ab_4denovo_CLC6_a.fa
-```
 
-```{r view2-query, engine='bash', eval=FALSE}
-echo "How many sequences are there?"
+echo "How many sequences?"
 grep -c ">" ../data/Ab_4denovo_CLC6_a.fa
 ```
 
-```{r histogram, eval=FALSE}
-# Read FASTA file
-fasta_file <- "../data/Ab_4denovo_CLC6_a.fa"  # Replace with the name of your FASTA file
-sequences <- readDNAStringSet(fasta_file)
+Basic properties worth plotting for any new assembly — sequence length distribution, base composition, and CG motif counts:
 
-# Calculate sequence lengths
-sequence_lengths <- width(sequences)
+::: {layout-ncol="3"}
+![Sequence length distribution](04-img/histogram-1.png){fig-alt="Histogram of sequence lengths in the assembly"}
 
-# Create a data frame
-sequence_lengths_df <- data.frame(Length = sequence_lengths)
+![Base composition](04-img/ACGT-1.png){fig-alt="Bar chart of A, C, G, T base counts"}
 
-# Plot histogram using ggplot2
-ggplot(sequence_lengths_df, aes(x = Length)) +
+![CG motif distribution](04-img/cg-1.png){fig-alt="Histogram of CG motif counts per sequence"}
+:::
+
+Those were produced in R with `Biostrings` and `ggplot2`:
+
+``` r
+library(Biostrings)
+library(tidyverse)
+
+sequences <- readDNAStringSet("../data/Ab_4denovo_CLC6_a.fa")
+
+# Sequence length distribution
+tibble(Length = width(sequences)) |>
+  ggplot(aes(x = Length)) +
   geom_histogram(binwidth = 1, color = "grey", fill = "blue", alpha = 0.75) +
-  labs(title = "Histogram of Sequence Lengths",
-       x = "Sequence Length",
-       y = "Frequency") +
+  labs(title = "Histogram of Sequence Lengths", x = "Sequence Length", y = "Frequency") +
+  theme_minimal()
+
+# Base composition
+alphabetFrequency(sequences, baseOnly = TRUE) |>
+  as_tibble() |>
+  pivot_longer(everything(), names_to = "Base", values_to = "Count") |>
+  ggplot(aes(x = Base, y = Count, fill = Base)) +
+  geom_col(color = "black") +
+  labs(title = "Base Composition", x = "Base", y = "Count") +
   theme_minimal()
 ```
 
-```{r ACGT, eval=FALSE}
+## Run blastx
 
-# Read FASTA file
-fasta_file <- "../data/Ab_4denovo_CLC6_a.fa"
-sequences <- readDNAStringSet(fasta_file)
-
-# Calculate base composition
-base_composition <- alphabetFrequency(sequences, baseOnly = TRUE)
-
-# Convert to data frame and reshape for ggplot2
-base_composition_df <- as.data.frame(base_composition)
-base_composition_df$ID <- rownames(base_composition_df)
-base_composition_melted <- reshape2::melt(base_composition_df, id.vars = "ID", variable.name = "Base", value.name = "Count")
-
-# Plot base composition bar chart using ggplot2
-ggplot(base_composition_melted, aes(x = Base, y = Count, fill = Base)) +
-  geom_bar(stat = "identity", position = "dodge", color = "black") +
-  labs(title = "Base Composition",
-       x = "Base",
-       y = "Count") +
-  theme_minimal() +
-  scale_fill_manual(values = c("A" = "green", "C" = "blue", "G" = "yellow", "T" = "red"))
-```
-
-```{r cg, eval=FALSE}
-# Read FASTA file
-fasta_file <- "../data/Ab_4denovo_CLC6_a.fa"
-sequences <- readDNAStringSet(fasta_file)
-
-# Count CG motifs in each sequence
-count_cg_motifs <- function(sequence) {
-  cg_motif <- "CG"
-  return(length(gregexpr(cg_motif, sequence, fixed = TRUE)[[1]]))
-}
-
-cg_motifs_counts <- sapply(sequences, count_cg_motifs)
-
-# Create a data frame
-cg_motifs_counts_df <- data.frame(CG_Count = cg_motifs_counts)
-
-# Plot CG motifs distribution using ggplot2
-ggplot(cg_motifs_counts_df, aes(x = CG_Count)) +
-  geom_histogram(binwidth = 1, color = "black", fill = "blue", alpha = 0.75) +
-  labs(title = "Distribution of CG Motifs",
-       x = "Number of CG Motifs",
-       y = "Frequency") +
-  theme_minimal()
-```
-
-## Running Blastx
-
-```{r blastx, engine='bash'}
-~/applications/ncbi-blast-2.13.0+/bin/blastx \
+``` bash
+blastx \
 -query ../data/Ab_4denovo_CLC6_a.fa \
--db ../blastdb/uniprot_sprot_r2023_01 \
+-db ../blastdb/uniprot_sprot_${RELEASE} \
 -out ../output/Ab_4-uniprot_blastx.tab \
 -evalue 1E-20 \
 -num_threads 20 \
@@ -188,298 +169,276 @@ ggplot(cg_motifs_counts_df, aes(x = CG_Count)) +
 -outfmt 6
 ```
 
-```{r blast-look, engine='bash'}
-head -2 ../output/Ab_4-uniprot_blastx.tab
+The arguments that matter:
+
+- **`-evalue 1E-20`** — the significance cutoff. E-value is the number of hits this good you would expect *by chance* in a database this size, so smaller is stricter. `1E-20` is conservative, appropriate when you would rather miss a real gene than record a wrong one.
+- **`-num_threads 20`** — how many CPUs to use. Set this to what your machine actually has; check with `nproc`.
+- **`-max_target_seqs 1`** — keep only the best hit per query. Fine for "what is this gene," wrong if you want to examine the hit distribution.
+- **`-outfmt 6`** — tabular output. This is the format everything downstream expects.
+
+::: callout-tip
+## Start small
+Before committing to a run over thousands of sequences, take the first few and time it:
+
+``` bash
+head -100 ../data/Ab_4denovo_CLC6_a.fa > ../data/test.fa
 ```
 
-```{r blast-look2, engine='bash'}
-echo "Number of lines in output"
+Run the pipeline on that. You will find your path typos in 30 seconds rather than 3 hours.
+:::
+
+## Check the output
+
+``` bash
+head -2 ../output/Ab_4-uniprot_blastx.tab
+
+echo "Number of hits"
 wc -l ../output/Ab_4-uniprot_blastx.tab
 ```
 
-## Joining Blast table with annoations.
+The 12 columns of `-outfmt 6`, in order:
 
-### Prepping Blast table for easy join
+| # | Column | Meaning |
+|---|---|---|
+| 1 | `qseqid` | Query sequence ID |
+| 2 | `sseqid` | Subject (database hit) ID |
+| 3 | `pident` | Percent identical |
+| 4 | `length` | Alignment length |
+| 5 | `mismatch` | Mismatches |
+| 6 | `gapopen` | Gap openings |
+| 7–8 | `qstart`, `qend` | Alignment range on the query |
+| 9–10 | `sstart`, `send` | Alignment range on the subject |
+| 11 | `evalue` | E-value |
+| 12 | `bitscore` | Bit score |
 
-```{r separate, engine='bash'}
+There is no header row in the file — you have to know this table.
+
+Note that the hit count is normally **lower** than your sequence count. Sequences with no match above the E-value threshold simply produce no line. That is a result, not a failure: plenty of transcripts in a non-model assembly have no reviewed homolog.
+
+## Split the UniProt identifier
+
+Swiss-Prot IDs arrive as `sp|P12345|NAME_SPECIES`. The middle field is the accession you need for joining:
+
+``` bash
 tr '|' '\t' < ../output/Ab_4-uniprot_blastx.tab \
 > ../output/Ab_4-uniprot_blastx_sep.tab
 
 head -1 ../output/Ab_4-uniprot_blastx_sep.tab
-
 ```
 
-## Could do some cool stuff in R here reading in table
+This turns column 2 into three columns, so everything after it shifts right by two. The accession lands in **column 3**, and the E-value that was column 11 is now column 13.
 
-```{r read-data}
-bltabl <- read.csv("../output/Ab_4-uniprot_blastx_sep.tab", sep = '\t', header = FALSE)
+------------------------------------------------------------------------
 
-spgo <- read.csv("https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab", sep = '\t', header = TRUE)
+# Part 3 — Join annotations in R
+
+BLAST told you *which* protein each sequence matches. It did not tell you what that protein does. For that, join to a UniProt table carrying protein names, organisms, and GO terms.
+
+``` r
+library(tidyverse)
+library(DT)
+
+bltabl <- read.csv("../output/Ab_4-uniprot_blastx_sep.tab", sep = "\t", header = FALSE)
+
+spgo <- read.csv("https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab",
+                 sep = "\t", header = TRUE)
 ```
 
-```{r}
-datatable(head(bltabl), options = list(scrollX = TRUE, scrollY = "400px", scrollCollapse = TRUE, paging = FALSE))
+``` r
+annot_tab <- left_join(bltabl, spgo, by = c("V3" = "Entry")) |>
+  select(V1, V3, V13,
+         Protein.names, Organism,
+         Gene.Ontology..biological.process., Gene.Ontology.IDs)
+
+# Write it out — later steps read this file back in.
+write.table(annot_tab, "../output/blast_annot_go.tab",
+            sep = "\t", row.names = FALSE, quote = FALSE)
+
+datatable(head(annot_tab, 100), options = list(scrollX = TRUE))
 ```
 
-```{r spgo-table}
-datatable(head(spgo), options = list(scrollX = TRUE, scrollY = "400px", scrollCollapse = TRUE, paging = FALSE))
+`V3` is the UniProt accession you exposed with `tr`, and `V13` is the E-value after the shift. A `left_join` keeps every BLAST hit even where the UniProt table has no matching row, so unmatched entries appear as `NA` rather than vanishing — which is what you want, because a silently shrinking table is the easiest way to lose data without noticing.
+
+## What did you match?
+
+A quick sanity check — the organisms behind your hits:
+
+``` r
+annot_tab |>
+  count(Organism, sort = TRUE) |>
+  slice_head(n = 10) |>
+  ggplot(aes(x = reorder(Organism, n), y = n)) +
+  geom_col(fill = "steelblue", color = "black") +
+  coord_flip() +
+  labs(title = "Top 10 species hits", x = "Organism", y = "Count") +
+  theme_minimal()
 ```
 
-```{r see}
-datatable(
-  left_join(bltabl, spgo,  by = c("V3" = "Entry")) %>%
-  select(V1, V3, V13, Protein.names, Organism, Gene.Ontology..biological.process., Gene.Ontology.IDs) %>% mutate(V1 = str_replace_all(V1, 
-            pattern = "solid0078_20110412_FRAG_BC_WHITE_WHITE_F3_QV_SE_trimmed", replacement = "Ab"))
-)
+Expect a lot of human, mouse, and other well-studied models. That is a property of Swiss-Prot, not a discovery about your animal — reviewed proteins skew heavily toward organisms people study intensively. Do not over-read it.
+
+## Most common biological processes
+
+``` r
+annot_tab |>
+  separate_rows(Gene.Ontology..biological.process., sep = ";") |>
+  mutate(process = str_trim(Gene.Ontology..biological.process.)) |>
+  filter(!is.na(process), process != "") |>
+  count(process, sort = TRUE) |>
+  slice_head(n = 20) |>
+  ggplot(aes(x = reorder(process, n), y = n)) +
+  geom_col(fill = "darkseagreen", color = "black") +
+  coord_flip() +
+  labs(title = "20 most common biological processes", x = NULL, y = "Count") +
+  theme_minimal()
 ```
 
-```{r join}
-annot_tab <-
-  left_join(bltabl, spgo,  by = c("V3" = "Entry")) %>%
-  select(V1, V3, V13, Protein.names, Organism, Gene.Ontology..biological.process., Gene.Ontology.IDs) %>% mutate(V1 = str_replace_all(V1, 
-            pattern = "solid0078_20110412_FRAG_BC_WHITE_WHITE_F3_QV_SE_trimmed", replacement = "Ab"))
+------------------------------------------------------------------------
+
+# Part 4 — Case study: the eastern oyster
+
+The workflow above starts from unknown sequences. More often you are working in a species that already has a reference, and the goal is to attach GO terms to an existing gene set so you can run functional enrichment later.
+
+## Choosing which file to annotate
+
+This is the step people get wrong, and it is worth slowing down for.
+
+**Work backwards from your identifiers.** Your count matrix already names genes in some particular way. Whatever you annotate has to produce identifiers that match, or the join at the end silently fails.
+
+For a *Crassostrea virginica* count matrix built with HISAT2/StringTie against the RefSeq GFF, genes are named like `gene-LOC111099033`. The file that lets you recover those IDs is `translated_cds.faa` — its FASTA headers carry the `[gene=...]` tag.
+
+::: callout-important
+## Use the current assembly
+Older lab notebooks — and earlier versions of this module — used `GCF_002022765.2` (*C_virginica-3.0*). **That assembly is now suppressed in RefSeq.**
+
+The current *C. virginica* reference is `GCF_053477285.1` (ASM5347728v1, chromosome-level, ~529 Mb). Use it for new work.
+
+If you are reproducing an older analysis, you may still need the old assembly — but know that you are doing that deliberately, and say so in your methods. See [Bivalves](../biology/01-bivalves.qmd) for more on this species.
+:::
+
+``` bash
+cd ../data
+
+ASM=GCF_053477285.1_ASM5347728v1
+
+curl -O https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/${ASM}/${ASM}_translated_cds.faa.gz
+
+gunzip -k ${ASM}_translated_cds.faa.gz
 ```
 
-```{r}
-# Read dataset
-dataset <- read.csv("../output/blast_annot_go.tab", sep = '\t')  # Replace with the path to your dataset
-
-# Select the column of interest
-column_name <- "Organism"  # Replace with the name of the column of interest
-column_data <- dataset[[column_name]]
-
-# Count the occurrences of the strings in the column
-string_counts <- table(column_data)
-
-# Convert to a data frame, sort by count, and select the top 10
-string_counts_df <- as.data.frame(string_counts)
-colnames(string_counts_df) <- c("String", "Count")
-string_counts_df <- string_counts_df[order(string_counts_df$Count, decreasing = TRUE), ]
-top_10_strings <- head(string_counts_df, n = 10)
-
-# Plot the top 10 most common strings using ggplot2
-ggplot(top_10_strings, aes(x = reorder(String, -Count), y = Count, fill = String)) +
-  geom_bar(stat = "identity", position = "dodge", color = "black") +
-  labs(title = "Top 10 Species hits",
-       x = column_name,
-       y = "Count") +
-  theme_minimal() +
-  theme(legend.position = "none") +
-  coord_flip()
-
-
-```
-
-```{r go}
-
-
-data <- read.csv("../output/blast_annot_go.tab", sep = '\t')
-
-# Rename the `Gene.Ontology..biological.process.` column to `Biological_Process`
-colnames(data)[colnames(data) == "Gene.Ontology..biological.process."] <- "Biological_Process"
-
-# Separate the `Biological_Process` column into individual biological processes
-data_separated <- unlist(strsplit(data$Biological_Process, split = ";"))
-
-# Trim whitespace from the biological processes
-data_separated <- gsub("^\\s+|\\s+$", "", data_separated)
-
-# Count the occurrences of each biological process
-process_counts <- table(data_separated)
-process_counts <- data.frame(Biological_Process = names(process_counts), Count = as.integer(process_counts))
-process_counts <- process_counts[order(-process_counts$Count), ]
-
-# Select the 20 most predominant biological processes
-top_20_processes <- process_counts[1:20, ]
-
-# Create a color palette for the bars
-bar_colors <- rainbow(nrow(top_20_processes))
-
-# Create a staggered vertical bar plot with different colors for each bar
-barplot(top_20_processes$Count, names.arg = rep("", nrow(top_20_processes)), col = bar_colors,
-        ylim = c(0, max(top_20_processes$Count) * 1.25),
-        main = "Occurrences of the 20 Most Predominant Biological Processes", xlab = "Biological Process", ylab = "Count")
-
-
-# Create a separate plot for the legend
-png("../output/GOlegend.png", width = 800, height = 600)
-par(mar = c(0, 0, 0, 0))
-plot.new()
-legend("center", legend = top_20_processes$Biological_Process, fill = bar_colors, cex = 1, title = "Biological Processes")
-dev.off()
-```
-
-```{r legend, fig.width = 100 ,fig.height = 100}
-knitr::include_graphics("../output/GOlegend.png")
-```
-
-# Case Study - Oyster
-
-## Navigating Annotation
-
-The following is a stepwise example or annotation of a gene set using UniProt::Swiss-Prot (reviewed) such that Gene Ontology terms can be associated with each gene.
-
-In this following chunk where the fasta file is downloaded the [release](https://www.uniprot.org/help/release-statistics) is noted and the file name is modified accordingly.
-
-```{r engine='bash', eval=FALSE}
-cd DRAFT_Funct_Enrich/annot
-
-curl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
-
-mv uniprot_sprot.fasta.gz uniprot_sprot_r2023_02.fasta.gz
-gunzip -k uniprot_sprot_r2023_02.fasta.gz
-```
-
-A protein blast database is then made.
-
-```{r engine='bash', eval=FALSE}
-/home/shared/ncbi-blast-2.11.0+/bin/makeblastdb \
--in DRAFT_Funct_Enrich/annot/uniprot_sprot_r2023_02.fasta \
--dbtype prot \
--out DRAFT_Funct_Enrich/annot/uniprot_sprot_r2023_02
-```
-
-In a majority of cases you will want to annotate a gene set to get gene ontology information. If you are creating your own genome or transcriptome it should be rather straightforward to know what file to annotate. If using a widely studied system where there are publically available resources, it is advisable to use those as this is the best way to facilitate integration of data sets. In this case study we will be considering the Eastern oyster, (*Crassostrea virginica*) for which there is data at [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_002022765.2/) and [Ensembl Metazoa](http://metazoa.ensembl.org/Crassostrea_virginica_gca002022765v4/Info/Index). At NCBI there is both a GenBank and RefSeq assembly available.
-
-In order to know which of the numerous fasta files should annotated with gene ontology information one should think downstream (or look to files already generated) to the identifiers in genesets that would be subject to functional enrichment tests.
-
-The resulting fpkm count matrix for our case study is from an experiment where male and female oysters where exposed to low pH (and control) conditions. The count matrix is accessible [here (csv)](https://github.com/epigeneticstoocean/2018_L18-adult-methylation/blob/main/analyses/gene_fpkm.csv). Hisat2/Stringtie was used to generate the count matrix with `GCF_002022765.2_C_virginica-3.0_genomic.gff` formatting thus responsible for gene naming. Specifically the naming format is as follows `gene-LOC111099033,gene-LOC111099034,gene-LOC111099035`.
-
-The following fasta was selected for annotation: `GCF_002022765.2_C_virginica-3.0_translated_cds.faa.gz`
-
-```{r engine='bash', eval=FALSE}
-cd DRAFT_Funct_Enrich/annot
-
-curl -O https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/022/765/GCF_002022765.2_C_virginica-3.0/GCF_002022765.2_C_virginica-3.0_translated_cds.faa.gz
-
-gunzip -k GCF_002022765.2_C_virginica-3.0_translated_cds.faa.gz
-```
-
-```{r engine='bash', eval=FALSE}
-head -2 DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.faa
+``` bash
+head -2 ../data/${ASM}_translated_cds.faa
 
 echo "number of sequences"
-grep -c  ">" DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.faa
-
+grep -c ">" ../data/${ASM}_translated_cds.faa
 ```
 
-```         
+A header looks like this — note the `[gene=...]` field, which is the part you need:
+
+```
 >lcl|NC_035780.1_prot_XP_022327646.1_1 [gene=LOC111126949] [db_xref=GeneID:111126949] [protein=UNC5C-like protein] [protein_id=XP_022327646.1] [location=join(30535..31557,31736..31887,31977..32565,32959..33204)] [gbkey=CDS]
 MTEVCYIWASSSTTVVICGIFFIVWRCFISIKKRASPLHGSSQQVCQTCQIEGHDFGEFQLSCRRQNTNVGYDLQGRRSD
 ```
 
-This protein fasta is used as query for blast of uniprot_sprot database.
+## Run blastp
 
-```{r engine='bash', eval=FALSE}
-/home/shared/ncbi-blast-2.11.0+/bin/blastp \
--query DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.faa \
--db DRAFT_Funct_Enrich/annot/uniprot_sprot_r2023_02 \
--out DRAFT_Funct_Enrich/annot/Cvir_transcds-uniprot_blastp.tab \
+These are already proteins, so this is `blastp` rather than `blastx`:
+
+``` bash
+blastp \
+-query ../data/${ASM}_translated_cds.faa \
+-db ../blastdb/uniprot_sprot_${RELEASE} \
+-out ../output/Cvir_transcds-uniprot_blastp.tab \
 -evalue 1E-20 \
 -num_threads 40 \
 -max_target_seqs 1 \
 -outfmt 6
 ```
 
-Here is what the output file looks like, and at this point we want to get the UniProt Accession number for each gene
+This is a much larger job than Part 2 — tens of thousands of proteins. Run it somewhere it can finish.
 
-```{r engine='bash', eval=FALSE}
-head -2 DRAFT_Funct_Enrich/annot/Cvir_transcds-uniprot_blastp.tab
+## Link gene IDs to Swiss-Prot accessions
+
+The BLAST output identifies each query by the full `lcl|...` header ID, which does not contain the gene name. The gene name lives in the *rest* of the header. So convert the FASTA to a table and join on that ID:
+
+``` bash
+awk '/^>/ {if (seq) print id "\t" desc "\t" seq; \
+           split(substr($0,2), a, " "); id = a[1]; \
+           desc = substr($0, 2 + length(id) + 1); seq = ""; next} \
+     {gsub(/ /, ""); seq = seq $0} \
+     END {if (seq) print id "\t" desc "\t" seq}' \
+  ../data/${ASM}_translated_cds.faa \
+  > ../data/${ASM}_translated_cds.tab
+
+head -1 ../data/${ASM}_translated_cds.tab
 ```
 
-```{r eval=FALSE}
-blast <- read.csv("DRAFT_Funct_Enrich/annot/Cvir_transcds-uniprot_blastp.tab", sep = '\t', header = FALSE)
-```
+``` r
+library(tidyverse)
 
-Convert fasta to tab
+blast <- read.csv("../output/Cvir_transcds-uniprot_blastp.tab",
+                  sep = "\t", header = FALSE)
 
-```{r engine='bash', eval=FALSE}
-perl -e '$count=0; $len=0; while(<>) {s/\r?\n//; s/\t/ /g; if (s/^>//) { if ($. != 1) {print "\n"} s/ |$/\t/; $count++; $_ .= "\t";} else {s/ //g; $len += length($_)} print $_;} print "\n"; warn "\nConverted $count FASTA records in $. lines to tabular format\nTotal sequence length: $len\n\n";' \
-DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.faa > DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.tab
-```
+cdsftab <- read.csv(paste0("../data/", ASM, "_translated_cds.tab"),
+                    sep = "\t", header = FALSE, row.names = NULL)
 
-```{r engine='bash', eval=FALSE}
-head -1 DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.tab
-```
-
-```{r}
-cdsftab <- read.csv("DRAFT_Funct_Enrich/annot/GCF_002022765.2_C_virginica-3.0_translated_cds.tab", sep = '\t', header = FALSE, row.names=NULL)
-```
-
-Now we can take the two data frames: A) blast output of taking protein fasta and comparing to uniprot_swiss-prot and B) a tabular version of same fasta file that has ID numbers of importance. Note this importance was determined based on what we want to use down stream.
-
-```{r, eval=FALSE}
-g.spid <- left_join(blast, cdsftab, by = "V1") %>%
-  mutate(gene = str_extract(V2.y, "(?<=\\[gene=)\\w+")) %>%
-  select(gene, V11, V2.x) %>%
-  mutate(SPID = str_extract(V2.x, "(?<=\\|)[^\\|]*(?=\\|)")) %>%
+g.spid <- left_join(blast, cdsftab, by = "V1") |>
+  mutate(gene = str_extract(V2.y, "(?<=\\[gene=)\\w+")) |>
+  select(gene, V11, V2.x) |>
+  mutate(SPID = str_extract(V2.x, "(?<=\\|)[^\\|]*(?=\\|)")) |>
   distinct(gene, SPID, .keep_all = TRUE)
 ```
 
-Let's break it down step by step:
+Step by step:
 
-1.  **`g.spid <- left_join(blast, cdsftab, by = "V1")`** - This line is using the **`left_join()`** function from **`dplyr`** to merge the **`blast`** and **`cdsftab`** datasets by the column "V1". A left join retains all the rows in the **`blast`** data frame and appends the matching rows in the **`cdsftab`** data frame. If there is no match, the result is **`NA`**. The result of this operation is assigned to the **`g.spid`** object.
+1. **`left_join(blast, cdsftab, by = "V1")`** — both tables key on the sequence ID, so this attaches each BLAST hit to its original FASTA header. Columns present in both get suffixed: `V2.x` from `blast` (the Swiss-Prot hit), `V2.y` from `cdsftab` (the header description).
+2. **`str_extract(V2.y, "(?<=\\[gene=)\\w+")`** — pulls the gene name out of the header. The `(?<=...)` is a lookbehind: match word characters *preceded by* `[gene=`, without capturing that text itself.
+3. **`select(gene, V11, V2.x)`** — keep the gene name, the E-value, and the hit ID.
+4. **`str_extract(V2.x, "(?<=\\|)[^\\|]*(?=\\|)")`** — pull the accession from `sp|P12345|NAME_SPECIES` by matching what sits between two pipes. Same idea as the `tr` trick in Part 2, done in R.
+5. **`distinct(gene, SPID, .keep_all = TRUE)`** — one row per gene–accession pair. A gene with several transcripts would otherwise appear repeatedly.
 
-2.  **`mutate(gene = str_extract(V2.y, "(?<=\\[gene=)\\w+"))`** - This line is using the **`mutate()`** function from **`dplyr`** to add a new column called "gene" to the data frame. The new column is created by extracting substrings from the "V2.y" column based on the given regular expression pattern **`"(?<=\\[gene=)\\w+"`**. This regular expression matches and extracts any word (sequence of word characters, i.e., alphanumeric and underscore) that comes after "\[gene=".
+## Get GO terms
 
-3.  **`select(gene, V11, V2.x)`** - This line is using the **`select()`** function from **`dplyr`** to keep only the specified columns ("gene", "V11", and "V2.x") in the data frame.
+Write out the accessions:
 
-4.  **`mutate(SPID = str_extract(V2.x, "(?<=\\|)[^\\|]*(?=\\|)"))`** - Again, the **`mutate()`** function is used to add another new column named "SPID". This column is created by extracting substrings from the "V2.x" column. The regular expression **`"(?<=\\|)[^\\|]*(?=\\|)"`** is designed to extract any character(s) that is/are surrounded by "\|" (pipe symbol). This is a common format for delimited strings.
-
-5.  **`distinct(gene, SPID, .keep_all = TRUE)`** - This line is using the **`distinct()`** function from **`dplyr`** to remove duplicate rows based on the "gene" and "SPID" columns. The **`.keep_all = TRUE`** argument means that all other columns are also kept in the result, not just the "gene" and "SPID" columns.
-
-The resulting **`g.spid`** data frame should have unique rows with respect to the "gene" and "SPID" columns, and it should contain these two new columns, "gene" and "SPID", extracted from the original data based on specific string patterns.
-
-Now lets just write out SPIDs.
-
-```{r, eval=FALSE}
-left_join(blast, cdsftab, by = "V1") %>%
-  mutate(gene = str_extract(V2.y, "(?<=\\[gene=)\\w+")) %>%
-  select(gene, V11, V2.x) %>%
-  mutate(SPID = str_extract(V2.x, "(?<=\\|)[^\\|]*(?=\\|)")) %>%
-  distinct(gene, SPID, .keep_all = TRUE) %>%
-  select(SPID) %>%
-  write.table(file = "DRAFT_Funct_Enrich/annot/SPID.txt", sep = "\t", row.names = FALSE, quote = FALSE
- ) 
+``` r
+g.spid |>
+  select(SPID) |>
+  write.table(file = "../output/SPID.txt", sep = "\t",
+              row.names = FALSE, quote = FALSE)
 ```
 
-With a list of matching Swiss-Prot IDs, (technically UniProt Accession number) we can go back to https://www.uniprot.org and grab corresponding GO terms. This can be done via a web or using Python API.
+Then map them to GO terms at <https://www.uniprot.org> using **Retrieve/ID mapping**. Paste or upload `SPID.txt`, map from UniProtKB\_AC-ID to UniProtKB, then use **Customize columns** to include Gene Ontology IDs before downloading as TSV.
 
-**Using Web**
+Finally, join back so your gene IDs carry GO terms:
 
-Using ID Mapping
+``` r
+go <- read.csv("../output/uniprotGO.tab", sep = "\t",
+               header = TRUE, row.names = NULL)
 
-![id](http://gannet.fish.washington.edu/seashell/snaps/Monosnap_RetrieveID_mapping__UniProt_2023-07-10_10-03-33.png)
-
-![finished](http://gannet.fish.washington.edu/seashell/snaps/Monosnap_Tool_results__UniProt_2023-07-10_10-05-07.png)
-
-Now will customize columns to get GO IDs.
-
-![custcol](http://gannet.fish.washington.edu/seashell/snaps/Monosnap_RetrieveID_mapping_results__UniProtKB__UniProt_2023-07-10_10-07-05.png)
-
-```{r engine='bash', eval=FALSE}
-head -2 DRAFT_Funct_Enrich/annot/uniprotGO.tab
+left_join(g.spid, go, by = c("SPID" = "Entry")) |>
+  select(gene, Gene.Ontology.IDs) |>
+  write.table(file = "../output/geneGO.txt", sep = "\t",
+              row.names = FALSE, quote = FALSE)
 ```
 
-Finally we can join table to get "LOCIDs" the notation for our DEGs, with GO terms.
+`geneGO.txt` maps each `LOC` gene ID to its GO terms — the input a functional enrichment test expects.
 
-```{r, eval=FALSE}
-go <- read.csv("DRAFT_Funct_Enrich/annot/uniprotGO.tab", sep = '\t', header = TRUE, row.names=NULL)
-```
+------------------------------------------------------------------------
 
-```{r, eval=FALSE}
-left_join(g.spid, go, by = c("SPID" = "Entry")) %>%
-  select(gene,Gene.Ontology.IDs) %>%
-  write.table(file = "DRAFT_Funct_Enrich/annot/geneGO.txt", sep = "\t", row.names = FALSE, quote = FALSE
-  )
-```
+## Where things commonly go wrong
 
-```{r engine='bash', eval=FALSE}
-head DRAFT_Funct_Enrich/annot/geneGO.txt
-```
+**Empty output file.** Usually the `-db` prefix does not match what `makeblastdb -out` wrote, or the path is wrong relative to where you are running. BLAST will not always complain loudly.
 
-**Using API**
+**Far fewer hits than sequences.** Often correct. Sequences with no homolog above threshold produce no line. Loosen `-evalue` only if you have a reason, and know you are trading precision for recall.
 
-```{r engine='bash'}
-python3 DRAFT_Funct_Enrich/annot/uniprot-retrieval.py DRAFT_Funct_Enrich/annot/SPID.txt
-```
+**The join produces all `NA`.** The keys do not match. Print `head()` of both key columns and look at them. Most often the identifier still has decoration — a `sp|` prefix, a version suffix — that has not been stripped.
+
+**Row count grows after a join.** A one-to-many match. Check for duplicate keys on the right-hand table before joining.
+
+**It has been running for hours.** Check the size of the input and the thread count. Then remember the `head -100` test from earlier.
+
+## Next steps
+
+With `geneGO.txt` you can run functional enrichment on a gene set — for instance, the differentially expressed genes from an experiment — and ask which biological processes are over-represented.
+
+For background on the animal behind the case study, see [Bivalves](../biology/01-bivalves.qmd). For where to run jobs this size, see [Computing Resources](05-computers.qmd).
