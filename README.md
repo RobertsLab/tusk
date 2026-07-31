@@ -8,7 +8,7 @@ The site has three kinds of content:
 
 - **Modules** — hands-on technical training, ordered so that each one builds on the ones before it, but written so any single module also stands alone.
 - **Organism Biology** — fundamental biology of the animals we work on, for readers with no background in invertebrate zoology. Sits between the technical modules and the conceptual framing, both of which assume it.
-- **Lab Science** — the lab's conceptual grounding: how we define environmental memory and resilience, and the foundational papers that framing is distilled from.
+- **Lab Science** — a beginner bridge from gene expression to DNA methylation, followed by the lab's conceptual grounding for environmental memory and resilience and the foundational papers behind it.
 
 ## Repository layout
 

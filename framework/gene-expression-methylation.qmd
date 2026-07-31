@@ -1,0 +1,170 @@
+---
+title: "From Gene Expression to DNA Methylation"
+subtitle: "A short bridge from the central dogma to the molecular layer this lab studies"
+---
+
+You probably know the central dogma: information encoded in DNA can be copied into RNA, and RNA can be used to build protein. That describes the direction information travels. It does not explain why a gill cell and a muscle cell use different genes, or why the same oyster can respond differently before and after an environmental exposure.
+
+> **Gene regulation controls when, where, and how much the information in DNA is used. DNA methylation is one part of that regulation.**
+
+By the end of this page, you should be able to explain what DNA methylation changes, why its position in the genome matters, and what a methylation result can — and cannot — tell you.
+
+## From information to expression
+
+```{mermaid}
+flowchart LR
+  A["DNA<br/>stored sequence"] -->|transcription| B["RNA<br/>working copy"]
+  B -->|translation| C["Protein<br/>functional product"]
+  D["Transcription factors<br/>and chromatin"] -. regulate .-> A
+  E["RNA processing<br/>and degradation"] -. regulate .-> B
+  F["Translation and<br/>protein turnover"] -. regulate .-> C
+```
+
+A **gene** is a region of DNA used to produce a functional RNA or protein product. **Transcription** is the production of RNA from that DNA. When we say that a gene is **expressed**, we mean that its product is being made; in an RNA-seq experiment, we usually use RNA abundance as the readout.
+
+Expression is not a single switch. A cell can control whether transcription starts, how an RNA is processed, how long the RNA lasts, whether it is translated, and how quickly the resulting protein is removed. This primer concentrates on transcription because DNA methylation is measured on the DNA and can be associated with how genes are transcribed.
+
+::: callout-note
+## RNA is a measurement, not the whole process
+
+More RNA often suggests more transcription, but RNA abundance also depends on RNA processing and degradation. RNA-seq therefore measures the transcript pool at the sampling time, not transcription alone and not protein abundance.
+:::
+
+## What DNA methylation changes
+
+DNA uses four bases: A, C, G, and T. In animals, DNA methylation most often means adding a small chemical group — a methyl group, **CH~3~** — to cytosine to form **5-methylcytosine (5mC)**. It commonly occurs where a cytosine is immediately followed by a guanine on the same strand. This two-base sequence is called a **CpG site**; the `p` refers to the phosphate joining the bases.
+
+```{mermaid}
+flowchart LR
+  A["DNA sequence<br/>... C — p — G ..."] -->|"DNMT adds CH₃"| B["Methylated DNA<br/>... 5mC — p — G ..."]
+  B --> C["Sequence is still<br/>... C — p — G ..."]
+```
+
+Enzymes called **DNA methyltransferases (DNMTs)** add or maintain methylation. Other processes can dilute methylation as cells divide or promote its removal through chemical intermediates. The important point is that methylation can change while the underlying sequence remains the same.
+
+That makes methylation different from a mutation:
+
+| Change | DNA letters changed? | Can vary among tissues or conditions? |
+|---|---:|---:|
+| Mutation, such as C → T | Yes | Usually not within an individual |
+| DNA methylation at C | No | Yes |
+
+## Position changes the interpretation
+
+A gene includes more than the protein-coding pieces. Its **promoter** helps recruit the machinery that begins transcription. Its **gene body** is the transcribed region, including exons and introns.
+
+```{mermaid}
+flowchart LR
+  P["Promoter<br/>transcription begins nearby"] --> E1["Exon 1"] --> I["Intron"] --> E2["Exon 2"] --> T["Transcription end"]
+  subgraph GB["gene body"]
+    E1
+    I
+    E2
+  end
+```
+
+You may have learned that “methylation turns genes off.” That shorthand comes largely from promoter methylation in vertebrates. Heavy methylation at some promoters is associated with reduced transcription, but it is not a universal rule.
+
+Many invertebrates instead have a **mosaic methylome**: methylated regions are interspersed with regions containing little methylation. Much of their methylation occurs inside transcribed regions, producing **gene-body methylation (gbM)**. Methylated gene bodies are often actively expressed, so the presence of gbM cannot be interpreted as simple repression.
+
+Across studied invertebrates, gbM has been associated with highly and consistently expressed genes. Proposed roles include limiting inappropriate transcription from inside a gene, influencing transcript processing, and reducing variation in expression. Methylation can also be associated with transposable elements and genome defense. The relative importance of these roles varies among lineages and remains an active research question.
+
+::: callout-important
+## Do not import the mammal shortcut
+
+For an oyster, coral, or other invertebrate, “more methylation” does **not** automatically mean “less expression.” Ask where the methylated CpGs are, which tissue and life stage were sampled, and what that species' methylome normally looks like.
+:::
+
+## From environment to phenotype — with no guaranteed arrows
+
+Environmental conditions can be associated with changes at several biological layers:
+
+```{mermaid}
+flowchart LR
+  A["Environmental<br/>exposure"] --> B["Cell signaling and<br/>physiological state"]
+  B --> C["Methylation and other<br/>regulatory states"]
+  B --> D["Gene expression"]
+  C <--> D
+  D --> E["Protein and<br/>cellular function"]
+  E --> F["Organismal<br/>phenotype"]
+  F -. feedback .-> B
+```
+
+The branching and feedback are deliberate. An exposure might alter methylation and expression independently. Expression may affect the cellular conditions that support methylation. A measured methylation difference could also reflect genetic variation or a change in the mixture of cell types in the sampled tissue.
+
+Suppose low-pH-exposed oysters show altered methylation in a calcification gene, altered RNA abundance for that gene, and slower shell growth. The data establish that all three differ between groups. They do not, by themselves, establish this chain:
+
+`low pH → methylation change → expression change → slower growth`
+
+Testing that causal chain requires additional evidence, such as time-resolved sampling, controls for genotype and tissue composition, targeted manipulation, or successful prediction in an independent group.
+
+## Persistence is not the same as inheritance
+
+An environmentally associated methylation state can persist for very different lengths of time:
+
+- **Transient response:** detectable during or soon after exposure.
+- **Mitotic persistence:** maintained as cells divide within an individual.
+- **Developmental carryover:** established during one stage and detected later in life.
+- **Intergenerational effect:** detected in offspring whose parents, gametes, or developing embryos may have been directly exposed.
+- **Transgenerational inheritance:** transmitted beyond directly exposed generations.
+
+These are different claims requiring different experimental designs. **Epigenetic does not mean heritable**, and a mark that persists is not necessarily adaptive. It may be beneficial, neutral, or harmful in the environment where it is expressed. The [Lab Conceptual Framework](conceptual-framework.qmd) uses this distinction when discussing environmental memory.
+
+## What common assays actually measure
+
+| Assay | Primary readout | What it cannot establish alone |
+|---|---|---|
+| Whole-genome bisulfite sequencing (WGBS) | Cytosine modification across the genome | Why a difference occurred or what it does |
+| Reduced-representation bisulfite sequencing / Methyl-seq | Cytosine modification in a sampled subset of the genome | The state of every CpG or causality |
+| RNA-seq | Relative RNA abundance | Whether methylation caused an expression difference |
+| ATAC-seq | Regions of accessible chromatin | Actual transcription or DNA methylation |
+| ChIP-seq / CUT&Tag | Location of a bound protein or histone mark | DNA methylation or causal regulation |
+| Growth, survival, or development assay | Organismal phenotype | Which molecular layer produced it |
+
+In standard bisulfite sequencing, unmethylated cytosine is converted and later read as thymine, while 5mC is protected and read as cytosine. The method estimates modification at covered sites; it does not reveal the causal history of a mark. Standard bisulfite sequencing also does not distinguish 5mC from the related base 5-hydroxymethylcytosine, a limitation worth remembering when the distinction matters.
+
+::: callout-note
+## DNA methylation and histones are different layers
+
+DNA methylation modifies DNA. Histone modifications alter proteins around which DNA is packaged. Both can be associated with transcriptional potential and can interact, but one is not a proxy for the other. This site focuses first on DNA methylation because it is the dominant epigenetic measurement in the lab's foundational marine studies.
+:::
+
+## A safe way to read a result
+
+When a paper reports differential methylation, ask these questions in order:
+
+1. **What was compared?** Tissue, life stage, genotype, exposure, and sampling time all matter.
+2. **Where is the difference?** Promoter, exon, intron, transposable element, or an unannotated region?
+3. **How large and consistent is it?** Statistical significance is not the same as a large biological effect.
+4. **Was expression or phenotype measured in the same biological samples?** Separate cohorts weaken a direct connection.
+5. **Is the claim association, prediction, or causation?** Each requires stronger evidence than the one before it.
+
+## Check yourself
+
+::: {.callout-tip collapse="true"}
+## Five questions
+
+1. **Does DNA methylation change the DNA sequence?**  
+   No. It adds a chemical group to a base without changing the A, C, G, and T sequence.
+
+2. **Why is “methylation turns genes off” unreliable for this lab's animals?**  
+   Many invertebrates concentrate methylation in actively transcribed gene bodies rather than using promoter methylation as a general off switch.
+
+3. **A gene is both differentially methylated and differentially expressed. Did methylation cause the expression change?**  
+   Not necessarily. The measurements establish association; genotype, cell composition, another regulatory process, or reverse direction could explain the relationship.
+
+4. **Does an environmentally induced methylation difference demonstrate transgenerational inheritance?**  
+   No. Inheritance requires an experimental design that follows the mark beyond directly exposed generations.
+
+5. **Which paired measurements would connect molecular state to organismal performance?**  
+   A methylation assay, an expression assay, and a relevant phenotype measured in matched samples provide a stronger connection, though still not causation by themselves.
+:::
+
+## Read next
+
+- [Gavery & Roberts (2017), *Epigenetic considerations in aquaculture*](https://doi.org/10.7717/peerj.4147) — the applied bridge from epigenetic mechanisms to aquaculture and environmental memory.
+- [Venney et al. (2023), *The Evolutionary Complexities of DNA Methylation in Animals*](https://doi.org/10.1093/gbe/evad216) — a cautious account of methylation across biological and evolutionary timescales.
+- [Ying et al. (2022), *The Role of DNA Methylation in Genome Defense in Cnidaria and Other Invertebrates*](https://doi.org/10.1093/molbev/msac018) — evidence that invertebrate methylation patterns and functions are more complex than promoter regulation alone.
+- [Liew et al. (2018), *Epigenome-associated phenotypic acclimatization to ocean acidification in a reef-building coral*](https://doi.org/10.1126/sciadv.aar8028) — a lab-relevant example joining methylation, expression, and phenotype.
+
+Continue to the [Lab Conceptual Framework](conceptual-framework.qmd) to see how methylation fits alongside expression, non-coding RNA, chromatin, physiology, and environmental history.

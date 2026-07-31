@@ -17,6 +17,7 @@ If you are new to marine invertebrates, start here. The **Organism Biology** sec
 
 Beyond the technical modules, the **Lab Science** section holds the conceptual grounding for what we do:
 
+-   [Gene Expression and DNA Methylation](framework/gene-expression-methylation.qmd) — start here if you know the central dogma but are new to gene regulation, gene-body methylation, or methylation assays.
 -   [Lab Conceptual Framework](framework/conceptual-framework.qmd) — how the lab defines environmental memory, resilience, and predictive phenotyping in marine organisms, including the mechanistic channels we work on and the questions we treat as open.
 -   [Foundational Papers](framework/foundational-papers.qmd) — annotated index of the seven anchor papers the framework is distilled from, with PDFs where licensing allows.
 

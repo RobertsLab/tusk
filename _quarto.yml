@@ -12,8 +12,8 @@ website:
         text: Home
       - href: biology/index.qmd
         text: Biology
-      - href: framework/conceptual-framework.qmd
-        text: Framework
+      - href: framework/gene-expression-methylation.qmd
+        text: Lab Science
       - about.qmd
     tools:
       - icon: github
@@ -43,6 +43,7 @@ website:
           - biology/reading-list.qmd
       - section: "Lab Science"
         contents:
+          - framework/gene-expression-methylation.qmd
           - framework/conceptual-framework.qmd
           - framework/foundational-papers.qmd
 
@@ -58,4 +59,3 @@ format:
     toc: true
 
 editor: visual
-

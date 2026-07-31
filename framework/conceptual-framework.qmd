@@ -5,6 +5,12 @@ subtitle: "Environmental Memory, Resilience, and Predictive Phenotyping in Marin
 
 A working reference distilled from the [seven foundational papers](foundational-papers.qmd). Intended for use in grant introductions, manuscript framings, lab discussions, and as the comparison baseline for incoming literature.
 
+::: callout-tip
+## New to gene regulation?
+
+Read [From Gene Expression to DNA Methylation](gene-expression-methylation.qmd) first. It connects the central dogma to CpG and gene-body methylation, explains what the common assays measure, and introduces the causal cautions assumed below.
+:::
+
 ------------------------------------------------------------------------
 
 ## 1. Definition of environmental memory
@@ -23,7 +29,7 @@ Memory in this framework is informational, not damage. It is what the organism *
 
 The lab treats environmental memory as operating through five mechanistic channels, which interact rather than substitute:
 
-**Gene body methylation (gbM).** Functions as a regulator of transcriptional fidelity — suppresses spurious transcription from cryptic intragenic promoters, fine-tunes transcriptional noise of highly expressed genes, and shifts the precision–flexibility balance under stress. Not a binary on/off switch. Relationship to expression is non-linear and saturates at high methylation density.
+**Gene body methylation (gbM).** Functions as a regulator of transcriptional fidelity — suppresses spurious transcription from cryptic intragenic promoters, fine-tunes transcriptional noise of highly expressed genes, and shifts the precision–flexibility balance under stress. Not a binary on/off switch. Relationship to expression is non-linear and saturates at high methylation density. The [gene expression and DNA methylation primer](gene-expression-methylation.qmd#position-changes-the-interpretation) explains why the familiar promoter-silencing shorthand does not transfer cleanly to invertebrate gbM.
 
 **Regulatory non-coding RNAs (lncRNAs / lincRNAs in particular).** Act as a parallel epigenetic layer, frequently in cis on neighboring protein-coding genes. Evolve faster than coding sequence; respond to environmental context tissue- and location-specifically; provide a fast-response channel that does not require nucleotide change.
 

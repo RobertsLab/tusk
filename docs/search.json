@@ -324,6 +324,18 @@
     ]
   },
   {
+    "objectID": "biology/glossary.html#gene-expression-and-epigenetics",
+    "href": "biology/glossary.html#gene-expression-and-epigenetics",
+    "title": "Glossary",
+    "section": "Gene expression and epigenetics",
+    "text": "Gene expression and epigenetics\nGene expression. Use of the information in a gene to produce a functional RNA or protein. RNA-seq measures RNA abundance as one readout of expression; it does not directly measure protein abundance.\nTranscription. Production of an RNA copy from a DNA template. It is the DNA-to-RNA step of the central dogma.\nPromoter. A regulatory DNA region near the start of a gene where transcription machinery is recruited. Promoter methylation can be associated with reduced transcription in some contexts, but this is not a universal methylation rule.\nCpG site. A cytosine followed by a guanine on the same DNA strand; the p represents the phosphate joining them. CpGs are the predominant sites of DNA methylation in animals.\nDNA methylation. Addition of a methyl group to DNA, most commonly producing 5-methylcytosine at CpG sites in animals. It changes the chemical state of DNA without changing its nucleotide sequence.\nGene body. The region transcribed into RNA, from transcription start to transcription end, including exons and introns. It does not include the promoter.\nGene-body methylation (gbM). DNA methylation within a transcribed gene. It is common in many invertebrates and is often associated with active, stable expression rather than simple gene silencing.\nDNA methyltransferase (DNMT). An enzyme that adds or maintains methyl groups on DNA. Different DNMT family members participate in establishing and copying methylation patterns.\nEpigenetics. Study of regulatory states that affect genome function without changing the DNA sequence. The term does not by itself mean that a state is environmentally caused, adaptive, or inherited.\nMethylome. The genome-wide pattern of DNA methylation in a particular biological sample. It can differ among species, tissues, cell types, developmental stages, and environments.\nDifferentially methylated gene (DMG). A gene associated with a statistically supported methylation difference between groups. The label does not establish that methylation changed the gene’s expression.\nDifferentially expressed gene (DEG). A gene whose measured RNA abundance differs between groups under a specified statistical threshold. A DEG is not automatically a DMG, and neither label establishes mechanism by itself.\nFor the full bridge from the central dogma to these terms, see From Gene Expression to DNA Methylation.",
+    "crumbs": [
+      "Home",
+      "Organism Biology",
+      "Glossary"
+    ]
+  },
+  {
     "objectID": "biology/index.html",
     "href": "biology/index.html",
     "title": "Start Here",
@@ -678,7 +690,7 @@
     "href": "index.html#lab-science",
     "title": "Where the fun starts",
     "section": "Lab Science",
-    "text": "Lab Science\nBeyond the technical modules, the Lab Science section holds the conceptual grounding for what we do:\n\nLab Conceptual Framework — how the lab defines environmental memory, resilience, and predictive phenotyping in marine organisms, including the mechanistic channels we work on and the questions we treat as open.\nFoundational Papers — annotated index of the seven anchor papers the framework is distilled from, with PDFs where licensing allows.\n\nIf you want to contribute, have suggestions, want to see additional resources related to data science, or learn more about what our lab does please visit the about page."
+    "text": "Lab Science\nBeyond the technical modules, the Lab Science section holds the conceptual grounding for what we do:\n\nGene Expression and DNA Methylation — start here if you know the central dogma but are new to gene regulation, gene-body methylation, or methylation assays.\nLab Conceptual Framework — how the lab defines environmental memory, resilience, and predictive phenotyping in marine organisms, including the mechanistic channels we work on and the questions we treat as open.\nFoundational Papers — annotated index of the seven anchor papers the framework is distilled from, with PDFs where licensing allows.\n\nIf you want to contribute, have suggestions, want to see additional resources related to data science, or learn more about what our lab does please visit the about page."
   },
   {
     "objectID": "framework/conceptual-framework.html",
@@ -709,7 +721,7 @@
     "href": "framework/conceptual-framework.html#major-mechanistic-pathways",
     "title": "Lab Conceptual Framework",
     "section": "2. Major mechanistic pathways",
-    "text": "2. Major mechanistic pathways\nThe lab treats environmental memory as operating through five mechanistic channels, which interact rather than substitute:\nGene body methylation (gbM). Functions as a regulator of transcriptional fidelity — suppresses spurious transcription from cryptic intragenic promoters, fine-tunes transcriptional noise of highly expressed genes, and shifts the precision–flexibility balance under stress. Not a binary on/off switch. Relationship to expression is non-linear and saturates at high methylation density.\nRegulatory non-coding RNAs (lncRNAs / lincRNAs in particular). Act as a parallel epigenetic layer, frequently in cis on neighboring protein-coding genes. Evolve faster than coding sequence; respond to environmental context tissue- and location-specifically; provide a fast-response channel that does not require nucleotide change.\nGene expression baselines and reaction norms. The transcriptomic state itself functions as memory. Populations exposed to historically variable environments evolve different reaction-norm slopes than populations from stable environments. Reaction-norm shape — frontloaded constitutive expression versus reactive plasticity — is a quantitative trait under selection, with stress periodicity setting which solution is favored.\nChromatin and histone modification. Acts in concert with methylation to set transcriptional potential. Not directly assayed in most foundational empirical work in this corpus but treated as integral to the regulatory layer.\nReciprocal coupling to the genome. Methylation can be controlled in cis by SNPs (mQTLs), can drive mutation at methylated CpGs over generational time, and gates transposable-element activity. Memory has a forward channel into the genome itself — the plasticity-to-assimilation continuum.\nThese channels are not independent. Empirical correspondence between methylation, transcription, and phenotype is often weak (DMG–DEG overlap can be ~2%), which means the lab treats no single mark as causally sufficient for phenotype.",
+    "text": "2. Major mechanistic pathways\nThe lab treats environmental memory as operating through five mechanistic channels, which interact rather than substitute:\nGene body methylation (gbM). Functions as a regulator of transcriptional fidelity — suppresses spurious transcription from cryptic intragenic promoters, fine-tunes transcriptional noise of highly expressed genes, and shifts the precision–flexibility balance under stress. Not a binary on/off switch. Relationship to expression is non-linear and saturates at high methylation density. The gene expression and DNA methylation primer explains why the familiar promoter-silencing shorthand does not transfer cleanly to invertebrate gbM.\nRegulatory non-coding RNAs (lncRNAs / lincRNAs in particular). Act as a parallel epigenetic layer, frequently in cis on neighboring protein-coding genes. Evolve faster than coding sequence; respond to environmental context tissue- and location-specifically; provide a fast-response channel that does not require nucleotide change.\nGene expression baselines and reaction norms. The transcriptomic state itself functions as memory. Populations exposed to historically variable environments evolve different reaction-norm slopes than populations from stable environments. Reaction-norm shape — frontloaded constitutive expression versus reactive plasticity — is a quantitative trait under selection, with stress periodicity setting which solution is favored.\nChromatin and histone modification. Acts in concert with methylation to set transcriptional potential. Not directly assayed in most foundational empirical work in this corpus but treated as integral to the regulatory layer.\nReciprocal coupling to the genome. Methylation can be controlled in cis by SNPs (mQTLs), can drive mutation at methylated CpGs over generational time, and gates transposable-element activity. Memory has a forward channel into the genome itself — the plasticity-to-assimilation continuum.\nThese channels are not independent. Empirical correspondence between methylation, transcription, and phenotype is often weak (DMG–DEG overlap can be ~2%), which means the lab treats no single mark as causally sufficient for phenotype.",
     "crumbs": [
       "Home",
       "Lab Science",
@@ -774,6 +786,126 @@
       "Home",
       "Lab Science",
       "Lab Conceptual Framework"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html",
+    "href": "framework/gene-expression-methylation.html",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "",
+    "text": "You probably know the central dogma: information encoded in DNA can be copied into RNA, and RNA can be used to build protein. That describes the direction information travels. It does not explain why a gill cell and a muscle cell use different genes, or why the same oyster can respond differently before and after an environmental exposure.\nBy the end of this page, you should be able to explain what DNA methylation changes, why its position in the genome matters, and what a methylation result can — and cannot — tell you.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#from-information-to-expression",
+    "href": "framework/gene-expression-methylation.html#from-information-to-expression",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "From information to expression",
+    "text": "From information to expression\n\n\n\n\n\nflowchart LR\n  A[\"DNA&lt;br/&gt;stored sequence\"] --&gt;|transcription| B[\"RNA&lt;br/&gt;working copy\"]\n  B --&gt;|translation| C[\"Protein&lt;br/&gt;functional product\"]\n  D[\"Transcription factors&lt;br/&gt;and chromatin\"] -. regulate .-&gt; A\n  E[\"RNA processing&lt;br/&gt;and degradation\"] -. regulate .-&gt; B\n  F[\"Translation and&lt;br/&gt;protein turnover\"] -. regulate .-&gt; C\n\n\n\n\n\n\nA gene is a region of DNA used to produce a functional RNA or protein product. Transcription is the production of RNA from that DNA. When we say that a gene is expressed, we mean that its product is being made; in an RNA-seq experiment, we usually use RNA abundance as the readout.\nExpression is not a single switch. A cell can control whether transcription starts, how an RNA is processed, how long the RNA lasts, whether it is translated, and how quickly the resulting protein is removed. This primer concentrates on transcription because DNA methylation is measured on the DNA and can be associated with how genes are transcribed.\n\n\n\n\n\n\nNoteRNA is a measurement, not the whole process\n\n\n\nMore RNA often suggests more transcription, but RNA abundance also depends on RNA processing and degradation. RNA-seq therefore measures the transcript pool at the sampling time, not transcription alone and not protein abundance.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#what-dna-methylation-changes",
+    "href": "framework/gene-expression-methylation.html#what-dna-methylation-changes",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "What DNA methylation changes",
+    "text": "What DNA methylation changes\nDNA uses four bases: A, C, G, and T. In animals, DNA methylation most often means adding a small chemical group — a methyl group, CH3 — to cytosine to form 5-methylcytosine (5mC). It commonly occurs where a cytosine is immediately followed by a guanine on the same strand. This two-base sequence is called a CpG site; the p refers to the phosphate joining the bases.\n\n\n\n\n\nflowchart LR\n  A[\"DNA sequence&lt;br/&gt;... C — p — G ...\"] --&gt;|\"DNMT adds CH₃\"| B[\"Methylated DNA&lt;br/&gt;... 5mC — p — G ...\"]\n  B --&gt; C[\"Sequence is still&lt;br/&gt;... C — p — G ...\"]\n\n\n\n\n\n\nEnzymes called DNA methyltransferases (DNMTs) add or maintain methylation. Other processes can dilute methylation as cells divide or promote its removal through chemical intermediates. The important point is that methylation can change while the underlying sequence remains the same.\nThat makes methylation different from a mutation:\n\n\n\n\n\n\n\n\nChange\nDNA letters changed?\nCan vary among tissues or conditions?\n\n\n\n\nMutation, such as C → T\nYes\nUsually not within an individual\n\n\nDNA methylation at C\nNo\nYes",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#position-changes-the-interpretation",
+    "href": "framework/gene-expression-methylation.html#position-changes-the-interpretation",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "Position changes the interpretation",
+    "text": "Position changes the interpretation\nA gene includes more than the protein-coding pieces. Its promoter helps recruit the machinery that begins transcription. Its gene body is the transcribed region, including exons and introns.\n\n\n\n\n\nflowchart LR\n  P[\"Promoter&lt;br/&gt;transcription begins nearby\"] --&gt; E1[\"Exon 1\"] --&gt; I[\"Intron\"] --&gt; E2[\"Exon 2\"] --&gt; T[\"Transcription end\"]\n  subgraph GB[\"gene body\"]\n    E1\n    I\n    E2\n  end\n\n\n\n\n\n\nYou may have learned that “methylation turns genes off.” That shorthand comes largely from promoter methylation in vertebrates. Heavy methylation at some promoters is associated with reduced transcription, but it is not a universal rule.\nMany invertebrates instead have a mosaic methylome: methylated regions are interspersed with regions containing little methylation. Much of their methylation occurs inside transcribed regions, producing gene-body methylation (gbM). Methylated gene bodies are often actively expressed, so the presence of gbM cannot be interpreted as simple repression.\nAcross studied invertebrates, gbM has been associated with highly and consistently expressed genes. Proposed roles include limiting inappropriate transcription from inside a gene, influencing transcript processing, and reducing variation in expression. Methylation can also be associated with transposable elements and genome defense. The relative importance of these roles varies among lineages and remains an active research question.\n\n\n\n\n\n\nImportantDo not import the mammal shortcut\n\n\n\nFor an oyster, coral, or other invertebrate, “more methylation” does not automatically mean “less expression.” Ask where the methylated CpGs are, which tissue and life stage were sampled, and what that species’ methylome normally looks like.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#from-environment-to-phenotype-with-no-guaranteed-arrows",
+    "href": "framework/gene-expression-methylation.html#from-environment-to-phenotype-with-no-guaranteed-arrows",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "From environment to phenotype — with no guaranteed arrows",
+    "text": "From environment to phenotype — with no guaranteed arrows\nEnvironmental conditions can be associated with changes at several biological layers:\n\n\n\n\n\nflowchart LR\n  A[\"Environmental&lt;br/&gt;exposure\"] --&gt; B[\"Cell signaling and&lt;br/&gt;physiological state\"]\n  B --&gt; C[\"Methylation and other&lt;br/&gt;regulatory states\"]\n  B --&gt; D[\"Gene expression\"]\n  C &lt;--&gt; D\n  D --&gt; E[\"Protein and&lt;br/&gt;cellular function\"]\n  E --&gt; F[\"Organismal&lt;br/&gt;phenotype\"]\n  F -. feedback .-&gt; B\n\n\n\n\n\n\nThe branching and feedback are deliberate. An exposure might alter methylation and expression independently. Expression may affect the cellular conditions that support methylation. A measured methylation difference could also reflect genetic variation or a change in the mixture of cell types in the sampled tissue.\nSuppose low-pH-exposed oysters show altered methylation in a calcification gene, altered RNA abundance for that gene, and slower shell growth. The data establish that all three differ between groups. They do not, by themselves, establish this chain:\nlow pH → methylation change → expression change → slower growth\nTesting that causal chain requires additional evidence, such as time-resolved sampling, controls for genotype and tissue composition, targeted manipulation, or successful prediction in an independent group.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#persistence-is-not-the-same-as-inheritance",
+    "href": "framework/gene-expression-methylation.html#persistence-is-not-the-same-as-inheritance",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "Persistence is not the same as inheritance",
+    "text": "Persistence is not the same as inheritance\nAn environmentally associated methylation state can persist for very different lengths of time:\n\nTransient response: detectable during or soon after exposure.\nMitotic persistence: maintained as cells divide within an individual.\nDevelopmental carryover: established during one stage and detected later in life.\nIntergenerational effect: detected in offspring whose parents, gametes, or developing embryos may have been directly exposed.\nTransgenerational inheritance: transmitted beyond directly exposed generations.\n\nThese are different claims requiring different experimental designs. Epigenetic does not mean heritable, and a mark that persists is not necessarily adaptive. It may be beneficial, neutral, or harmful in the environment where it is expressed. The Lab Conceptual Framework uses this distinction when discussing environmental memory.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#what-common-assays-actually-measure",
+    "href": "framework/gene-expression-methylation.html#what-common-assays-actually-measure",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "What common assays actually measure",
+    "text": "What common assays actually measure\n\n\n\n\n\n\n\n\nAssay\nPrimary readout\nWhat it cannot establish alone\n\n\n\n\nWhole-genome bisulfite sequencing (WGBS)\nCytosine modification across the genome\nWhy a difference occurred or what it does\n\n\nReduced-representation bisulfite sequencing / Methyl-seq\nCytosine modification in a sampled subset of the genome\nThe state of every CpG or causality\n\n\nRNA-seq\nRelative RNA abundance\nWhether methylation caused an expression difference\n\n\nATAC-seq\nRegions of accessible chromatin\nActual transcription or DNA methylation\n\n\nChIP-seq / CUT&Tag\nLocation of a bound protein or histone mark\nDNA methylation or causal regulation\n\n\nGrowth, survival, or development assay\nOrganismal phenotype\nWhich molecular layer produced it\n\n\n\nIn standard bisulfite sequencing, unmethylated cytosine is converted and later read as thymine, while 5mC is protected and read as cytosine. The method estimates modification at covered sites; it does not reveal the causal history of a mark. Standard bisulfite sequencing also does not distinguish 5mC from the related base 5-hydroxymethylcytosine, a limitation worth remembering when the distinction matters.\n\n\n\n\n\n\nNoteDNA methylation and histones are different layers\n\n\n\nDNA methylation modifies DNA. Histone modifications alter proteins around which DNA is packaged. Both can be associated with transcriptional potential and can interact, but one is not a proxy for the other. This site focuses first on DNA methylation because it is the dominant epigenetic measurement in the lab’s foundational marine studies.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#a-safe-way-to-read-a-result",
+    "href": "framework/gene-expression-methylation.html#a-safe-way-to-read-a-result",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "A safe way to read a result",
+    "text": "A safe way to read a result\nWhen a paper reports differential methylation, ask these questions in order:\n\nWhat was compared? Tissue, life stage, genotype, exposure, and sampling time all matter.\nWhere is the difference? Promoter, exon, intron, transposable element, or an unannotated region?\nHow large and consistent is it? Statistical significance is not the same as a large biological effect.\nWas expression or phenotype measured in the same biological samples? Separate cohorts weaken a direct connection.\nIs the claim association, prediction, or causation? Each requires stronger evidence than the one before it.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#check-yourself",
+    "href": "framework/gene-expression-methylation.html#check-yourself",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "Check yourself",
+    "text": "Check yourself\n\n\n\n\n\n\nTipFive questions\n\n\n\n\n\n\nDoes DNA methylation change the DNA sequence?\nNo. It adds a chemical group to a base without changing the A, C, G, and T sequence.\nWhy is “methylation turns genes off” unreliable for this lab’s animals?\nMany invertebrates concentrate methylation in actively transcribed gene bodies rather than using promoter methylation as a general off switch.\nA gene is both differentially methylated and differentially expressed. Did methylation cause the expression change?\nNot necessarily. The measurements establish association; genotype, cell composition, another regulatory process, or reverse direction could explain the relationship.\nDoes an environmentally induced methylation difference demonstrate transgenerational inheritance?\nNo. Inheritance requires an experimental design that follows the mark beyond directly exposed generations.\nWhich paired measurements would connect molecular state to organismal performance?\nA methylation assay, an expression assay, and a relevant phenotype measured in matched samples provide a stronger connection, though still not causation by themselves.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
+    ]
+  },
+  {
+    "objectID": "framework/gene-expression-methylation.html#read-next",
+    "href": "framework/gene-expression-methylation.html#read-next",
+    "title": "From Gene Expression to DNA Methylation",
+    "section": "Read next",
+    "text": "Read next\n\nGavery & Roberts (2017), Epigenetic considerations in aquaculture — the applied bridge from epigenetic mechanisms to aquaculture and environmental memory.\nVenney et al. (2023), The Evolutionary Complexities of DNA Methylation in Animals — a cautious account of methylation across biological and evolutionary timescales.\nYing et al. (2022), The Role of DNA Methylation in Genome Defense in Cnidaria and Other Invertebrates — evidence that invertebrate methylation patterns and functions are more complex than promoter regulation alone.\nLiew et al. (2018), Epigenome-associated phenotypic acclimatization to ocean acidification in a reef-building coral — a lab-relevant example joining methylation, expression, and phenotype.\n\nContinue to the Lab Conceptual Framework to see how methylation fits alongside expression, non-coding RNA, chromatin, physiology, and environmental history.",
+    "crumbs": [
+      "Home",
+      "Lab Science",
+      "From Gene Expression to DNA Methylation"
     ]
   },
   {
@@ -1084,11 +1216,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#what-you-are-doing-and-why",
-    "href": "modules/04-blast.html#what-you-are-doing-and-why",
+    "objectID": "modules/04-blast.html#the-idea",
+    "href": "modules/04-blast.html#the-idea",
     "title": "NCBI Blast",
-    "section": "What you are doing and why",
-    "text": "What you are doing and why\nYou have a few thousand sequences and no idea what they are. Maybe they came off a de novo assembly of a non-model organism, so there is no annotation to inherit. You want to know which genes are present.\nThe strategy is comparison. Take each unknown sequence, search it against a database of proteins whose function is known, and transfer the annotation from the best match. That is the whole idea behind BLAST — Basic Local Alignment Search Tool.\nThe database used here is UniProt/Swiss-Prot: the manually reviewed portion of UniProt. It is much smaller than the full database and much better curated, which is exactly the trade you want for annotation. A confident match to a reviewed protein is worth more than a match to something machine-annotated.\nBy the end you will have gone from an anonymous FASTA file to a table of gene names, organisms, and Gene Ontology terms.",
+    "section": "The idea",
+    "text": "The idea\nYou have a few thousand sequences and no idea what they are — off a de novo assembly of a non-model organism, say, with no annotation to inherit.\nThe strategy is comparison: search each unknown sequence against a database of proteins whose function is known, and take the annotation from the best match.\nThe database here is UniProt/Swiss-Prot, the manually reviewed part of UniProt. Smaller than the full database and far better curated — the right trade for annotation.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1096,11 +1228,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#which-blast-program-to-use",
-    "href": "modules/04-blast.html#which-blast-program-to-use",
+    "objectID": "modules/04-blast.html#the-three-steps",
+    "href": "modules/04-blast.html#the-three-steps",
     "title": "NCBI Blast",
-    "section": "Which BLAST program to use",
-    "text": "Which BLAST program to use\nThis trips people up, so settle it first. The program name tells you what is being compared:\n\n\n\n\n\n\n\n\n\nProgram\nQuery\nDatabase\nUse when\n\n\n\n\nblastn\nnucleotide\nnucleotide\nComparing DNA to DNA\n\n\nblastp\nprotein\nprotein\nYou already have protein sequences\n\n\nblastx\nnucleotide, translated\nprotein\nYou have transcripts/DNA and want to know what protein they encode\n\n\ntblastn\nprotein\nnucleotide, translated\nLooking for a known protein in an unannotated genome\n\n\n\nThis module uses blastx for the unknown transcripts (nucleotide query against a protein database) and blastp for the oyster case study (where NCBI already provides translated proteins).",
+    "section": "The three steps",
+    "text": "The three steps\n\n\n\n\n\nflowchart LR\n  A[\"Swiss-Prot&lt;br/&gt;FASTA\"] --&gt;|makeblastdb| B[\"BLAST&lt;br/&gt;database\"]\n  C[\"Your&lt;br/&gt;sequences\"] --&gt; D\n  B --&gt; D[\"blastx\"]\n  D --&gt; E[\"Hit table&lt;br/&gt;outfmt 6\"]\n  E --&gt;|join in R| F[\"Gene names,&lt;br/&gt;GO terms\"]\n\n\n\n\n\n\n\n\n\n\n\n\nTipThere is a script that does all of this\n\n\n\nsr320/workflow-annotation wraps the entire workflow in one command:\nbash blast2slim.sh -i transcripts.fasta\nIt downloads and indexes Swiss-Prot, picks blastx or blastp for you, pulls UniProt annotations over the REST API, maps GO terms to GO-Slim categories with GOATOOLS, and writes TSVs ready for downstream use. --diamond swaps in DIAMOND when BLAST+ is too slow for the dataset.\nWork through the steps below first so you know what it is doing — then use the script for real work rather than retyping this by hand.\n\n\nEverything below is those three steps. Set your BLAST+ location once if it is not already on your PATH:\nexport BLAST=/home/shared/ncbi-blast-2.11.0+/bin   # adjust to your machine\n$BLAST/blastx -version                             # check what you actually have",
     "crumbs": [
       "Home",
       "Modules",
@@ -1108,11 +1240,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#a-note-on-paths",
-    "href": "modules/04-blast.html#a-note-on-paths",
+    "objectID": "modules/04-blast.html#step-1-build-the-database",
+    "href": "modules/04-blast.html#step-1-build-the-database",
     "title": "NCBI Blast",
-    "section": "A note on paths",
-    "text": "A note on paths\nCommands below call blastx, blastp, and makeblastdb directly, assuming BLAST+ is on your PATH.\nOn lab machines it may be installed somewhere specific instead. Rather than hardcoding a version into every command — which is how a tutorial silently rots — set it once:\n# Adjust to wherever BLAST+ lives on your machine, then use $BLAST/ below.\nexport BLAST=/home/shared/ncbi-blast-2.11.0+/bin\n\n$BLAST/blastx -version\nCheck the version you actually have rather than assuming. Paths and version numbers in older lab notebooks are frequently stale.",
+    "section": "Step 1 — Build the database",
+    "text": "Step 1 — Build the database\nDownload Swiss-Prot and index it. Record the release — annotation results shift between releases, so it belongs in your methods.\ncd ../data\nRELEASE=r2025_03    # check https://www.uniprot.org/help/release-statistics\n\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_${RELEASE}.fasta.gz\ngunzip -k uniprot_sprot_${RELEASE}.fasta.gz\n\nmkdir -p ../blastdb\nmakeblastdb \\\n-in ../data/uniprot_sprot_${RELEASE}.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_${RELEASE}\nUsing a variable for the release is deliberate: type it by hand in both places and they will eventually disagree, leaving you with a database built from a different file than you think — and nothing will error.\n-out gives a prefix, not a filename. Several index files are written from it, and that same prefix is what you pass to -db.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1120,11 +1252,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#download-swiss-prot",
-    "href": "modules/04-blast.html#download-swiss-prot",
+    "objectID": "modules/04-blast.html#step-2-run-blast",
+    "href": "modules/04-blast.html#step-2-run-blast",
     "title": "NCBI Blast",
-    "section": "Download Swiss-Prot",
-    "text": "Download Swiss-Prot\nUniProt publishes releases, and which release you used is part of your methods. Recording it is not bookkeeping for its own sake — annotation results shift between releases, and a reviewer or a future you will want to know.\nSet the release once and let the filenames follow from it:\ncd ../data\n\n# Record the release you are actually downloading.\n# Check https://www.uniprot.org/help/release-statistics for the current one.\nRELEASE=r2025_03\n\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\n\nmv uniprot_sprot.fasta.gz uniprot_sprot_${RELEASE}.fasta.gz\ngunzip -k uniprot_sprot_${RELEASE}.fasta.gz\n\n\n\n\n\n\nWarningKeep the release consistent\n\n\n\nUsing a variable here is deliberate. If you type the release by hand in the download step and again in the database step, sooner or later they will disagree — you will build a database from one file while believing you built it from another, and nothing will error. Set it once, reuse it.",
+    "section": "Step 2 — Run BLAST",
+    "text": "Step 2 — Run BLAST\n\nPick the right program\n\n\n\nProgram\nQuery\nDatabase\n\n\n\n\nblastn\nnucleotide\nnucleotide\n\n\nblastp\nprotein\nprotein\n\n\nblastx\nnucleotide, translated\nprotein\n\n\ntblastn\nprotein\nnucleotide, translated\n\n\n\nTranscripts against a protein database means blastx.\ncurl -k https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \\\n&gt; ../data/Ab_4denovo_CLC6_a.fa\n\ngrep -c \"&gt;\" ../data/Ab_4denovo_CLC6_a.fa    # how many sequences?\n\nblastx \\\n-query ../data/Ab_4denovo_CLC6_a.fa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Ab_4-uniprot_blastx.tab \\\n-evalue 1E-20 \\\n-num_threads 20 \\\n-max_target_seqs 1 \\\n-outfmt 6\n\n-evalue 1E-20 — how many hits this good you would expect by chance. Smaller is stricter.\n-num_threads 20 — set to what the machine has (nproc).\n-max_target_seqs 1 — best hit only.\n-outfmt 6 — tabular; everything downstream expects this.\n\n\n\n\n\n\n\nTip\n\n\n\nRun head -100 of your input through the whole thing first. You will find path typos in 30 seconds rather than 3 hours.\n\n\n\n\nRead the output\nhead -2 ../output/Ab_4-uniprot_blastx.tab\nwc -l ../output/Ab_4-uniprot_blastx.tab\nThere is no header row, so you have to know the 12 columns:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#\n1\n2\n3\n4\n5\n6\n7–8\n9–10\n11\n12\n\n\n\n\n\nqseqid\nsseqid\npident\nlength\nmismatch\ngapopen\nqstart qend\nsstart send\nevalue\nbitscore\n\n\n\nExpect fewer hits than sequences. Anything without a match above threshold produces no line — normal for a non-model assembly, not a failure.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1132,11 +1264,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#make-the-blast-database",
-    "href": "modules/04-blast.html#make-the-blast-database",
+    "objectID": "modules/04-blast.html#step-3-add-annotation",
+    "href": "modules/04-blast.html#step-3-add-annotation",
     "title": "NCBI Blast",
-    "section": "Make the BLAST database",
-    "text": "Make the BLAST database\nA FASTA file is not searchable as-is. makeblastdb builds the index BLAST needs:\nmkdir -p ../blastdb\n\nmakeblastdb \\\n-in ../data/uniprot_sprot_${RELEASE}.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_${RELEASE}\n-dbtype prot says these are protein sequences. -out gives a prefix, not a filename — several index files are written using it, and you pass that same prefix to -db later.",
+    "section": "Step 3 — Add annotation",
+    "text": "Step 3 — Add annotation\nBLAST told you which protein each sequence matches, not what it does. Join to a UniProt table for that.\nSwiss-Prot IDs arrive as sp|P12345|NAME_SPECIES; split on the pipe to expose the accession:\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\nThat turns column 2 into three, shifting everything after it right by two — accession lands in column 3, E-value moves from 11 to 13.\nlibrary(tidyverse)\n\nbltabl &lt;- read.csv(\"../output/Ab_4-uniprot_blastx_sep.tab\", sep = \"\\t\", header = FALSE)\nspgo   &lt;- read.csv(\"https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab\",\n                   sep = \"\\t\", header = TRUE)\n\nannot_tab &lt;- left_join(bltabl, spgo, by = c(\"V3\" = \"Entry\")) |&gt;\n  select(V1, V3, V13,\n         Protein.names, Organism,\n         Gene.Ontology..biological.process., Gene.Ontology.IDs)\n\nwrite.table(annot_tab, \"../output/blast_annot_go.tab\",\n            sep = \"\\t\", row.names = FALSE, quote = FALSE)\nleft_join keeps every BLAST hit even where UniProt has no matching row, so misses show as NA rather than disappearing — a silently shrinking table is the easiest way to lose data without noticing.\nThat is the workflow. annot_tab has a gene name, organism, and GO terms for every sequence that matched.\n\n\n\n\n\n\nNote\n\n\n\nMost hits will be to human, mouse, and other heavily studied organisms. That is a property of Swiss-Prot, not a discovery about your animal.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1144,11 +1276,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#get-the-query-sequences",
-    "href": "modules/04-blast.html#get-the-query-sequences",
+    "objectID": "modules/04-blast.html#variation-starting-from-a-reference-proteome",
+    "href": "modules/04-blast.html#variation-starting-from-a-reference-proteome",
     "title": "NCBI Blast",
-    "section": "Get the query sequences",
-    "text": "Get the query sequences\nThe example file is a de novo transcriptome assembly:\ncurl -k https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \\\n&gt; ../data/Ab_4denovo_CLC6_a.fa",
+    "section": "Variation — starting from a reference proteome",
+    "text": "Variation — starting from a reference proteome\nMore often you are in a species that already has a reference, and the goal is to attach GO terms to an existing gene set for enrichment testing later. Same three steps, two differences.\nWork backwards from your identifiers. Whatever you annotate must produce IDs matching your count matrix, or the final join silently fails. For a Crassostrea virginica matrix built against the RefSeq GFF, genes look like gene-LOC111099033, and the file carrying those in its headers is translated_cds.faa.\n\n\n\n\n\n\nImportantUse the current assembly\n\n\n\nOlder notebooks use GCF_002022765.2 (C_virginica-3.0), which is now suppressed in RefSeq. The current reference is GCF_053477285.1 (ASM5347728v1). See Bivalves.\n\n\ncd ../data\nASM=GCF_053477285.1_ASM5347728v1\ncurl -O https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/${ASM}/${ASM}_translated_cds.faa.gz\ngunzip -k ${ASM}_translated_cds.faa.gz\nThese are already proteins, so use blastp:\nblastp \\\n-query ../data/${ASM}_translated_cds.faa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Cvir_transcds-uniprot_blastp.tab \\\n-evalue 1E-20 -num_threads 40 -max_target_seqs 1 -outfmt 6\nThe gene ID lives in the FASTA header ([gene=LOC111126949]), not in the BLAST output, so pull it out and pair it with the Swiss-Prot accession:\ng.spid &lt;- left_join(blast, cdsftab, by = \"V1\") |&gt;\n  mutate(gene = str_extract(V2.y, \"(?&lt;=\\\\[gene=)\\\\w+\"),          # from the header\n         SPID = str_extract(V2.x, \"(?&lt;=\\\\|)[^\\\\|]*(?=\\\\|)\")) |&gt;  # from sp|P12345|NAME\n  distinct(gene, SPID)\n\nwrite.table(g.spid[\"SPID\"], \"../output/SPID.txt\",\n            sep = \"\\t\", row.names = FALSE, quote = FALSE)\nThen map those accessions to GO terms at https://www.uniprot.org via Retrieve/ID mapping, adding Gene Ontology IDs under Customize columns, and join the result back on SPID. The output — each LOC gene with its GO terms — is what an enrichment test expects.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1156,131 +1288,11 @@
     ]
   },
   {
-    "objectID": "modules/04-blast.html#look-at-your-input-first",
-    "href": "modules/04-blast.html#look-at-your-input-first",
+    "objectID": "modules/04-blast.html#when-it-doesnt-work",
+    "href": "modules/04-blast.html#when-it-doesnt-work",
     "title": "NCBI Blast",
-    "section": "Look at your input first",
-    "text": "Look at your input first\nAlways. Knowing the size and shape of your input tells you whether the run will take minutes or days, and catches a truncated download before it costs you an afternoon.\nhead -3 ../data/Ab_4denovo_CLC6_a.fa\n\necho \"How many sequences?\"\ngrep -c \"&gt;\" ../data/Ab_4denovo_CLC6_a.fa\nBasic properties worth plotting for any new assembly — sequence length distribution, base composition, and CG motif counts:\n\n\n\n\n\n\nSequence length distribution\n\n\n\n\n\n\n\nBase composition\n\n\n\n\n\n\n\nCG motif distribution\n\n\n\n\n\nThose were produced in R with Biostrings and ggplot2:\nlibrary(Biostrings)\nlibrary(tidyverse)\n\nsequences &lt;- readDNAStringSet(\"../data/Ab_4denovo_CLC6_a.fa\")\n\n# Sequence length distribution\ntibble(Length = width(sequences)) |&gt;\n  ggplot(aes(x = Length)) +\n  geom_histogram(binwidth = 1, color = \"grey\", fill = \"blue\", alpha = 0.75) +\n  labs(title = \"Histogram of Sequence Lengths\", x = \"Sequence Length\", y = \"Frequency\") +\n  theme_minimal()\n\n# Base composition\nalphabetFrequency(sequences, baseOnly = TRUE) |&gt;\n  as_tibble() |&gt;\n  pivot_longer(everything(), names_to = \"Base\", values_to = \"Count\") |&gt;\n  ggplot(aes(x = Base, y = Count, fill = Base)) +\n  geom_col(color = \"black\") +\n  labs(title = \"Base Composition\", x = \"Base\", y = \"Count\") +\n  theme_minimal()",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#run-blastx",
-    "href": "modules/04-blast.html#run-blastx",
-    "title": "NCBI Blast",
-    "section": "Run blastx",
-    "text": "Run blastx\nblastx \\\n-query ../data/Ab_4denovo_CLC6_a.fa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Ab_4-uniprot_blastx.tab \\\n-evalue 1E-20 \\\n-num_threads 20 \\\n-max_target_seqs 1 \\\n-outfmt 6\nThe arguments that matter:\n\n-evalue 1E-20 — the significance cutoff. E-value is the number of hits this good you would expect by chance in a database this size, so smaller is stricter. 1E-20 is conservative, appropriate when you would rather miss a real gene than record a wrong one.\n-num_threads 20 — how many CPUs to use. Set this to what your machine actually has; check with nproc.\n-max_target_seqs 1 — keep only the best hit per query. Fine for “what is this gene,” wrong if you want to examine the hit distribution.\n-outfmt 6 — tabular output. This is the format everything downstream expects.\n\n\n\n\n\n\n\nTipStart small\n\n\n\nBefore committing to a run over thousands of sequences, take the first few and time it:\nhead -100 ../data/Ab_4denovo_CLC6_a.fa &gt; ../data/test.fa\nRun the pipeline on that. You will find your path typos in 30 seconds rather than 3 hours.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#check-the-output",
-    "href": "modules/04-blast.html#check-the-output",
-    "title": "NCBI Blast",
-    "section": "Check the output",
-    "text": "Check the output\nhead -2 ../output/Ab_4-uniprot_blastx.tab\n\necho \"Number of hits\"\nwc -l ../output/Ab_4-uniprot_blastx.tab\nThe 12 columns of -outfmt 6, in order:\n\n\n\n#\nColumn\nMeaning\n\n\n\n\n1\nqseqid\nQuery sequence ID\n\n\n2\nsseqid\nSubject (database hit) ID\n\n\n3\npident\nPercent identical\n\n\n4\nlength\nAlignment length\n\n\n5\nmismatch\nMismatches\n\n\n6\ngapopen\nGap openings\n\n\n7–8\nqstart, qend\nAlignment range on the query\n\n\n9–10\nsstart, send\nAlignment range on the subject\n\n\n11\nevalue\nE-value\n\n\n12\nbitscore\nBit score\n\n\n\nThere is no header row in the file — you have to know this table.\nNote that the hit count is normally lower than your sequence count. Sequences with no match above the E-value threshold simply produce no line. That is a result, not a failure: plenty of transcripts in a non-model assembly have no reviewed homolog.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#split-the-uniprot-identifier",
-    "href": "modules/04-blast.html#split-the-uniprot-identifier",
-    "title": "NCBI Blast",
-    "section": "Split the UniProt identifier",
-    "text": "Split the UniProt identifier\nSwiss-Prot IDs arrive as sp|P12345|NAME_SPECIES. The middle field is the accession you need for joining:\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\n\nhead -1 ../output/Ab_4-uniprot_blastx_sep.tab\nThis turns column 2 into three columns, so everything after it shifts right by two. The accession lands in column 3, and the E-value that was column 11 is now column 13.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#what-did-you-match",
-    "href": "modules/04-blast.html#what-did-you-match",
-    "title": "NCBI Blast",
-    "section": "What did you match?",
-    "text": "What did you match?\nA quick sanity check — the organisms behind your hits:\nannot_tab |&gt;\n  count(Organism, sort = TRUE) |&gt;\n  slice_head(n = 10) |&gt;\n  ggplot(aes(x = reorder(Organism, n), y = n)) +\n  geom_col(fill = \"steelblue\", color = \"black\") +\n  coord_flip() +\n  labs(title = \"Top 10 species hits\", x = \"Organism\", y = \"Count\") +\n  theme_minimal()\nExpect a lot of human, mouse, and other well-studied models. That is a property of Swiss-Prot, not a discovery about your animal — reviewed proteins skew heavily toward organisms people study intensively. Do not over-read it.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#most-common-biological-processes",
-    "href": "modules/04-blast.html#most-common-biological-processes",
-    "title": "NCBI Blast",
-    "section": "Most common biological processes",
-    "text": "Most common biological processes\nannot_tab |&gt;\n  separate_rows(Gene.Ontology..biological.process., sep = \";\") |&gt;\n  mutate(process = str_trim(Gene.Ontology..biological.process.)) |&gt;\n  filter(!is.na(process), process != \"\") |&gt;\n  count(process, sort = TRUE) |&gt;\n  slice_head(n = 20) |&gt;\n  ggplot(aes(x = reorder(process, n), y = n)) +\n  geom_col(fill = \"darkseagreen\", color = \"black\") +\n  coord_flip() +\n  labs(title = \"20 most common biological processes\", x = NULL, y = \"Count\") +\n  theme_minimal()",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#choosing-which-file-to-annotate",
-    "href": "modules/04-blast.html#choosing-which-file-to-annotate",
-    "title": "NCBI Blast",
-    "section": "Choosing which file to annotate",
-    "text": "Choosing which file to annotate\nThis is the step people get wrong, and it is worth slowing down for.\nWork backwards from your identifiers. Your count matrix already names genes in some particular way. Whatever you annotate has to produce identifiers that match, or the join at the end silently fails.\nFor a Crassostrea virginica count matrix built with HISAT2/StringTie against the RefSeq GFF, genes are named like gene-LOC111099033. The file that lets you recover those IDs is translated_cds.faa — its FASTA headers carry the [gene=...] tag.\n\n\n\n\n\n\nImportantUse the current assembly\n\n\n\nOlder lab notebooks — and earlier versions of this module — used GCF_002022765.2 (C_virginica-3.0). That assembly is now suppressed in RefSeq.\nThe current C. virginica reference is GCF_053477285.1 (ASM5347728v1, chromosome-level, ~529 Mb). Use it for new work.\nIf you are reproducing an older analysis, you may still need the old assembly — but know that you are doing that deliberately, and say so in your methods. See Bivalves for more on this species.\n\n\ncd ../data\n\nASM=GCF_053477285.1_ASM5347728v1\n\ncurl -O https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/${ASM}/${ASM}_translated_cds.faa.gz\n\ngunzip -k ${ASM}_translated_cds.faa.gz\nhead -2 ../data/${ASM}_translated_cds.faa\n\necho \"number of sequences\"\ngrep -c \"&gt;\" ../data/${ASM}_translated_cds.faa\nA header looks like this — note the [gene=...] field, which is the part you need:\n&gt;lcl|NC_035780.1_prot_XP_022327646.1_1 [gene=LOC111126949] [db_xref=GeneID:111126949] [protein=UNC5C-like protein] [protein_id=XP_022327646.1] [location=join(30535..31557,31736..31887,31977..32565,32959..33204)] [gbkey=CDS]\nMTEVCYIWASSSTTVVICGIFFIVWRCFISIKKRASPLHGSSQQVCQTCQIEGHDFGEFQLSCRRQNTNVGYDLQGRRSD",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#run-blastp",
-    "href": "modules/04-blast.html#run-blastp",
-    "title": "NCBI Blast",
-    "section": "Run blastp",
-    "text": "Run blastp\nThese are already proteins, so this is blastp rather than blastx:\nblastp \\\n-query ../data/${ASM}_translated_cds.faa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Cvir_transcds-uniprot_blastp.tab \\\n-evalue 1E-20 \\\n-num_threads 40 \\\n-max_target_seqs 1 \\\n-outfmt 6\nThis is a much larger job than Part 2 — tens of thousands of proteins. Run it somewhere it can finish.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#link-gene-ids-to-swiss-prot-accessions",
-    "href": "modules/04-blast.html#link-gene-ids-to-swiss-prot-accessions",
-    "title": "NCBI Blast",
-    "section": "Link gene IDs to Swiss-Prot accessions",
-    "text": "Link gene IDs to Swiss-Prot accessions\nThe BLAST output identifies each query by the full lcl|... header ID, which does not contain the gene name. The gene name lives in the rest of the header. So convert the FASTA to a table and join on that ID:\nawk '/^&gt;/ {if (seq) print id \"\\t\" desc \"\\t\" seq; \\\n           split(substr($0,2), a, \" \"); id = a[1]; \\\n           desc = substr($0, 2 + length(id) + 1); seq = \"\"; next} \\\n     {gsub(/ /, \"\"); seq = seq $0} \\\n     END {if (seq) print id \"\\t\" desc \"\\t\" seq}' \\\n  ../data/${ASM}_translated_cds.faa \\\n  &gt; ../data/${ASM}_translated_cds.tab\n\nhead -1 ../data/${ASM}_translated_cds.tab\nlibrary(tidyverse)\n\nblast &lt;- read.csv(\"../output/Cvir_transcds-uniprot_blastp.tab\",\n                  sep = \"\\t\", header = FALSE)\n\ncdsftab &lt;- read.csv(paste0(\"../data/\", ASM, \"_translated_cds.tab\"),\n                    sep = \"\\t\", header = FALSE, row.names = NULL)\n\ng.spid &lt;- left_join(blast, cdsftab, by = \"V1\") |&gt;\n  mutate(gene = str_extract(V2.y, \"(?&lt;=\\\\[gene=)\\\\w+\")) |&gt;\n  select(gene, V11, V2.x) |&gt;\n  mutate(SPID = str_extract(V2.x, \"(?&lt;=\\\\|)[^\\\\|]*(?=\\\\|)\")) |&gt;\n  distinct(gene, SPID, .keep_all = TRUE)\nStep by step:\n\nleft_join(blast, cdsftab, by = \"V1\") — both tables key on the sequence ID, so this attaches each BLAST hit to its original FASTA header. Columns present in both get suffixed: V2.x from blast (the Swiss-Prot hit), V2.y from cdsftab (the header description).\nstr_extract(V2.y, \"(?&lt;=\\\\[gene=)\\\\w+\") — pulls the gene name out of the header. The (?&lt;=...) is a lookbehind: match word characters preceded by [gene=, without capturing that text itself.\nselect(gene, V11, V2.x) — keep the gene name, the E-value, and the hit ID.\nstr_extract(V2.x, \"(?&lt;=\\\\|)[^\\\\|]*(?=\\\\|)\") — pull the accession from sp|P12345|NAME_SPECIES by matching what sits between two pipes. Same idea as the tr trick in Part 2, done in R.\ndistinct(gene, SPID, .keep_all = TRUE) — one row per gene–accession pair. A gene with several transcripts would otherwise appear repeatedly.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#get-go-terms",
-    "href": "modules/04-blast.html#get-go-terms",
-    "title": "NCBI Blast",
-    "section": "Get GO terms",
-    "text": "Get GO terms\nWrite out the accessions:\ng.spid |&gt;\n  select(SPID) |&gt;\n  write.table(file = \"../output/SPID.txt\", sep = \"\\t\",\n              row.names = FALSE, quote = FALSE)\nThen map them to GO terms at https://www.uniprot.org using Retrieve/ID mapping. Paste or upload SPID.txt, map from UniProtKB_AC-ID to UniProtKB, then use Customize columns to include Gene Ontology IDs before downloading as TSV.\nFinally, join back so your gene IDs carry GO terms:\ngo &lt;- read.csv(\"../output/uniprotGO.tab\", sep = \"\\t\",\n               header = TRUE, row.names = NULL)\n\nleft_join(g.spid, go, by = c(\"SPID\" = \"Entry\")) |&gt;\n  select(gene, Gene.Ontology.IDs) |&gt;\n  write.table(file = \"../output/geneGO.txt\", sep = \"\\t\",\n              row.names = FALSE, quote = FALSE)\ngeneGO.txt maps each LOC gene ID to its GO terms — the input a functional enrichment test expects.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#where-things-commonly-go-wrong",
-    "href": "modules/04-blast.html#where-things-commonly-go-wrong",
-    "title": "NCBI Blast",
-    "section": "Where things commonly go wrong",
-    "text": "Where things commonly go wrong\nEmpty output file. Usually the -db prefix does not match what makeblastdb -out wrote, or the path is wrong relative to where you are running. BLAST will not always complain loudly.\nFar fewer hits than sequences. Often correct. Sequences with no homolog above threshold produce no line. Loosen -evalue only if you have a reason, and know you are trading precision for recall.\nThe join produces all NA. The keys do not match. Print head() of both key columns and look at them. Most often the identifier still has decoration — a sp| prefix, a version suffix — that has not been stripped.\nRow count grows after a join. A one-to-many match. Check for duplicate keys on the right-hand table before joining.\nIt has been running for hours. Check the size of the input and the thread count. Then remember the head -100 test from earlier.",
+    "section": "When it doesn’t work",
+    "text": "When it doesn’t work\n\nEmpty output — the -db prefix does not match what makeblastdb -out wrote, or the path is wrong for where you are running.\nJoin gives all NA — keys do not match. head() both key columns; usually an identifier still has a sp| prefix or version suffix attached.\nRow count grows after a join — duplicate keys on the right-hand table.\nRunning for hours — check input size and -num_threads, then go back to the head -100 test.",
     "crumbs": [
       "Home",
       "Modules",
@@ -1633,90 +1645,6 @@
       "Home",
       "Organism Biology",
       "Cnidarians"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#the-idea",
-    "href": "modules/04-blast.html#the-idea",
-    "title": "NCBI Blast",
-    "section": "The idea",
-    "text": "The idea\nYou have a few thousand sequences and no idea what they are — off a de novo assembly of a non-model organism, say, with no annotation to inherit.\nThe strategy is comparison: search each unknown sequence against a database of proteins whose function is known, and take the annotation from the best match.\nThe database here is UniProt/Swiss-Prot, the manually reviewed part of UniProt. Smaller than the full database and far better curated — the right trade for annotation.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#the-three-steps",
-    "href": "modules/04-blast.html#the-three-steps",
-    "title": "NCBI Blast",
-    "section": "The three steps",
-    "text": "The three steps\n\n\n\n\n\nflowchart LR\n  A[\"Swiss-Prot&lt;br/&gt;FASTA\"] --&gt;|makeblastdb| B[\"BLAST&lt;br/&gt;database\"]\n  C[\"Your&lt;br/&gt;sequences\"] --&gt; D\n  B --&gt; D[\"blastx\"]\n  D --&gt; E[\"Hit table&lt;br/&gt;outfmt 6\"]\n  E --&gt;|join in R| F[\"Gene names,&lt;br/&gt;GO terms\"]\n\n\n\n\n\n\n\n\n\n\n\n\nTipThere is a script that does all of this\n\n\n\nsr320/workflow-annotation wraps the entire workflow in one command:\nbash blast2slim.sh -i transcripts.fasta\nIt downloads and indexes Swiss-Prot, picks blastx or blastp for you, pulls UniProt annotations over the REST API, maps GO terms to GO-Slim categories with GOATOOLS, and writes TSVs ready for downstream use. --diamond swaps in DIAMOND when BLAST+ is too slow for the dataset.\nWork through the steps below first so you know what it is doing — then use the script for real work rather than retyping this by hand.\n\n\nEverything below is those three steps. Set your BLAST+ location once if it is not already on your PATH:\nexport BLAST=/home/shared/ncbi-blast-2.11.0+/bin   # adjust to your machine\n$BLAST/blastx -version                             # check what you actually have",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#step-1-build-the-database",
-    "href": "modules/04-blast.html#step-1-build-the-database",
-    "title": "NCBI Blast",
-    "section": "Step 1 — Build the database",
-    "text": "Step 1 — Build the database\nDownload Swiss-Prot and index it. Record the release — annotation results shift between releases, so it belongs in your methods.\ncd ../data\nRELEASE=r2025_03    # check https://www.uniprot.org/help/release-statistics\n\ncurl -O https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz\nmv uniprot_sprot.fasta.gz uniprot_sprot_${RELEASE}.fasta.gz\ngunzip -k uniprot_sprot_${RELEASE}.fasta.gz\n\nmkdir -p ../blastdb\nmakeblastdb \\\n-in ../data/uniprot_sprot_${RELEASE}.fasta \\\n-dbtype prot \\\n-out ../blastdb/uniprot_sprot_${RELEASE}\nUsing a variable for the release is deliberate: type it by hand in both places and they will eventually disagree, leaving you with a database built from a different file than you think — and nothing will error.\n-out gives a prefix, not a filename. Several index files are written from it, and that same prefix is what you pass to -db.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#step-2-run-blast",
-    "href": "modules/04-blast.html#step-2-run-blast",
-    "title": "NCBI Blast",
-    "section": "Step 2 — Run BLAST",
-    "text": "Step 2 — Run BLAST\n\nPick the right program\n\n\n\nProgram\nQuery\nDatabase\n\n\n\n\nblastn\nnucleotide\nnucleotide\n\n\nblastp\nprotein\nprotein\n\n\nblastx\nnucleotide, translated\nprotein\n\n\ntblastn\nprotein\nnucleotide, translated\n\n\n\nTranscripts against a protein database means blastx.\ncurl -k https://eagle.fish.washington.edu/cnidarian/Ab_4denovo_CLC6_a.fa \\\n&gt; ../data/Ab_4denovo_CLC6_a.fa\n\ngrep -c \"&gt;\" ../data/Ab_4denovo_CLC6_a.fa    # how many sequences?\n\nblastx \\\n-query ../data/Ab_4denovo_CLC6_a.fa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Ab_4-uniprot_blastx.tab \\\n-evalue 1E-20 \\\n-num_threads 20 \\\n-max_target_seqs 1 \\\n-outfmt 6\n\n-evalue 1E-20 — how many hits this good you would expect by chance. Smaller is stricter.\n-num_threads 20 — set to what the machine has (nproc).\n-max_target_seqs 1 — best hit only.\n-outfmt 6 — tabular; everything downstream expects this.\n\n\n\n\n\n\n\nTip\n\n\n\nRun head -100 of your input through the whole thing first. You will find path typos in 30 seconds rather than 3 hours.\n\n\n\n\nRead the output\nhead -2 ../output/Ab_4-uniprot_blastx.tab\nwc -l ../output/Ab_4-uniprot_blastx.tab\nThere is no header row, so you have to know the 12 columns:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#\n1\n2\n3\n4\n5\n6\n7–8\n9–10\n11\n12\n\n\n\n\n\nqseqid\nsseqid\npident\nlength\nmismatch\ngapopen\nqstart qend\nsstart send\nevalue\nbitscore\n\n\n\nExpect fewer hits than sequences. Anything without a match above threshold produces no line — normal for a non-model assembly, not a failure.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#step-3-add-annotation",
-    "href": "modules/04-blast.html#step-3-add-annotation",
-    "title": "NCBI Blast",
-    "section": "Step 3 — Add annotation",
-    "text": "Step 3 — Add annotation\nBLAST told you which protein each sequence matches, not what it does. Join to a UniProt table for that.\nSwiss-Prot IDs arrive as sp|P12345|NAME_SPECIES; split on the pipe to expose the accession:\ntr '|' '\\t' &lt; ../output/Ab_4-uniprot_blastx.tab \\\n&gt; ../output/Ab_4-uniprot_blastx_sep.tab\nThat turns column 2 into three, shifting everything after it right by two — accession lands in column 3, E-value moves from 11 to 13.\nlibrary(tidyverse)\n\nbltabl &lt;- read.csv(\"../output/Ab_4-uniprot_blastx_sep.tab\", sep = \"\\t\", header = FALSE)\nspgo   &lt;- read.csv(\"https://gannet.fish.washington.edu/seashell/snaps/uniprot_table_r2023_01.tab\",\n                   sep = \"\\t\", header = TRUE)\n\nannot_tab &lt;- left_join(bltabl, spgo, by = c(\"V3\" = \"Entry\")) |&gt;\n  select(V1, V3, V13,\n         Protein.names, Organism,\n         Gene.Ontology..biological.process., Gene.Ontology.IDs)\n\nwrite.table(annot_tab, \"../output/blast_annot_go.tab\",\n            sep = \"\\t\", row.names = FALSE, quote = FALSE)\nleft_join keeps every BLAST hit even where UniProt has no matching row, so misses show as NA rather than disappearing — a silently shrinking table is the easiest way to lose data without noticing.\nThat is the workflow. annot_tab has a gene name, organism, and GO terms for every sequence that matched.\n\n\n\n\n\n\nNote\n\n\n\nMost hits will be to human, mouse, and other heavily studied organisms. That is a property of Swiss-Prot, not a discovery about your animal.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#variation-starting-from-a-reference-proteome",
-    "href": "modules/04-blast.html#variation-starting-from-a-reference-proteome",
-    "title": "NCBI Blast",
-    "section": "Variation — starting from a reference proteome",
-    "text": "Variation — starting from a reference proteome\nMore often you are in a species that already has a reference, and the goal is to attach GO terms to an existing gene set for enrichment testing later. Same three steps, two differences.\nWork backwards from your identifiers. Whatever you annotate must produce IDs matching your count matrix, or the final join silently fails. For a Crassostrea virginica matrix built against the RefSeq GFF, genes look like gene-LOC111099033, and the file carrying those in its headers is translated_cds.faa.\n\n\n\n\n\n\nImportantUse the current assembly\n\n\n\nOlder notebooks use GCF_002022765.2 (C_virginica-3.0), which is now suppressed in RefSeq. The current reference is GCF_053477285.1 (ASM5347728v1). See Bivalves.\n\n\ncd ../data\nASM=GCF_053477285.1_ASM5347728v1\ncurl -O https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/053/477/285/${ASM}/${ASM}_translated_cds.faa.gz\ngunzip -k ${ASM}_translated_cds.faa.gz\nThese are already proteins, so use blastp:\nblastp \\\n-query ../data/${ASM}_translated_cds.faa \\\n-db ../blastdb/uniprot_sprot_${RELEASE} \\\n-out ../output/Cvir_transcds-uniprot_blastp.tab \\\n-evalue 1E-20 -num_threads 40 -max_target_seqs 1 -outfmt 6\nThe gene ID lives in the FASTA header ([gene=LOC111126949]), not in the BLAST output, so pull it out and pair it with the Swiss-Prot accession:\ng.spid &lt;- left_join(blast, cdsftab, by = \"V1\") |&gt;\n  mutate(gene = str_extract(V2.y, \"(?&lt;=\\\\[gene=)\\\\w+\"),          # from the header\n         SPID = str_extract(V2.x, \"(?&lt;=\\\\|)[^\\\\|]*(?=\\\\|)\")) |&gt;  # from sp|P12345|NAME\n  distinct(gene, SPID)\n\nwrite.table(g.spid[\"SPID\"], \"../output/SPID.txt\",\n            sep = \"\\t\", row.names = FALSE, quote = FALSE)\nThen map those accessions to GO terms at https://www.uniprot.org via Retrieve/ID mapping, adding Gene Ontology IDs under Customize columns, and join the result back on SPID. The output — each LOC gene with its GO terms — is what an enrichment test expects.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
-    ]
-  },
-  {
-    "objectID": "modules/04-blast.html#when-it-doesnt-work",
-    "href": "modules/04-blast.html#when-it-doesnt-work",
-    "title": "NCBI Blast",
-    "section": "When it doesn’t work",
-    "text": "When it doesn’t work\n\nEmpty output — the -db prefix does not match what makeblastdb -out wrote, or the path is wrong for where you are running.\nJoin gives all NA — keys do not match. head() both key columns; usually an identifier still has a sp| prefix or version suffix attached.\nRow count grows after a join — duplicate keys on the right-hand table.\nRunning for hours — check input size and -num_threads, then go back to the head -100 test.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "NCBI Blast"
     ]
   }
 ]

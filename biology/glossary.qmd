@@ -170,3 +170,33 @@ If you add a term to a [taxon page](index.qmd), add it here too.
 **Frontloading.** Maintaining constitutively elevated expression of stress-response genes so that they are already up before the stress arrives, rather than responding after. One of two contrasting reaction-norm strategies, the other being reactive plasticity.
 
 **Phenotypic plasticity.** The capacity of one genotype to produce different phenotypes depending on environment. Central to the lab's framing, where the plasticity itself is treated as the trait of interest.
+
+------------------------------------------------------------------------
+
+## Gene expression and epigenetics
+
+**Gene expression.** Use of the information in a gene to produce a functional RNA or protein. RNA-seq measures RNA abundance as one readout of expression; it does not directly measure protein abundance.
+
+**Transcription.** Production of an RNA copy from a DNA template. It is the DNA-to-RNA step of the central dogma.
+
+**Promoter.** A regulatory DNA region near the start of a gene where transcription machinery is recruited. Promoter methylation can be associated with reduced transcription in some contexts, but this is not a universal methylation rule.
+
+**CpG site.** A cytosine followed by a guanine on the same DNA strand; the `p` represents the phosphate joining them. CpGs are the predominant sites of DNA methylation in animals.
+
+**DNA methylation.** Addition of a methyl group to DNA, most commonly producing 5-methylcytosine at CpG sites in animals. It changes the chemical state of DNA without changing its nucleotide sequence.
+
+**Gene body.** The region transcribed into RNA, from transcription start to transcription end, including exons and introns. It does not include the promoter.
+
+**Gene-body methylation (gbM).** DNA methylation within a transcribed gene. It is common in many invertebrates and is often associated with active, stable expression rather than simple gene silencing.
+
+**DNA methyltransferase (DNMT).** An enzyme that adds or maintains methyl groups on DNA. Different DNMT family members participate in establishing and copying methylation patterns.
+
+**Epigenetics.** Study of regulatory states that affect genome function without changing the DNA sequence. The term does not by itself mean that a state is environmentally caused, adaptive, or inherited.
+
+**Methylome.** The genome-wide pattern of DNA methylation in a particular biological sample. It can differ among species, tissues, cell types, developmental stages, and environments.
+
+**Differentially methylated gene (DMG).** A gene associated with a statistically supported methylation difference between groups. The label does not establish that methylation changed the gene's expression.
+
+**Differentially expressed gene (DEG).** A gene whose measured RNA abundance differs between groups under a specified statistical threshold. A DEG is not automatically a DMG, and neither label establishes mechanism by itself.
+
+For the full bridge from the central dogma to these terms, see [From Gene Expression to DNA Methylation](../framework/gene-expression-methylation.qmd).
