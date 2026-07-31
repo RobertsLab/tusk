@@ -1,0 +1,134 @@
+---
+title: "Reading List"
+subtitle: "Where to go when these pages stop being enough"
+---
+
+Two tiers, kept deliberately separate. Mixing an introductory textbook chapter with a primary research paper is what makes reading lists useless to someone new — you cannot tell which one to open first.
+
+**Start here** is written for people encountering these animals for the first time. **Go deeper** is primary literature and reviews that bridge organismal biology into the lab's own framing; open those once the basics are in place.
+
+::: callout-note
+## On these citations
+Every journal citation below was verified against PubMed, and the DOI links resolve to the record checked. The books and web resources in *Start here* are not indexed in PubMed and were not machine-verified — confirm the edition through the UW Libraries catalog before ordering one.
+:::
+
+------------------------------------------------------------------------
+
+# Start here
+
+## General invertebrate biology
+
+**Ruppert EE, Fox RS, Barnes RD. *Invertebrate Zoology: A Functional Evolutionary Approach*. 7th ed. Brooks/Cole, 2004.** The standard comprehensive text. Organized functionally rather than as a taxonomic march, which makes it useful for understanding *why* a body plan works rather than just what its parts are called. Read the chapters for your phylum, not the whole book.
+
+**Brusca RC, Moore W, Shuster SM. *Invertebrates*. 3rd ed. Sinauer, 2016.** The main alternative, with stronger phylogenetic framing. Either one works; use whichever the library has available.
+
+## Bivalves
+
+**Gosling E. *Marine Bivalve Molluscs*. 2nd ed. Wiley-Blackwell, 2015.** The single most useful entry point for the lab's core animals. Covers anatomy, feeding, reproduction, larval biology, genetics, and culture in one volume, written at a level that assumes interest rather than prior training.
+
+**Galtsoff PS. *The American Oyster* Crassostrea virginica *Gmelin*. Fishery Bulletin of the Fish and Wildlife Service, Vol. 64. U.S. Government Printing Office, 1964.** Sixty years old and still the most thorough single description of eastern oyster anatomy ever published. A U.S. government work, so it is in the public domain and freely downloadable. If you want to know what a structure actually looks like, this is where to look.
+
+**Kennedy VS, Newell RIE, Eble AF (eds). *The Eastern Oyster:* Crassostrea virginica. Maryland Sea Grant, 1996.** The modern companion to Galtsoff — edited chapters covering biology, ecology, disease, and fishery, each by a specialist.
+
+## Species fact sheets and databases
+
+**FAO Cultured Aquatic Species Information Programme** — <https://www.fao.org/fishery/en/culturedspecies/search>. Short, structured profiles of farmed species covering biology, life cycle, and production. The fastest way to orient on a species you have not worked with.
+
+**NOAA Fisheries species directory** — <https://www.fisheries.noaa.gov/species-directory>. Accessible profiles with a management and conservation emphasis. Public domain, so figures can be reused.
+
+**WoRMS, the World Register of Marine Species** — <https://www.marinespecies.org>. The authority for marine taxonomy and valid species names. Use it when a paper's name for a species does not match the one you know — marine invertebrate nomenclature changes more than you would expect.
+
+**Echinobase** — <https://echinobase.org>. The model-organism knowledgebase for echinoderms: genomes, gene pages, orthology, and a genome browser for sea urchins and sea stars, including *Patiria miniata* (bat star) and *Acanthaster planci* (crown-of-thorns).
+
+------------------------------------------------------------------------
+
+# Go deeper
+
+## Bivalve immunity
+
+**Allam B, Raftos D (2015) Immune responses to infectious diseases in bivalves. *J Invertebr Pathol* 131:121–136.** [doi:10.1016/j.jip.2015.05.005](https://doi.org/10.1016/j.jip.2015.05.005)
+
+The comprehensive review of how oysters, clams, and mussels defend themselves. Covers hemocytes, pattern recognition receptors, and effector proteins, and is careful about the open question of whether diversified gene families such as FREPs give bivalves any pathogen-specific response. Read this before making any claim about "immune memory" in a bivalve.
+
+## Biomineralization
+
+**Marin F, Le Roy N, Marie B (2012) The formation and mineralization of mollusk shell. *Front Biosci (Schol Ed)* 4(3):1099–1125.** [doi:10.2741/s321](https://doi.org/10.2741/s321)
+
+How a shell actually gets built, from nanostructure up. Its central point is that shell matrix proteins are not simply nucleators and inhibitors — the matrix is an integrated system regulating protein–mineral, protein–protein, and tissue–mineral interactions together.
+
+**McDougall C, Degnan BM (2018) The evolution of mollusc shells. *WIREs Dev Biol* 7(3):e313.** [doi:10.1002/wdev.313](https://doi.org/10.1002/wdev.313)
+
+The evolutionary companion piece, and a useful corrective to an assumption newcomers often bring. Despite a conserved set of genes specifying the mantle, there is **no single conserved "biomineralization toolkit"** — the secreted proteins are rapidly evolving and largely lineage-specific. The authors argue the same processes likely underlie coral and echinoderm skeletons too, which makes this a good cross-cutting read.
+
+## Coral symbiosis and bleaching
+
+**Davy SK, Allemand D, Weis VM (2012) Cell biology of cnidarian-dinoflagellate symbiosis. *Microbiol Mol Biol Rev* 76(2):229–261.** [doi:10.1128/MMBR.05014-11](https://doi.org/10.1128/MMBR.05014-11) · [PMC3372257](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3372257/)
+
+The definitive review of how the symbiosis works at the cellular level, organized around four processes: recognition and phagocytosis, regulation of host–symbiont biomass, metabolic exchange, and calcification. Start here for corals.
+
+**Weis VM (2008) Cellular mechanisms of Cnidarian bleaching: stress causes the collapse of symbiosis. *J Exp Biol* 211(19):3059–3066.** [doi:10.1242/jeb.009597](https://doi.org/10.1242/jeb.009597)
+
+Short, readable, and the source of a framing worth carrying: bleaching as a **host innate immune response to a compromised symbiont**, rather than simple thermal damage. That reframing connects coral stress biology directly to the immunity material above.
+
+**LaJeunesse TC, Parkinson JE, Gabrielson PW, Jeong HJ, Reimer JD, Voolstra CR, Santos SR (2018) Systematic revision of Symbiodiniaceae highlights the antiquity and diversity of coral endosymbionts. *Curr Biol* 28(16):2570–2580.e6.** [doi:10.1016/j.cub.2018.07.008](https://doi.org/10.1016/j.cub.2018.07.008)
+
+Why the naming changed. What was treated as clades within the single genus *Symbiodinium* was formally revised into multiple genera in the family Symbiodiniaceae. Papers before and after 2018 use different names for the same organisms, and you need this to read across that boundary.
+
+## Sea star wasting disease
+
+::: callout-important
+## Read these three in order
+This is the most useful worked example on the site of how disease etiology actually gets established — including a decade in which the field's answer was wrong. Read them in sequence rather than picking one.
+:::
+
+**1. Hewson I et al. (2014) Densovirus associated with sea-star wasting disease and mass mortality. *PNAS* 111(48):17278–17283.** [doi:10.1073/pnas.1416625111](https://doi.org/10.1073/pnas.1416625111) · [PMC4260605](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4260605/)
+
+The original identification of a densovirus (SSaDV) as the candidate agent, from transmission experiments and viral metagenomics. Widely cited and, as it turned out, not correct.
+
+**2. Hewson I, Johnson MR, Reyes-Chavez B (2024) Lessons learned from the sea star wasting disease investigation. *Ann Rev Mar Sci* 17(1):257–279.** [doi:10.1146/annurev-marine-040623-082617](https://doi.org/10.1146/annurev-marine-040623-082617)
+
+The same lead author's retrospective on why the 2014 result did not hold up. Later work failed to support it, and reanalysis of the original experimental procedures disbanded the candidate agent entirely. An unusually candid account of how early findings got over-interpreted, written by the person who made them.
+
+**3. Prentice MB et al. (2025) *Vibrio pectenicida* strain FHCF-3 is a causative agent of sea star wasting disease. *Nat Ecol Evol* 9(9):1739–1751.** [doi:10.1038/s41559-025-02797-2](https://doi.org/10.1038/s41559-025-02797-2)
+
+The resolution, more than ten years after the epidemic began — a bacterium, not a virus, established by fulfilling Koch's postulates with a cultured strain. Note the author list: this is UW-adjacent work, with co-authors at SAFS and Friday Harbor Laboratories.
+
+**Also useful.** McCracken AR et al. (2026) Precursors of sea star wasting: immune and microbial disruption during initial disease outbreak in southeast Alaska. *Proc Biol Sci* 293(2069). [doi:10.1098/rspb.2025.2947](https://doi.org/10.1098/rspb.2025.2947) — transcriptomic and microbial data from wild *Pycnopodia helianthoides*, showing immune activation in exposed animals *before* visible signs of disease. A good example of molecular readouts detecting a state the phenotype has not yet revealed.
+
+## Reference genomes
+
+**Zhang G et al. (2012) The oyster genome reveals stress adaptation and complexity of shell formation. *Nature* 490(7418):49–54.** [doi:10.1038/nature11413](https://doi.org/10.1038/nature11413)
+
+The *Crassostrea gigas* genome, and still the reference point for molluscan genomics. Two findings matter for the lab's framing: expanded heat shock protein 70 and inhibitor-of-apoptosis gene families as an adaptation to sessile intertidal life, and shell formation being more complex than expected, involving cells and their exosomes rather than secretion alone.
+
+**Shinzato C et al. (2011) Using the *Acropora digitifera* genome to understand coral responses to environmental change. *Nature* 476(7360):320–323.** [doi:10.1038/nature10249](https://doi.org/10.1038/nature10249)
+
+The first scleractinian coral genome. Notable for finding no evidence of symbiont-to-host horizontal gene transfer, an apparent host dependency on symbionts for cysteine, and an innate immune repertoire more complex than the sea anemone's.
+
+**Sodergren E et al. (2006) The genome of the sea urchin *Strongylocentrotus purpuratus*. *Science* 314(5801):941–952.** [doi:10.1126/science.1133609](https://doi.org/10.1126/science.1133609) · [PMC3159423](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159423/)
+
+The echinoderm genome that made the group a genomic outgroup for chordates. Its striking result — many genes previously thought to be vertebrate innovations turn out to be present here — is the concrete payoff of the deuterostome relationship described on the [Start Here](index.qmd) page.
+
+**Echinobase.** Telmer CA et al. (2024) Echinobase: a resource to support the echinoderm research community. *Genetics* 227(1). [doi:10.1093/genetics/iyae002](https://doi.org/10.1093/genetics/iyae002) · Arshinoff BI et al. (2022) *Nucleic Acids Res* 50(D1):D970–D979. [doi:10.1093/nar/gkab1005](https://doi.org/10.1093/nar/gkab1005)
+
+Cite these if you use Echinobase data. The 2024 paper is the current description; the 2022 paper describes how the resource was built.
+
+::: callout-note
+## The *C. virginica* assembly
+The eastern oyster reference used in the [NCBI BLAST module](../modules/04-blast.qmd) is NCBI assembly `GCF_002022765.2` (*C_virginica-3.0*). Cite the NCBI assembly accession directly — there is no single assembly-announcement paper that serves as the canonical reference.
+:::
+
+------------------------------------------------------------------------
+
+## On hosting PDFs
+
+`framework/papers/` holds only openly licensed PDFs, because everything under `docs/` is publicly served. The same rule applies here.
+
+**No PDFs are hosted for this page.** Several of the papers above are freely readable in PubMed Central, but free access in PMC is not the same as a license permitting redistribution — that has to be checked per article. Until someone does that check individually, these are linked by DOI and PMC only. If you verify that a specific paper carries CC BY or CC BY-NC, add the PDF and note the license in your commit message.
+
+------------------------------------------------------------------------
+
+## Related
+
+- [Foundational Papers](../framework/foundational-papers.qmd) — the seven anchor papers behind the lab's conceptual framework. That index assumes the biology this section teaches; this list is the on-ramp to it.
+- [Glossary](glossary.qmd) — for terms in the papers above.

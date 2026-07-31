@@ -1,0 +1,146 @@
+---
+title: "Bivalves"
+subtitle: "Oysters, clams, and mussels — the lab's core study animals"
+---
+
+A bivalve is a mollusc that gave up having a head. What it has instead is two hinged shell valves, an enormously enlarged gill that feeds it, and a sessile or near-sessile life spent filtering seawater. That combination — stuck in place, continuously sampling the water around it — is what makes bivalves both commercially important and unusually informative about environmental history.
+
+## 1. Who they are
+
+Class **Bivalvia**, phylum **Mollusca**, within the protostome group Lophotrochozoa. Roughly 20,000 living species. They are defined by the two-part shell joined at a hinge, and by what they lack relative to other molluscs: no radula, no distinct head, and very little in the way of centralized sense organs.
+
+Species that come up in lab work and Pacific Northwest aquaculture:
+
+| Species | Common name | Why it appears |
+|---|---|---|
+| *Magallana gigas* (formerly *Crassostrea gigas*) | Pacific oyster | The most widely farmed shellfish in the world; the workhorse of shellfish aquaculture research |
+| *Crassostrea virginica* | Eastern oyster | Atlantic and Gulf coasts; the species used in the [NCBI BLAST module](../modules/04-blast.qmd) |
+| *Mytilus trossulus*, *M. galloprovincialis*, *M. chilensis* | Blue mussels | Widespread, easily transplanted, and central to the lncRNA work in the [foundational papers](../framework/foundational-papers.qmd) |
+| *Panopea generosa* | Geoduck | A long-lived PNW clam of regional aquaculture importance |
+| *Ruditapes philippinarum* | Manila clam | Widely cultured infaunal clam |
+
+::: callout-warning
+## A naming trap worth knowing early
+The Pacific oyster has been reassigned from *Crassostrea* to ***Magallana***. NCBI now lists its genome under *Magallana gigas*, while a large share of the literature — including papers published this year — still says *Crassostrea gigas*. Both names refer to the same animal. The eastern oyster, *C. virginica*, remains in *Crassostrea*.
+
+When a search comes back emptier than it should, a name change is a common reason. [WoRMS](https://www.marinespecies.org) is the authority to check.
+:::
+
+## 2. Body plan
+
+**Shell and hinge.** Two valves of calcium carbonate, joined by a springy protein ligament that pushes them *open*. The **adductor muscles** pull them closed, working against that ligament — which is why a dead bivalve gapes. Growth radiates outward from the **umbo**, the oldest part near the hinge, so the shell carries a record of the animal's growth history.
+
+**Mantle.** The tissue sheet lining each valve, and the tissue that secretes the shell. Shell-building happens at the mantle edge. When a paper reports a mantle transcriptome, biomineralization is almost always the subject.
+
+**Ctenidium (gill).** Greatly enlarged relative to other molluscs, and doing two jobs at once: gas exchange, and food capture. Cilia drive a water current across it and trap particles in mucus.
+
+**Labial palps.** Sort what the gill delivers, routing some to the mouth and rejecting the rest as pseudofeces. This is why a bivalve's filtration rate and its ingestion rate are different numbers.
+
+**Foot.** Large and muscular in clams (burrowing) and mussels (positioning before attachment), reduced to near-nothing in adult oysters, which cement one valve to a surface and stay there.
+
+**Byssus.** In mussels, a bundle of secreted protein threads anchoring the animal. Renewable — a mussel can release and re-attach.
+
+**Digestive gland, gut, and gonad.** The gonad in many bivalves is not a discrete organ but a diffuse tissue that swells through the visceral mass during the reproductive season, interleaved with digestive tissue. This matters for sampling: "gonad" tissue is rarely clean.
+
+**Hemolymph and open circulation.** A heart moves hemolymph, but it is not confined to vessels — it bathes tissues directly. Hemolymph can be drawn from the adductor sinus without killing the animal, which makes repeated sampling of the same individual possible.
+
+::: callout-tip
+## Tissues you will actually see in sample metadata
+**Gill** and **mantle** dominate, because they are the environmental interface and the shell-forming tissue respectively. **Hemolymph** shows up in immune work and where non-lethal repeat sampling is needed. **Adductor** is used when a large, relatively homogeneous muscle sample is wanted. **Digestive gland** appears in contaminant and energetics studies.
+:::
+
+## 3. Life cycle
+
+Most of the lab's species are broadcast spawners with external fertilization and a planktonic larval period of roughly two to three weeks, though temperature moves this substantially.
+
+```{mermaid}
+flowchart LR
+  A["Broadcast<br/>spawning"] --> B["Fertilization<br/>~0 h"]
+  B --> C["Trochophore<br/>~1 day"]
+  C --> D["D-veliger<br/>~2 days"]
+  D --> E["Veliger<br/>feeding, growing"]
+  E --> F["Pediveliger<br/>competent"]
+  F --> G["Settlement<br/>+ metamorphosis"]
+  G --> H["Spat"]
+  H --> I["Adult"]
+  I -.-> A
+```
+
+The **trochophore** is the first swimming stage, ciliated and top-shaped — the same larval form found in annelids, and one of the traits uniting the Lophotrochozoa. It gives way to the **veliger**, which swims and feeds using the ciliated **velum**, and whose early symmetric shell gives the "D-veliger" its name. As the veliger grows it develops a foot and becomes a **pediveliger**: competent to settle. Settlement is cue-dependent, not scheduled — larvae respond to biofilms and chemical signals, and a competent larva can delay if it finds nowhere suitable.
+
+**Metamorphosis** follows settlement: the velum is lost, and the juvenile body plan takes over. Oysters cement their left valve down permanently. Mussels attach by byssus and retain the option to move. Clams burrow.
+
+::: callout-important
+## Why the early window matters so much
+The embryo–larval period is short, and the animal is at its most permeable and least buffered. This is why exposure experiments in this system target the first hours to days — the 0–48 hours post-fertilization window used in the multigenerational pesticide work described in the [foundational papers](../framework/foundational-papers.qmd) is a deliberate choice, not an arbitrary one.
+:::
+
+A further wrinkle: many oysters are **protandrous hermaphrodites**, maturing first as males and potentially switching to female in later seasons. Sex is not a fixed attribute of an individual, which has consequences for how broodstock and family designs are set up.
+
+## 4. Physiology essentials
+
+**Suspension feeding.** Cilia on the gill drive water through the mantle cavity, particles are caught in mucus, palps sort, and the rest leaves as pseudofeces. An adult oyster processes a substantial volume of water daily. The consequence worth carrying: a bivalve concentrates whatever is in the water — food, phytoplankton toxins, contaminants, pathogens, environmental DNA. It is an integrator of its surroundings, which is exactly why it is useful as a biomonitor.
+
+**Gas exchange and circulation.** Oxygen is taken up across the gill and distributed by hemolymph in an open system. Intertidal species close up and go anaerobic when exposed at low tide, then repay the oxygen debt on submersion — a routine daily stress cycle for an animal on a tideflat.
+
+**Osmoconformity.** Bivalves do not hold their internal osmolarity constant against the outside. Estuarine species handle swings in salinity by regulating cell volume with free amino acids rather than by pumping ions to maintain a fixed internal state.
+
+**Biomineralization.** Shell is built at the mantle edge, in layers, over an organic matrix that controls where and how crystals form. Composition varies: adult oyster shell is dominantly **calcite**, while mussels lay down an outer prismatic calcite layer over inner **aragonite** nacre.
+
+::: callout-note
+## The larval shell is the vulnerable one
+The first larval shell is **aragonite**, which is more soluble than calcite, and it must be built fast, early, from an animal with little reserve. This is the mechanistic reason ocean acidification hits bivalve *larvae* harder than adults, and why PNW hatchery failures showed up at the larval stage. Adult shell chemistry is not a good guide to larval vulnerability.
+:::
+
+**Immunity.** Hemocytes do the work: phagocytosis, encapsulation, and the production of antimicrobial effectors, guided by pattern recognition receptors rather than antibodies. There is no adaptive immune system here. See [Allam & Raftos 2015](reading-list.qmd) before making any claim about bivalve immune memory.
+
+## 5. Why the lab cares
+
+**Aquaculture.** Bivalves are among the most sustainable animal protein sources farmed — they require no feed inputs, taking their food from the water column. That makes hatchery reliability, disease resistance, and stress tolerance economically consequential, not just academically interesting.
+
+**Ocean acidification.** Aragonitic larval shell plus a short, energetically tight developmental window makes larvae a sensitive point of failure. PNW hatcheries encountered this directly when upwelled, corrosive water reached intakes and larval production collapsed — one of the clearest cases of ocean acidification producing an economic effect within a human timeframe.
+
+**Environmental memory.** A sessile animal in the intertidal cannot escape a stressor and must solve it physiologically. The [*M. gigas* genome](reading-list.qmd) makes this concrete: expanded heat shock protein 70 and inhibitor-of-apoptosis gene families read as genomic adaptation to exactly that life. Bivalves are where the lab's [conceptual framework](../framework/conceptual-framework.qmd) has the most empirical traction — including the demonstration that ancestral exposure can shape offspring phenotype more strongly than the offspring's own exposure.
+
+## 6. Genomic resources
+
+Reference assemblies as listed by NCBI. Accessions verified against the NCBI Datasets API on 2026-07-30.
+
+| Species | Assembly | Accession | Level |
+|---|---|---|---|
+| *Crassostrea virginica* | ASM5347728v1 | `GCF_053477285.1` | Chromosome |
+| *Magallana gigas* | xbMagGiga1.1 | `GCF_963853765.1` | Chromosome |
+| *Mytilus trossulus* | PNRI_Mtr1.1.1.hap1 | `GCF_036588685.1` | Haplotype-resolved |
+| *Mytilus galloprovincialis* | xbMytGall1.hap1.1 | `GCF_965363235.1` | Haplotype-resolved |
+| *Mytilus chilensis* | — | — | No NCBI reference assembly |
+
+::: callout-warning
+## The BLAST module uses a superseded assembly
+[Module 04](../modules/04-blast.qmd) annotates *C. virginica* transcripts against `GCF_002022765.2` (*C_virginica-3.0*). That accession is now **suppressed in RefSeq**, and the current reference is `GCF_053477285.1` (ASM5347728v1, chromosome-level, released 2025-11-14, ~529 Mb).
+
+The module still teaches BLAST correctly — the mechanics are unchanged. But if you are annotating *C. virginica* for real work rather than for practice, start from the current assembly.
+:::
+
+Two practical notes. *Mytilus* assemblies are increasingly **haplotype-resolved**, meaning you are handed one haplotype rather than a merged consensus; check which one your annotation is on before comparing across studies. And *Mytilus* species hybridize readily where their ranges overlap, so a mussel's species identity is a genetic question, not a shell-shape question.
+
+## 7. Read next
+
+Full annotations on the [reading list](reading-list.qmd).
+
+- **Gosling, *Marine Bivalve Molluscs*** — the single best entry point for this group.
+- **Galtsoff 1964** — public-domain monograph, still the most thorough eastern oyster anatomy available.
+- **Allam & Raftos 2015** — bivalve immunity, and the right level of caution about immune priming.
+- **Marin, Le Roy & Marie 2012** and **McDougall & Degnan 2018** — how shell is built, and why there is no universal molluscan biomineralization toolkit.
+- **Zhang et al. 2012** — the Pacific oyster genome and its stress-adaptation findings.
+
+## 8. Check yourself
+
+::: {.callout-tip collapse="true"}
+## Five questions
+
+1. A bivalve's ligament and its adductor muscle work against each other. Which one opens the shell, and what does that tell you about what you would see in a dead animal?
+2. Why is a bivalve's filtration rate not the same number as its ingestion rate?
+3. Adult oyster shell is mostly calcite, but the larval shell is aragonite. Why does that difference matter for ocean acidification?
+4. You read a 2019 paper on *Crassostrea gigas* and a 2026 paper on *Magallana gigas*. Are these the same animal, and how would you confirm it?
+5. A collaborator sends you *C. virginica* annotations built against `GCF_002022765.2`. What should you check before merging them with your own?
+:::

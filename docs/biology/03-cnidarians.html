@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>markdown – Roberts Lab Course Set - Things u should know</title>
+<title>Cnidarians – Roberts Lab Course Set - Things u should know</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,6 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -322,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-markdown.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/00-markdown.html">markdown</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/index.html">Organism Biology</a></li><li class="breadcrumb-item"><a href="../biology/03-cnidarians.html">Cnidarians</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -345,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/00-markdown.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/00-markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">markdown</span></a>
   </div>
 </li>
@@ -410,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../biology/03-cnidarians.html" class="sidebar-item-text sidebar-link">
+  <a href="../biology/03-cnidarians.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Cnidarians</span></a>
   </div>
 </li>
@@ -467,35 +435,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-markdown" id="toc-what-is-markdown" class="nav-link active" data-scroll-target="#what-is-markdown">What is Markdown?</a>
-  <ul class="collapse">
-  <li><a href="#why-is-markdown-useful" id="toc-why-is-markdown-useful" class="nav-link" data-scroll-target="#why-is-markdown-useful">Why is Markdown Useful?</a>
-  <ul class="collapse">
-  <li><a href="#simplicity" id="toc-simplicity" class="nav-link" data-scroll-target="#simplicity">Simplicity</a></li>
-  <li><a href="#flexibility" id="toc-flexibility" class="nav-link" data-scroll-target="#flexibility">Flexibility</a></li>
-  <li><a href="#versatility" id="toc-versatility" class="nav-link" data-scroll-target="#versatility">Versatility</a></li>
-  <li><a href="#readability" id="toc-readability" class="nav-link" data-scroll-target="#readability">Readability</a></li>
-  </ul></li>
-  <li><a href="#markdown-syntax-and-examples" id="toc-markdown-syntax-and-examples" class="nav-link" data-scroll-target="#markdown-syntax-and-examples">Markdown Syntax and Examples</a></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
-  <ul class="collapse">
-  <li><a href="#keep-it-simple" id="toc-keep-it-simple" class="nav-link" data-scroll-target="#keep-it-simple">Keep it Simple</a></li>
-  <li><a href="#be-consistent" id="toc-be-consistent" class="nav-link" data-scroll-target="#be-consistent">Be Consistent</a></li>
-  <li><a href="#use-a-style-guide" id="toc-use-a-style-guide" class="nav-link" data-scroll-target="#use-a-style-guide">Use a Style Guide</a></li>
-  <li><a href="#use-markdown-extensions-wisely" id="toc-use-markdown-extensions-wisely" class="nav-link" data-scroll-target="#use-markdown-extensions-wisely">Use Markdown Extensions Wisely</a></li>
-  <li><a href="#preview-before-publishing" id="toc-preview-before-publishing" class="nav-link" data-scroll-target="#preview-before-publishing">Preview Before Publishing</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#who-they-are" id="toc-who-they-are" class="nav-link active" data-scroll-target="#who-they-are">1. Who they are</a></li>
+  <li><a href="#body-plan" id="toc-body-plan" class="nav-link" data-scroll-target="#body-plan">2. Body plan</a></li>
+  <li><a href="#life-cycle" id="toc-life-cycle" class="nav-link" data-scroll-target="#life-cycle">3. Life cycle</a></li>
+  <li><a href="#physiology-essentials" id="toc-physiology-essentials" class="nav-link" data-scroll-target="#physiology-essentials">4. Physiology essentials</a></li>
+  <li><a href="#why-the-lab-cares" id="toc-why-the-lab-cares" class="nav-link" data-scroll-target="#why-the-lab-cares">5. Why the lab cares</a></li>
+  <li><a href="#genomic-resources" id="toc-genomic-resources" class="nav-link" data-scroll-target="#genomic-resources">6. Genomic resources</a></li>
+  <li><a href="#read-next" id="toc-read-next" class="nav-link" data-scroll-target="#read-next">7. Read next</a></li>
+  <li><a href="#check-yourself" id="toc-check-yourself" class="nav-link" data-scroll-target="#check-yourself">8. Check yourself</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/modules/00-markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/biology/03-cnidarians.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-markdown.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/00-markdown.html">markdown</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/index.html">Organism Biology</a></li><li class="breadcrumb-item"><a href="../biology/03-cnidarians.html">Cnidarians</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">markdown</h1>
+<h1 class="title">Cnidarians</h1>
+<p class="subtitle lead">Corals, and the symbiosis that makes a reef possible</p>
 </div>
 
 
@@ -512,81 +470,223 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-is-markdown" class="level1">
-<h1>What is Markdown?</h1>
-<p>Markdown is a lightweight markup language created by John Gruber and Aaron Swartz in 2004. It is designed to be easy-to-read and easy-to-write. The syntax allows you to format text using simple symbols and characters you already know. For example, you can use asterisks <code>*</code> or underscores <code>_</code> to create italics or bold text. You can also create lists, headers, links, and many other formatting features easily.</p>
-<section id="why-is-markdown-useful" class="level2">
-<h2 class="anchored" data-anchor-id="why-is-markdown-useful">Why is Markdown Useful?</h2>
-<section id="simplicity" class="level3">
-<h3 class="anchored" data-anchor-id="simplicity">Simplicity</h3>
-<p>Markdown is much simpler to learn compared to other markup languages like HTML. This makes it a quick tool for anyone who wants to write well-formatted content without the steep learning curve.</p>
+<p>A reef-building coral is not really one organism. It is a colony of genetically identical polyps sharing a skeleton, and every one of those polyps is packed with photosynthetic algae living inside its own cells. The animal contributes structure, nitrogen, and CO₂; the algae contribute most of the food. Nearly everything that stresses a coral stresses that partnership first.</p>
+<section id="who-they-are" class="level2">
+<h2 class="anchored" data-anchor-id="who-they-are">1. Who they are</h2>
+<p>Phylum <strong>Cnidaria</strong>, class <strong>Anthozoa</strong>, order <strong>Scleractinia</strong> — the stony, reef-building corals. Cnidarians branched off before the split between protostomes and deuterostomes, making them the most distantly related of the lab’s study animals.</p>
+<p>They are <strong>diploblastic</strong>: two tissue layers with a non-cellular <strong>mesoglea</strong> between them, not the three germ layers that bilaterians have. There is no brain, no heart, no blood, and no through-gut.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Species</th>
+<th>Why it appears</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Stylophora pistillata</em></td>
+<td>The long-term ocean acidification and methylome work anchoring the <a href="../framework/foundational-papers.html">foundational papers</a></td>
+</tr>
+<tr class="even">
+<td><em>Porites astreoides</em></td>
+<td>The reciprocal-transplant expression-plasticity work — the cleanest evidence that plasticity itself is the adaptive trait</td>
+</tr>
+<tr class="odd">
+<td><em>Acropora</em> spp.</td>
+<td>The first sequenced coral genus; fast-growing and thermally sensitive</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="flexibility" class="level3">
-<h3 class="anchored" data-anchor-id="flexibility">Flexibility</h3>
-<p>Markdown files are plain text files with a <code>.md</code> extension, which means they can be opened with any text editor. This makes them extremely portable and easy to manage.</p>
+<section id="body-plan" class="level2">
+<h2 class="anchored" data-anchor-id="body-plan">2. Body plan</h2>
+<p><strong>The polyp.</strong> A sac with a single opening ringed by tentacles. That opening is both mouth and anus, leading into the <strong>gastrovascular cavity</strong>, which is subdivided by sheets of tissue called mesenteries where digestion and gamete production occur.</p>
+<p><strong>Two layers.</strong> An outer <strong>epidermis</strong> and an inner <strong>gastrodermis</strong>, separated by mesoglea. The symbiotic algae live <em>inside</em> gastrodermal cells — intracellular, each in a host-derived membrane.</p>
+<p><strong>Coenosarc.</strong> The living tissue sheet connecting polyps across the colony surface. It is what makes a colony an integrated organism able to share resources, rather than a cluster of independent animals.</p>
+<p><strong>The skeleton and where it forms.</strong> Beneath the tissue sits the aragonite skeleton. Calcification happens at the <strong>calicoblastic epithelium</strong>, the tissue layer facing the skeleton, which secretes into a thin <strong>subcalicoblastic space</strong> between tissue and mineral. The coral is not calcifying in seawater — it is calcifying in a compartment whose chemistry it controls.</p>
+<p><strong>Corallite and calyx.</strong> Each polyp sits in a skeletal cup. Calyx dimensions, septal spacing, and skeletal porosity are all standard morphometric readouts in acidification experiments — they are how a chemical treatment becomes a measurable phenotype.</p>
+<p><strong>Nematocysts.</strong> The stinging organelles that name the phylum: pressurized capsules that fire on contact, used for prey capture and defense against neighbors.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why coral experiments have a design advantage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A colony can be cut into fragments that are all the <strong>same genet</strong> — genetically identical — and distributed across treatments. Genotype is held constant by construction, not by statistical adjustment.</p>
+<p>This is why coral studies can make claims about environmental effects with a confidence that is hard to reach in oysters, where every individual is a different genotype. When you read “same-genet fragments distributed across pH treatments,” recognize it as a real strength of the design.</p>
+</div>
+</div>
 </section>
-<section id="versatility" class="level3">
-<h3 class="anchored" data-anchor-id="versatility">Versatility</h3>
-<p>Markdown is commonly used for readme files, GitHub repositories, blogging platforms like Jekyll, and even in data science notebooks like Jupyter.</p>
+<section id="life-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="life-cycle">3. Life cycle</h2>
+<p>Corals reproduce sexually as <strong>broadcast spawners</strong> or <strong>brooders</strong>, and asexually by budding — which is how a colony grows and how fragmentation propagates a genet.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A["Spawning&lt;br/&gt;or brooding"] --&gt; B["Planula larva"]
+  B --&gt; C["Settlement&lt;br/&gt;on cue"]
+  C --&gt; D["Primary polyp"]
+  D --&gt; E["Budding"]
+  E --&gt; F["Colony"]
+  F -.-&gt; A
+  B -. "horizontal" .-&gt; S["Symbiont&lt;br/&gt;acquisition"]
+  A -. "vertical" .-&gt; S
+  S -.-&gt; D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Many broadcast-spawning species release gametes in <strong>mass synchronized spawning events</strong>, with whole reefs spawning within a night or two, cued by lunar cycle, temperature, and sunset timing. Fertilization is external, producing a swimming <strong>planula</strong> larva.</p>
+<p>Settlement is cue-driven — crustose coralline algae and specific bacterial biofilms are among the recognized signals. The settled larva becomes a <strong>primary polyp</strong>, and the colony grows from there by budding.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Vertical vs.&nbsp;horizontal symbiont acquisition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Vertical</strong>: symbionts are passed directly into eggs or larvae, so offspring start life already partnered. Common in brooders.</p>
+<p><strong>Horizontal</strong>: larvae start symbiont-free and must acquire algae from the environment. Typical of broadcast spawners.</p>
+<p>This matters for how fast a population’s symbiont community can shift. Horizontal acquisition means each generation re-samples what is locally available — a potential route to a more thermally tolerant partnership, and a reason not to treat host genotype as the only thing that determines a colony’s stress tolerance.</p>
+</div>
+</div>
 </section>
-<section id="readability" class="level3">
-<h3 class="anchored" data-anchor-id="readability">Readability</h3>
-<p>The syntax is designed to be readable as-is, so even if you’re not rendering the Markdown to HTML or another format, it’s still easy to understand what’s going on.</p>
+<section id="physiology-essentials" class="level2">
+<h2 class="anchored" data-anchor-id="physiology-essentials">4. Physiology essentials</h2>
+<p><strong>The symbiosis.</strong> Symbiodiniaceae — dinoflagellate algae, formerly all called <em>Symbiodinium</em> — live inside gastrodermal cells and translocate <strong>photosynthate</strong> to the host, often supplying the majority of its energy budget. This is what allows a reef to be spectacularly productive in nutrient-poor tropical water. The host reciprocates with CO₂, nitrogen, and a protected, well-lit position in the water column.</p>
+<p>The partnership is established by <strong>phagocytosis</strong> — the host cell takes the alga up by the same mechanism it would use to engulf a microbe, and then does not digest it. Understanding why is one of the open questions in the field.</p>
+<p><strong>Heterotrophy.</strong> Corals also eat, capturing zooplankton with tentacles and nematocysts and taking up organic material via mucus. Photosynthate is not the whole story, and heterotrophic feeding capacity affects how well a colony survives bleaching.</p>
+<p><strong>Calcification.</strong> Aragonite is deposited at the calicoblastic layer. Calcification is typically <strong>light-enhanced</strong> — it runs faster when the symbionts are photosynthesizing, which couples skeletal growth to the health of the partnership. Ocean acidification does not simply dissolve corals; it raises the cost of maintaining the internal chemistry that calcification requires.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Bleaching, correctly stated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under stress — most often elevated temperature with high light — the symbiosis breaks down and symbionts or their pigments are lost, leaving white skeleton visible through transparent tissue.</p>
+<p>Three things newcomers routinely get wrong:</p>
+<ol type="1">
+<li><strong>A bleached coral is not dead.</strong> It has lost its energy supply and will die if the condition persists, but bleaching is recoverable.</li>
+<li><strong>The skeleton was always white.</strong> The color comes from the symbionts and host pigments, not the mineral.</li>
+<li><strong>It is not simple heat damage.</strong> A well-supported reading treats bleaching as a <strong>host innate immune response to a symbiont that has become damaging</strong> — reactive oxygen species from stressed photosynthetic machinery signal the problem, and the host expels the partner. That framing connects coral stress biology directly to invertebrate immunity.</li>
+</ol>
+</div>
+</div>
 </section>
+<section id="why-the-lab-cares" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-lab-cares">5. Why the lab cares</h2>
+<p><strong>Thermal stress and bleaching.</strong> Marine heatwaves have driven repeated mass bleaching events. The question of which colonies survive, and why, is exactly a question about environmental memory: does prior exposure to variable conditions leave a state that changes the response to the next event?</p>
+<p><strong>Expression plasticity as the adaptive trait.</strong> Reciprocal transplant work in <em>Porites astreoides</em> showed that corals from environmentally variable inshore sites have <em>more flexible</em> transcriptomes than those from stable offshore sites, and that this flexibility predicts bleaching outcome. It is the cornerstone empirical result for predictive phenotyping in the <a href="../framework/conceptual-framework.html">conceptual framework</a> — the plasticity itself is the trait under selection, not any particular expression level.</p>
+<p><strong>Gene body methylation and acclimatization.</strong> Long-term ocean acidification work in <em>Stylophora pistillata</em> linked methylation state to sustained phenotypic acclimatization across molecular and morphometric scales, anchoring the lab’s reading of gene body methylation as a regulator of transcriptional noise.</p>
+<p><strong>The holobiont problem.</strong> A coral sample contains host, symbiont, and an associated microbial community. That is a methodological burden — reads have to be partitioned — but also an opportunity, because the unit that acclimatizes may be the partnership rather than the animal.</p>
 </section>
-<section id="markdown-syntax-and-examples" class="level2">
-<h2 class="anchored" data-anchor-id="markdown-syntax-and-examples">Markdown Syntax and Examples</h2>
-<p>Here are some basic examples of Markdown syntax:</p>
+<section id="genomic-resources" class="level2">
+<h2 class="anchored" data-anchor-id="genomic-resources">6. Genomic resources</h2>
+<p>Reference assemblies as listed by NCBI. Accessions verified against the NCBI Datasets API on 2026-07-30.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Species</th>
+<th>Assembly</th>
+<th>Accession</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Stylophora pistillata</em></td>
+<td>Stylophora pistillata v1.1</td>
+<td><code>GCF_002571385.2</code></td>
+<td>RefSeq</td>
+</tr>
+<tr class="even">
+<td><em>Acropora digitifera</em></td>
+<td>Adig_1.1</td>
+<td><code>GCF_000222465.1</code></td>
+<td>RefSeq; the first coral genome</td>
+</tr>
+<tr class="odd">
+<td><em>Porites astreoides</em></td>
+<td>—</td>
+<td>—</td>
+<td><strong>No NCBI reference assembly</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><em>Porites astreoides</em> has no NCBI reference genome
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is worth knowing before you plan work on it. The species behind one of the lab’s anchor papers has no reference assembly in NCBI — which is precisely why that study used <strong>TagSeq</strong> with reference-free and host/symbiont-partitioned approaches rather than a standard genome-guided pipeline.</p>
+<p>If a species you need is missing an assembly, that constrains your method choice from the start. Check first.</p>
+</div>
+</div>
+<p><strong>Symbiont genomes are separate.</strong> Symbiodiniaceae genomes are deposited independently of their hosts. Any coral RNA-seq dataset contains both, and you have to decide deliberately how to partition reads — mapping to a concatenated host+symbiont reference is the usual approach. Note also that the family was taxonomically revised in 2018, so genomes deposited under <em>Symbiodinium</em> may now sit in other genera.</p>
+</section>
+<section id="read-next" class="level2">
+<h2 class="anchored" data-anchor-id="read-next">7. Read next</h2>
+<p>Full annotations on the <a href="../biology/reading-list.html">reading list</a>.</p>
 <ul>
-<li><p>Headers:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># H1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## H2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### H3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Lists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Sub-item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Item 1</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Item 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Links:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">OpenAI</span><span class="co">](https://www.openai.com/)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Images:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Alt text](url)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Code Blocks:</p>
-<pre><code>```bash
- Code goes here
-```</code></pre></li>
-<li><p>In-line Code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`code`</span> in your markdown file.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><strong>Davy, Allemand &amp; Weis 2012</strong> — the definitive cell-biology review of the symbiosis. Start here.</li>
+<li><strong>Weis 2008</strong> — bleaching as a host innate immune response; short and worth the hour.</li>
+<li><strong>LaJeunesse et al.&nbsp;2018</strong> — the Symbiodiniaceae revision, and why pre- and post-2018 papers use different names.</li>
+<li><strong>Shinzato et al.&nbsp;2011</strong> — the <em>Acropora digitifera</em> genome.</li>
 </ul>
 </section>
-<section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
-<section id="keep-it-simple" class="level3">
-<h3 class="anchored" data-anchor-id="keep-it-simple">Keep it Simple</h3>
-<p>The beauty of Markdown lies in its simplicity. Stick to the basics unless there’s a strong reason to use a complex feature.</p>
-</section>
-<section id="be-consistent" class="level3">
-<h3 class="anchored" data-anchor-id="be-consistent">Be Consistent</h3>
-<p>If you’re working on a longer document or a series of documents, be consistent in your style and formatting. This will make it easier for others (or future you) to read and modify the content.</p>
-</section>
-<section id="use-a-style-guide" class="level3">
-<h3 class="anchored" data-anchor-id="use-a-style-guide">Use a Style Guide</h3>
-<p>Consider using a Markdown style guide or linter to keep your formatting consistent. This is especially helpful for collaborative projects.</p>
-</section>
-<section id="use-markdown-extensions-wisely" class="level3">
-<h3 class="anchored" data-anchor-id="use-markdown-extensions-wisely">Use Markdown Extensions Wisely</h3>
-<p>Many platforms support Markdown extensions that provide additional features like tables, footnotes, and task lists. While these are useful, keep in mind that they may not be supported everywhere.</p>
-</section>
-<section id="preview-before-publishing" class="level3">
-<h3 class="anchored" data-anchor-id="preview-before-publishing">Preview Before Publishing</h3>
-<p>Always preview your Markdown file before publishing to make sure it looks the way you intended.</p>
-<p>By adopting these best practices, you’ll be able to create content that is clean, easy to read, and easy to maintain.</p>
+<section id="check-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="check-yourself">8. Check yourself</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Five questions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>A coral polyp has one opening. What are the consequences for how it feeds and digests?</li>
+<li>Where does calcification physically happen, and why does it matter that this is not simply “in seawater”?</li>
+<li>Someone says a bleached coral is dead and its skeleton has turned white. Correct both halves.</li>
+<li>Two species, one brooding with vertical symbiont transmission and one broadcast spawning with horizontal acquisition. Which might shift to a more heat-tolerant symbiont community faster, and why?</li>
+<li>You have coral RNA-seq reads. Why can’t you just map them to the host genome and move on?</li>
+</ol>
+</div>
+</div>
+</div>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1008,4 +1108,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/modules/00-markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/biology/03-cnidarians.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

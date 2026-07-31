@@ -1,0 +1,156 @@
+---
+title: "Cross-Cutting Themes"
+subtitle: "The biology all three groups share, and why it shapes every experiment"
+---
+
+If you read one page in this section, read this one. It covers what oysters, sea stars, and corals have in common, and hands off to the [Lab Conceptual Framework](../framework/conceptual-framework.qmd).
+
+Start with the fact that makes the rest interesting: **these three groups are not close relatives.** Corals branched off before the protostome–deuterostome split. Bivalves are protostomes. Echinoderms are deuterostomes, on our own branch. When all three respond to a stressor the same way, that similarity is almost certainly **convergence** — separate lineages arriving at the same solution to the same problem in seawater — rather than a trait inherited from a shared ancestor.
+
+That has a double edge. Convergent solutions are strong evidence that a constraint is real and general. They are also a reason not to assume a mechanism found in one group operates in another. Both halves matter below.
+
+------------------------------------------------------------------------
+
+## 1. Broadcast spawning and larval ecology
+
+All three groups do essentially the same thing reproductively: release gametes into the water column, fertilize externally, and develop as small planktonic larvae before settling.
+
+| | Bivalves | Echinoderms | Corals |
+|---|---|---|---|
+| First swimming stage | Trochophore | Blastula → gastrula | Planula |
+| Feeding larva | Veliger | Bipinnaria / pluteus | Usually non-feeding |
+| Competent stage | Pediveliger | Brachiolaria / rudiment | Late planula |
+| Settlement | Cue-dependent | Cue-dependent | Cue-dependent |
+
+The names differ and the larvae are not homologous. The **life-history shape** is the same, and it has three consequences that run through every experiment on this site.
+
+**The early window is short, and the animal is least buffered inside it.** A larva is small, thin-walled, has minimal reserves, and is building skeletal material fast. Whatever the water is doing reaches it almost directly. This is why exposure studies in these systems target hours-to-days post-fertilization rather than treating adults — the 0–48 hours post-fertilization window used in the multigenerational pesticide work in the [foundational papers](../framework/foundational-papers.qmd) is chosen, not arbitrary.
+
+**Larvae are the demographic bottleneck.** Enormous numbers are produced and very few recruit. A stressor that reduces larval survival slightly can move population outcomes far more than an equivalent effect on adults.
+
+**Settlement is a decision, not a schedule.** Competent larvae respond to biofilm and chemical cues and can delay if conditions are unsuitable. So "metamorphosis competency" is a genuinely informative endpoint: it reports both whether the animal developed properly *and* whether it can act on that development.
+
+::: callout-note
+## This is where the framework's "programming windows" come from
+The [conceptual framework](../framework/conceptual-framework.qmd) treats embryo–larval development and broodstock holding as windows during which sub-lethal exposure can induce a lasting memory. The biology above is why those particular windows: they are when the organism is most permeable to environmental signal and when developmental decisions with long consequences are being made.
+:::
+
+------------------------------------------------------------------------
+
+## 2. Biomineralization — three solutions to one problem
+
+All three groups build calcium carbonate structures, and all three do it differently.
+
+| Group | Structure | Mineral | Relative solubility |
+|---|---|---|---|
+| Corals | External aragonite skeleton | Aragonite | Middle |
+| Bivalves | Two-valve shell | Calcite and/or aragonite; **larval shell is aragonite** | Low to middle |
+| Echinoderms | Internal ossicles / test | High-magnesium calcite | **Highest** |
+
+Solubility runs **high-Mg calcite > aragonite > calcite**. That ordering is the single most useful thing to carry out of this section, because it means ocean acidification does not act uniformly across the lab's animals — and a result in one group does not transfer to another.
+
+Two refinements matter:
+
+**Life stage beats species.** Adult oyster shell is largely calcite, which is comparatively robust. But the *larval* shell is aragonite, built fast, early, by an animal with almost no energetic reserve. The vulnerable stage is not the one adult shell chemistry would predict. Pacific Northwest hatchery failures appeared at the larval stage for exactly this reason.
+
+**Corals are not simply dissolving.** Calcification happens at the calicoblastic epithelium, in a confined space whose chemistry the animal controls — not in open seawater. Acidification raises the *cost* of maintaining that internal chemistry. The mechanism is energetic, not straightforwardly chemical, which is why acidification effects interact so strongly with the energy budget.
+
+::: callout-important
+## There is no universal biomineralization toolkit
+It is tempting to assume that because all three build CaCO₃, they share a conserved genetic machinery for doing it. They do not. Comparative work on molluscs found that the secreted proteins controlling shell formation are **rapidly evolving and largely lineage-specific**, with few conserved components beyond carbonic anhydrase — and the same appears to hold for coral and echinoderm skeletons.
+
+Practically: do not expect to find shell genes in a sea star by homology search from an oyster. See McDougall & Degnan 2018 on the [reading list](reading-list.qmd).
+:::
+
+------------------------------------------------------------------------
+
+## 3. Innate immunity, without adaptive immunity
+
+None of these animals has antibodies, lymphocytes, or vertebrate-style immunological memory. What they have is innate immunity, and it is not a lesser version of ours — it is a different architecture.
+
+| Group | Immune cells | Compartment |
+|---|---|---|
+| Bivalves | Hemocytes | Hemolymph (open circulation) |
+| Echinoderms | Coelomocytes | Coelomic fluid |
+| Corals | Amoebocytes and general epithelial responses | Tissue |
+
+The shared toolkit: **pattern recognition receptors** detecting conserved microbial features, phagocytosis and encapsulation as effectors, antimicrobial peptides, and melanization or similar cascades. Specificity comes from recognizing *classes* of pathogen rather than from clonal selection on individual antigens.
+
+**Immune priming is real, and easy to overstate.** Some invertebrates show an enhanced response on second exposure. That is a genuine phenomenon and worth studying. It is *not* demonstrated to work by the vertebrate mechanism, and the vocabulary of vertebrate immunology imports assumptions that have not been established here. Diversified gene families such as FREPs in bivalves leave the door open to some pathogen specificity, but this remains an open question rather than a settled result.
+
+::: callout-tip
+## The connection most people miss
+Bleaching — a coral expelling its symbionts under thermal stress — is well supported as a **host innate immune response to a symbiont that has become damaging**, not as simple heat injury. Reactive oxygen species from stressed photosynthetic machinery signal the problem, and the host removes the partner.
+
+That means coral thermal stress and bivalve disease response are, at some level, the same kind of biology. It is one of the few places where a mechanism genuinely does connect across these phyla.
+:::
+
+------------------------------------------------------------------------
+
+## 4. Stress physiology and energetics
+
+**They cannot leave.** Oysters cement in place. Corals are colonies fixed to reef. Sea stars move, but slowly and locally. An animal that cannot relocate away from a stressor has to absorb it physiologically — which is precisely why these species are informative about environmental history. A mobile animal's response to a bad summer is partly a map of where it went. A sessile animal's response is entirely internal.
+
+**They live in variable places.** The intertidal cycles through temperature, salinity, oxygen, and emersion twice a day. Estuaries swing in salinity with the tide and the season. These are not organisms adapted to constancy, and their baseline is a moving one.
+
+**Energy constrains everything.** Regulatory plasticity is not free — maintaining high-turnover regulatory states, mounting stress responses, and calcifying against an unfavorable gradient all draw on the same budget. This produces the trade-off at the center of the framework's treatment of resilience:
+
+- **Frontloading** — keeping stress-response genes constitutively elevated, so protection is already in place when stress arrives. Fast, but wasteful if stress is rare.
+- **Reactive plasticity** — responding after detection. Cheap at baseline, but there is a lag.
+
+Which strategy is favored depends on how *predictable* the stress is, not on how severe. That is why populations from environmentally variable sites often differ from stable-site populations in the shape of their response rather than in its magnitude.
+
+------------------------------------------------------------------------
+
+## 5. Where the framework's readouts come from
+
+The [conceptual framework](../framework/conceptual-framework.qmd) lists the physiological readouts it treats as relevant. Here is where each one actually comes from at the bench:
+
+| Framework readout | Bivalves | Echinoderms | Corals |
+|---|---|---|---|
+| Growth and size | Shell height, tissue mass | Test/arm dimensions | Linear extension, buoyant weight |
+| Survival under stress | Mortality trials | Mortality, wasting signs | Mortality, colony condition |
+| Developmental competency | % reaching pediveliger, settlement success | % reaching metamorphosis | Planula settlement success |
+| Calcification | Shell deposition, thickness | Ossicle/test integrity | Calcification rate, calyx morphometrics, porosity |
+| Symbiont density | — | — | Symbiont cell counts, pigment |
+| Immune response | Hemocyte counts, phagocytic activity | Coelomocyte response | Bleaching response |
+| Reaction-norm shape | Expression across a gradient | Expression across a gradient | Expression across a gradient |
+
+Two things follow from reading across that table. **Symbiont density has no bivalve or echinoderm analogue** — corals have a readout the others cannot provide. And **reaction-norm shape is the one readout available identically in all three**, which is a large part of why expression plasticity carries so much weight in the framework.
+
+------------------------------------------------------------------------
+
+## 6. Where this leads
+
+The framework defines resilience as having four operational faces. Each rests on biology from this page:
+
+- **Buffering** — keeping function within bounds under perturbation. Rests on the regulatory machinery of animals that cannot escape and must absorb.
+- **Plasticity** — tracking environmental change with appropriate adjustment. Measured as reaction-norm shape, the one readout shared across all three groups.
+- **Preparedness** — anticipatory state laid down developmentally or across generations. Rests on the short, high-leverage larval windows in §1.
+- **Time-buying** — acclimatization bridging until slower genetic adaptation can occur. Rests on the energetic constraints in §4.
+
+::: callout-warning
+## The caveat to carry forward
+The framework lists **cross-taxa generality** among its open questions: does the plasticity–frontloading trade-off found in corals generalize to bivalves?
+
+That is a real open question, and the opening of this page is why. These groups converged on similar life histories and similar problems from very different starting points. Shared *constraints* are well established. Shared *mechanisms* are not — and demonstrating one requires showing it, not assuming it from the shared ecology.
+
+When you read a claim that spans these phyla, ask which of the two it is resting on.
+:::
+
+You are ready for the [Lab Conceptual Framework](../framework/conceptual-framework.qmd). It will assume everything on this page and move immediately to how the lab reads it.
+
+------------------------------------------------------------------------
+
+## Check yourself
+
+::: {.callout-tip collapse="true"}
+## Six questions
+
+1. All three groups respond similarly to a stressor. Why is that *not* good evidence they share a mechanism — and what would be?
+2. Rank aragonite, calcite, and high-Mg calcite by solubility. Which group builds which, and why does adult shell chemistry mislead you about larval vulnerability?
+3. Why does ocean acidification affect corals through the energy budget rather than by dissolving them directly?
+4. What makes "metamorphosis competency" a more informative endpoint than simply counting surviving larvae?
+5. Frontloading versus reactive plasticity: which environmental property decides between them, and why is it not stress severity?
+6. Name the one physiological readout available in all three groups, and one available only in corals. What does that asymmetry do to cross-taxa comparison?
+:::

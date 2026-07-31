@@ -4,9 +4,10 @@ Source for the Roberts Lab course set — **<https://robertslab.github.io/tusk/>
 
 The intent is to offer core, basic content. What that exactly might be could be complicated, but let's start very basic / foundational and work our way up.
 
-The site has two kinds of content:
+The site has three kinds of content:
 
 - **Modules** — hands-on technical training, ordered so that each one builds on the ones before it, but written so any single module also stands alone.
+- **Organism Biology** — fundamental biology of the animals we work on, for readers with no background in invertebrate zoology. Sits between the technical modules and the conceptual framing, both of which assume it.
 - **Lab Science** — the lab's conceptual grounding: how we define environmental memory and resilience, and the foundational papers that framing is distilled from.
 
 ## Repository layout
@@ -18,6 +19,8 @@ about.qmd              about / contributing pointer
 styles.css             site-wide CSS overrides
 modules/               numbered training modules (00–05)
   04-data/             inputs + outputs for the BLAST module
+biology/               Organism Biology pages
+  _template.qmd        starting point for a new taxon page (not rendered)
 framework/             Lab Science pages
   papers/              openly licensed PDFs served from the site
 docs/                  RENDERED SITE — committed, served by GitHub Pages
@@ -71,6 +74,23 @@ For anything larger, branch off `main`, make the change, render, and open a pull
 
 3. Register it in `_quarto.yml` under the `Modules` section of `sidebar: contents:`. **A file that isn't listed there renders but is unreachable from the site navigation** — this is the most common thing to forget.
 4. Render and commit.
+
+### Adding a biology page
+
+1. Copy `biology/_template.qmd` to `biology/NN-shortname.qmd`. Files beginning with an underscore are not rendered, so the template itself never reaches the site.
+2. Keep the eight sections in the order the template gives them. Consistency across taxon pages is deliberate — a reader who learns the shape on the bivalve page should be able to skim the coral page.
+3. Register it in `_quarto.yml` under the `Organism Biology` section of `sidebar: contents:`, same as for a module.
+4. Render and commit.
+
+Write these for someone who has never taken invertebrate zoology. If a term needs defining, define it inline *and* add it to `biology/glossary.qmd`.
+
+### Figures and licensing
+
+Everything under `docs/` is publicly served, so the same licensing care that applies to `framework/papers/` applies to images.
+
+- **Prefer Mermaid** (` ```{mermaid} ` blocks) for life cycles, phylogenies, and process flows. Quarto renders them natively — no licensing exposure, they diff cleanly in review, and they adapt to the light and dark themes.
+- **For anatomy**, use lab-made figures or verified CC BY / public-domain sources only. NOAA and USFWS material is generally public domain and is the safest external source.
+- Record the source and license in an HTML comment beside the figure *and* in the alt text.
 
 ### Writing guidelines
 

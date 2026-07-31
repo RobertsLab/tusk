@@ -5,6 +5,14 @@ title: Where the fun starts
 This is a portal developed out as a Course Set where core learning modules exist. Please see sidebar menu for specific modules.
 There is a logic to the order as modules build as you go down the list, though they are developed where they are also stand-alone.
 
+## Organism Biology
+
+If you are new to marine invertebrates, start here. The **Organism Biology** section covers the fundamental biology of the animals the lab works on — oysters, clams, mussels, sea stars, and corals — assuming no background in invertebrate zoology:
+
+-   [Start Here](biology/index.qmd) — how the three phyla relate to each other, what each group brings, and the traits they share that shape every experiment the lab runs.
+-   [Cross-Cutting Themes](biology/04-cross-cutting.qmd) — the fastest single-page orientation, and the bridge into the conceptual framework below.
+-   [Glossary](biology/glossary.qmd) and [Reading List](biology/reading-list.qmd) — for terms you hit in the first week, and for going deeper.
+
 ## Lab Science
 
 Beyond the technical modules, the **Lab Science** section holds the conceptual grounding for what we do:

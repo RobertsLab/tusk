@@ -1,0 +1,69 @@
+---
+title: "Start Here"
+subtitle: "The animals this lab works on, and why they are built the way they are"
+---
+
+The modules teach you to handle the data. The [Lab Conceptual Framework](../framework/conceptual-framework.qmd) tells you how the lab interprets it. This section covers the part in between that is easy to assume and expensive to skip: **what these animals actually are**.
+
+If you have found yourself reading "metamorphosis competency" or "gene body methylation tracks calcification" and quietly not knowing what a pediveliger is, or why a coral needs an alga to live, you are in the right place. Nothing here assumes a background in invertebrate zoology.
+
+## Three phyla, one lab
+
+The lab's study animals come from three phyla that are not close relatives. This matters more than it first appears — it means shared responses to a stressor are unlikely to be shared by descent, and are more likely to reflect convergent solutions to the same problem in seawater.
+
+```{mermaid}
+flowchart LR
+  M["Metazoa"] --> C["Cnidaria"]
+  M --> B["Bilateria"]
+  C --> AN["Anthozoa<br/>corals, anemones"]
+  B --> P["Protostomia"]
+  B --> D["Deuterostomia"]
+  P --> LO["Lophotrochozoa"]
+  LO --> MO["Mollusca"]
+  MO --> BI["Bivalvia<br/>oysters, clams, mussels"]
+  D --> EC["Echinodermata"]
+  EC --> AS["Asteroidea<br/>sea stars"]
+  EC --> EH["Echinoidea<br/>sea urchins"]
+  D --> CH["Chordata<br/>vertebrates, including us"]
+```
+
+The single most useful orienting fact on that tree: **a sea star is more closely related to you than it is to an oyster.** Echinoderms are deuterostomes, on our branch. Bivalves are protostomes, on the other one. Corals split off before either.
+
+## What each group brings
+
+**Bivalves — oysters, clams, mussels.** Molluscs with a two-part hinged shell, no head to speak of, and gills that do double duty as respiratory surface and feeding apparatus. Sessile or nearly so as adults, filter-feeding, and the backbone of shellfish aquaculture. Most of the lab's work lives here.
+
+**Echinoderms — sea stars, sea urchins.** Pentaradial as adults but bilateral as larvae, moving on a hydraulic water vascular system with no direct analogue anywhere else in the animal kingdom. Urchin embryos are among the most thoroughly described in developmental biology; sea stars matter to the lab additionally as keystone predators undergoing a mass mortality event.
+
+**Cnidarians — corals.** Two tissue layers, radial symmetry, no organs in the sense the other two have them, and a nutritional dependence on dinoflagellate symbionts living inside their own cells. A coral colony is a partnership, and most of what stresses a coral stresses the partnership first.
+
+## What they have in common
+
+Despite the phylogenetic distance, the three groups converge on a set of traits that shape every experiment the lab runs:
+
+- **Broadcast spawning and planktonic larvae.** Gametes go into the water column, fertilization is external, and development happens as free-swimming larvae before settlement. This is why early-life exposure windows are so short and so consequential.
+- **Calcification.** All three build calcium carbonate structures — which is why ocean acidification is a shared threat, and why calcification is a shared physiological readout.
+- **Innate immunity only.** No antibodies, no lymphocytes, no adaptive immune memory in the vertebrate sense. Whatever "immune memory" means in these animals, it is not the mechanism you learned in an immunology course.
+- **Sessile or sedentary adults.** They cannot leave. An organism that cannot escape a stressor has to solve it physiologically, which is precisely what makes these animals informative about environmental memory.
+
+That last point is the through-line connecting this section to the rest of the site.
+
+## How to use this section
+
+Read [Cross-Cutting Themes](04-cross-cutting.qmd) first if you want the fastest orientation — it covers the shared biology in one pass. Read the taxon pages when you need depth on the animal in front of you.
+
+| Page | Read it when |
+|---|---|
+| [Bivalves](01-bivalves.qmd) | Working on oysters, clams, or mussels — most lab projects |
+| [Echinoderms](02-echinoderms.qmd) | Working on sea stars or urchins |
+| [Cnidarians](03-cnidarians.qmd) | Working on corals or symbiosis |
+| [Cross-Cutting Themes](04-cross-cutting.qmd) | You want the shared biology, or you are new and want one page |
+| [Glossary](glossary.qmd) | You hit a term and need it defined now |
+| [Reading List](reading-list.qmd) | You want to go deeper than these pages go |
+
+Each taxon page follows the same structure, so once you learn the shape on one, you can skim the others.
+
+::: callout-tip
+## Where this connects
+The [genomic resources](01-bivalves.qmd) sections on each taxon page list the reference assemblies used in the technical modules — including the *Crassostrea virginica* assembly you annotate in the [NCBI BLAST module](../modules/04-blast.qmd). If you want to know what the sequences you are BLASTing actually came from, start there.
+:::

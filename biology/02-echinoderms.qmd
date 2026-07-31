@@ -1,0 +1,143 @@
+---
+title: "Echinoderms"
+subtitle: "Sea stars and sea urchins — deuterostomes on our own branch of the tree"
+---
+
+Echinoderms are the strangest animals the lab works on, and also the most closely related to us. They are built on five-part radial symmetry that they were not born with, they move on seawater hydraulics, they have a skeleton inside their skin, and they can change the stiffness of their own connective tissue on command. They are also exclusively marine — no echinoderm has ever made it into fresh water or onto land.
+
+## 1. Who they are
+
+Phylum **Echinodermata**, roughly 7,000 living species, within the **deuterostomes** — the same branch that leads to chordates and to us. The two classes that matter here are **Asteroidea** (sea stars) and **Echinoidea** (sea urchins).
+
+| Species | Common name | Why it appears |
+|---|---|---|
+| *Pycnopodia helianthoides* | Sunflower sea star | Devastated by sea star wasting disease; the subject of the *Vibrio* work below |
+| *Pisaster ochraceus* | Ochre star | The original keystone predator of intertidal ecology |
+| *Patiria miniata* | Bat star | A tractable developmental and genomic model |
+| *Acanthaster planci* | Crown-of-thorns star | Coral predator; outbreaks are a major reef stressor |
+| *Strongylocentrotus purpuratus* | Purple sea urchin | Among the most thoroughly described embryos in all of biology |
+| *Lytechinus variegatus* | Green sea urchin | Second urchin model, well supported in Echinobase |
+
+::: callout-note
+## The relationship worth internalizing
+Echinoderms are deuterostomes. **A sea star is more closely related to you than it is to an oyster.** This is not trivia — it is why the sea urchin genome turned up so many genes previously thought to be vertebrate innovations, and why urchins work as a comparative outgroup for chordate biology.
+:::
+
+## 2. Body plan
+
+**Pentaradial symmetry — but secondarily.** Adult echinoderms have five-part radial symmetry with an oral (mouth) and aboral surface rather than a front and back. The larvae, however, are bilateral. The radial adult is *constructed* during metamorphosis, on top of a bilateral beginning.
+
+**Water vascular system.** A hydraulic network unique to the phylum, and the defining echinoderm feature. Seawater enters through the **madreporite**, a sieve plate on the aboral surface, passes down the stone canal to a ring canal around the mouth, and out along radial canals into the arms. Each **tube foot** is extended by squeezing its **ampulla**, a muscular bulb at its base. There is no analogue to this system anywhere else in the animal kingdom.
+
+**Endoskeleton of ossicles.** The skeleton is internal, under the epidermis, and made of discrete **ossicles** of high-magnesium calcite. In sea stars the ossicles are separate and connected by tissue, which is what makes an arm both firm and flexible. In urchins they are fused into a rigid **test**.
+
+**Mutable collagenous tissue.** The connective tissue holding the ossicles together can change its stiffness under nervous control, going from pliable to rigid in seconds. It is how a sea star can hold a locked posture without muscular effort, and how it can drop an arm.
+
+**Coelom and coelomocytes.** The main body cavity is filled with coelomic fluid, which serves as the circulatory compartment and carries **coelomocytes**, the immune cells. Coelomic fluid can be sampled without killing the animal — it is the compartment from which *Vibrio pectenicida* was cultured in the sea star wasting work.
+
+**Sea star specifics.** A central disc with arms; **pyloric caeca** (digestive glands) extending into each arm; a cardiac stomach that can be everted out through the mouth. No centralized brain — a nerve ring with radial nerves running down each arm.
+
+**Urchin specifics.** A rigid test covered in movable spines and **pedicellariae** (small pincers for cleaning and defense), and **Aristotle's lantern**, a five-part jaw apparatus for scraping algae off rock.
+
+## 3. Life cycle
+
+Broadcast spawning, external fertilization, and a long-lived feeding larva. The transition to the adult is more radical here than in any other group on this site.
+
+```{mermaid}
+flowchart LR
+  A["Broadcast<br/>spawning"] --> B["Fertilization"]
+  B --> C["Blastula"]
+  C --> D["Gastrula"]
+  D --> E1["Bipinnaria<br/>(sea star)"]
+  D --> E2["Echinopluteus<br/>(urchin)"]
+  E1 --> F["Brachiolaria"]
+  F --> G["Settlement +<br/>metamorphosis"]
+  E2 --> G
+  G --> H["Juvenile"]
+  H --> I["Adult"]
+  I -.-> A
+```
+
+Echinoderm development is the textbook case of **deuterostomy**: the blastopore — the first opening formed in the gastrula — becomes the anus, and the mouth forms secondarily. This is the character that defines our own branch of the animal tree, and it is easiest to see in a sea urchin embryo.
+
+The larvae are bilateral, planktonic, and feeding. Sea stars pass through a **bipinnaria** and then a **brachiolaria**, which bears attachment structures used at settlement. Urchins develop as an **echinopluteus**, held in shape by internal skeletal rods and instantly recognizable by its long arms.
+
+::: callout-important
+## Metamorphosis here is not a remodel — it is a replacement
+The adult echinoderm develops from a **rudiment** that forms on one side of the larva. At metamorphosis, that rudiment becomes the juvenile and most of the rest of the larval body is discarded. The bilateral larva does not gradually reshape into a radial adult; it largely builds a new animal inside itself and then abandons the remainder.
+:::
+
+## 4. Physiology essentials
+
+**Hydraulic locomotion.** Hundreds of tube feet operate semi-independently, coordinated by the radial nerves rather than a brain. Collectively they generate enough sustained force for a sea star to pull open a bivalve — slowly, but for far longer than the bivalve's adductor can hold.
+
+**Extraoral digestion.** A sea star feeding on a mussel or clam everts its cardiac stomach out through its mouth and into the gap between the valves, digesting the animal in its own shell before retracting. This is worth noting on a site about shellfish: **sea stars eat the lab's other study animals**, and are a real predation pressure in both wild beds and aquaculture.
+
+**High-magnesium calcite.** The echinoderm skeleton uses the *most* soluble common form of calcium carbonate — more soluble than aragonite, which is more soluble than calcite. Echinoderms are therefore their own case in ocean acidification work, and results from bivalves do not transfer to them directly.
+
+**Regeneration.** Sea stars regenerate arms, and in some species an arm with part of the disc can regenerate a whole animal. Regeneration and **autotomy** — deliberate self-amputation — are normal parts of the biology, which complicates using limb loss as a disease sign.
+
+**Immunity.** Coelomocytes provide phagocytosis and encapsulation, backed by an innate immune repertoire that the purple urchin genome revealed to be unexpectedly large. As with the other groups here, there is no antibody-based adaptive immunity.
+
+**No excretory organs and no gills in the usual sense.** Gas exchange happens across thin-walled surfaces including the tube feet and papulae; nitrogenous waste diffuses out as ammonia.
+
+## 5. Why the lab cares
+
+**Sea star wasting disease.** Beginning in 2013, an epidemic killed billions of sea stars across more than 20 species from Mexico to Alaska. *Pycnopodia helianthoides* was hit hardest. The ecological consequence was a trophic cascade: with the sunflower star gone, urchin populations grew unchecked and kelp forests were lost over large areas.
+
+**Keystone predation.** *Pisaster ochraceus* is the animal on which the keystone species concept was built — remove the predator, and the community it structured collapses into a monoculture. The wasting epidemic is that experiment running at coastwide scale without anyone choosing to run it.
+
+**Ocean acidification.** High-Mg calcite makes echinoderms a distinct and sensitive case, and their larvae build skeletal structure early, as bivalve larvae do.
+
+**Comparative genomics.** As a deuterostome outgroup, echinoderms let you ask which features of chordate biology are actually chordate innovations. Often, they are not.
+
+::: callout-tip
+## A worked example of science correcting itself
+The etiology of sea star wasting took more than a decade to establish, and the field's answer was wrong for most of it. A densovirus was identified as the agent in 2014, that finding did not hold up under later scrutiny, and in 2025 a bacterium — *Vibrio pectenicida* — was established as a causative agent by fulfilling Koch's postulates.
+
+The [reading list](reading-list.qmd) walks all three papers in order. If you read only one thing about echinoderms, read that sequence: it teaches more about how evidence actually works than any single result would.
+:::
+
+## 6. Genomic resources
+
+Reference assemblies as listed by NCBI. Accessions verified against the NCBI Datasets API on 2026-07-30.
+
+| Species | Assembly | Accession | Note |
+|---|---|---|---|
+| *Patiria miniata* | Pmin_3.0 | `GCF_015706575.1` | RefSeq; fully supported in Echinobase |
+| *Acanthaster planci* | OKI-Apl_1.0 | `GCF_001949145.1` | RefSeq |
+| *Pycnopodia helianthoides* | ASM3215829v1 | `GCA_032158295.1` | GenBank only — no RefSeq annotation |
+| *Pisaster ochraceus* | ASM1099431v2 | `GCA_010994315.2` | GenBank only — no RefSeq annotation |
+| *Strongylocentrotus purpuratus* | Spur_5.0 | `GCF_000002235.5` | RefSeq |
+| *Lytechinus variegatus* | Lvar_3.0 | `GCF_018143015.1` | RefSeq |
+
+::: callout-note
+## `GCF_` vs `GCA_` — a distinction that will bite you
+`GCF_` accessions are **RefSeq**: curated, with NCBI gene annotation attached. `GCA_` accessions are **GenBank**: author-submitted assembly with no guarantee of NCBI annotation.
+
+Both wasting-relevant sea stars — *Pycnopodia* and *Pisaster* — are GenBank-only. If your workflow assumes an NCBI annotation set exists (as the [BLAST module](../modules/04-blast.qmd) does), it will not for those species. You will need annotation from the submitting group or from Echinobase, or you will need to generate it.
+:::
+
+**[Echinobase](https://echinobase.org)** is the model-organism knowledgebase for the phylum: gene pages, orthology across supported species, a genome browser, BLAST services, and an echinoderm anatomical ontology. Use it before going to raw NCBI files. Cite Telmer et al. 2024 if you use it — details on the [reading list](reading-list.qmd).
+
+## 7. Read next
+
+Full annotations on the [reading list](reading-list.qmd).
+
+- **The sea star wasting sequence** — Hewson et al. 2014, then Hewson et al. 2024, then Prentice et al. 2025. In that order.
+- **McCracken et al. 2026** — immune activation in wild *Pycnopodia* detectable before any visible sign of disease.
+- **Sodergren et al. 2006** — the purple urchin genome, and the deuterostome-outgroup payoff.
+- **Telmer et al. 2024** — Echinobase, and what it contains.
+- **Ruppert, Fox & Barnes** — the echinoderm chapters, for body plan and water vascular system.
+
+## 8. Check yourself
+
+::: {.callout-tip collapse="true"}
+## Five questions
+
+1. Adult echinoderms are radially symmetric, but the phylum is placed among the bilaterians. How is that not a contradiction?
+2. Trace a drop of seawater from the madreporite to the tip of a tube foot. What makes the foot extend?
+3. Why can't you take an ocean acidification result from oyster larvae and apply it directly to urchin larvae?
+4. A sea star's arm falls off. Give two very different explanations, and say what else you would want to know.
+5. You want to map RNA-seq reads to *Pycnopodia helianthoides* and count genes. What will you run into, and why is *Patiria miniata* easier?
+:::

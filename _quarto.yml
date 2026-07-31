@@ -10,6 +10,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: biology/index.qmd
+        text: Biology
       - href: framework/conceptual-framework.qmd
         text: Framework
       - about.qmd
@@ -30,6 +32,15 @@ website:
           - modules/03-rstudio.qmd
           - modules/04-blast.qmd
           - modules/05-computers.qmd
+      - section: "Organism Biology"
+        contents:
+          - biology/index.qmd
+          - biology/01-bivalves.qmd
+          - biology/02-echinoderms.qmd
+          - biology/03-cnidarians.qmd
+          - biology/04-cross-cutting.qmd
+          - biology/glossary.qmd
+          - biology/reading-list.qmd
       - section: "Lab Science"
         contents:
           - framework/conceptual-framework.qmd

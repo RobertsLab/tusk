@@ -1,0 +1,78 @@
+---
+title: "TAXON NAME"
+subtitle: "One line on what this group is and why the lab works on it"
+---
+
+<!--
+TEMPLATE — files beginning with an underscore are not rendered by Quarto.
+
+Copy this file to biology/NN-shortname.qmd to start a new taxon page.
+Keep the eight sections below, in this order. Consistency across taxon
+pages is the point: a reader who learns the shape on one page should be
+able to skim the next.
+
+FIGURES: prefer ```{mermaid} blocks for life cycles, phylogenies, and
+process flows — no licensing exposure and they diff cleanly. For anatomy,
+use lab-made figures or verified CC-BY / public-domain sources only
+(NOAA and USFWS material is generally public domain). Record the source
+and license in an HTML comment next to the figure AND in the alt text.
+Everything under docs/ is publicly served — see the README.
+
+CITATIONS: verify every citation against PubMed or DOI before committing.
+Do not write them from memory.
+-->
+
+Opening paragraph: what this animal is, in plain language, for someone who has never taken invertebrate zoology. Two or three sentences.
+
+## 1. Who they are
+
+Taxonomy in one short paragraph — enough to place the group on the tree in the [section overview](index.qmd), not a full classification.
+
+Then the species the lab actually touches, as a short list with why each one matters.
+
+## 2. Body plan
+
+Anatomy oriented around what gets dissected and sampled, not around a textbook tour. If a structure never appears in a lab protocol, it probably does not need a paragraph.
+
+Name the tissues that show up in sample metadata and explain what each one does.
+
+## 3. Life cycle
+
+Spawning through settlement, with the developmental windows the lab's exposure experiments target called out explicitly.
+
+```{mermaid}
+flowchart LR
+  A["stage"] --> B["stage"] --> C["stage"]
+```
+
+## 4. Physiology essentials
+
+Feeding, respiration, circulation, calcification, immunity. Keep each to a short paragraph — depth belongs in the reading list.
+
+## 5. Why the lab cares
+
+The applied and conceptual hooks: aquaculture, ocean acidification, disease, environmental memory. Link into [the framework](../framework/conceptual-framework.qmd) where the connection is direct.
+
+## 6. Genomic resources
+
+Reference assemblies with accessions, and where they live (NCBI, Ensembl Metazoa, Echinobase, ReefGenomics). Link back to the [technical modules](../modules/04-blast.qmd) that use them.
+
+| Species | Assembly | Accession | Source |
+|---|---|---|---|
+|  |  |  |  |
+
+## 7. Read next
+
+Three to five items, one line of annotation each. Full entries go in the [reading list](reading-list.qmd) — this is the short path.
+
+## 8. Check yourself
+
+::: {.callout-tip collapse="true"}
+## Five questions
+
+1.
+2.
+3.
+4.
+5.
+:::

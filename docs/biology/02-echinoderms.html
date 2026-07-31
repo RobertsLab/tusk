@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>markdown – Roberts Lab Course Set - Things u should know</title>
+<title>Echinoderms – Roberts Lab Course Set - Things u should know</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,6 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -322,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-markdown.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/00-markdown.html">markdown</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/index.html">Organism Biology</a></li><li class="breadcrumb-item"><a href="../biology/02-echinoderms.html">Echinoderms</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -345,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/00-markdown.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/00-markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">markdown</span></a>
   </div>
 </li>
@@ -404,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../biology/02-echinoderms.html" class="sidebar-item-text sidebar-link">
+  <a href="../biology/02-echinoderms.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Echinoderms</span></a>
   </div>
 </li>
@@ -467,35 +435,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-markdown" id="toc-what-is-markdown" class="nav-link active" data-scroll-target="#what-is-markdown">What is Markdown?</a>
-  <ul class="collapse">
-  <li><a href="#why-is-markdown-useful" id="toc-why-is-markdown-useful" class="nav-link" data-scroll-target="#why-is-markdown-useful">Why is Markdown Useful?</a>
-  <ul class="collapse">
-  <li><a href="#simplicity" id="toc-simplicity" class="nav-link" data-scroll-target="#simplicity">Simplicity</a></li>
-  <li><a href="#flexibility" id="toc-flexibility" class="nav-link" data-scroll-target="#flexibility">Flexibility</a></li>
-  <li><a href="#versatility" id="toc-versatility" class="nav-link" data-scroll-target="#versatility">Versatility</a></li>
-  <li><a href="#readability" id="toc-readability" class="nav-link" data-scroll-target="#readability">Readability</a></li>
-  </ul></li>
-  <li><a href="#markdown-syntax-and-examples" id="toc-markdown-syntax-and-examples" class="nav-link" data-scroll-target="#markdown-syntax-and-examples">Markdown Syntax and Examples</a></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
-  <ul class="collapse">
-  <li><a href="#keep-it-simple" id="toc-keep-it-simple" class="nav-link" data-scroll-target="#keep-it-simple">Keep it Simple</a></li>
-  <li><a href="#be-consistent" id="toc-be-consistent" class="nav-link" data-scroll-target="#be-consistent">Be Consistent</a></li>
-  <li><a href="#use-a-style-guide" id="toc-use-a-style-guide" class="nav-link" data-scroll-target="#use-a-style-guide">Use a Style Guide</a></li>
-  <li><a href="#use-markdown-extensions-wisely" id="toc-use-markdown-extensions-wisely" class="nav-link" data-scroll-target="#use-markdown-extensions-wisely">Use Markdown Extensions Wisely</a></li>
-  <li><a href="#preview-before-publishing" id="toc-preview-before-publishing" class="nav-link" data-scroll-target="#preview-before-publishing">Preview Before Publishing</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#who-they-are" id="toc-who-they-are" class="nav-link active" data-scroll-target="#who-they-are">1. Who they are</a></li>
+  <li><a href="#body-plan" id="toc-body-plan" class="nav-link" data-scroll-target="#body-plan">2. Body plan</a></li>
+  <li><a href="#life-cycle" id="toc-life-cycle" class="nav-link" data-scroll-target="#life-cycle">3. Life cycle</a></li>
+  <li><a href="#physiology-essentials" id="toc-physiology-essentials" class="nav-link" data-scroll-target="#physiology-essentials">4. Physiology essentials</a></li>
+  <li><a href="#why-the-lab-cares" id="toc-why-the-lab-cares" class="nav-link" data-scroll-target="#why-the-lab-cares">5. Why the lab cares</a></li>
+  <li><a href="#genomic-resources" id="toc-genomic-resources" class="nav-link" data-scroll-target="#genomic-resources">6. Genomic resources</a></li>
+  <li><a href="#read-next" id="toc-read-next" class="nav-link" data-scroll-target="#read-next">7. Read next</a></li>
+  <li><a href="#check-yourself" id="toc-check-yourself" class="nav-link" data-scroll-target="#check-yourself">8. Check yourself</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/modules/00-markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/biology/02-echinoderms.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/00-markdown.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/00-markdown.html">markdown</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/index.html">Organism Biology</a></li><li class="breadcrumb-item"><a href="../biology/02-echinoderms.html">Echinoderms</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">markdown</h1>
+<h1 class="title">Echinoderms</h1>
+<p class="subtitle lead">Sea stars and sea urchins — deuterostomes on our own branch of the tree</p>
 </div>
 
 
@@ -512,81 +470,262 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-is-markdown" class="level1">
-<h1>What is Markdown?</h1>
-<p>Markdown is a lightweight markup language created by John Gruber and Aaron Swartz in 2004. It is designed to be easy-to-read and easy-to-write. The syntax allows you to format text using simple symbols and characters you already know. For example, you can use asterisks <code>*</code> or underscores <code>_</code> to create italics or bold text. You can also create lists, headers, links, and many other formatting features easily.</p>
-<section id="why-is-markdown-useful" class="level2">
-<h2 class="anchored" data-anchor-id="why-is-markdown-useful">Why is Markdown Useful?</h2>
-<section id="simplicity" class="level3">
-<h3 class="anchored" data-anchor-id="simplicity">Simplicity</h3>
-<p>Markdown is much simpler to learn compared to other markup languages like HTML. This makes it a quick tool for anyone who wants to write well-formatted content without the steep learning curve.</p>
+<p>Echinoderms are the strangest animals the lab works on, and also the most closely related to us. They are built on five-part radial symmetry that they were not born with, they move on seawater hydraulics, they have a skeleton inside their skin, and they can change the stiffness of their own connective tissue on command. They are also exclusively marine — no echinoderm has ever made it into fresh water or onto land.</p>
+<section id="who-they-are" class="level2">
+<h2 class="anchored" data-anchor-id="who-they-are">1. Who they are</h2>
+<p>Phylum <strong>Echinodermata</strong>, roughly 7,000 living species, within the <strong>deuterostomes</strong> — the same branch that leads to chordates and to us. The two classes that matter here are <strong>Asteroidea</strong> (sea stars) and <strong>Echinoidea</strong> (sea urchins).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Species</th>
+<th>Common name</th>
+<th>Why it appears</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Pycnopodia helianthoides</em></td>
+<td>Sunflower sea star</td>
+<td>Devastated by sea star wasting disease; the subject of the <em>Vibrio</em> work below</td>
+</tr>
+<tr class="even">
+<td><em>Pisaster ochraceus</em></td>
+<td>Ochre star</td>
+<td>The original keystone predator of intertidal ecology</td>
+</tr>
+<tr class="odd">
+<td><em>Patiria miniata</em></td>
+<td>Bat star</td>
+<td>A tractable developmental and genomic model</td>
+</tr>
+<tr class="even">
+<td><em>Acanthaster planci</em></td>
+<td>Crown-of-thorns star</td>
+<td>Coral predator; outbreaks are a major reef stressor</td>
+</tr>
+<tr class="odd">
+<td><em>Strongylocentrotus purpuratus</em></td>
+<td>Purple sea urchin</td>
+<td>Among the most thoroughly described embryos in all of biology</td>
+</tr>
+<tr class="even">
+<td><em>Lytechinus variegatus</em></td>
+<td>Green sea urchin</td>
+<td>Second urchin model, well supported in Echinobase</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The relationship worth internalizing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Echinoderms are deuterostomes. <strong>A sea star is more closely related to you than it is to an oyster.</strong> This is not trivia — it is why the sea urchin genome turned up so many genes previously thought to be vertebrate innovations, and why urchins work as a comparative outgroup for chordate biology.</p>
+</div>
+</div>
 </section>
-<section id="flexibility" class="level3">
-<h3 class="anchored" data-anchor-id="flexibility">Flexibility</h3>
-<p>Markdown files are plain text files with a <code>.md</code> extension, which means they can be opened with any text editor. This makes them extremely portable and easy to manage.</p>
+<section id="body-plan" class="level2">
+<h2 class="anchored" data-anchor-id="body-plan">2. Body plan</h2>
+<p><strong>Pentaradial symmetry — but secondarily.</strong> Adult echinoderms have five-part radial symmetry with an oral (mouth) and aboral surface rather than a front and back. The larvae, however, are bilateral. The radial adult is <em>constructed</em> during metamorphosis, on top of a bilateral beginning.</p>
+<p><strong>Water vascular system.</strong> A hydraulic network unique to the phylum, and the defining echinoderm feature. Seawater enters through the <strong>madreporite</strong>, a sieve plate on the aboral surface, passes down the stone canal to a ring canal around the mouth, and out along radial canals into the arms. Each <strong>tube foot</strong> is extended by squeezing its <strong>ampulla</strong>, a muscular bulb at its base. There is no analogue to this system anywhere else in the animal kingdom.</p>
+<p><strong>Endoskeleton of ossicles.</strong> The skeleton is internal, under the epidermis, and made of discrete <strong>ossicles</strong> of high-magnesium calcite. In sea stars the ossicles are separate and connected by tissue, which is what makes an arm both firm and flexible. In urchins they are fused into a rigid <strong>test</strong>.</p>
+<p><strong>Mutable collagenous tissue.</strong> The connective tissue holding the ossicles together can change its stiffness under nervous control, going from pliable to rigid in seconds. It is how a sea star can hold a locked posture without muscular effort, and how it can drop an arm.</p>
+<p><strong>Coelom and coelomocytes.</strong> The main body cavity is filled with coelomic fluid, which serves as the circulatory compartment and carries <strong>coelomocytes</strong>, the immune cells. Coelomic fluid can be sampled without killing the animal — it is the compartment from which <em>Vibrio pectenicida</em> was cultured in the sea star wasting work.</p>
+<p><strong>Sea star specifics.</strong> A central disc with arms; <strong>pyloric caeca</strong> (digestive glands) extending into each arm; a cardiac stomach that can be everted out through the mouth. No centralized brain — a nerve ring with radial nerves running down each arm.</p>
+<p><strong>Urchin specifics.</strong> A rigid test covered in movable spines and <strong>pedicellariae</strong> (small pincers for cleaning and defense), and <strong>Aristotle’s lantern</strong>, a five-part jaw apparatus for scraping algae off rock.</p>
 </section>
-<section id="versatility" class="level3">
-<h3 class="anchored" data-anchor-id="versatility">Versatility</h3>
-<p>Markdown is commonly used for readme files, GitHub repositories, blogging platforms like Jekyll, and even in data science notebooks like Jupyter.</p>
+<section id="life-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="life-cycle">3. Life cycle</h2>
+<p>Broadcast spawning, external fertilization, and a long-lived feeding larva. The transition to the adult is more radical here than in any other group on this site.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A["Broadcast&lt;br/&gt;spawning"] --&gt; B["Fertilization"]
+  B --&gt; C["Blastula"]
+  C --&gt; D["Gastrula"]
+  D --&gt; E1["Bipinnaria&lt;br/&gt;(sea star)"]
+  D --&gt; E2["Echinopluteus&lt;br/&gt;(urchin)"]
+  E1 --&gt; F["Brachiolaria"]
+  F --&gt; G["Settlement +&lt;br/&gt;metamorphosis"]
+  E2 --&gt; G
+  G --&gt; H["Juvenile"]
+  H --&gt; I["Adult"]
+  I -.-&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Echinoderm development is the textbook case of <strong>deuterostomy</strong>: the blastopore — the first opening formed in the gastrula — becomes the anus, and the mouth forms secondarily. This is the character that defines our own branch of the animal tree, and it is easiest to see in a sea urchin embryo.</p>
+<p>The larvae are bilateral, planktonic, and feeding. Sea stars pass through a <strong>bipinnaria</strong> and then a <strong>brachiolaria</strong>, which bears attachment structures used at settlement. Urchins develop as an <strong>echinopluteus</strong>, held in shape by internal skeletal rods and instantly recognizable by its long arms.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Metamorphosis here is not a remodel — it is a replacement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The adult echinoderm develops from a <strong>rudiment</strong> that forms on one side of the larva. At metamorphosis, that rudiment becomes the juvenile and most of the rest of the larval body is discarded. The bilateral larva does not gradually reshape into a radial adult; it largely builds a new animal inside itself and then abandons the remainder.</p>
+</div>
+</div>
 </section>
-<section id="readability" class="level3">
-<h3 class="anchored" data-anchor-id="readability">Readability</h3>
-<p>The syntax is designed to be readable as-is, so even if you’re not rendering the Markdown to HTML or another format, it’s still easy to understand what’s going on.</p>
+<section id="physiology-essentials" class="level2">
+<h2 class="anchored" data-anchor-id="physiology-essentials">4. Physiology essentials</h2>
+<p><strong>Hydraulic locomotion.</strong> Hundreds of tube feet operate semi-independently, coordinated by the radial nerves rather than a brain. Collectively they generate enough sustained force for a sea star to pull open a bivalve — slowly, but for far longer than the bivalve’s adductor can hold.</p>
+<p><strong>Extraoral digestion.</strong> A sea star feeding on a mussel or clam everts its cardiac stomach out through its mouth and into the gap between the valves, digesting the animal in its own shell before retracting. This is worth noting on a site about shellfish: <strong>sea stars eat the lab’s other study animals</strong>, and are a real predation pressure in both wild beds and aquaculture.</p>
+<p><strong>High-magnesium calcite.</strong> The echinoderm skeleton uses the <em>most</em> soluble common form of calcium carbonate — more soluble than aragonite, which is more soluble than calcite. Echinoderms are therefore their own case in ocean acidification work, and results from bivalves do not transfer to them directly.</p>
+<p><strong>Regeneration.</strong> Sea stars regenerate arms, and in some species an arm with part of the disc can regenerate a whole animal. Regeneration and <strong>autotomy</strong> — deliberate self-amputation — are normal parts of the biology, which complicates using limb loss as a disease sign.</p>
+<p><strong>Immunity.</strong> Coelomocytes provide phagocytosis and encapsulation, backed by an innate immune repertoire that the purple urchin genome revealed to be unexpectedly large. As with the other groups here, there is no antibody-based adaptive immunity.</p>
+<p><strong>No excretory organs and no gills in the usual sense.</strong> Gas exchange happens across thin-walled surfaces including the tube feet and papulae; nitrogenous waste diffuses out as ammonia.</p>
 </section>
+<section id="why-the-lab-cares" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-lab-cares">5. Why the lab cares</h2>
+<p><strong>Sea star wasting disease.</strong> Beginning in 2013, an epidemic killed billions of sea stars across more than 20 species from Mexico to Alaska. <em>Pycnopodia helianthoides</em> was hit hardest. The ecological consequence was a trophic cascade: with the sunflower star gone, urchin populations grew unchecked and kelp forests were lost over large areas.</p>
+<p><strong>Keystone predation.</strong> <em>Pisaster ochraceus</em> is the animal on which the keystone species concept was built — remove the predator, and the community it structured collapses into a monoculture. The wasting epidemic is that experiment running at coastwide scale without anyone choosing to run it.</p>
+<p><strong>Ocean acidification.</strong> High-Mg calcite makes echinoderms a distinct and sensitive case, and their larvae build skeletal structure early, as bivalve larvae do.</p>
+<p><strong>Comparative genomics.</strong> As a deuterostome outgroup, echinoderms let you ask which features of chordate biology are actually chordate innovations. Often, they are not.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>A worked example of science correcting itself
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The etiology of sea star wasting took more than a decade to establish, and the field’s answer was wrong for most of it. A densovirus was identified as the agent in 2014, that finding did not hold up under later scrutiny, and in 2025 a bacterium — <em>Vibrio pectenicida</em> — was established as a causative agent by fulfilling Koch’s postulates.</p>
+<p>The <a href="../biology/reading-list.html">reading list</a> walks all three papers in order. If you read only one thing about echinoderms, read that sequence: it teaches more about how evidence actually works than any single result would.</p>
+</div>
+</div>
 </section>
-<section id="markdown-syntax-and-examples" class="level2">
-<h2 class="anchored" data-anchor-id="markdown-syntax-and-examples">Markdown Syntax and Examples</h2>
-<p>Here are some basic examples of Markdown syntax:</p>
+<section id="genomic-resources" class="level2">
+<h2 class="anchored" data-anchor-id="genomic-resources">6. Genomic resources</h2>
+<p>Reference assemblies as listed by NCBI. Accessions verified against the NCBI Datasets API on 2026-07-30.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Species</th>
+<th>Assembly</th>
+<th>Accession</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Patiria miniata</em></td>
+<td>Pmin_3.0</td>
+<td><code>GCF_015706575.1</code></td>
+<td>RefSeq; fully supported in Echinobase</td>
+</tr>
+<tr class="even">
+<td><em>Acanthaster planci</em></td>
+<td>OKI-Apl_1.0</td>
+<td><code>GCF_001949145.1</code></td>
+<td>RefSeq</td>
+</tr>
+<tr class="odd">
+<td><em>Pycnopodia helianthoides</em></td>
+<td>ASM3215829v1</td>
+<td><code>GCA_032158295.1</code></td>
+<td>GenBank only — no RefSeq annotation</td>
+</tr>
+<tr class="even">
+<td><em>Pisaster ochraceus</em></td>
+<td>ASM1099431v2</td>
+<td><code>GCA_010994315.2</code></td>
+<td>GenBank only — no RefSeq annotation</td>
+</tr>
+<tr class="odd">
+<td><em>Strongylocentrotus purpuratus</em></td>
+<td>Spur_5.0</td>
+<td><code>GCF_000002235.5</code></td>
+<td>RefSeq</td>
+</tr>
+<tr class="even">
+<td><em>Lytechinus variegatus</em></td>
+<td>Lvar_3.0</td>
+<td><code>GCF_018143015.1</code></td>
+<td>RefSeq</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>GCF_</code> vs <code>GCA_</code> — a distinction that will bite you
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>GCF_</code> accessions are <strong>RefSeq</strong>: curated, with NCBI gene annotation attached. <code>GCA_</code> accessions are <strong>GenBank</strong>: author-submitted assembly with no guarantee of NCBI annotation.</p>
+<p>Both wasting-relevant sea stars — <em>Pycnopodia</em> and <em>Pisaster</em> — are GenBank-only. If your workflow assumes an NCBI annotation set exists (as the <a href="../modules/04-blast.html">BLAST module</a> does), it will not for those species. You will need annotation from the submitting group or from Echinobase, or you will need to generate it.</p>
+</div>
+</div>
+<p><strong><a href="https://echinobase.org">Echinobase</a></strong> is the model-organism knowledgebase for the phylum: gene pages, orthology across supported species, a genome browser, BLAST services, and an echinoderm anatomical ontology. Use it before going to raw NCBI files. Cite Telmer et al.&nbsp;2024 if you use it — details on the <a href="../biology/reading-list.html">reading list</a>.</p>
+</section>
+<section id="read-next" class="level2">
+<h2 class="anchored" data-anchor-id="read-next">7. Read next</h2>
+<p>Full annotations on the <a href="../biology/reading-list.html">reading list</a>.</p>
 <ul>
-<li><p>Headers:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># H1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## H2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### H3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Lists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Sub-item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Item 1</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Item 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Links:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">OpenAI</span><span class="co">](https://www.openai.com/)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Images:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Alt text](url)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Code Blocks:</p>
-<pre><code>```bash
- Code goes here
-```</code></pre></li>
-<li><p>In-line Code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`code`</span> in your markdown file.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><strong>The sea star wasting sequence</strong> — Hewson et al.&nbsp;2014, then Hewson et al.&nbsp;2024, then Prentice et al.&nbsp;2025. In that order.</li>
+<li><strong>McCracken et al.&nbsp;2026</strong> — immune activation in wild <em>Pycnopodia</em> detectable before any visible sign of disease.</li>
+<li><strong>Sodergren et al.&nbsp;2006</strong> — the purple urchin genome, and the deuterostome-outgroup payoff.</li>
+<li><strong>Telmer et al.&nbsp;2024</strong> — Echinobase, and what it contains.</li>
+<li><strong>Ruppert, Fox &amp; Barnes</strong> — the echinoderm chapters, for body plan and water vascular system.</li>
 </ul>
 </section>
-<section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
-<section id="keep-it-simple" class="level3">
-<h3 class="anchored" data-anchor-id="keep-it-simple">Keep it Simple</h3>
-<p>The beauty of Markdown lies in its simplicity. Stick to the basics unless there’s a strong reason to use a complex feature.</p>
-</section>
-<section id="be-consistent" class="level3">
-<h3 class="anchored" data-anchor-id="be-consistent">Be Consistent</h3>
-<p>If you’re working on a longer document or a series of documents, be consistent in your style and formatting. This will make it easier for others (or future you) to read and modify the content.</p>
-</section>
-<section id="use-a-style-guide" class="level3">
-<h3 class="anchored" data-anchor-id="use-a-style-guide">Use a Style Guide</h3>
-<p>Consider using a Markdown style guide or linter to keep your formatting consistent. This is especially helpful for collaborative projects.</p>
-</section>
-<section id="use-markdown-extensions-wisely" class="level3">
-<h3 class="anchored" data-anchor-id="use-markdown-extensions-wisely">Use Markdown Extensions Wisely</h3>
-<p>Many platforms support Markdown extensions that provide additional features like tables, footnotes, and task lists. While these are useful, keep in mind that they may not be supported everywhere.</p>
-</section>
-<section id="preview-before-publishing" class="level3">
-<h3 class="anchored" data-anchor-id="preview-before-publishing">Preview Before Publishing</h3>
-<p>Always preview your Markdown file before publishing to make sure it looks the way you intended.</p>
-<p>By adopting these best practices, you’ll be able to create content that is clean, easy to read, and easy to maintain.</p>
+<section id="check-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="check-yourself">8. Check yourself</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Five questions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Adult echinoderms are radially symmetric, but the phylum is placed among the bilaterians. How is that not a contradiction?</li>
+<li>Trace a drop of seawater from the madreporite to the tip of a tube foot. What makes the foot extend?</li>
+<li>Why can’t you take an ocean acidification result from oyster larvae and apply it directly to urchin larvae?</li>
+<li>A sea star’s arm falls off. Give two very different explanations, and say what else you would want to know.</li>
+<li>You want to map RNA-seq reads to <em>Pycnopodia helianthoides</em> and count genes. What will you run into, and why is <em>Patiria miniata</em> easier?</li>
+</ol>
+</div>
+</div>
+</div>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1008,4 +1147,4 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/modules/00-markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Robertslab/tusk/edit/main/biology/02-echinoderms.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Robertslab/tusk/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

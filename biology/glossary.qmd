@@ -1,0 +1,172 @@
+---
+title: "Glossary"
+subtitle: "Terms you will hit in the first week"
+---
+
+Definitions are written for someone new to marine invertebrates, not as formal taxonomic descriptions. Where a term carries a specific meaning in the lab's own work, that meaning is noted.
+
+If you add a term to a [taxon page](index.qmd), add it here too.
+
+------------------------------------------------------------------------
+
+## Development and life history
+
+**Broadcast spawning.** Releasing eggs and sperm directly into the water column rather than mating. Standard across all three of the lab's study groups, and the reason fertilization and early development happen outside the parent, exposed to whatever the seawater is doing.
+
+**Planktotrophic / lecithotrophic.** A planktotrophic larva feeds in the plankton; a lecithotrophic larva runs on yolk reserves. This determines how long a larva can stay in the water column and how sensitive it is to food supply during development.
+
+**Trochophore.** The first free-swimming larval stage in bivalves — a small ciliated top-shaped larva. The same form appears in annelids, and its shared presence is one of the traits that groups them as Lophotrochozoa.
+
+**Veliger.** The bivalve larval stage after the trochophore, distinguished by the **velum**, a ciliated organ used for both swimming and feeding. The early stage with a symmetrical shell is the **D-veliger**, named for its profile.
+
+**Pediveliger.** The late-stage veliger that has developed a foot and is capable of settling. This is the stage at which a larva becomes competent to metamorphose.
+
+**Competency.** The developmental state in which a larva is capable of responding to a settlement cue and metamorphosing. "Metamorphosis competency" as a measured endpoint in the lab's papers refers to the proportion of larvae reaching this state.
+
+**Settlement.** Leaving the plankton and attaching to a substrate. Often triggered by specific chemical or biofilm cues rather than occurring on a fixed schedule.
+
+**Metamorphosis.** The reorganization from larval to juvenile body plan following settlement. In bivalves this includes loss of the velum; in echinoderms it involves the dramatic shift from a bilateral larva to a radial adult.
+
+**Spat.** A juvenile bivalve just after settlement and metamorphosis. "Spatfall" is the arrival of a cohort of these in a place — a quantity hatcheries and growers care about a great deal.
+
+**Recruitment.** The addition of new individuals to a population, usually measured at or after settlement. Distinct from spawning success — many larvae are produced, few recruit.
+
+**Planula.** The free-swimming ciliated coral larva. The cnidarian counterpart to a veliger, though not homologous to it.
+
+**Bipinnaria** and **brachiolaria.** Successive free-swimming larval stages of sea stars. The brachiolaria bears the attachment structures used at settlement.
+
+**Pluteus (echinopluteus).** The larval stage of sea urchins, supported by an internal skeletal rod framework and easily recognized by its long arms. The workhorse of classical developmental biology.
+
+------------------------------------------------------------------------
+
+## Anatomy — molluscs
+
+**Mantle.** The tissue layer that secretes the shell. A primary sampling tissue and the site of biomineralization — when a paper reports "mantle transcriptome," shell formation is usually the subject.
+
+**Ctenidium.** The bivalve gill. Does double duty as respiratory surface and feeding apparatus, capturing particles from the water passing over it.
+
+**Labial palps.** Flaps that sort particles delivered by the gill before ingestion, rejecting what the animal will not eat as pseudofeces.
+
+**Adductor muscle.** The muscle that closes the shell. What you eat when you eat a scallop, and a common tissue for sampling because it is large and relatively homogeneous.
+
+**Foot.** The muscular organ used for movement and, in larvae and mussels, for exploring a surface before attaching. Reduced in adult oysters, which cement in place.
+
+**Byssus.** The bundle of tough protein threads a mussel secretes to attach to a substrate. Why mussels stay put in heavy surf and why they are hard to pull off rocks.
+
+**Umbo.** The oldest part of a bivalve shell, near the hinge — shell growth radiates outward from it, so the umbo is the beginning of the growth record.
+
+**Digestive gland.** The organ handling digestion and nutrient storage, sometimes called the hepatopancreas. A frequent target for contaminant and energetics work.
+
+**Hemolymph.** The circulatory fluid of an animal with an open circulatory system — not confined to vessels the way blood is. Carries hemocytes, and is samplable without killing the animal.
+
+------------------------------------------------------------------------
+
+## Anatomy — echinoderms
+
+**Pentaradial symmetry.** Five-part radial symmetry in the adult. Secondary, not ancestral: echinoderm larvae are bilateral, and the radial adult is built during metamorphosis.
+
+**Water vascular system.** A hydraulic network of fluid-filled canals unique to echinoderms, powering the tube feet. It has no close analogue anywhere else in the animal kingdom.
+
+**Tube feet.** The many small hydraulic appendages used for locomotion, gripping, and — in sea stars — prying open bivalves.
+
+**Ampulla.** The muscular bulb at the base of each tube foot. Squeezing it extends the foot; this is the pump in the hydraulic system.
+
+**Madreporite.** The sieve-like plate on the surface through which the water vascular system connects to seawater. Visible as an off-center spot on a sea star's upper surface.
+
+**Ossicle.** A discrete element of the echinoderm endoskeleton, made of high-magnesium calcite. Held together by connective tissue rather than fused, which is what makes a sea star's arm both firm and flexible.
+
+**Coelom / coelomic fluid.** The main body cavity and the fluid filling it. Coelomic fluid can be sampled non-lethally and is the compartment where the immune cells circulate — it is the fluid from which *Vibrio pectenicida* was cultured in the sea star wasting work.
+
+**Pyloric caeca.** The digestive glands extending into each arm of a sea star.
+
+**Autotomy.** Self-amputation of an arm, either as a predator escape or as a symptom of disease. Sea stars regenerate afterward; limb autotomy is one of the visible signs of sea star wasting.
+
+------------------------------------------------------------------------
+
+## Anatomy — cnidarians
+
+**Polyp.** The individual body unit of a coral — a small sac with a ring of tentacles around a single opening. A coral colony is many polyps.
+
+**Coenosarc.** The living tissue connecting polyps across the colony surface. It is what makes a colony an integrated organism rather than a pile of neighbors.
+
+**Mesoglea.** The non-cellular layer between the two tissue layers. Cnidarians are diploblastic — two tissue layers, not the three that bilaterians have.
+
+**Gastrovascular cavity.** The single internal cavity handling both digestion and distribution. One opening serves as both mouth and anus.
+
+**Calicoblastic epithelium.** The tissue layer at the interface with the skeleton, where calcification actually happens.
+
+**Corallite / calyx.** The skeletal cup housing an individual polyp. Calyx dimensions are a standard morphometric readout in ocean acidification work.
+
+**Nematocyst.** The stinging organelle that gives Cnidaria its name — an explosively discharged capsule used for prey capture and defense.
+
+**Genet / ramet.** A genet is a genetic individual; a ramet is a physically distinct piece of one. Because coral colonies can be fragmented and distributed across treatments, coral experiments can hold genotype constant in a way that is rarely possible elsewhere — "same-genet fragments across treatments" is a design strength worth recognizing.
+
+------------------------------------------------------------------------
+
+## Symbiosis
+
+**Symbiodiniaceae.** The family of dinoflagellate algae living inside coral cells and supplying the host with photosynthetic products. Formerly treated as the single genus *Symbiodinium*; the family was formally revised into multiple genera in 2018, so older papers use the older names.
+
+**Zooxanthellae.** The informal, older term for the same algae. Still widely used, including in current papers.
+
+**Photosynthate.** The fixed carbon the symbiont produces and transfers to the host, which can supply the majority of the coral's energy budget. This is why a reef can be productive in nutrient-poor water.
+
+**Vertical / horizontal transmission.** Vertical means symbionts are passed from parent to offspring in the gamete or larva; horizontal means each new generation acquires them from the environment. Which strategy a species uses affects how quickly its symbiont community can shift.
+
+**Bleaching.** Loss of symbionts or their pigments under stress, leaving white skeleton visible through the now-translucent tissue. It is a breakdown of the symbiosis, not immediate death — a bleached coral is alive and may recover, though it often does not.
+
+------------------------------------------------------------------------
+
+## Calcification and shell
+
+**Calcium carbonate (CaCO₃).** The mineral all three groups build with, in different polymorphs.
+
+**Aragonite.** The CaCO₃ polymorph forming coral skeleton and much of bivalve shell. More soluble than calcite, which is why aragonite saturation state is the standard ocean acidification metric.
+
+**Calcite / high-magnesium calcite.** The other CaCO₃ polymorph. Echinoderm ossicles are high-Mg calcite, which is more soluble still, making echinoderms a distinct case in acidification work.
+
+**Saturation state (Ω).** A measure of whether seawater favors mineral formation or dissolution. Below Ω = 1, the mineral tends to dissolve; larvae can be affected well before that threshold.
+
+**Nacre.** Mother-of-pearl — the layered aragonite structure lining some shells, and the best-studied model of controlled biomineralization.
+
+**Periostracum.** The thin organic outer layer of a bivalve shell, which protects the mineral underneath from dissolution.
+
+**Shell matrix protein.** A protein secreted into the shell that controls where and how crystals form. These evolve unusually fast and vary widely between species — there is no single conserved "biomineralization toolkit" across molluscs.
+
+------------------------------------------------------------------------
+
+## Immunity
+
+**Innate immunity.** Immune defense that does not depend on the antibody-and-lymphocyte machinery of vertebrates. It is the only immune system these animals have.
+
+**Hemocyte.** The circulating immune cell of molluscs — phagocytosis, encapsulation, and the general center of bivalve immune response.
+
+**Coelomocyte.** The echinoderm equivalent, circulating in coelomic fluid.
+
+**Phagocytosis.** Engulfment and destruction of a particle or microbe by a cell. Also, notably, the mechanism by which a coral takes up its symbionts in the first place.
+
+**PAMP / pattern recognition receptor.** A pathogen-associated molecular pattern is a conserved microbial feature; a pattern recognition receptor is the host protein that detects it. This recognize-a-class-of-microbe strategy is how innate immunity gets specificity without antibodies.
+
+**Antimicrobial peptide.** A short secreted peptide that kills or inhibits microbes directly.
+
+**Immune priming.** Enhanced response to a second exposure in an animal with no adaptive immune system. Real in some invertebrates and mechanistically distinct from vertebrate immune memory — treat claims about it carefully, and do not assume the vertebrate mechanism.
+
+------------------------------------------------------------------------
+
+## Environment and stress
+
+**Sessile / sedentary.** Attached in place, or barely mobile. An animal that cannot leave a stressor has to solve it physiologically — the fact underpinning much of the lab's interest in these species.
+
+**Suspension feeding (filter feeding).** Extracting particles from the water column. It makes bivalves efficient at concentrating whatever is in the water, including food, contaminants, and pathogens.
+
+**Intertidal.** The zone exposed at low tide and submerged at high tide, cycling through temperature, salinity, and oxygen extremes daily. Oysters live here, which is a strong clue about their stress tolerance.
+
+**Ocean acidification.** The decline in seawater pH and carbonate saturation as the ocean absorbs atmospheric CO₂. Shortened to OA throughout the lab's writing.
+
+**Acclimatization vs. adaptation.** Acclimatization is a within-lifetime physiological adjustment; adaptation is a genetic change across generations. Keeping these apart matters, because epigenetic mechanisms sit ambiguously between them — see the [conceptual framework](../framework/conceptual-framework.qmd).
+
+**Reaction norm.** The pattern of phenotypes a single genotype produces across a range of environments. Its *shape* — not just its average — is itself a trait that can differ between populations and be under selection.
+
+**Frontloading.** Maintaining constitutively elevated expression of stress-response genes so that they are already up before the stress arrives, rather than responding after. One of two contrasting reaction-norm strategies, the other being reactive plasticity.
+
+**Phenotypic plasticity.** The capacity of one genotype to produce different phenotypes depending on environment. Central to the lab's framing, where the plasticity itself is treated as the trait of interest.

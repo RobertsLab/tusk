@@ -1,0 +1,140 @@
+---
+title: "Cnidarians"
+subtitle: "Corals, and the symbiosis that makes a reef possible"
+---
+
+A reef-building coral is not really one organism. It is a colony of genetically identical polyps sharing a skeleton, and every one of those polyps is packed with photosynthetic algae living inside its own cells. The animal contributes structure, nitrogen, and CO₂; the algae contribute most of the food. Nearly everything that stresses a coral stresses that partnership first.
+
+## 1. Who they are
+
+Phylum **Cnidaria**, class **Anthozoa**, order **Scleractinia** — the stony, reef-building corals. Cnidarians branched off before the split between protostomes and deuterostomes, making them the most distantly related of the lab's study animals.
+
+They are **diploblastic**: two tissue layers with a non-cellular **mesoglea** between them, not the three germ layers that bilaterians have. There is no brain, no heart, no blood, and no through-gut.
+
+| Species | Why it appears |
+|---|---|
+| *Stylophora pistillata* | The long-term ocean acidification and methylome work anchoring the [foundational papers](../framework/foundational-papers.qmd) |
+| *Porites astreoides* | The reciprocal-transplant expression-plasticity work — the cleanest evidence that plasticity itself is the adaptive trait |
+| *Acropora* spp. | The first sequenced coral genus; fast-growing and thermally sensitive |
+
+## 2. Body plan
+
+**The polyp.** A sac with a single opening ringed by tentacles. That opening is both mouth and anus, leading into the **gastrovascular cavity**, which is subdivided by sheets of tissue called mesenteries where digestion and gamete production occur.
+
+**Two layers.** An outer **epidermis** and an inner **gastrodermis**, separated by mesoglea. The symbiotic algae live *inside* gastrodermal cells — intracellular, each in a host-derived membrane.
+
+**Coenosarc.** The living tissue sheet connecting polyps across the colony surface. It is what makes a colony an integrated organism able to share resources, rather than a cluster of independent animals.
+
+**The skeleton and where it forms.** Beneath the tissue sits the aragonite skeleton. Calcification happens at the **calicoblastic epithelium**, the tissue layer facing the skeleton, which secretes into a thin **subcalicoblastic space** between tissue and mineral. The coral is not calcifying in seawater — it is calcifying in a compartment whose chemistry it controls.
+
+**Corallite and calyx.** Each polyp sits in a skeletal cup. Calyx dimensions, septal spacing, and skeletal porosity are all standard morphometric readouts in acidification experiments — they are how a chemical treatment becomes a measurable phenotype.
+
+**Nematocysts.** The stinging organelles that name the phylum: pressurized capsules that fire on contact, used for prey capture and defense against neighbors.
+
+::: callout-tip
+## Why coral experiments have a design advantage
+A colony can be cut into fragments that are all the **same genet** — genetically identical — and distributed across treatments. Genotype is held constant by construction, not by statistical adjustment.
+
+This is why coral studies can make claims about environmental effects with a confidence that is hard to reach in oysters, where every individual is a different genotype. When you read "same-genet fragments distributed across pH treatments," recognize it as a real strength of the design.
+:::
+
+## 3. Life cycle
+
+Corals reproduce sexually as **broadcast spawners** or **brooders**, and asexually by budding — which is how a colony grows and how fragmentation propagates a genet.
+
+```{mermaid}
+flowchart LR
+  A["Spawning<br/>or brooding"] --> B["Planula larva"]
+  B --> C["Settlement<br/>on cue"]
+  C --> D["Primary polyp"]
+  D --> E["Budding"]
+  E --> F["Colony"]
+  F -.-> A
+  B -. "horizontal" .-> S["Symbiont<br/>acquisition"]
+  A -. "vertical" .-> S
+  S -.-> D
+```
+
+Many broadcast-spawning species release gametes in **mass synchronized spawning events**, with whole reefs spawning within a night or two, cued by lunar cycle, temperature, and sunset timing. Fertilization is external, producing a swimming **planula** larva.
+
+Settlement is cue-driven — crustose coralline algae and specific bacterial biofilms are among the recognized signals. The settled larva becomes a **primary polyp**, and the colony grows from there by budding.
+
+::: callout-important
+## Vertical vs. horizontal symbiont acquisition
+**Vertical**: symbionts are passed directly into eggs or larvae, so offspring start life already partnered. Common in brooders.
+
+**Horizontal**: larvae start symbiont-free and must acquire algae from the environment. Typical of broadcast spawners.
+
+This matters for how fast a population's symbiont community can shift. Horizontal acquisition means each generation re-samples what is locally available — a potential route to a more thermally tolerant partnership, and a reason not to treat host genotype as the only thing that determines a colony's stress tolerance.
+:::
+
+## 4. Physiology essentials
+
+**The symbiosis.** Symbiodiniaceae — dinoflagellate algae, formerly all called *Symbiodinium* — live inside gastrodermal cells and translocate **photosynthate** to the host, often supplying the majority of its energy budget. This is what allows a reef to be spectacularly productive in nutrient-poor tropical water. The host reciprocates with CO₂, nitrogen, and a protected, well-lit position in the water column.
+
+The partnership is established by **phagocytosis** — the host cell takes the alga up by the same mechanism it would use to engulf a microbe, and then does not digest it. Understanding why is one of the open questions in the field.
+
+**Heterotrophy.** Corals also eat, capturing zooplankton with tentacles and nematocysts and taking up organic material via mucus. Photosynthate is not the whole story, and heterotrophic feeding capacity affects how well a colony survives bleaching.
+
+**Calcification.** Aragonite is deposited at the calicoblastic layer. Calcification is typically **light-enhanced** — it runs faster when the symbionts are photosynthesizing, which couples skeletal growth to the health of the partnership. Ocean acidification does not simply dissolve corals; it raises the cost of maintaining the internal chemistry that calcification requires.
+
+::: callout-note
+## Bleaching, correctly stated
+Under stress — most often elevated temperature with high light — the symbiosis breaks down and symbionts or their pigments are lost, leaving white skeleton visible through transparent tissue.
+
+Three things newcomers routinely get wrong:
+
+1. **A bleached coral is not dead.** It has lost its energy supply and will die if the condition persists, but bleaching is recoverable.
+2. **The skeleton was always white.** The color comes from the symbionts and host pigments, not the mineral.
+3. **It is not simple heat damage.** A well-supported reading treats bleaching as a **host innate immune response to a symbiont that has become damaging** — reactive oxygen species from stressed photosynthetic machinery signal the problem, and the host expels the partner. That framing connects coral stress biology directly to invertebrate immunity.
+:::
+
+## 5. Why the lab cares
+
+**Thermal stress and bleaching.** Marine heatwaves have driven repeated mass bleaching events. The question of which colonies survive, and why, is exactly a question about environmental memory: does prior exposure to variable conditions leave a state that changes the response to the next event?
+
+**Expression plasticity as the adaptive trait.** Reciprocal transplant work in *Porites astreoides* showed that corals from environmentally variable inshore sites have *more flexible* transcriptomes than those from stable offshore sites, and that this flexibility predicts bleaching outcome. It is the cornerstone empirical result for predictive phenotyping in the [conceptual framework](../framework/conceptual-framework.qmd) — the plasticity itself is the trait under selection, not any particular expression level.
+
+**Gene body methylation and acclimatization.** Long-term ocean acidification work in *Stylophora pistillata* linked methylation state to sustained phenotypic acclimatization across molecular and morphometric scales, anchoring the lab's reading of gene body methylation as a regulator of transcriptional noise.
+
+**The holobiont problem.** A coral sample contains host, symbiont, and an associated microbial community. That is a methodological burden — reads have to be partitioned — but also an opportunity, because the unit that acclimatizes may be the partnership rather than the animal.
+
+## 6. Genomic resources
+
+Reference assemblies as listed by NCBI. Accessions verified against the NCBI Datasets API on 2026-07-30.
+
+| Species | Assembly | Accession | Note |
+|---|---|---|---|
+| *Stylophora pistillata* | Stylophora pistillata v1.1 | `GCF_002571385.2` | RefSeq |
+| *Acropora digitifera* | Adig_1.1 | `GCF_000222465.1` | RefSeq; the first coral genome |
+| *Porites astreoides* | — | — | **No NCBI reference assembly** |
+
+::: callout-warning
+## *Porites astreoides* has no NCBI reference genome
+This is worth knowing before you plan work on it. The species behind one of the lab's anchor papers has no reference assembly in NCBI — which is precisely why that study used **TagSeq** with reference-free and host/symbiont-partitioned approaches rather than a standard genome-guided pipeline.
+
+If a species you need is missing an assembly, that constrains your method choice from the start. Check first.
+:::
+
+**Symbiont genomes are separate.** Symbiodiniaceae genomes are deposited independently of their hosts. Any coral RNA-seq dataset contains both, and you have to decide deliberately how to partition reads — mapping to a concatenated host+symbiont reference is the usual approach. Note also that the family was taxonomically revised in 2018, so genomes deposited under *Symbiodinium* may now sit in other genera.
+
+## 7. Read next
+
+Full annotations on the [reading list](reading-list.qmd).
+
+- **Davy, Allemand & Weis 2012** — the definitive cell-biology review of the symbiosis. Start here.
+- **Weis 2008** — bleaching as a host innate immune response; short and worth the hour.
+- **LaJeunesse et al. 2018** — the Symbiodiniaceae revision, and why pre- and post-2018 papers use different names.
+- **Shinzato et al. 2011** — the *Acropora digitifera* genome.
+
+## 8. Check yourself
+
+::: {.callout-tip collapse="true"}
+## Five questions
+
+1. A coral polyp has one opening. What are the consequences for how it feeds and digests?
+2. Where does calcification physically happen, and why does it matter that this is not simply "in seawater"?
+3. Someone says a bleached coral is dead and its skeleton has turned white. Correct both halves.
+4. Two species, one brooding with vertical symbiont transmission and one broadcast spawning with horizontal acquisition. Which might shift to a more heat-tolerant symbiont community faster, and why?
+5. You have coral RNA-seq reads. Why can't you just map them to the host genome and move on?
+:::
