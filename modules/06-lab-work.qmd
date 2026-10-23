@@ -68,5 +68,58 @@ Prior to beginning, you'll need to get LN<sub>2</sub> from UW Chemistry Stores i
 
 ### Disposable Plastic Mortar & Pestle
 
+#### Pros
+
+- Supplies are always on hand.
+
+- Good for small tissue amounts.
+
+#### Cons
+
+- Somewhat labor intensive.
+
+- Somewhat time consuming.
+
+- Tissue might thaw during process.
+
+- Sometimes requires dry ice.
+
+- Only good for small tissue amounts.
+
+##### Example Procedure
+
+
+::: {.callout-note}
+
+If processing more than 2-3 samples, get dry ice from Biochemistry Stores (Health Sciences, J-wing basement) to prevent samples from thawing while waiting to be homogenized.
+
+:::
+
+1. Fill disposable mortar tubes with homogenization solution (e.g. Trizol, Tri-reagent, kit homogenization buffer, etc.).
+
+
+::: {.callout-important}
+
+Do not fill mortar tubes with more than 500uL of solution! Otherwise, displacement from the pestle will cause the tube to overflow.
+
+:::
+
+
+1. Store frozen samples on ice - preferably dry ice if more than 2-3 samples.
+2. Using small dissection scissors and/or forceps and/or small steel spatula, chip out a piece of frozen tissue.
+3. Weigh tissue with weight boat/paper.
+4. Transfer tissue piece to pre-filled mortar tube.
+5. Homogenize tissue with disposable pestle. Move the pestle up and down, with twisting motions to homogenize tissue. Do this until no visible chunks of tissue remain.
+
+
+::: {.callout-tip}
+
+If processing many samples, using a [motorized Pestle Pellet](https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/images/150/322/fd097467-314f-4e5f-99f0-a24d956a5bc1/800/fd097467-314f-4e5f-99f0-a24d956a5bc1.jpg) will significantly ease strain on your hand/fingers and make the process faster.
+
+Use caution to avoid splashing!!
+
+:::
+
+
 
 ### Bullet Blender (i.e. bead beater)
