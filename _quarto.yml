@@ -32,6 +32,7 @@ website:
           - modules/03-rstudio.qmd
           - modules/04-blast.qmd
           - modules/05-computers.qmd
+          - modules/06-lab-work.qmd
       - section: "Organism Biology"
         contents:
           - biology/index.qmd
