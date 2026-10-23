@@ -12,6 +12,13 @@ format:
 
 # RNA Isolation
 
+There are a few different approaches to isolating RNA in the Roberts Lab. 
+
+- Trizol/Tri-Reagent/RNA-zol: This is a classic, phenol/chaotropic salt/chloroform method. It's the most labor intensive, error prone and potentially harmful of all the methods. Although RNA-zol eliminates the need for chloroform, it's still based on a phenol/chaotropic salt solution. This method also has a high propensity for chemical carryover and/or low RNA yields. This is the most affordable method. These solutions are stored at 4C in FTR 209.
+
+- Spin Column Kits: There are a variety of kits which rely on charged resin columns to bind RNA. Almost all kits follow the same rough protocol: homogenize tissue in provided buffer, transfer homogenate to column, spin, wash column with some buffers, elute clean RNA into new tube. Spin column kits are the fastest, cleanest approach for RNA. They are the most expensive method. Kits are stored on the shelf near the door of FTR 213.
+
+- Hybrid: ZymoResearch makes a Direct-zol RNA isolation kit. Samples are homogenized in Trizol/Tri-Reagent/RNA-zol and then transferred to a spin column for washes/elution. Slightly cheaper than a dedicated spin column kit, but still requires usage/exposure to phenol/chaotropic salt solution. Kits are stored on the shelf near the door of FTR 213.
 
 ## Homogenization
 
