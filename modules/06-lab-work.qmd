@@ -1,0 +1,12 @@
+---
+title: "Lab Work"
+
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    code-copy: true
+    highlight-style: github
+    code-overflow: wrap
+---
+
