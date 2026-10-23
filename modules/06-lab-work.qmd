@@ -10,3 +10,63 @@ format:
     code-overflow: wrap
 ---
 
+# RNA Isolation
+
+
+## Homogenization
+
+
+### Liquid Nitrogen (LN<sub>2</sub>) with Mortar & Pestle
+
+#### Pros
+
+- Best method for complete tissue pulverization.
+
+- Best method for sample preservation (sample never thaws).
+
+- Can be easily adapted for most tissue amounts.
+
+#### Cons
+
+- Very labor intensive.
+
+- Very time consuming.
+
+- Requires LN<sub>2</sub> which is not readily available in our lab.
+
+##### Example Procedure
+
+
+::: {.callout-note}
+
+Prior to beginning, you'll need to get LN<sub>2</sub> from UW Chemistry Stores in Bagley Hall.
+
+:::
+
+
+1. Pour liquid nitrogen into a small(ish) polystyrene container (or, an ice bucket works).
+2. Use 50mL conical to transfer LN2 to a clean mortar (this tube can just be stored in the LN2 for the duration of this entire process). This pre-chills the mortar and is important!
+3. While the mortar is pre-chilling, put bottom portion of pestle into LN2 in the polystyrene container to pre-chill. Not too deep, though, or else the pestle handle will get too cold to hold onto.
+4. While the mortar and pestle are pre-chilling, place rounded end of steel spatula into LN2 in the polystyrene container to pre-chill.
+5. Transfer tissue to pre-chilled mortar.
+6. Quickly pulverize tissue using pre-chilled pestle.
+7. Transfer powdered tissue, using pre-chilled spatula, to storage tube (preferably pre-chilled in LN<sub>2</sub>) and/or subset to pre-chilled, zeroed-out tube on scale for weighing.
+8. Proceed to next sample with different clean mortar/pestle/spatula.
+9. After all mortar/pestles/spatulas have been used, wash with soap and water (use a sponge to wash).
+10. Submerge all utensils in a 10% bleach solution for at least 10mins.
+11. Rinse all utensils thoroughly with DI water. Dry them thoroughly with paper towels before proceeding. Residual water will be annoying to deal with and could inhibit dowstream processes.
+
+
+::: {.callout-tip}
+
+ For more thorough (and faster) drying, use a squirt bottle filled with methanol to rinse all utensils. Do this over a _LABELLED_ plastic "shoebox" container to collect the rinse. Set utensils aside on paper towels for a few minutes.
+ 
+ **IMPORTANT**: This should ONLY be done in the fume hood with proper PPE (e.g. gloves). Be sure to double check that no ignition sources are present! Methanol is extremely flammable. Allow collected methanol rinse to evaporate in fume hood.
+
+
+:::
+
+### Disposable Plastic Mortar & Pestle
+
+
+### Bullet Blender (i.e. bead beater)
