@@ -15,6 +15,7 @@ format:
 
 ## Homogenization
 
+Below, you will find rough guidelines for tissue homogenization via various methodologies. Please review them to decide which is best for your situation. The examples below will need to be adapted to your experiment and your RNA isolation methodology. For example, you may be working with samples stored in a preservative solution (e.g. RNA Later or DNA/RNA Shield). The guidelines below _do not address_ how to process these types of samples. Refer to the manufacturer's protocols for how to process samples for your RNA isolation procedure and tissue preservation method(s).
 
 ### Liquid Nitrogen (LN<sub>2</sub>) with Mortar & Pestle
 
@@ -123,3 +124,50 @@ Use caution to avoid splashing!!
 
 
 ### Bullet Blender (i.e. bead beater)
+
+#### Pros
+
+- High throughput (i.e. can process many samples simultaneously)
+
+- Least lab intensive of all methods.
+
+- Can handle almost all tissues sizes - very small to relatively large.
+
+#### Cons
+
+- Tissue will thaw during process.
+
+- Requires dry ice.
+
+- Very loud.
+
+##### Example Procedure
+
+Review the [Bullet Blender protocol in the Roberts Lab Handbook](https://robertslab.github.io/resources/protocols/protocol-bullet_blender/) before starting.
+
+::: {.callout-note}
+
+
+
+The Bullet Blender will require dry ice to keep it cool during your run(s). Get dry ice from Biochemistry Stores (Health Sciences, J-wing basement).
+
+:::
+
+
+
+1. Pre-fill tubes with desired beads and homogenization buffer.
+
+
+::: {.callout-tip}
+
+Prepare tubes a day or two ahead of time to save you time on the actual day you perform the extractions.
+
+:::
+
+
+2. Store frozen samples on ice - preferably dry ice if more than 2-3 samples.
+2. Using small dissection scissors and/or forceps and/or small steel spatula, chip out a piece of frozen tissue.
+3. Weigh tissue with weight boat/paper.
+4. Transfer tissue piece to pre-filled tube.
+5. Pre-chill Bullet Blender.
+6. Run Bullet Blender with desired time/intensity.
