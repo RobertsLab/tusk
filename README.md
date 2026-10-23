@@ -17,8 +17,8 @@ _quarto.yml            site config — navbar, sidebar, theme
 index.qmd              landing page
 about.qmd              about / contributing pointer
 styles.css             site-wide CSS overrides
-modules/               numbered training modules (00–05)
-  04-data/             inputs + outputs for the BLAST module
+modules/               numbered training modules (00–06)
+  04-data/             output from an older, executable BLAST module; not referenced
 biology/               Organism Biology pages
   _template.qmd        starting point for a new taxon page (not rendered)
 framework/             Lab Science pages
@@ -34,7 +34,7 @@ _site/                 stale output from an older config; not used
 You need:
 
 - [Quarto](https://quarto.org/docs/get-started/) 1.7 or newer
-- R, plus the `knitr` package — the modules use `{r}` code chunks, so Quarto renders through knitr rather than treating them as plain markdown
+No page currently executes code, so nothing else is required. The `{{r}}` chunks in `03-rstudio.qmd` are double-braced, which displays them without running them. If you add an executable `{r}` chunk, you'll also need R and the `knitr` package.
 
 Then, from the repo root:
 
@@ -50,7 +50,7 @@ quarto render
 
 This writes to `docs/`. Commit the source *and* the `docs/` changes together.
 
-> **Heads up on `modules/04-blast.qmd`:** several of its chunks are still `eval=TRUE`, so rendering it downloads reference data and actually runs `makeblastdb` / `blastx` into `modules/04-data/`. You need NCBI BLAST+ on your `PATH`, and a full render takes a few minutes. If you only touched an unrelated page, render just that file — `quarto render index.qmd` — instead of the whole site.
+> **Render the whole site after changing `_quarto.yml`.** The navbar and sidebar are written into every page's HTML at render time. Rendering a single file (`quarto render modules/06-lab-work.qmd`) updates only that page, so a new sidebar entry shows up on that page and nowhere else. If you only edited the body of one page, rendering just that file is fine.
 
 Note also that rendering with a newer Quarto than the last contributor used will rewrite everything under `docs/site_libs/`. That churn is expected and harmless; it just makes the diff noisy.
 
@@ -73,14 +73,14 @@ For anything larger, branch off `main`, make the change, render, and open a pull
    ```
 
 3. Register it in `_quarto.yml` under the `Modules` section of `sidebar: contents:`. **A file that isn't listed there renders but is unreachable from the site navigation** — this is the most common thing to forget.
-4. Render and commit.
+4. Render the whole site with `quarto render`, not just the new file, so every page's sidebar picks up the new entry. Then commit.
 
 ### Adding a biology page
 
 1. Copy `biology/_template.qmd` to `biology/NN-shortname.qmd`. Files beginning with an underscore are not rendered, so the template itself never reaches the site.
 2. Keep the eight sections in the order the template gives them. Consistency across taxon pages is deliberate — a reader who learns the shape on the bivalve page should be able to skim the coral page.
 3. Register it in `_quarto.yml` under the `Organism Biology` section of `sidebar: contents:`, same as for a module.
-4. Render and commit.
+4. Render the whole site with `quarto render` and commit.
 
 Write these for someone who has never taken invertebrate zoology. If a term needs defining, define it inline *and* add it to `biology/glossary.qmd`.
 
